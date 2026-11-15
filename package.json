@@ -1,0 +1,19 @@
+{
+  "name": "servico-facil-tailwind",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "css:watch": "tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "css:build": "tailwindcss -i ./src/input.css -o ./src/output.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "@tailwindcss/vite": "^4.1.17",
+    "tailwindcss": "^4.1.17",
+    "vite": "^6.4.1"
+  }
+}

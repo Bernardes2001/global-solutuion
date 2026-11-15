@@ -1,0 +1,200 @@
+{
+	"legenda_autenticacao": {
+		"true": "A documentação confirma que exige token/login.",
+		"false": "A documentação confirma que não exige token/login.",
+		"null": "A documentação consultada não permite confirmar se exige token/login."
+	},
+	"legenda_utilidade": {
+		"alta": "Traz serviços, passo a passo ou documentos necessários (o que o app precisa).",
+		"media": "Catálogo de dados abertos que pode conter bases de serviços, ou fonte complementar.",
+		"baixa": "Dados fiscais/contábeis/transparência. Pouco ou nenhum uso para o app."
+	},
+	"estados": [
+		{
+			"estado": "Maranhão",
+			"sigla": "MA",
+			"fonte": "Portal de serviços do Governo do Maranhão (ATI/SEAD)",
+			"apis": [],
+			"portais_servicos": [
+				{
+					"nome": "Portal de Serviços do Maranhão (EGMA)",
+					"url": "https://egma.ma.gov.br/servicos",
+					"utilidade": "alta"
+				}
+			]
+		},
+		{
+			"estado": "Piauí",
+			"sigla": "PI",
+			"fonte": "PI Digital (ATI-PI) e catálogo de serviços estaduais do gov.br",
+			"apis": [],
+			"portais_servicos": [
+				{
+					"nome": "PI Digital - Serviços ao Cidadão",
+					"url": "https://pidigital.pi.gov.br/app/catalog/list/servicos-ao-cidadao",
+					"utilidade": "alta"
+				},
+				{
+					"nome": "Serviços estaduais do Piauí no gov.br",
+					"url": "https://www.gov.br/pt-br/servicos-estaduais",
+					"utilidade": "alta"
+				}
+			]
+		},
+		{
+			"estado": "Ceará",
+			"sigla": "CE",
+			"fonte": "Ceará Digital e catálogo de serviços estaduais do gov.br",
+			"apis": [],
+			"portais_servicos": [
+				{
+					"nome": "Ceará Digital - Serviços",
+					"url": "https://cearadigital.ce.gov.br/servicos",
+					"utilidade": "alta"
+				},
+				{
+					"nome": "Portal de Serviços da Sefaz-CE",
+					"url": "https://portalservicos.sefaz.ce.gov.br/",
+					"utilidade": "media"
+				},
+				{
+					"nome": "Serviços estaduais do Ceará no gov.br",
+					"url": "https://www.gov.br/pt-br/servicos-estaduais?uf=CE",
+					"utilidade": "alta"
+				}
+			]
+		},
+		{
+			"estado": "Rio Grande do Norte",
+			"sigla": "RN",
+			"fonte": "Portal do Cidadão RN e TCE-RN",
+			"apis": [
+				{
+					"nome": "API de Dados Abertos do TCE-RN",
+					"requer_token": null,
+					"url": "https://apidadosabertos.tce.rn.gov.br/",
+					"utilidade": "baixa"
+				}
+			],
+			"portais_servicos": [
+				{
+					"nome": "Portal do Cidadão RN",
+					"url": "https://www.cidadao.rn.gov.br/",
+					"utilidade": "alta"
+				}
+			]
+		},
+		{
+			"estado": "Paraíba",
+			"sigla": "PB",
+			"fonte": "Paraíba Digital, Portal de Dados Abertos (CODATA/CGE) e gov.br",
+			"apis": [
+				{
+					"nome": "Portal de Dados Abertos do Estado da Paraíba",
+					"requer_token": false,
+					"url": "https://dados.pb.gov.br",
+					"utilidade": "baixa"
+				},
+				{
+					"nome": "Dados Abertos do TCE-PB (SAGRES)",
+					"requer_token": null,
+					"url": "https://dados-abertos.tce.pb.gov.br/",
+					"utilidade": "baixa"
+				}
+			],
+			"portais_servicos": [
+				{
+					"nome": "Paraíba Digital",
+					"url": "https://paraibadigital.pb.gov.br/inicio",
+					"utilidade": "alta"
+				}
+			]
+		},
+		{
+			"estado": "Pernambuco",
+			"sigla": "PE",
+			"fonte": "Portal pe.gov.br e TCE-PE",
+			"apis": [
+				{
+					"nome": "API de Dados Abertos do TCE-PE",
+					"requer_token": null,
+					"url": "https://sistemas.tcepe.tc.br/DadosAbertos/",
+					"utilidade": "baixa"
+				}
+			],
+			"portais_servicos": [
+				{
+					"nome": "Carta de Serviços de Pernambuco",
+					"url": "https://www.pe.gov.br/app/catalog/carta-de-servicos",
+					"utilidade": "alta"
+				}
+			]
+		},
+		{
+			"estado": "Alagoas",
+			"sigla": "AL",
+			"fonte": "Portal Alagoas Digital / Guia de Serviços (SEPLAG-AL) e Portal Alagoas em Dados",
+			"apis": [
+				{
+					"nome": "API de Serviços do Portal Alagoas Digital (JSON)",
+					"requer_token": false,
+					"url": "https://alagoasdigital.al.gov.br/api/v1/services.json",
+					"utilidade": "alta"
+				},
+				{
+					"nome": "Portal Alagoas em Dados (catálogo de dados abertos)",
+					"requer_token": false,
+					"url": "https://dados.al.gov.br/catalogo/",
+					"utilidade": "media"
+				}
+			],
+			"portais_servicos": [
+				{
+					"nome": "Guia de Serviços de Alagoas",
+					"url": "http://www.servicos.al.gov.br/",
+					"utilidade": "alta",
+					"observacao": "Antecessor do Alagoas Digital. Pode estar desatualizado."
+				}
+			]
+		},
+		{
+			"estado": "Sergipe",
+			"sigla": "SE",
+			"fonte": "Portal se.gov.br e catálogo de serviços estaduais do gov.br",
+			"apis": [],
+			"portais_servicos": [
+				{
+					"nome": "Serviços ao Cidadão - se.gov.br",
+					"url": "https://www.se.gov.br/busca?publicosAlvo=CIDADAO",
+					"utilidade": "alta"
+				}
+			]
+		},
+		{
+			"estado": "Bahia",
+			"sigla": "BA",
+			"fonte": "Portal de Serviços do Governo da Bahia",
+			"apis": [
+				{
+					"nome": "API de Serviços do Governo da Bahia (JSON)",
+					"requer_token": false,
+					"url": "https://servicos.ba.gov.br/api/servicos",
+					"utilidade": "alta"
+				},
+				{
+					"nome": "Documentação da API de integração ao Guia de Serviços (Bahia)",
+					"requer_token": false,
+					"url": "https://servicos.ba.gov.br/servicos/dados/abertos",
+					"utilidade": "alta"
+				}
+			],
+			"portais_servicos": [
+				{
+					"nome": "Todos os Serviços - Governo da Bahia",
+					"url": "https://www.ba.gov.br",
+					"utilidade": "alta"
+				}
+			]
+		}
+	]
+}
