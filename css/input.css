@@ -1,0 +1,151 @@
+/* Serviço Fácil — fonte do Tailwind CSS.
+ * Compile com `npm run css` → gera css/style.css (o arquivo que as páginas usam). */
+@import "tailwindcss";
+
+@source not "../data";
+@source not "../README.md";
+
+/* ---------- Tokens de design (paleta do Claude Design) ---------- */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-fundo: #F7F8FA;        /* fundo da página */
+  --color-superficie: #FFFFFF;   /* cards e painéis */
+  --color-tinta: #0F172A;        /* texto principal */
+  --color-suave: #475569;        /* texto secundário */
+  --color-linha: #E2E8F0;        /* bordas */
+  --color-campo: #CBD5E1;        /* borda de campos */
+  --color-navy: #0E2F5A;         /* faixas escuras */
+  --color-azul: #1652A8;         /* ações e links */
+  --color-ceu: #E8F0FB;          /* destaques claros */
+  --color-sol: #F4B740;          /* acento quente */
+  --color-claro: #FFFFFF;        /* texto sobre fundo escuro (navy) */
+  --color-sobre-azul: #FFFFFF;   /* texto sobre botão azul */
+  --color-claro-suave: #D6E2F5;  /* texto secundário sobre fundo escuro */
+  --color-rodape: #0B1B33;
+  --color-rodape-texto: #B8C4D6;
+  --color-sucesso: #14532D;
+  --color-sucesso-fundo: #DCF3E6;
+  --color-sucesso-barra: #1F7A4D;
+  --color-erro: #B42318;
+  --color-erro-texto: #8A1C12;
+  --color-erro-fundo: #FDECEC;
+  --color-aviso: #7A4100;
+  --color-aviso-fundo: #FDF1DC;
+}
+
+/* ---------- Base ---------- */
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-fundo font-sans text-tinta antialiased; }
+  h1, h2, .font-display { font-family: var(--font-display); }
+  button, input, select, textarea { font: inherit; }
+  :focus-visible { outline: 3px solid var(--color-azul); outline-offset: 3px; }
+  [hidden] { display: none !important; }
+}
+
+/* ---------- Componentes reutilizados nas 5 páginas ---------- */
+@layer components {
+  .container-site { @apply mx-auto w-full max-w-6xl px-4 sm:px-6; }
+
+  .pular-conteudo {
+    @apply absolute left-4 top-[-100px] z-50 rounded-lg bg-sol px-4 py-3 font-bold text-navy;
+  }
+  .pular-conteudo:focus { top: 1rem; }
+
+  .nav-link {
+    @apply flex min-h-11 items-center rounded-[10px] px-3.5 font-semibold text-tinta no-underline transition-colors hover:bg-ceu hover:text-azul;
+  }
+  .nav-link[aria-current="page"] { @apply bg-ceu font-bold text-azul; }
+
+  .btn-acess {
+    @apply inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-[10px] border border-campo bg-superficie px-3 font-bold text-tinta transition-colors hover:bg-ceu;
+  }
+  .btn-acess[aria-pressed="true"] { @apply border-azul bg-ceu text-azul; }
+
+  .btn-primario {
+    @apply inline-flex min-h-13 items-center justify-center gap-2.5 rounded-xl bg-azul px-6 font-extrabold text-sobre-azul no-underline transition hover:brightness-110;
+  }
+  .btn-sol {
+    @apply inline-flex min-h-13 items-center justify-center gap-2.5 rounded-xl bg-sol px-6 font-extrabold text-navy no-underline transition hover:brightness-105;
+  }
+  .btn-contorno {
+    @apply inline-flex min-h-13 items-center justify-center rounded-xl border-2 border-[#5B7FB3] px-6 font-bold text-claro no-underline transition hover:bg-white/10;
+  }
+
+  .eyebrow { @apply text-[13px] font-extrabold uppercase tracking-[0.06em] text-azul; }
+  .titulo-secao { @apply mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl; }
+  .card { @apply rounded-2xl border border-linha bg-superficie; }
+  .icone-box { @apply grid h-12 w-12 place-items-center rounded-xl bg-ceu text-azul; }
+  .chip { @apply rounded-full px-2.5 py-1 text-xs font-bold; }
+
+  .campo {
+    @apply min-h-13 w-full rounded-xl border-2 border-campo bg-superficie px-3.5 text-base text-tinta outline-none transition focus:border-azul focus:ring-4 focus:ring-ceu;
+  }
+  .campo[aria-invalid="true"] { @apply border-erro bg-erro-fundo; }
+  .rotulo { @apply mb-2 block font-bold; }
+  .erro-campo { @apply mt-2 text-sm font-semibold text-erro; }
+  .obrigatorio { @apply text-erro; }
+}
+
+/* ---------- Barra de progresso do checklist (<progress>) ---------- */
+.barra-checklist { appearance: none; border: 0; border-radius: 999px; overflow: hidden; background: var(--color-linha); }
+.barra-checklist::-webkit-progress-bar { background: var(--color-linha); border-radius: 999px; }
+.barra-checklist::-webkit-progress-value { background: var(--color-sucesso-barra); border-radius: 999px; transition: width .2s; }
+.barra-checklist::-moz-progress-bar { background: var(--color-sucesso-barra); border-radius: 999px; }
+html.alto-contraste .barra-checklist { background: #333333; }
+html.alto-contraste .barra-checklist::-webkit-progress-bar { background: #333333; }
+
+/* ---------- Responsividade (media queries próprias, além das do Tailwind) ---------- */
+@media (max-width: 767px) {
+  .menu-principal { display: none; }
+  .menu-principal.aberto { display: flex; }
+  .hero-titulo { font-size: 2.4rem; }
+}
+@media (min-width: 768px) {
+  .botao-menu { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* ---------- Ajuste de fonte (A− / A+) — classes aplicadas no <html> pelo js/main.js ---------- */
+html.fonte-1 { font-size: 87.5%; }
+html.fonte-3 { font-size: 112.5%; }
+html.fonte-4 { font-size: 125%; }
+html.fonte-5 { font-size: 137.5%; }
+
+/* ---------- Modo de alto contraste — redefine os tokens ---------- */
+html.alto-contraste {
+  --color-fundo: #000000;
+  --color-superficie: #000000;
+  --color-tinta: #FFFFFF;
+  --color-suave: #FFFFFF;
+  --color-linha: #FFFFFF;
+  --color-campo: #FFFFFF;
+  --color-navy: #000000;
+  --color-azul: #FFE600;
+  --color-ceu: #1A1A1A;
+  --color-sol: #FFE600;
+  --color-sobre-azul: #000000;
+  --color-claro-suave: #FFFFFF;
+  --color-rodape: #000000;
+  --color-rodape-texto: #FFFFFF;
+  --color-sucesso: #7CFF9B;
+  --color-sucesso-fundo: #000000;
+  --color-sucesso-barra: #7CFF9B;
+  --color-erro: #FF8A80;
+  --color-erro-texto: #FF8A80;
+  --color-erro-fundo: #000000;
+  --color-aviso: #FFE600;
+  --color-aviso-fundo: #000000;
+}
+html.alto-contraste a { text-decoration: underline; }
+html.alto-contraste .faixa-escura { border-bottom: 2px solid #FFFFFF; }
+html.alto-contraste .btn-contorno { border-color: #FFFFFF; }
+html.alto-contraste .card,
+html.alto-contraste dialog { border: 2px solid #FFFFFF; }
+html.alto-contraste :focus-visible { outline-color: #FFE600; }
+html.alto-contraste .ods { outline: 2px solid #FFFFFF; }
