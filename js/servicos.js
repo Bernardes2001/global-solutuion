@@ -105,7 +105,20 @@ function preencherFiltros() {
  * Com estado escolhido: nacionais + as fichas daquele estado. */
 function itensDoCatalogo(estado) {
   const nacionais = servicos.filter((ficha) => !ufDe(ficha));
-  if (estado) return [...nacionais, ...servicos.filter((ficha) => ufDe(ficha) === estado)];
+  if (estado) {
+    const fichasEstaduais = servicos.filter((ficha) => ufDe(ficha) === estado);
+    if (fichasEstaduais.length) return [...nacionais, ...fichasEstaduais];
+    const portais = comoLista(portaisEstaduais)
+      .filter((item) => item.sigla === estado)
+      .flatMap((item) => comoLista(item.portais_servicos).map((portal, indice) => ({
+        ...portal,
+        id: `portal-${estado}-${indice}`,
+        estado: item.estado,
+        sigla: estado,
+        ehPortalEstado: true
+      })));
+    return [...nacionais, ...portais];
+  }
   const bases = comoLista(servicosBase).map((base) => ({ ...base, ehServicoBase: true }));
   return [...nacionais, ...bases];
 }
@@ -148,7 +161,25 @@ function criarCardServicoBase(base) {
     </li>`;
 }
 
+function criarCardPortalEstado(portal) {
+  return `
+    <li class="card flex h-full flex-col gap-2.5 p-5">
+      <div class="flex flex-wrap gap-2">
+        <span class="chip bg-ceu text-azul">Portal estadual</span>
+        <span class="chip bg-sucesso-fundo text-sucesso">${escaparHtml(portal.estado)} (${escaparHtml(portal.sigla)})</span>
+      </div>
+      <h3 class="text-lg font-bold leading-snug">${escaparHtml(portal.nome)}</h3>
+      <p class="flex-1 leading-relaxed text-suave">Acesse o portal oficial do estado para localizar serviços. Requisitos, custos e prazos dependem de cada serviço.</p>
+      ${portal.observacao ? `<p class="text-sm text-aviso">${escaparHtml(portal.observacao)}</p>` : ''}
+      <a class="btn-primario mt-2 w-full" href="${escaparHtml(portal.url)}" target="_blank" rel="noopener noreferrer">
+        Consultar serviços<span class="sr-only"> de ${escaparHtml(portal.estado)} (abre em nova aba)</span>
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 3h7v7M10 14 21 3M19 13v7H4V5h7"/></svg>
+      </a>
+    </li>`;
+}
+
 function criarCard(servico) {
+  if (servico.ehPortalEstado) return criarCardPortalEstado(servico);
   if (servico.ehServicoBase) return criarCardServicoBase(servico);
   const { total, feitos } = progressoDocumentos(servico);
   const seloProgresso = feitos
