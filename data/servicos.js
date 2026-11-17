@@ -1,4 +1,4 @@
-{
+window.SERVICES_DATA = {
   "projeto": "Serviço Fácil",
   "versao": "2.0",
   "data_consulta": "2026-11-15",

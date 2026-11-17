@@ -1,51 +1,41 @@
-# Serviço Fácil — Front-end Tailwind CSS
+# Serviço Fácil
 
-Template responsivo para consulta de serviços públicos com base nos dois arquivos JSON fornecidos.
+Catálogo responsivo e informativo para consultar serviços públicos, documentos, etapas, custos e canais oficiais. O projeto usa somente HTML, CSS e JavaScript, sem ferramentas de build, servidor ou dependências.
 
-## Requisitos
-- Node.js 20 ou superior
-- npm
+## Como abrir
+Abra o arquivo `index.html` diretamente no navegador. Não é necessário instalar ou executar nada.
 
-## Instalação e execução
-
-```bash
-npm install
-npm run dev
-```
-
-Abra o endereço local exibido pelo Vite no terminal.
-
-## Gerar versão de produção
-
-```bash
-npm run build
-npm run preview
-```
-
-## Estrutura
+## Estrutura do projeto
 
 ```text
-servico-facil-tailwind/
+global-solutuion/
 ├── data/
-│   ├── nordeste.json
-│   └── servicos.json
-├── src/
-│   ├── input.css
-│   └── js/
-│       └── app.js
+│   ├── nordeste.js
+│   └── servicos.js
+├── css/
+│   └── style.css
+├── img/
+├── js/
+│   └── app.js
 ├── index.html
-├── package.json
-├── vite.config.js
 └── README.md
 ```
 
-O Tailwind CSS v4 é processado pelo plugin oficial do Vite. O arquivo `src/input.css` é a entrada do Tailwind; o Vite gera os estilos no build. Os dados são importados dos JSON locais e podem ser substituídos futuramente pela chamada à API.
+Os estilos ficam em `css/`, a lógica da interface em `js/`, as imagens do projeto em `img/` e os dados locais em `data/`. Os arquivos de dados são JavaScript local carregado por tags `<script>` comuns, para funcionar também ao abrir a página diretamente pelo sistema de arquivos.
 
-## Como os dados aparecem
+## Funcionalidades
 - 17 serviços nacionais e 24 variações estaduais são reunidos no catálogo.
 - Pesquisa por nome, sinônimos, descrição e órgão responsável.
 - Filtros por categoria e UF.
 - Detalhes com público, condições, documentos, etapas, canais, custo, prazo, observações, pendências e fontes.
 - Portais estaduais e fontes de integração são listados separadamente.
 
-O projeto é informativo e não envia solicitações para órgãos públicos. O campo vazio ou nulo nos dados é exibido como informação não confirmada, não como ausência de requisito.
+## Integrantes
+- Nome: [preencher]
+- Nome: [preencher]
+- Nome: [preencher]
+
+## Pitch
+Link para a apresentação: [inserir URL do pitch]
+
+O projeto é informativo e não envia solicitações para órgãos públicos. Campos vazios ou nulos nos dados são apresentados como informação não confirmada, não como ausência de requisito.

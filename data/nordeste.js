@@ -1,4 +1,4 @@
-{
+window.NORDESTE_DATA = {
 	"legenda_autenticacao": {
 		"true": "A documentação confirma que exige token/login.",
 		"false": "A documentação confirma que não exige token/login.",
