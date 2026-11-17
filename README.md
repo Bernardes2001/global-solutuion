@@ -31,9 +31,10 @@ Os estilos ficam em `css/`, a lógica da interface em `js/`, as imagens do proje
 - Portais estaduais e fontes de integração são listados separadamente.
 
 ## Integrantes
-- Nome: [preencher]
-- Nome: [preencher]
-- Nome: [preencher]
+- Felipe Tadeu Rodrigues da Silva
+- Gabriel Bernardes dos Santos
+- Lucas Cauã Silva Brasil
+- Luis Felipe Schimith da Silva
 
 ## Pitch
 Link para a apresentação: [inserir URL do pitch]
