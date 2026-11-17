@@ -30,6 +30,9 @@ a { color: inherit; }
 .brand small { margin-top: 2px; color: #d5e4f4; font-size: 12px; }
 .header-link { padding: 11px 14px; border-radius: 7px; color: #fff; font-size: 14px; font-weight: 650; text-decoration: none; }
 .header-link:hover { background: #1d4b80; }
+.brand-logo { display: block; width: 44px; height: 44px; flex: none; border-radius: 12px; box-shadow: 0 0 0 2px #fff; }
+.main-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px; }
+.header-link[aria-current="true"], .header-link:focus-visible { background: #1d4b80; }
 
 .page-shell { padding-block: 48px 56px; }
 .intro { max-width: 760px; margin-bottom: 34px; }
@@ -134,7 +137,9 @@ a { color: inherit; }
 @media (max-width: 600px) {
   .header-content, .page-shell { width: min(100% - 32px, 1180px); }
   .header-content { min-height: 72px; }
-  .header-link { display: none; }
+  .header-content { flex-wrap: wrap; padding-block: 10px; }
+  .main-nav { width: 100%; justify-content: flex-start; }
+  .header-link { padding: 9px 11px; font-size: 13px; }
   .page-shell { padding-block: 34px 42px; }
   .intro { margin-bottom: 25px; }
   .intro > p:last-child { font-size: 16px; }
