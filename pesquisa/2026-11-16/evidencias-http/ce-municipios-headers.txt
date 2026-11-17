@@ -1,0 +1,17 @@
+HTTP/1.1 200 
+Date: Mon, 16 Nov 2026 03:08:08 GMT
+Server: nginx/1.24.0 (Ubuntu)
+Content-Type: application/json;subtype=denodo-9;charset=UTF-8
+Cache-Control: private
+Strict-Transport-Security: max-age=31536000
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Content-Language: en
+vary: accept-encoding
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, OPTIONS
+Access-Control-Allow-Headers: Accept, Authorization, Content-Type
+Set-Cookie: cookiesession1=678A8C31C05A04A04FB90CD30745C16E;Expires=Tue, 16 Nov 2027 03:08:08 GMT;Path=/;HttpOnly
+X-XSS-Protection: 1
+content-length: 239
+

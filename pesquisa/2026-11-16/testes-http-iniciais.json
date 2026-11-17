@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://apidadosabertos.tce.rn.gov.br/",
+    "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "url": "https://dados-abertos.tce.pb.gov.br/",
+    "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "url": "https://sistemas.tcepe.tc.br/DadosAbertos/",
+    "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "url": "https://dados.ma.gov.br/api/3/action/package_list",
+    "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "url": "https://api.v1.transparencia.se.gov.br/v1/health",
+    "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  }
+]

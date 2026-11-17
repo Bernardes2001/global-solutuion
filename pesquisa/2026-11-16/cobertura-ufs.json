@@ -1,0 +1,309 @@
+{
+  "existentes": [
+    "DF",
+    "GO",
+    "MT",
+    "MS",
+    "ES",
+    "MG",
+    "RJ",
+    "SP"
+  ],
+  "universo": 27,
+  "cin_nova_uf": [
+    "PR"
+  ],
+  "matriz": [
+    {
+      "uf": "AC",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "AL",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "AP",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "AM",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "BA",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "CE",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "DF",
+      "cin_primeira": "existente",
+      "cnh_segunda_via": "existente",
+      "cnh_renovacao": "existente",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "ES",
+      "cin_primeira": "existente",
+      "cnh_segunda_via": "existente",
+      "cnh_renovacao": "existente",
+      "outros_novos": [
+        "CNH Social: matrícula de suplentes 2026 até 18/11; sem novas inscrições gerais."
+      ],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "GO",
+      "cin_primeira": "existente",
+      "cnh_segunda_via": "existente",
+      "cnh_renovacao": "existente",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "MA",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "MT",
+      "cin_primeira": "existente",
+      "cnh_segunda_via": "existente",
+      "cnh_renovacao": "existente",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "MS",
+      "cin_primeira": "existente",
+      "cnh_segunda_via": "existente",
+      "cnh_renovacao": "existente",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "MG",
+      "cin_primeira": "existente",
+      "cnh_segunda_via": "existente",
+      "cnh_renovacao": "existente",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "PA",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "PB",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "PR",
+      "cin_primeira": "nova_ficha_proposta",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "PE",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "PI",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "RJ",
+      "cin_primeira": "existente",
+      "cnh_segunda_via": "existente",
+      "cnh_renovacao": "existente",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "RN",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "RS",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "RO",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "RR",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "SC",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "SP",
+      "cin_primeira": "existente",
+      "cnh_segunda_via": "existente",
+      "cnh_renovacao": "existente",
+      "outros_novos": [
+        "sp-bo-online",
+        "sp-matricula-eja",
+        "Agenda Fácil: somente município de São Paulo."
+      ],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "SE",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    },
+    {
+      "uf": "TO",
+      "cin_primeira": "sem_ficha_nesta_pesquisa",
+      "cnh_segunda_via": "sem_ficha_nesta_pesquisa",
+      "cnh_renovacao": "sem_ficha_nesta_pesquisa",
+      "outros_novos": [],
+      "observacao": "Ausência de ficha não significa ausência de serviço. Regras de PR não são aplicadas às outras UFs.",
+      "fonte_diretorio_cin_url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+      "data_consulta": "2026-11-16"
+    }
+  ],
+  "limite": "Esta tarefa documenta regras somente de PR para CIN e SP para EJA/BO. A matriz das demais UFs é inventário de lacunas, não verificação dos portais.",
+  "fonte_diretorio_cin": {
+    "url": "https://www.gov.br/governodigital/pt-br/identidade/cin/duvidas-frequentes-sobre-a-cin-campanha",
+    "titulo": "Onde emitir a sua nova Carteira de Identidade?",
+    "orgao": "MGI / Governo Digital",
+    "data_consulta": "2026-11-16",
+    "tipo_evidencia": "pagina_lida",
+    "sustenta": [
+      "diretorio dos 27 órgãos estaduais/DF"
+    ],
+    "limitacoes": [
+      "Listagem federal não comprova agenda disponível, documentos especiais ou prazo por UF."
+    ]
+  },
+  "nota": "São 19 UFs sem CIN na base atual; PR tem ficha proposta nesta pesquisa. As outras 18 são lacunas geográficas identificadas, com checklist e prazo ainda não pesquisados; não extrapolar PR. Segunda via/renovação CNH permanecem com 19 UFs sem ficha."
+}

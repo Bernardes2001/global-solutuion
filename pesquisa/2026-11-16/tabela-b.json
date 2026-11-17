@@ -1,0 +1,571 @@
+[
+  {
+    "servico": "Solicitar BPC à pessoa idosa",
+    "ficha_id": "br-bpc-idoso",
+    "orgao": "INSS; gestão do MDS",
+    "por_que_incluir": "Proteção de renda para idosos de baixa renda; apoio CRAS/135 reduz barreira digital.",
+    "abrangencia": "nacional",
+    "uf": null,
+    "custo": "Requerimento gratuito.",
+    "prazo": "Carta estima média de 45 dias corridos; depende da análise.",
+    "documentos": "Identificação (RG, CIN, CNH ou CTPS) e CPF do titular e familiares da casa — Lista da carta; dados familiares também são extraídos do CadÚnico.",
+    "fonte_url": "https://www.gov.br/pt-br/servicos/solicitar-beneficio-assistencial-ao-idoso",
+    "prioridade": "alta",
+    "confianca": "media",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta com ressalvas",
+    "duplicidade": "procedimento_distinto",
+    "limitacoes": [
+      "Conferir enquadramento de estrangeiros, exceções biométricas e exigências do caso; não publicar elegibilidade simplificada como decisão automática."
+    ],
+    "fontes_urls": [
+      "https://www.gov.br/pt-br/servicos/solicitar-beneficio-assistencial-ao-idoso",
+      "https://www.gov.br/mds/pt-br/acoes-e-programas/SUAS/beneficios-assistenciais/beneficio-assistencial-ao-idoso-e-a-pessoa-com-deficiencia-bpc"
+    ],
+    "documentos_condicionais": "Identificação, CPF e procuração ou termo de representação (Pedido por procurador ou representante legal.)",
+    "pendencias": [
+      "Conferir enquadramento de estrangeiros, exceções biométricas e exigências do caso; não publicar elegibilidade simplificada como decisão automática."
+    ],
+    "status_conteudo": "parcial",
+    "apto_catalogo": "com_ressalvas"
+  },
+  {
+    "servico": "Solicitar BPC à pessoa com deficiência",
+    "ficha_id": "br-bpc-pcd",
+    "orgao": "INSS; gestão do MDS",
+    "por_que_incluir": "Proteção de renda para deficiência e baixa renda; critérios e avaliações próprios.",
+    "abrangencia": "nacional",
+    "uf": null,
+    "custo": "Requerimento gratuito.",
+    "prazo": "Carta informa média de 45 dias na resposta, mas também atendimento imediato no total; não interpretar como concessão imediata.",
+    "documentos": "Identificação (RG, CIN, CNH ou CTPS) e CPF do titular e familiares da casa — Lista da carta; dados familiares também são extraídos do CadÚnico.",
+    "fonte_url": "https://www.gov.br/pt-br/servicos/solicitar-beneficio-assistencial-a-pessoa-com-deficiencia",
+    "prioridade": "alta",
+    "confianca": "media",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta com ressalvas",
+    "duplicidade": "procedimento_distinto",
+    "limitacoes": [
+      "Conferir enquadramento de estrangeiros, exceções biométricas e exigências do caso; não publicar elegibilidade simplificada como decisão automática."
+    ],
+    "fontes_urls": [
+      "https://www.gov.br/pt-br/servicos/solicitar-beneficio-assistencial-a-pessoa-com-deficiencia",
+      "https://www.gov.br/mds/pt-br/acoes-e-programas/SUAS/beneficios-assistenciais/beneficio-assistencial-ao-idoso-e-a-pessoa-com-deficiencia-bpc"
+    ],
+    "documentos_condicionais": "Identificação, CPF e procuração ou termo de representação (Pedido por procurador ou representante legal.)",
+    "pendencias": [
+      "Conferir enquadramento de estrangeiros, exceções biométricas e exigências do caso; não publicar elegibilidade simplificada como decisão automática."
+    ],
+    "status_conteudo": "parcial",
+    "apto_catalogo": "com_ressalvas"
+  },
+  {
+    "servico": "Solicitar aposentadoria por idade urbana",
+    "ficha_id": "br-aposentadoria-idade-urbana",
+    "orgao": "INSS",
+    "por_que_incluir": "Renda na velhice; pedido digital com apoio do 135.",
+    "abrangencia": "nacional",
+    "uf": null,
+    "custo": "Pedido gratuito.",
+    "prazo": "Estimativa de 45 dias corridos; não garante concessão.",
+    "documentos": "Identificação (RG, CIN, CNH ou CTPS) e CPF",
+    "fonte_url": "https://www.gov.br/pt-br/servicos/solicitar-aposentadoria-por-idade-trabalhador-urbano",
+    "prioridade": "alta",
+    "confianca": "media",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta com ressalvas",
+    "duplicidade": "procedimento_distinto",
+    "limitacoes": [
+      "Determinar regra individual e documentos de vínculos/contribuições eventualmente exigidos."
+    ],
+    "fontes_urls": [
+      "https://www.gov.br/pt-br/servicos/solicitar-aposentadoria-por-idade-trabalhador-urbano",
+      "https://www.gov.br/inss/pt-br/direitos-e-deveres/aposentadorias/aposentadoria-por-idade-urbana"
+    ],
+    "documentos_condicionais": "Identificação, CPF e procuração ou termo legal (Pedido por representante.)",
+    "pendencias": [
+      "Determinar regra individual e documentos de vínculos/contribuições eventualmente exigidos."
+    ],
+    "status_conteudo": "parcial",
+    "apto_catalogo": "com_ressalvas"
+  },
+  {
+    "servico": "Solicitar auxílio por incapacidade temporária",
+    "ficha_id": "br-incapacidade-temporaria",
+    "orgao": "INSS / Perícia Médica Federal",
+    "por_que_incluir": "Protege renda durante afastamento; envio documental reduz deslocamento.",
+    "abrangencia": "nacional",
+    "uf": null,
+    "custo": "Pedido gratuito.",
+    "prazo": "Prazo total não estimado; 45 dias aparece apenas para uma etapa.",
+    "documentos": "Identificação (RG, CIN, CNH ou CTPS) e CPF; Laudo, relatório e/ou atestado legível e sem rasuras — Nome, data, afastamento estimado, informação da doença/CID e assinatura/registro profissional.",
+    "fonte_url": "https://www.gov.br/pt-br/servicos/solicitar-beneficio-por-incapacidade-temporaria-auxilio-doenca",
+    "prioridade": "alta",
+    "confianca": "media",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta com ressalvas",
+    "duplicidade": "procedimento_distinto",
+    "limitacoes": [
+      "Conferir regras atuais do Atestmed, dispensas de carência e documentos do tipo de afastamento; fontes divergem sobre duração."
+    ],
+    "fontes_urls": [
+      "https://www.gov.br/pt-br/servicos/solicitar-beneficio-por-incapacidade-temporaria-auxilio-doenca",
+      "https://www.gov.br/inss/pt-br/direitos-e-deveres/beneficios-por-incapacidade/auxilio-por-incapacidade-temporaria"
+    ],
+    "documentos_condicionais": "Identificação, CPF e procuração/termo legal (Pedido por representante.)",
+    "pendencias": [
+      "Conferir regras atuais do Atestmed, dispensas de carência e documentos do tipo de afastamento; fontes divergem sobre duração."
+    ],
+    "status_conteudo": "parcial",
+    "apto_catalogo": "com_ressalvas"
+  },
+  {
+    "servico": "Consultar acesso à Tarifa Social de Energia Elétrica",
+    "ficha_id": "br-tarifa-social-energia",
+    "orgao": "MME / ANEEL; execução pelas distribuidoras",
+    "por_que_incluir": "Reduz despesa essencial de famílias de baixa renda; explica concessão automática.",
+    "abrangencia": "nacional",
+    "uf": null,
+    "custo": "Custo do procedimento de consulta/correção cadastral não confirmado nas fontes nacionais lidas; concessão é automática, sem solicitação. Não confundir com o valor da fatura de energia.",
+    "prazo": "Prazo para reconhecimento ou correção não localizado.",
+    "documentos": "Somente dados/login para o recorte digital; consultar documentos condicionais na ficha.",
+    "fonte_url": "https://www.gov.br/mme/pt-br/luzdopovo/luzdopovo/",
+    "prioridade": "alta",
+    "confianca": "media",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta com ressalvas",
+    "duplicidade": "procedimento_distinto",
+    "limitacoes": [
+      "Confirmar documentos e prazo da distribuidora se benefício não aparecer; sem checklist nacional exaustivo.",
+      "Confirmar expressamente o custo do procedimento no canal escolhido; não nacionalizar gratuidade encontrada apenas para atendimento de determinada distribuidora/UF."
+    ],
+    "fontes_urls": [
+      "https://www.gov.br/mme/pt-br/luzdopovo/luzdopovo/",
+      "https://www.gov.br/mme/pt-br/luzdopovo/perguntas-frequentes-faq/perguntas-frequentes/"
+    ],
+    "documentos_condicionais": "Documentação de vínculo à unidade e, quando aplicável, de condição de saúde (Regularização ou enquadramento que exija atendimento da distribuidora.)",
+    "pendencias": [
+      "Confirmar documentos e prazo da distribuidora se benefício não aparecer; sem checklist nacional exaustivo.",
+      "Confirmar expressamente o custo do procedimento no canal escolhido; não nacionalizar gratuidade encontrada apenas para atendimento de determinada distribuidora/UF."
+    ],
+    "status_conteudo": "parcial",
+    "apto_catalogo": "com_ressalvas"
+  },
+  {
+    "servico": "Retirar medicamentos pelo Farmácia Popular",
+    "ficha_id": "br-farmacia-popular",
+    "orgao": "Ministério da Saúde; farmácias credenciadas",
+    "por_que_incluir": "Acesso gratuito a medicamentos do elenco; retirada presencial assistida.",
+    "abrangencia": "nacional",
+    "uf": null,
+    "custo": "Itens do elenco são gratuitos desde 14/02/2025.",
+    "prazo": "Não há prazo nacional de dispensação publicado nesta página.",
+    "documentos": "Documento oficial com foto e CPF; Receita médica válida, do SUS ou particular",
+    "fonte_url": "https://www.gov.br/saude/pt-br/composicao/sectics/farmacia-popular",
+    "prioridade": "alta",
+    "confianca": "alta",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta confirmada",
+    "duplicidade": "procedimento_distinto",
+    "limitacoes": [],
+    "fontes_urls": [
+      "https://www.gov.br/saude/pt-br/composicao/sectics/farmacia-popular"
+    ],
+    "documentos_condicionais": "Documentos do titular e representante e prova de representação (Titular acamado ou impossibilitado de comparecer.)",
+    "pendencias": [],
+    "status_conteudo": "confirmado",
+    "apto_catalogo": "sim"
+  },
+  {
+    "servico": "Consultar histórico e CNS no Meu SUS Digital",
+    "ficha_id": "br-meu-sus-digital",
+    "orgao": "Ministério da Saúde",
+    "por_que_incluir": "Facilita histórico e localização do CNS; explica limite do cadastro digital.",
+    "abrangencia": "nacional",
+    "uf": null,
+    "custo": "Consulta do histórico gratuita.",
+    "prazo": "Etapas digitais indicadas como imediatas; prazo total e integração/correção de registros não estimados.",
+    "documentos": "Somente dados/login para o recorte digital; consultar documentos condicionais na ficha.",
+    "fonte_url": "https://www.gov.br/pt-br/servicos/consultar-historico-de-atendimentos-realizados-pelo-sus-e-saude-suplementar",
+    "prioridade": "alta",
+    "confianca": "media",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta com ressalvas",
+    "duplicidade": "procedimento_distinto",
+    "limitacoes": [
+      "Resolver conflito do nível gov.br antes de fixar requisito; cadastro/primeira emissão do CNS exige fonte local."
+    ],
+    "fontes_urls": [
+      "https://www.gov.br/pt-br/servicos/consultar-historico-de-atendimentos-realizados-pelo-sus-e-saude-suplementar",
+      "https://www.gov.br/saude/pt-br/composicao/seidigi/meususdigital/perguntas-e-respostas/cidadao/"
+    ],
+    "documentos_condicionais": "Identificação com foto, comprovante de residência e número CNS (Correção de dados presencial no estabelecimento.)",
+    "pendencias": [
+      "Resolver conflito do nível gov.br antes de fixar requisito; cadastro/primeira emissão do CNS exige fonte local."
+    ],
+    "status_conteudo": "parcial",
+    "apto_catalogo": "com_ressalvas"
+  },
+  {
+    "servico": "Acessar vacinação de rotina no SUS",
+    "ficha_id": "br-vacinacao-sus",
+    "orgao": "Ministério da Saúde / secretarias estaduais e municipais",
+    "por_que_incluir": "Prevenção gratuita e porta presencial próxima; cartão perdido não impede acesso.",
+    "abrangencia": "nacional",
+    "uf": null,
+    "custo": "Vacinas do calendário oferecidas gratuitamente no SUS.",
+    "prazo": "Rotina ao longo do ano; atendimento e intervalos dependem da vacina e da unidade.",
+    "documentos": "Não confirmado; ver limites e documentos condicionais da ficha.",
+    "fonte_url": "https://www.gov.br/saude/pt-br/vacinacao",
+    "prioridade": "alta",
+    "confianca": "media",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta com ressalvas",
+    "duplicidade": "procedimento_distinto",
+    "limitacoes": [
+      "Checklist de identificação/cadastro e funcionamento devem ser verificados em ficha municipal; não exigir CNS ou cartão como barreira nacional."
+    ],
+    "fontes_urls": [
+      "https://www.gov.br/saude/pt-br/vacinacao"
+    ],
+    "documentos_condicionais": "Cartão ou caderneta de vacinação, se tiver (Avaliação do histórico na sala de vacina.)",
+    "pendencias": [
+      "Checklist de identificação/cadastro e funcionamento devem ser verificados em ficha municipal; não exigir CNS ou cartão como barreira nacional."
+    ],
+    "status_conteudo": "parcial",
+    "apto_catalogo": "com_ressalvas"
+  },
+  {
+    "servico": "Participar do Encceja",
+    "ficha_id": "br-encceja",
+    "orgao": "Inep; certificação pelas instituições aderentes",
+    "por_que_incluir": "Retomada da educação básica; oferece alternativa à trajetória escolar incompleta.",
+    "abrangencia": "nacional",
+    "uf": null,
+    "custo": "Exame gratuito em regra; ausência sem justificativa pode exigir ressarcimento conforme edital.",
+    "prazo": "Inscrições nacionais de 2026: 04–15/05, encerradas. Próxima edição não confirmada.",
+    "documentos": "Identificação original válida com foto, conforme edital — Para a prova; CPF é dado da inscrição.",
+    "fonte_url": "https://www.gov.br/pt-br/servicos/fazer-o-exame-nacional-para-certificacao-de-competencias-de-jovens-e-adultos",
+    "prioridade": "alta",
+    "confianca": "media",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta com ressalvas",
+    "duplicidade": "procedimento_distinto",
+    "limitacoes": [
+      "Confirmar próximo edital, ressarcimento e identificação aceita antes de anunciar inscrição aberta."
+    ],
+    "fontes_urls": [
+      "https://www.gov.br/pt-br/servicos/fazer-o-exame-nacional-para-certificacao-de-competencias-de-jovens-e-adultos",
+      "https://educacao.rs.gov.br/estao-abertas-as-inscricoes-para-o-encceja-2026"
+    ],
+    "documentos_condicionais": "Comprovantes de ausência ou atendimento especializado (Justificativa/recurso ou acessibilidade solicitados.)",
+    "pendencias": [
+      "Confirmar próximo edital, ressarcimento e identificação aceita antes de anunciar inscrição aberta."
+    ],
+    "status_conteudo": "parcial",
+    "apto_catalogo": "com_ressalvas"
+  },
+  {
+    "servico": "Entregar declaração de Imposto de Renda da Pessoa Física",
+    "ficha_id": "br-irpf-declaracao",
+    "orgao": "Receita Federal",
+    "por_que_incluir": "Obrigação fiscal e correção de pendências; utilidade conforme situação tributária.",
+    "abrangencia": "nacional",
+    "uf": null,
+    "custo": "Serviço de envio gratuito; imposto e multa por atraso, quando devidos, são obrigações separadas.",
+    "prazo": "Prazo regular de 2026 terminou no último dia útil de maio; atraso pode gerar multa. Processamento sem estimativa.",
+    "documentos": "Somente dados/login para o recorte digital; consultar documentos condicionais na ficha.",
+    "fonte_url": "https://www.gov.br/pt-br/servicos/declarar-meu-imposto-de-renda",
+    "prioridade": "media",
+    "confianca": "alta",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta confirmada",
+    "duplicidade": "procedimento_distinto",
+    "limitacoes": [],
+    "fontes_urls": [
+      "https://www.gov.br/pt-br/servicos/declarar-meu-imposto-de-renda"
+    ],
+    "documentos_condicionais": "Comprovantes das informações declaradas (Para preenchimento e eventual comprovação.)",
+    "pendencias": [],
+    "status_conteudo": "confirmado",
+    "apto_catalogo": "sim"
+  },
+  {
+    "servico": "Atualizar CPF ou regularizar cadastro suspenso",
+    "ficha_id": "br-cpf-atualizar-regularizar",
+    "orgao": "Receita Federal; órgão de identificação para alterações da CIN",
+    "por_que_incluir": "Resolve impedimento cadastral que consulta e comprovante existentes não resolvem.",
+    "abrangencia": "nacional",
+    "uf": null,
+    "custo": "Gratuito na Receita; conveniadas cobram R$ 7,00.",
+    "prazo": "Tempos de etapa não equivalem a prazo final; conclusão não consolidada.",
+    "documentos": "Documento de identificação oficial com foto — No atendimento documental.",
+    "fonte_url": "https://www.gov.br/pt-br/servicos/atualizar-cadastro-de-pessoas-fisicas",
+    "prioridade": "alta",
+    "confianca": "media",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta com ressalvas",
+    "duplicidade": "procedimento_distinto",
+    "limitacoes": [
+      "Detalhar checklist da situação individual; não aplicar formulário do suspenso a pendência de declaração."
+    ],
+    "fontes_urls": [
+      "https://www.gov.br/pt-br/servicos/atualizar-cadastro-de-pessoas-fisicas"
+    ],
+    "documentos_condicionais": "Certidão de nascimento/casamento ou equivalente (Identificação sem dados de nascimento, filiação ou naturalidade.); Foto segurando documento e complementos solicitados (Envio por e-mail ou protocolo que exija documentos.); Documentos do representado e responsável; prova de representação (Menor, representação ou outras situações especiais.)",
+    "pendencias": [
+      "Detalhar checklist da situação individual; não aplicar formulário do suspenso a pendência de declaração."
+    ],
+    "status_conteudo": "parcial",
+    "apto_catalogo": "com_ressalvas"
+  },
+  {
+    "servico": "Consultar e solicitar devolução de valores a receber",
+    "ficha_id": "br-valores-receber",
+    "orgao": "Banco Central; devolução pela instituição financeira",
+    "por_que_incluir": "Consulta gratuita e possível recuperação de recurso; não garante saldo.",
+    "abrangencia": "nacional",
+    "uf": null,
+    "custo": "Serviço gratuito.",
+    "prazo": "Até 12 dias úteis via solicitação Pix no SVR; negociação direta tem prazo próprio.",
+    "documentos": "Somente dados/login para o recorte digital; consultar documentos condicionais na ficha.",
+    "fonte_url": "https://www.gov.br/pt-br/servicos/consultar-e-solicitar-a-devolucao-de-valores-a-receber",
+    "prioridade": "media",
+    "confianca": "alta",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta confirmada",
+    "duplicidade": "procedimento_distinto",
+    "limitacoes": [],
+    "fontes_urls": [
+      "https://www.gov.br/pt-br/servicos/consultar-e-solicitar-a-devolucao-de-valores-a-receber"
+    ],
+    "documentos_condicionais": "Documentação combinada com a instituição financeira (Sem chave Pix disponível ou valores de falecido/empresa encerrada.)",
+    "pendencias": [],
+    "status_conteudo": "confirmado",
+    "apto_catalogo": "sim"
+  },
+  {
+    "servico": "Registrar reclamação no Consumidor.gov.br",
+    "ficha_id": "br-consumidor-gov",
+    "orgao": "Senacon / Ministério da Justiça e Segurança Pública",
+    "por_que_incluir": "Canal gratuito para cobranças e problemas cotidianos de consumo.",
+    "abrangencia": "nacional",
+    "uf": null,
+    "custo": "Serviço gratuito.",
+    "prazo": "Empresa responde em até 10 dias; consumidor avalia em até 20 dias após resposta. Não garante acordo.",
+    "documentos": "Somente dados/login para o recorte digital; consultar documentos condicionais na ficha.",
+    "fonte_url": "https://www.gov.br/pt-br/servicos/reclamar-contra-servico-ou-produto-de-empresas-privadas",
+    "prioridade": "alta",
+    "confianca": "alta",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta confirmada",
+    "duplicidade": "procedimento_distinto",
+    "limitacoes": [],
+    "fontes_urls": [
+      "https://www.gov.br/pt-br/servicos/reclamar-contra-servico-ou-produto-de-empresas-privadas",
+      "https://www.consumidor.gov.br/pages/conteudo/publico/3",
+      "https://www.consumidor.gov.br/pages/conteudo/publico/8"
+    ],
+    "documentos_condicionais": "Nota fiscal, contrato, comprovante de pagamento ou outros documentos da relação de consumo (Opcionalmente, para fundamentar a reclamação, ou se houver pedido de complemento na negociação.)",
+    "pendencias": [],
+    "status_conteudo": "confirmado",
+    "apto_catalogo": "sim"
+  },
+  {
+    "servico": "Buscar assistência jurídica na Defensoria Pública da União",
+    "ficha_id": "br-dpu-atendimento",
+    "orgao": "Defensoria Pública da União",
+    "por_que_incluir": "Apoio jurídico federal a pessoas vulneráveis para enfrentar negativas e barreiras.",
+    "abrangencia": "nacional",
+    "uf": null,
+    "custo": "Assistência gratuita.",
+    "prazo": "Triagem e solução dependem da unidade e do caso; sem prazo nacional confirmado.",
+    "documentos": "Não confirmado; ver limites e documentos condicionais da ficha.",
+    "fonte_url": "https://direitoshumanos.dpu.def.br/dpu-presta-assistencia-a-brasileiros-repatriados/",
+    "prioridade": "alta",
+    "confianca": "media",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta com ressalvas",
+    "duplicidade": "procedimento_distinto",
+    "limitacoes": [
+      "Lista de documentos obrigatórios não confirmada nacionalmente; obter checklist, agenda e critério econômico da unidade e da matéria procuradas."
+    ],
+    "fontes_urls": [
+      "https://direitoshumanos.dpu.def.br/dpu-presta-assistencia-a-brasileiros-repatriados/",
+      "https://direitoshumanos.dpu.def.br/dpu-cidadao-agora-e-dpu-digital-confira-as-mudancas-e-como-elas-te-afetam/",
+      "https://direitoshumanos.dpu.def.br/wp-content/uploads/2025/11/cartilha_revisao_bpc_v3.pdf",
+      "https://direitoshumanos.dpu.def.br/wp-content/uploads/2022/07/Cartilha___Assistencia_a_Vitimas___TRACK4TIP__Digital__compressed.pdf"
+    ],
+    "documentos_condicionais": "Documento de identificação (Se solicitado pela unidade após triagem do caso.); Comprovante de renda e declaração de hipossuficiência (Se solicitado pela unidade após triagem do caso.); CPF, se houver (Quando disponível.); Documentos relacionados à demanda (Conforme o problema jurídico.)",
+    "pendencias": [
+      "Lista de documentos obrigatórios não confirmada nacionalmente; obter checklist, agenda e critério econômico da unidade e da matéria procuradas."
+    ],
+    "status_conteudo": "parcial",
+    "apto_catalogo": "com_ressalvas"
+  },
+  {
+    "servico": "Registrar boletim de ocorrência eletrônico em São Paulo",
+    "ficha_id": "sp-bo-online",
+    "orgao": "Polícia Civil / Secretaria da Segurança Pública de São Paulo",
+    "por_que_incluir": "Registro de fatos e perda de documentos sem deslocamento, limitado a São Paulo.",
+    "abrangencia": "estadual",
+    "uf": "SP",
+    "custo": "Serviço gratuito.",
+    "prazo": "Prazo total não estimado nos campos próprios; análise depende do fato.",
+    "documentos": "Somente dados/login para o recorte digital; consultar documentos condicionais na ficha.",
+    "fonte_url": "https://www.poupatempo.sp.gov.br/carta/58530894-E128-4E25-ADEC-AB177394802A",
+    "prioridade": "alta",
+    "confianca": "alta",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta confirmada",
+    "duplicidade": "procedimento_distinto",
+    "limitacoes": [],
+    "fontes_urls": [
+      "https://www.poupatempo.sp.gov.br/carta/58530894-E128-4E25-ADEC-AB177394802A"
+    ],
+    "documentos_condicionais": "",
+    "pendencias": [],
+    "status_conteudo": "confirmado",
+    "apto_catalogo": "sim"
+  },
+  {
+    "servico": "Solicitar matrícula na EJA da rede estadual de São Paulo",
+    "ficha_id": "sp-matricula-eja",
+    "orgao": "Secretaria da Educação do Estado de São Paulo",
+    "por_que_incluir": "Retorno gratuito à escola, com canal presencial e proteção contra barreira documental.",
+    "abrangencia": "estadual",
+    "uf": "SP",
+    "custo": "Inscrição e matrícula gratuitas.",
+    "prazo": "Inscrição em qualquer época do ano letivo; não há prazo confirmado para alocação e conclusão da matrícula.",
+    "documentos": "RG e CPF do estudante; Comprovante de residência ou declaração datada e assinada; Histórico ou declaração escolar e carteira de vacinação — A falta de documentos não impede a matrícula, conforme a fonte.",
+    "fonte_url": "https://www.poupatempo.sp.gov.br/carta/93ACB8F4-702A-482D-8F5B-4DC3BAB86116",
+    "prioridade": "alta",
+    "confianca": "alta",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta confirmada",
+    "duplicidade": "procedimento_distinto",
+    "limitacoes": [],
+    "fontes_urls": [
+      "https://www.poupatempo.sp.gov.br/carta/93ACB8F4-702A-482D-8F5B-4DC3BAB86116"
+    ],
+    "documentos_condicionais": "RG e CPF do responsável (Estudante menor de 18 anos.)",
+    "pendencias": [],
+    "status_conteudo": "confirmado",
+    "apto_catalogo": "sim"
+  },
+  {
+    "servico": "Registrar pedido de acesso à energia no Luz para Todos",
+    "ficha_id": "br-luz-para-todos",
+    "orgao": "MME; atendimento pelas distribuidoras",
+    "por_que_incluir": "Inclui população rural/remota sem energia; não é serviço para toda unidade urbana.",
+    "abrangencia": "nacional",
+    "uf": null,
+    "custo": "Aplicativo gratuito; custo/enquadramento da ligação não consolidado em norma atual nesta pesquisa.",
+    "prazo": "Distribuidora informa próximos passos e prazos após análise.",
+    "documentos": "Documento oficial com foto e comprovante de residência",
+    "fonte_url": "https://www.gov.br/mme/pt-br/destaques/Programa%20Luz%20para%20Todos/saiba-como-solicitar-acesso/saiba-como-solicitar-acesso",
+    "prioridade": "media",
+    "confianca": "media",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta com ressalvas",
+    "duplicidade": "procedimento_distinto",
+    "limitacoes": [
+      "Conferir regras atuais de gratuidade/instalação e documentação técnica; não reutilizar automaticamente FAQ de 2023 baseada em norma de 2011."
+    ],
+    "fontes_urls": [
+      "https://www.gov.br/mme/pt-br/destaques/Programa%20Luz%20para%20Todos/saiba-como-solicitar-acesso/saiba-como-solicitar-acesso",
+      "https://www.gov.br/mme/pt-br/assuntos/secretarias/secretaria-nacional-energia-eletrica/mais-noticias/governo-do-brasil-lanca-aplicativo-para-ampliar-atendimento-do-programa-luz-para-todos"
+    ],
+    "documentos_condicionais": "NIS da família (Quando houver inscrição no CadÚnico.); Foto e localização da unidade (Pedido pelo aplicativo.)",
+    "pendencias": [
+      "Conferir regras atuais de gratuidade/instalação e documentação técnica; não reutilizar automaticamente FAQ de 2023 baseada em norma de 2011."
+    ],
+    "status_conteudo": "parcial",
+    "apto_catalogo": "com_ressalvas"
+  },
+  {
+    "servico": "Solicitar a primeira CIN no Paraná",
+    "ficha_id": "pr-cin-primeira",
+    "orgao": "Instituto de Identificação / Polícia Civil do Paraná",
+    "por_que_incluir": "Amplia identidade gratuita para UF ausente; é expansão de cobertura do mesmo serviço.",
+    "abrangencia": "estadual",
+    "uf": "PR",
+    "custo": "Primeira CIN gratuita; segunda emissão tem cobrança e não integra esta ficha.",
+    "prazo": "Entre 10 e 30 dias úteis após solicitação, conforme validação e remessa.",
+    "documentos": "Certidão de nascimento ou casamento conforme estado civil — Original, cópia autenticada ou documento digital admitido; casamento com averbação quando aplicável.",
+    "fonte_url": "https://www.policiacivil.pr.gov.br/Pagina/INFORMACOES-SOBRE-CARTEIRA-DE-IDENTIDADE-NACIONAL-CIN",
+    "prioridade": "media",
+    "confianca": "media",
+    "data_consulta": "2026-11-16",
+    "situacao": "ficha proposta com ressalvas",
+    "duplicidade": "expansao_geografica",
+    "limitacoes": [
+      "Detalhar representação de menores, mudanças civis e informações opcionais antes de apresentar checklist exaustivo."
+    ],
+    "fontes_urls": [
+      "https://www.policiacivil.pr.gov.br/Pagina/INFORMACOES-SOBRE-CARTEIRA-DE-IDENTIDADE-NACIONAL-CIN",
+      "https://www.policiacivil.pr.gov.br/servicos/Servicos/Identidade-CIN/Solicitar-a-Carteira-de-Identidade-Nacional-CIN-WaowKoDJ"
+    ],
+    "documentos_condicionais": "Traslado/transcrição, naturalização ou igualdade de direitos (Nascido no exterior, naturalizado ou português.); Foto enviada pelo sistema (Solicitação online.)",
+    "pendencias": [
+      "Detalhar representação de menores, mudanças civis e informações opcionais antes de apresentar checklist exaustivo."
+    ],
+    "status_conteudo": "parcial",
+    "apto_catalogo": "com_ressalvas"
+  },
+  {
+    "servico": "Consultar convocação e fazer matrícula de suplente da CNH Social 2026",
+    "id": "es-cnh-social-suplentes-2026",
+    "orgao": "Detran-ES",
+    "por_que_incluir": "Habilitação gratuita e matrícula de convocados com data próxima; evita perda da vaga.",
+    "abrangencia": "estadual",
+    "uf": "ES",
+    "custo": "Processo gratuito para os beneficiários selecionados.",
+    "prazo": "Matrícula de suplentes de 03 a 18/11/2026. É uma janela de matrícula, não prazo para receber CNH.",
+    "documentos": "Somente dados/login para o recorte digital; consultar documentos condicionais na ficha.",
+    "fonte_url": "https://detran.es.gov.br/Noticia/detran-es-convoca-3-008-suplentes-no-programa-cnh-social",
+    "fontes_urls": [
+      "https://detran.es.gov.br/Noticia/detran-es-convoca-3-008-suplentes-no-programa-cnh-social",
+      "https://detran.es.gov.br/media/CNH%20Social/Resultado/2026%20-%20CNH%20SOCIAL%20-%20SUPLENTES.pdf"
+    ],
+    "prioridade": "alta",
+    "confianca": "alta",
+    "data_consulta": "2026-11-16",
+    "situacao": "Disponível somente a suplentes selecionados até 18/11/2026.",
+    "ficha_id": "es-cnh-social-suplentes-2026",
+    "documentos_condicionais": "",
+    "pendencias": [],
+    "status_conteudo": "confirmado",
+    "apto_catalogo": "sim",
+    "duplicidade": "procedimento_distinto"
+  },
+  {
+    "servico": "Agendar consultas e exames na rede municipal de São Paulo",
+    "id": "sp-sao-paulo-agenda-facil",
+    "orgao": "Secretaria Municipal da Saúde de São Paulo",
+    "por_que_incluir": "Permite gerir consultas sem deslocamento; mantém alternativa pela UBS para quem precisa de ajuda.",
+    "abrangencia": "estadual, execução municipal em São Paulo/SP",
+    "uf": "SP",
+    "custo": "Uso gratuito do aplicativo da rede municipal.",
+    "prazo": "Não confirmado prazo único para conseguir consulta ou exame; depende da agenda e do procedimento.",
+    "documentos": "Somente dados/login para o recorte digital; consultar documentos condicionais na ficha.",
+    "fonte_url": "https://prefeitura.sp.gov.br/saude/w/atencao_basica/250738",
+    "fontes_urls": [
+      "https://prefeitura.sp.gov.br/saude/w/atencao_basica/250738",
+      "https://prefeitura.sp.gov.br/web/saude/w/agenda-facil-dtic",
+      "https://agendafacil.prefeitura.sp.gov.br/saude"
+    ],
+    "prioridade": "alta",
+    "confianca": "media",
+    "data_consulta": "2026-11-16",
+    "situacao": "Canal digital municipal; prazo de atendimento não confirmado.",
+    "ficha_id": "sp-sao-paulo-agenda-facil",
+    "documentos_condicionais": "",
+    "pendencias": [
+      "Prazo de atendimento não confirmado; consultar a UBS e a agenda do procedimento."
+    ],
+    "status_conteudo": "parcial",
+    "apto_catalogo": "com_ressalvas",
+    "duplicidade": "procedimento_distinto"
+  }
+]
