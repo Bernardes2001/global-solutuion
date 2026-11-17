@@ -90,7 +90,14 @@ function preencherFiltros() {
     .sort((a, b) => nomeCategoria(a).localeCompare(nomeCategoria(b), 'pt-BR'));
   categorias.forEach((chave) => filtroCategoria.add(new Option(nomeCategoria(chave), chave)));
 
-  const ufs = [...new Set(servicos.map((s) => s.localidade && s.localidade.uf).filter(Boolean))].sort();
+  const ufsComFichas = servicos
+    .map((s) => s.localidade && s.localidade.uf)
+    .filter(Boolean);
+  const ufsComPortais = comoLista(portaisEstaduais)
+    .map((estado) => estado.sigla)
+    .filter(Boolean);
+  const ufs = [...new Set([...ufsComFichas, ...ufsComPortais])]
+    .sort((a, b) => (nomesUf[a] || a).localeCompare(nomesUf[b] || b, 'pt-BR'));
   ufs.forEach((uf) => filtroEstado.add(new Option(`${nomesUf[uf] || uf} (${uf})`, uf)));
 }
 
