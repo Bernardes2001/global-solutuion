@@ -35,6 +35,7 @@ Os estilos ficam em `css/`, a lógica da interface em `js/`, as imagens do proje
 - Gabriel Bernardes dos Santos
 - Lucas Cauã Silva Brasil
 - Luis Felipe Schimith da Silva
+- Matheus Antonio Pereira Girelli
 
 ## Pitch
 Link para a apresentação: [inserir URL do pitch]
