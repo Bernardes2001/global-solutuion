@@ -35,7 +35,7 @@ npm run css:watch  # recompila automaticamente enquanto você edita
 | Início | `index.html` | O cidadão, o problema com dado real e fonte, a proposta e os ODS |
 | Serviços (solução) | `servicos.html` | Busca, filtros por categoria e estado, detalhes e checklist de documentos |
 | Impacto | `impacto.html` | Números do catálogo, quem ganha, indicadores, ODS e ecossistema de fontes |
-| Sobre nós | `sobre.html` | Missão, como a pesquisa foi feita e a equipe |
+| Sobre nós | `sobre-nos.html` | Missão, como a pesquisa foi feita e a equipe |
 | Fale conosco | `contato.html` | Formulário com validação em JavaScript |
 
 ## Funcionalidades
@@ -54,7 +54,7 @@ npm run css:watch  # recompila automaticamente enquanto você edita
 ## Estrutura
 
 ```text
-├── index.html  servicos.html  impacto.html  sobre.html  contato.html
+├── index.html  servicos.html  impacto.html  sobre-nos.html  contato.html
 ├── css/
 │   ├── input.css      # fonte do Tailwind (tokens de cor, componentes, alto contraste)
 │   └── style.css      # CSS compilado usado pelas páginas
