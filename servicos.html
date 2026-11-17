@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#123b72" />
+  <meta name="description" content="Pesquise serviços públicos e veja documentos, passo a passo, custo, prazo e canal oficial." />
+  <title>Serviços | Serviço Fácil</title>
+  <link rel="icon" href="./img/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <a href="./index.html" class="brand">
+        <img class="brand-logo" src="./img/logo.svg" alt="" width="44" height="44" />
+        <span><strong>Serviço Fácil</strong><small>Informação pública sem complicação</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Menu principal">
+        <a href="./index.html#inicio" class="header-link">Início</a>
+        <a href="./servicos.html" class="header-link" aria-current="true">Serviços</a>
+        <a href="./index.html#fontes" class="header-link">Fontes e portais oficiais</a>
+        <a href="./fale-conosco.html" class="header-link">Fale conosco</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="page-shell">
+    <section class="intro">
+      <p class="eyebrow">Serviços públicos</p>
+      <h1>Como podemos ajudar você?</h1>
+      <p>Pesquise um serviço e encontre informações sobre documentos, etapas, custos e canais oficiais.</p>
+    </section>
+
+    <section aria-label="Buscar serviços" class="search-panel">
+      <label for="search" class="search-label">O que você precisa encontrar?</label>
+      <div class="search-row">
+        <div class="search-input-wrap">
+          <span aria-hidden="true" class="search-icon">⌕</span>
+          <input id="search" type="search" placeholder="Ex.: tirar identidade, CPF, habilitação..." />
+        </div>
+        <button id="clearSearch" type="button" class="button button-secondary">Limpar busca</button>
+      </div>
+      <div class="filter-row">
+        <div class="filter-field">
+          <label for="category">Tipo de serviço</label>
+          <select id="category"><option value="">Todas as categorias</option></select>
+        </div>
+        <div class="filter-field">
+          <label for="state">Estado</label>
+          <select id="state"><option value="">Todos os estados / nacional</option></select>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" aria-labelledby="resultsTitle" class="results-section">
+      <div class="section-heading">
+        <div><h2 id="resultsTitle">Serviços disponíveis</h2><p id="resultCount" aria-live="polite">Carregando serviços...</p></div>
+      </div>
+      <div id="servicesGrid" class="service-grid"></div>
+      <div id="emptyState" class="empty-state is-hidden">
+        <p class="empty-title">Não encontramos esse serviço.</p><p>Tente usar outras palavras ou alterar os filtros.</p>
+        <button id="resetFilters" class="button button-primary">Mostrar todos os serviços</button>
+      </div>
+    </section>
+
+    <p class="notice"><strong>Importante:</strong> este catálogo é informativo. Ele não realiza solicitações, agendamentos ou emissão de documentos. Confira as regras atualizadas no canal oficial antes de iniciar um atendimento. Campos sem informação confirmada não significam que o requisito não exista.</p>
+  </main>
+
+  <dialog id="serviceDialog" class="service-dialog">
+    <div id="dialogContent"></div>
+  </dialog>
+  <footer class="site-footer"><p>Serviço Fácil · Projeto informativo de serviços públicos</p></footer>
+  <script src="./data/servicos.js"></script>
+  <script src="./data/nordeste.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
