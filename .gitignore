@@ -1,2 +1,5 @@
 node_modules
 dist
+# IDE / ferramentas locais
+.idea/
+.claude/
