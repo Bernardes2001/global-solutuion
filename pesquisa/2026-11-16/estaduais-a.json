@@ -1,0 +1,766 @@
+{
+  "data_consulta": "2026-11-16",
+  "linhas": [
+    {
+      "id": "df-cnh-renovacao",
+      "campo": "prazo",
+      "valor": {
+        "status": "com_ressalva",
+        "descricao": "Entrega física: até 20 dias, sem marco inicial explícito. A duração total da renovação continua não confirmada.",
+        "fontes": [
+          "df-cnh-entrega-2026"
+        ]
+      },
+      "fonte_url": "https://www.agenciabrasilia.df.gov.br/w/cnhs-devolvidas-pelos-correios-aguardam-retirada-nos-postos-do-detran-df",
+      "data_consulta": "2026-11-16",
+      "confianca": "media",
+      "resolucao": "com_ressalva",
+      "motivo": "Notícia oficial informa entrega; agendamento, exames e processamento não têm duração total publicada."
+    },
+    {
+      "id": "df-cnh",
+      "campo": "custo",
+      "valor": {
+        "status": "pago",
+        "valor_brl": 212,
+        "descricao": "Segunda via física: R$ 212,00 (R$ 144,00 do serviço + R$ 68,00 da emissão), conforme tabela 2026.",
+        "fontes": [
+          "df-taxas-habilitacao-2026",
+          "df-taxas-anexos-2026"
+        ]
+      },
+      "fonte_url": "https://www.agenciabrasilia.df.gov.br/documents/d/departamento-de-tr%C3%A2nsito/tp2026_reqhabilitacao-7-pdf",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "confirmado",
+      "motivo": "Composição específica da segunda via física publicada na tabela 2026."
+    },
+    {
+      "id": "df-cnh-renovacao",
+      "campo": "custo",
+      "valor": {
+        "status": "variavel",
+        "valor_brl": null,
+        "descricao": "Taxas 2026: R$ 53,00 biometria + R$ 144,00 solicitação; físico facultativo + R$ 68,00. A composição com físico soma R$ 265,00 antes dos exames, cobrados separadamente. Total depende do caso.",
+        "fontes": [
+          "df-taxas-habilitacao-2026",
+          "df-taxas-anexos-2026"
+        ]
+      },
+      "fonte_url": "https://www.agenciabrasilia.df.gov.br/documents/d/departamento-de-tr%C3%A2nsito/tp2026_reqhabilitacao-7-pdf",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "com_ressalva",
+      "motivo": "Taxas administrativas confirmadas; R$ 265,00 não é o total da renovação com exames."
+    },
+    {
+      "id": "go-cnh-renovacao",
+      "campo": "prazo",
+      "valor": {
+        "status": "pendente",
+        "descricao": "Prazo total vigente de renovação não confirmado; o Portal Expresso não expôs conteúdo legível nesta consulta.",
+        "fontes": [
+          "go-carta-2023"
+        ]
+      },
+      "fonte_url": "https://www.go.gov.br/servicos/servico/renovar-cnh",
+      "data_consulta": "2026-11-16",
+      "confianca": "baixa",
+      "resolucao": "nao_confirmado",
+      "motivo": "Portal atual sem texto legível; carta antiga não comprova prazo vigente e prazos de segunda via/transferência não foram transpostos."
+    },
+    {
+      "id": "mt-cin",
+      "campo": "prazo",
+      "valor": {
+        "status": "com_ressalva",
+        "descricao": "Catálogo oficial indexado informa 30 dias úteis, sem marco inicial. Abertura direta não expôs o conteúdo; prazo individual pode ser consultado pelo CPF.",
+        "fontes": [
+          "mt-cin-portal",
+          "mt-cin-acompanhamento"
+        ]
+      },
+      "fonte_url": "https://portal.mt.gov.br/catalog/emitir-1a-via-da-carteira-de-identidade-nacional-%28cin%29",
+      "data_consulta": "2026-11-16",
+      "confianca": "media",
+      "resolucao": "com_ressalva",
+      "motivo": "Prazo aparece em “Quanto tempo leva?” da ficha estadual indexada; conferir no atendimento e na consulta individual."
+    },
+    {
+      "id": "ms-cin",
+      "campo": "prazo",
+      "valor": {
+        "status": "pendente",
+        "descricao": "Prazo estadual de entrega da CIN não confirmado nas páginas atuais da Polícia Científica/Sejusp. Consultar o posto do atendimento.",
+        "fontes": [
+          "ms-cin-documentos",
+          "ms-cin-agendamento"
+        ]
+      },
+      "fonte_url": "https://www.cgp.sejusp.ms.gov.br/novo-rg-agenda-e-aberta-com-mais-de-28-mil-vagas-por-dia-em-ms/",
+      "data_consulta": "2026-11-16",
+      "confianca": "baixa",
+      "resolucao": "nao_confirmado",
+      "motivo": "Páginas estaduais consultadas não informam prazo. Estimativas municipais distintas não sustentam regra para todo MS."
+    },
+    {
+      "id": "ms-cnh",
+      "campo": "prazo",
+      "valor": {
+        "status": "pendente",
+        "descricao": "Prazo específico da segunda via não confirmado; notícia sobre Sedex não informa duração do serviço.",
+        "fontes": [
+          "ms-cnh-carta",
+          "ms-cnh-entrega"
+        ]
+      },
+      "fonte_url": "https://www.detran.ms.gov.br/servicos-em-destaque/solicitar-segunda-via-da-carteira-nacional-de-habilitacao-cnh-ou-permissao-para-dirigir-ppd/",
+      "data_consulta": "2026-11-16",
+      "confianca": "baixa",
+      "resolucao": "nao_confirmado",
+      "motivo": "Ficha atual é resumida. Trinta dias da notícia de Sedex são guarda após devolução, e não emissão/entrega."
+    },
+    {
+      "id": "ms-cnh",
+      "campo": "custo",
+      "valor": {
+        "status": "pago",
+        "valor_brl": null,
+        "descricao": "Valor total vigente da segunda via não confirmado. R$ 202,91 da notícia é de fevereiro/2026; a tabela atual usa conversões diferentes da UFERMS de novembro (R$ 56,33). Confirmar guia, composição e envio.",
+        "fontes": [
+          "ms-cnh-impressa",
+          "ms-taxas-publicadas-2026",
+          "ms-uferms-novembro-2026"
+        ]
+      },
+      "fonte_url": "https://www.detran.ms.gov.br/informativos/taxas/",
+      "data_consulta": "2026-11-16",
+      "confianca": "baixa",
+      "resolucao": "nao_confirmado",
+      "motivo": "Taxa de emissão isolada e unidade fiscal não permitem confirmar composição total. Mantido pago sem valor."
+    },
+    {
+      "id": "ms-cnh-renovacao",
+      "campo": "custo",
+      "valor": {
+        "status": "pago",
+        "valor_brl": null,
+        "descricao": "Taxa total de renovação não confirmada. Tabela e UFERMS novembro/2026 divergem. Exames à parte: notícia da Portaria N 201/2026 informa médico R$ 75,00 e psicológico R$ 105,00; tabela mostra R$ 85,00/R$ 95,00. Confirmar guia e exames antes de somar.",
+        "fontes": [
+          "ms-taxas-publicadas-2026",
+          "ms-uferms-novembro-2026",
+          "ms-exames-portaria-201-2026"
+        ]
+      },
+      "fonte_url": "https://www.detran.ms.gov.br/informativos/taxas/",
+      "data_consulta": "2026-11-16",
+      "confianca": "baixa",
+      "resolucao": "nao_confirmado",
+      "motivo": "Conflito oficial não reconciliado; nenhum subtotal convertido em custo total. Mantido pago sem valor."
+    },
+    {
+      "id": "es-cnh",
+      "campo": "documentos",
+      "valor": {
+        "documentos_status": "pendente",
+        "documentos_obrigatorios": [],
+        "documentos_condicionais": []
+      },
+      "fonte_url": "https://detran.es.gov.br/perda-ou-dano-2",
+      "data_consulta": "2026-11-16",
+      "confianca": "baixa",
+      "resolucao": "nao_confirmado",
+      "motivo": "Página manda levar “documentos discriminados abaixo”, mas não apresenta checklist. PDF da IS N 018/2020 não pôde ser lido; não usada documentação de outro serviço."
+    },
+    {
+      "id": "es-cnh",
+      "campo": "custo",
+      "valor": {
+        "status": "pago",
+        "valor_brl": 271.61,
+        "descricao": "Taxa Detran-ES para segunda via: R$ 271,61 na tabela SIT consultada. Conferir valor na guia DUA.",
+        "fontes": [
+          "es-taxas-sit-2026"
+        ]
+      },
+      "fonte_url": "https://renach2.es.gov.br/Habilitacao/Publico/hab_valor_servico.aspx",
+      "data_consulta": "2026-11-16",
+      "confianca": "media",
+      "resolucao": "com_ressalva",
+      "motivo": "Tabela oficial ligada pela ficha informa o valor; tela não explicita data-base. Documentação continua pendente."
+    },
+    {
+      "id": "es-cnh-renovacao",
+      "campo": "custo",
+      "valor": {
+        "status": "variavel",
+        "valor_brl": null,
+        "descricao": "Taxa Detran-ES de renovação: R$ 276,54 na tabela SIT consultada; exames pagos à clínica e demais componentes conforme o caso. Esse valor não é o custo total.",
+        "fontes": [
+          "es-taxas-sit-2026",
+          "es-renovacao"
+        ]
+      },
+      "fonte_url": "https://renach2.es.gov.br/Habilitacao/Publico/hab_valor_servico.aspx",
+      "data_consulta": "2026-11-16",
+      "confianca": "media",
+      "resolucao": "com_ressalva",
+      "motivo": "Taxa identificada, com exames separados. A tabela não explicita data-base nem total final."
+    },
+    {
+      "id": "rj-cin",
+      "campo": "prazo",
+      "valor": {
+        "status": "com_ressalva",
+        "descricao": "Entrega: 12 dias úteis a partir do requerimento; pode aumentar por consulta ao cartório, outras exigências ou análises da Receita Federal.",
+        "fontes": [
+          "rj-cin-pagina"
+        ]
+      },
+      "fonte_url": "https://www.detran.rj.gov.br/todos-os-servicos/servicos-dic/1-via-de-identidade.html",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "confirmado",
+      "motivo": "Prazo e causas de ampliação constam na seção “Prazo de entrega” da página atual."
+    },
+    {
+      "id": "rj-cnh",
+      "campo": "prazo",
+      "valor": {
+        "status": "com_ressalva",
+        "descricao": "Segunda via pelo Posto Digital: notícia de 2024 orienta retirada após 10 dias úteis no posto escolhido. Prazo total vigente e modalidade presencial continuam não confirmados.",
+        "fontes": [
+          "rj-cnh-digital-prazo"
+        ]
+      },
+      "fonte_url": "https://www.detran.rj.gov.br/noticias/saiba-como-pedir-a-renovacao-ou-a-segunda-via-da-cnh-pelo-posto-digital-do-detran-rj-sem-necessidade-de-agendamento-3.html",
+      "data_consulta": "2026-11-16",
+      "confianca": "media",
+      "resolucao": "com_ressalva",
+      "motivo": "Prazo específico do roteiro digital em notícia antiga; ficha atual e carta de outubro/2026 não trazem prazo equivalente."
+    },
+    {
+      "id": "rj-cnh-renovacao",
+      "campo": "prazo",
+      "valor": {
+        "status": "pendente",
+        "descricao": "Prazo total da renovação não confirmado nas páginas e carta de serviços consultadas. Prazo de compensação do DUDA não é prazo de emissão.",
+        "fontes": [
+          "rj-renovacao"
+        ]
+      },
+      "fonte_url": "https://www.detran.rj.gov.br/todos-os-servicos/servicos-hab/renovacao-da-habilitacao.html",
+      "data_consulta": "2026-11-16",
+      "confianca": "baixa",
+      "resolucao": "nao_confirmado",
+      "motivo": "Fonte informa etapas e compensação de pagamento, sem duração total. Dez dias do roteiro de segunda via não se aplicam."
+    },
+    {
+      "id": "sp-cnh",
+      "campo": "documentos",
+      "valor": {
+        "documentos_status": "pendente",
+        "documentos_obrigatorios": [],
+        "documentos_condicionais": []
+      },
+      "fonte_url": "https://www.poupatempo.sp.gov.br/carta/D6BB72BC-80D9-4AC4-924C-7C8503F37367",
+      "data_consulta": "2026-11-16",
+      "confianca": "baixa",
+      "resolucao": "nao_confirmado",
+      "motivo": "Fonte oficial sem checklist claro: resumo indexado menciona RG ou equivalente e comprovante/declaração de residência quando aplicável, mas a etapa presencial diz documentação não necessária. São apenas indícios; abertura direta retornou 500/indisponibilidade."
+    },
+    {
+      "id": "sp-cnh",
+      "campo": "custo",
+      "valor": {
+        "status": "variavel",
+        "valor_brl": null,
+        "descricao": "Carta indexada: digital gratuita; físico opcional R$ 126,79 emissão + R$ 11,00 Correios = R$ 137,79. Confirmar no serviço: página tem trechos contraditórios sobre cobrança presencial e abertura direta indisponível.",
+        "fontes": [
+          "sp-segunda-indexado"
+        ]
+      },
+      "fonte_url": "https://www.poupatempo.sp.gov.br/carta/D6BB72BC-80D9-4AC4-924C-7C8503F37367",
+      "data_consulta": "2026-11-16",
+      "confianca": "media",
+      "resolucao": "com_ressalva",
+      "motivo": "Valores de 2026 publicados no índice da ficha; modalidades distintas e inconsistência da página impedem tratar como preço único irrestrito."
+    }
+  ],
+  "atualizacoes": [
+    {
+      "id": "df-cnh-renovacao",
+      "campos": {
+        "prazo": {
+          "status": "com_ressalva",
+          "descricao": "Entrega física: até 20 dias, sem marco inicial explícito. A duração total da renovação continua não confirmada.",
+          "fontes": [
+            "df-cnh-entrega-2026"
+          ]
+        },
+        "custo": {
+          "status": "variavel",
+          "valor_brl": null,
+          "descricao": "Taxas 2026: R$ 53,00 biometria + R$ 144,00 solicitação; físico facultativo + R$ 68,00. A composição com físico soma R$ 265,00 antes dos exames, cobrados separadamente. Total depende do caso.",
+          "fontes": [
+            "df-taxas-habilitacao-2026",
+            "df-taxas-anexos-2026"
+          ]
+        }
+      },
+      "fontes_adicionar": [
+        {
+          "id": "df-cnh-entrega-2026",
+          "url": "https://www.agenciabrasilia.df.gov.br/w/cnhs-devolvidas-pelos-correios-aguardam-retirada-nos-postos-do-detran-df",
+          "titulo": "CNHs devolvidas pelos Correios aguardam retirada nos postos do Detran-DF",
+          "orgao": "Agência Brasília / Detran-DF",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "pagina_lida",
+          "sustenta": [
+            "prazo de entrega física"
+          ],
+          "limitacoes": [
+            "Notícia de 13/02/2025, atualizada em 26/10/2026. Até 20 dias refere-se à entrega; não define marco inicial nem duração total da renovação."
+          ]
+        },
+        {
+          "id": "df-taxas-habilitacao-2026",
+          "url": "https://www.agenciabrasilia.df.gov.br/documents/d/departamento-de-tr%C3%A2nsito/tp2026_reqhabilitacao-7-pdf",
+          "titulo": "Detran-DF — principais serviços de habilitação — tabela 2026",
+          "orgao": "Detran-DF",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "documento_lido",
+          "sustenta": [
+            "custo"
+          ],
+          "limitacoes": [
+            "Composição administrativa; exames em clínicas e toxicológico ficam fora. Impressão facultativa na renovação."
+          ]
+        },
+        {
+          "id": "df-taxas-anexos-2026",
+          "url": "https://www.agenciabrasilia.df.gov.br/documents/d/departamento-de-tr%C3%A2nsito/tp2026-21-pdf",
+          "titulo": "Detran-DF — anexos I, II e III — tabela de preços públicos 2026",
+          "orgao": "Detran-DF",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "documento_lido",
+          "sustenta": [
+            "custo"
+          ],
+          "limitacoes": [
+            "Valores por código; não representam isoladamente o total de um processo."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "df-cnh",
+      "campos": {
+        "custo": {
+          "status": "pago",
+          "valor_brl": 212,
+          "descricao": "Segunda via física: R$ 212,00 (R$ 144,00 do serviço + R$ 68,00 da emissão), conforme tabela 2026.",
+          "fontes": [
+            "df-taxas-habilitacao-2026",
+            "df-taxas-anexos-2026"
+          ]
+        }
+      },
+      "fontes_adicionar": [
+        {
+          "id": "df-taxas-habilitacao-2026",
+          "url": "https://www.agenciabrasilia.df.gov.br/documents/d/departamento-de-tr%C3%A2nsito/tp2026_reqhabilitacao-7-pdf",
+          "titulo": "Detran-DF — principais serviços de habilitação — tabela 2026",
+          "orgao": "Detran-DF",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "documento_lido",
+          "sustenta": [
+            "custo"
+          ],
+          "limitacoes": [
+            "Composição administrativa; exames em clínicas e toxicológico ficam fora. Impressão facultativa na renovação."
+          ]
+        },
+        {
+          "id": "df-taxas-anexos-2026",
+          "url": "https://www.agenciabrasilia.df.gov.br/documents/d/departamento-de-tr%C3%A2nsito/tp2026-21-pdf",
+          "titulo": "Detran-DF — anexos I, II e III — tabela de preços públicos 2026",
+          "orgao": "Detran-DF",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "documento_lido",
+          "sustenta": [
+            "custo"
+          ],
+          "limitacoes": [
+            "Valores por código; não representam isoladamente o total de um processo."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "go-cnh-renovacao",
+      "campos": {
+        "prazo": {
+          "status": "pendente",
+          "descricao": "Prazo total vigente de renovação não confirmado; o Portal Expresso não expôs conteúdo legível nesta consulta.",
+          "fontes": [
+            "go-carta-2023"
+          ]
+        }
+      },
+      "fontes_adicionar": []
+    },
+    {
+      "id": "mt-cin",
+      "campos": {
+        "prazo": {
+          "status": "com_ressalva",
+          "descricao": "Catálogo oficial indexado informa 30 dias úteis, sem marco inicial. Abertura direta não expôs o conteúdo; prazo individual pode ser consultado pelo CPF.",
+          "fontes": [
+            "mt-cin-portal",
+            "mt-cin-acompanhamento"
+          ]
+        }
+      },
+      "fontes_adicionar": [
+        {
+          "id": "mt-cin-acompanhamento",
+          "url": "https://www.politec.mt.gov.br/acompanhamento-de-emissao-da-cin",
+          "titulo": "Acompanhamento de Emissão da CIN",
+          "orgao": "Politec-MT",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "pagina_lida",
+          "sustenta": [
+            "consulta individual do andamento e prazo médio"
+          ],
+          "limitacoes": [
+            "Consulta usa CPF; nenhum dado pessoal foi informado. Não publica prazo geral numérico."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ms-cin",
+      "campos": {
+        "prazo": {
+          "status": "pendente",
+          "descricao": "Prazo estadual de entrega da CIN não confirmado nas páginas atuais da Polícia Científica/Sejusp. Consultar o posto do atendimento.",
+          "fontes": [
+            "ms-cin-documentos",
+            "ms-cin-agendamento"
+          ]
+        }
+      },
+      "fontes_adicionar": []
+    },
+    {
+      "id": "ms-cnh",
+      "campos": {
+        "prazo": {
+          "status": "pendente",
+          "descricao": "Prazo específico da segunda via não confirmado; notícia sobre Sedex não informa duração do serviço.",
+          "fontes": [
+            "ms-cnh-carta",
+            "ms-cnh-entrega"
+          ]
+        },
+        "custo": {
+          "status": "pago",
+          "valor_brl": null,
+          "descricao": "Valor total vigente da segunda via não confirmado. R$ 202,91 da notícia é de fevereiro/2026; a tabela atual usa conversões diferentes da UFERMS de novembro (R$ 56,33). Confirmar guia, composição e envio.",
+          "fontes": [
+            "ms-cnh-impressa",
+            "ms-taxas-publicadas-2026",
+            "ms-uferms-novembro-2026"
+          ]
+        }
+      },
+      "fontes_adicionar": [
+        {
+          "id": "ms-taxas-publicadas-2026",
+          "url": "https://www.detran.ms.gov.br/informativos/taxas/",
+          "titulo": "Taxas — Detran MS",
+          "orgao": "Detran-MS",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "pagina_lida",
+          "sustenta": [
+            "componentes do custo",
+            "divergência de valores"
+          ],
+          "limitacoes": [
+            "Conversões exibidas correspondem a UFERMS de R$ 55,50, diferente do valor de novembro/2026 (R$ 56,33). Exames R$ 85/95 divergem da notícia da Portaria N 201/2026. Não confirma composição total da segunda via ou renovação."
+          ]
+        },
+        {
+          "id": "ms-uferms-novembro-2026",
+          "url": "https://aacpdappls.net.ms.gov.br/appls/legislacao/serc/legato.nsf/7382b3a89b695e7a04256b1f00725c1e/6b3ffc49b559834c04258e9d00484bd5",
+          "titulo": "Resolução/SEFAZ nº 3.529, de 20 de outubro de 2026",
+          "orgao": "SEFAZ-MS",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "pagina_lida",
+          "sustenta": [
+            "UFERMS novembro/2026"
+          ],
+          "limitacoes": [
+            "Fixa a unidade em R$ 56,33; não identifica quais taxas compõem cada serviço do Detran."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ms-cnh-renovacao",
+      "campos": {
+        "custo": {
+          "status": "pago",
+          "valor_brl": null,
+          "descricao": "Taxa total de renovação não confirmada. Tabela e UFERMS novembro/2026 divergem. Exames à parte: notícia da Portaria N 201/2026 informa médico R$ 75,00 e psicológico R$ 105,00; tabela mostra R$ 85,00/R$ 95,00. Confirmar guia e exames antes de somar.",
+          "fontes": [
+            "ms-taxas-publicadas-2026",
+            "ms-uferms-novembro-2026",
+            "ms-exames-portaria-201-2026"
+          ]
+        }
+      },
+      "fontes_adicionar": [
+        {
+          "id": "ms-taxas-publicadas-2026",
+          "url": "https://www.detran.ms.gov.br/informativos/taxas/",
+          "titulo": "Taxas — Detran MS",
+          "orgao": "Detran-MS",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "pagina_lida",
+          "sustenta": [
+            "componentes do custo",
+            "divergência de valores"
+          ],
+          "limitacoes": [
+            "Conversões exibidas correspondem a UFERMS de R$ 55,50, diferente do valor de novembro/2026 (R$ 56,33). Exames R$ 85/95 divergem da notícia da Portaria N 201/2026. Não confirma composição total da segunda via ou renovação."
+          ]
+        },
+        {
+          "id": "ms-uferms-novembro-2026",
+          "url": "https://aacpdappls.net.ms.gov.br/appls/legislacao/serc/legato.nsf/7382b3a89b695e7a04256b1f00725c1e/6b3ffc49b559834c04258e9d00484bd5",
+          "titulo": "Resolução/SEFAZ nº 3.529, de 20 de outubro de 2026",
+          "orgao": "SEFAZ-MS",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "pagina_lida",
+          "sustenta": [
+            "UFERMS novembro/2026"
+          ],
+          "limitacoes": [
+            "Fixa a unidade em R$ 56,33; não identifica quais taxas compõem cada serviço do Detran."
+          ]
+        },
+        {
+          "id": "ms-exames-portaria-201-2026",
+          "url": "https://www.detran.ms.gov.br/detran-ms-publica-portaria-que-reduz-valores-dos-exames-da-cnh-do-brasil/",
+          "titulo": "Detran-MS publica Portaria que reduz valores dos exames da CNH do Brasil",
+          "orgao": "Detran-MS",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "pagina_lida",
+          "sustenta": [
+            "exames separados das taxas"
+          ],
+          "limitacoes": [
+            "Notícia da Portaria N 201/2026: médico R$ 75 e psicológico R$ 105 desde 23/01/2026. Diverge da tabela pública de taxas; vigência posterior não reconciliada."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "es-cnh",
+      "campos": {
+        "documentos_status": "pendente",
+        "documentos_obrigatorios": [],
+        "documentos_condicionais": [],
+        "custo": {
+          "status": "pago",
+          "valor_brl": 271.61,
+          "descricao": "Taxa Detran-ES para segunda via: R$ 271,61 na tabela SIT consultada. Conferir valor na guia DUA.",
+          "fontes": [
+            "es-taxas-sit-2026"
+          ]
+        }
+      },
+      "fontes_adicionar": [
+        {
+          "id": "es-taxas-sit-2026",
+          "url": "https://renach2.es.gov.br/Habilitacao/Publico/hab_valor_servico.aspx",
+          "titulo": "SIT — Valores dos Serviços",
+          "orgao": "Detran-ES",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "pagina_lida",
+          "sustenta": [
+            "custo"
+          ],
+          "limitacoes": [
+            "Tabela oficial consultada em 16/11/2026; a própria tela não indica data-base. Traz taxa do Detran, sem confirmar total com exames."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "es-cnh-renovacao",
+      "campos": {
+        "custo": {
+          "status": "variavel",
+          "valor_brl": null,
+          "descricao": "Taxa Detran-ES de renovação: R$ 276,54 na tabela SIT consultada; exames pagos à clínica e demais componentes conforme o caso. Esse valor não é o custo total.",
+          "fontes": [
+            "es-taxas-sit-2026",
+            "es-renovacao"
+          ]
+        }
+      },
+      "fontes_adicionar": [
+        {
+          "id": "es-taxas-sit-2026",
+          "url": "https://renach2.es.gov.br/Habilitacao/Publico/hab_valor_servico.aspx",
+          "titulo": "SIT — Valores dos Serviços",
+          "orgao": "Detran-ES",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "pagina_lida",
+          "sustenta": [
+            "custo"
+          ],
+          "limitacoes": [
+            "Tabela oficial consultada em 16/11/2026; a própria tela não indica data-base. Traz taxa do Detran, sem confirmar total com exames."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rj-cin",
+      "campos": {
+        "prazo": {
+          "status": "com_ressalva",
+          "descricao": "Entrega: 12 dias úteis a partir do requerimento; pode aumentar por consulta ao cartório, outras exigências ou análises da Receita Federal.",
+          "fontes": [
+            "rj-cin-pagina"
+          ]
+        }
+      },
+      "fontes_adicionar": []
+    },
+    {
+      "id": "rj-cnh",
+      "campos": {
+        "prazo": {
+          "status": "com_ressalva",
+          "descricao": "Segunda via pelo Posto Digital: notícia de 2024 orienta retirada após 10 dias úteis no posto escolhido. Prazo total vigente e modalidade presencial continuam não confirmados.",
+          "fontes": [
+            "rj-cnh-digital-prazo"
+          ]
+        }
+      },
+      "fontes_adicionar": [
+        {
+          "id": "rj-cnh-digital-prazo",
+          "url": "https://www.detran.rj.gov.br/noticias/saiba-como-pedir-a-renovacao-ou-a-segunda-via-da-cnh-pelo-posto-digital-do-detran-rj-sem-necessidade-de-agendamento-3.html",
+          "titulo": "Saiba como pedir a Renovação ou a Segunda Via da CNH pelo Posto Digital do Detran.RJ, sem necessidade de agendamento",
+          "orgao": "Detran-RJ",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "pagina_lida",
+          "sustenta": [
+            "prazo da segunda via solicitada pelo Posto Digital"
+          ],
+          "limitacoes": [
+            "Notícia de 23/10/2024. Dez dias úteis constam somente do roteiro da segunda via digital; não estendidos à renovação ou ao presencial."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rj-cnh-renovacao",
+      "campos": {
+        "prazo": {
+          "status": "pendente",
+          "descricao": "Prazo total da renovação não confirmado nas páginas e carta de serviços consultadas. Prazo de compensação do DUDA não é prazo de emissão.",
+          "fontes": [
+            "rj-renovacao"
+          ]
+        }
+      },
+      "fontes_adicionar": []
+    },
+    {
+      "id": "sp-cnh",
+      "campos": {
+        "documentos_status": "pendente",
+        "documentos_obrigatorios": [],
+        "documentos_condicionais": [],
+        "custo": {
+          "status": "variavel",
+          "valor_brl": null,
+          "descricao": "Carta indexada: digital gratuita; físico opcional R$ 126,79 emissão + R$ 11,00 Correios = R$ 137,79. Confirmar no serviço: página tem trechos contraditórios sobre cobrança presencial e abertura direta indisponível.",
+          "fontes": [
+            "sp-segunda-indexado"
+          ]
+        }
+      },
+      "fontes_adicionar": []
+    }
+  ],
+  "nao_confirmados": [
+    {
+      "id": "go-cnh-renovacao",
+      "campo": "prazo",
+      "motivo": "Portal atual sem texto legível; carta antiga não comprova prazo vigente e prazos de segunda via/transferência não foram transpostos.",
+      "fonte_url": "https://www.go.gov.br/servicos/servico/renovar-cnh"
+    },
+    {
+      "id": "ms-cin",
+      "campo": "prazo",
+      "motivo": "Páginas estaduais consultadas não informam prazo. Estimativas municipais distintas não sustentam regra para todo MS.",
+      "fonte_url": "https://www.cgp.sejusp.ms.gov.br/novo-rg-agenda-e-aberta-com-mais-de-28-mil-vagas-por-dia-em-ms/"
+    },
+    {
+      "id": "ms-cnh",
+      "campo": "prazo",
+      "motivo": "Ficha atual é resumida. Trinta dias da notícia de Sedex são guarda após devolução, e não emissão/entrega.",
+      "fonte_url": "https://www.detran.ms.gov.br/servicos-em-destaque/solicitar-segunda-via-da-carteira-nacional-de-habilitacao-cnh-ou-permissao-para-dirigir-ppd/"
+    },
+    {
+      "id": "ms-cnh",
+      "campo": "custo",
+      "motivo": "Taxa de emissão isolada e unidade fiscal não permitem confirmar composição total. Mantido pago sem valor.",
+      "fonte_url": "https://www.detran.ms.gov.br/informativos/taxas/"
+    },
+    {
+      "id": "ms-cnh-renovacao",
+      "campo": "custo",
+      "motivo": "Conflito oficial não reconciliado; nenhum subtotal convertido em custo total. Mantido pago sem valor.",
+      "fonte_url": "https://www.detran.ms.gov.br/informativos/taxas/"
+    },
+    {
+      "id": "es-cnh",
+      "campo": "documentos",
+      "motivo": "Página manda levar “documentos discriminados abaixo”, mas não apresenta checklist. PDF da IS N 018/2020 não pôde ser lido; não usada documentação de outro serviço.",
+      "fonte_url": "https://detran.es.gov.br/perda-ou-dano-2"
+    },
+    {
+      "id": "rj-cnh-renovacao",
+      "campo": "prazo",
+      "motivo": "Fonte informa etapas e compensação de pagamento, sem duração total. Dez dias do roteiro de segunda via não se aplicam.",
+      "fonte_url": "https://www.detran.rj.gov.br/todos-os-servicos/servicos-hab/renovacao-da-habilitacao.html"
+    },
+    {
+      "id": "sp-cnh",
+      "campo": "documentos",
+      "motivo": "Fonte oficial sem checklist claro: resumo indexado menciona RG ou equivalente e comprovante/declaração de residência quando aplicável, mas a etapa presencial diz documentação não necessária. São apenas indícios; abertura direta retornou 500/indisponibilidade.",
+      "fonte_url": "https://www.poupatempo.sp.gov.br/carta/D6BB72BC-80D9-4AC4-924C-7C8503F37367"
+    }
+  ],
+  "notas": [
+    "Pesquisa somente em fontes oficiais; consulta em 16/11/2026, fuso America/Sao_Paulo. Propostas para revisão, sem aplicação em data/*.json ou js/dados.js.",
+    "Campos apresentados são substituições completas do campo indicado. fontes_adicionar contém apenas URLs novas na ficha. Referências já existentes foram reutilizadas para evitar URL duplicada.",
+    "Não remover pendências gerais de documentos, exames, marcos iniciais e modalidades apenas porque uma taxa ou prazo parcial foi encontrado. Nenhum status_conteudo/apto_catalogo foi promovido nesta proposta.",
+    "Fontes existentes relidas ou consultadas no índice nesta data: rj-cin-pagina, rj-renovacao, es-cnh-pagina, es-renovacao, mt-cin-portal, ms-cin-agendamento, ms-cnh-carta, ms-cnh-entrega e sp-segunda-indexado. Na aplicação, atualizar seus metadados de consulta com a evidência descrita, sem duplicar a URL.",
+    "GO: https://www.go.gov.br/servicos/servico/renovar-cnh e https://www.go.gov.br/servicos/servico/obter-a-renovacao-da-cnh abriram sem texto; PDF antigo https://servicos.detran.go.gov.br/sgcp/rest/docflow/anexo/494734039/pdf retornou timeout na tentativa de abertura; conteúdo indexado não confirmou prazo atual.",
+    "MS-CIN: Corumbá https://stic.corumba.ms.gov.br/rg_agenda/documentos.php menciona aproximadamente 15 dias úteis após coleta, em contexto de mutirão. Bonito https://www.bonito.ms.gov.br/2025/10/29/emissao-da-nova-carteira-de-identidade-nacional-em-bonito-pode-ser-agendada-online-ou-presencialmente/ menciona até 30 dias corridos após atendimento. Evidências municipais não foram generalizadas.",
+    "ES-documentos: a IS N 018/2020 está listada em https://detran.es.gov.br/instrucoes-de-servico-detran-es-2020, porém o PDF vinculado retornou Cache miss nas tentativas. Não confirma checklist vigente.",
+    "SP: a carta indexada consta como atualizada em 12/08/2026. O roteiro online e o checklist geral diferem da etapa presencial (documentação não necessária, referência a exame e ausência de taxa nessa etapa). A taxa indicada refere-se ao físico opcional; o custo do serviço não foi reduzido a uma modalidade sem explicação.",
+    "Prazos de entrega foram identificados como tal. Não foram somados a agendamento/exames nem apresentados como duração total quando a fonte não o faz.",
+    "MS: não foi calculado custo total por multiplicação de coeficientes, pois a composição aplicável aos serviços não ficou confirmada; a conversão monetária da tabela pública está divergente da resolução mensal."
+  ]
+}

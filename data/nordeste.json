@@ -1,14 +1,5 @@
 {
-	"legenda_autenticacao": {
-		"true": "A documentação confirma que exige token/login.",
-		"false": "A documentação confirma que não exige token/login.",
-		"null": "A documentação consultada não permite confirmar se exige token/login."
-	},
-	"legenda_utilidade": {
-		"alta": "Traz serviços, passo a passo ou documentos necessários (o que o app precisa).",
-		"media": "Catálogo de dados abertos que pode conter bases de serviços, ou fonte complementar.",
-		"baixa": "Dados fiscais/contábeis/transparência. Pouco ou nenhum uso para o app."
-	},
+	"legendas": "Ver legendas.autenticacao e legendas.utilidade em data/servicos.json.",
 	"estados": [
 		{
 			"estado": "Maranhão",
@@ -36,7 +27,7 @@
 				},
 				{
 					"nome": "Serviços estaduais do Piauí no gov.br",
-					"url": "https://www.gov.br/pt-br/servicos-estaduais",
+					"url": "https://www.gov.br/pt-br/servicos-estaduais?uf=PI",
 					"utilidade": "alta"
 				}
 			]
@@ -71,7 +62,7 @@
 			"apis": [
 				{
 					"nome": "API de Dados Abertos do TCE-RN",
-					"requer_token": null,
+					"autenticacao": null,
 					"url": "https://apidadosabertos.tce.rn.gov.br/",
 					"utilidade": "baixa"
 				}
@@ -91,13 +82,13 @@
 			"apis": [
 				{
 					"nome": "Portal de Dados Abertos do Estado da Paraíba",
-					"requer_token": false,
+					"autenticacao": false,
 					"url": "https://dados.pb.gov.br",
 					"utilidade": "baixa"
 				},
 				{
 					"nome": "Dados Abertos do TCE-PB (SAGRES)",
-					"requer_token": null,
+					"autenticacao": null,
 					"url": "https://dados-abertos.tce.pb.gov.br/",
 					"utilidade": "baixa"
 				}
@@ -117,7 +108,7 @@
 			"apis": [
 				{
 					"nome": "API de Dados Abertos do TCE-PE",
-					"requer_token": null,
+					"autenticacao": null,
 					"url": "https://sistemas.tcepe.tc.br/DadosAbertos/",
 					"utilidade": "baixa"
 				}
@@ -137,13 +128,13 @@
 			"apis": [
 				{
 					"nome": "API de Serviços do Portal Alagoas Digital (JSON)",
-					"requer_token": false,
+					"autenticacao": false,
 					"url": "https://alagoasdigital.al.gov.br/api/v1/services.json",
 					"utilidade": "alta"
 				},
 				{
 					"nome": "Portal Alagoas em Dados (catálogo de dados abertos)",
-					"requer_token": false,
+					"autenticacao": false,
 					"url": "https://dados.al.gov.br/catalogo/",
 					"utilidade": "media"
 				}
@@ -177,13 +168,13 @@
 			"apis": [
 				{
 					"nome": "API de Serviços do Governo da Bahia (JSON)",
-					"requer_token": false,
+					"autenticacao": false,
 					"url": "https://servicos.ba.gov.br/api/servicos",
 					"utilidade": "alta"
 				},
 				{
 					"nome": "Documentação da API de integração ao Guia de Serviços (Bahia)",
-					"requer_token": false,
+					"autenticacao": false,
 					"url": "https://servicos.ba.gov.br/servicos/dados/abertos",
 					"utilidade": "alta"
 				}

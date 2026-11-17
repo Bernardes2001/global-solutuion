@@ -1,0 +1,1152 @@
+{
+  "data_consulta": "2026-11-16",
+  "linhas": [
+    {
+      "id": "br-cpf-inscricao",
+      "campo": "prazo",
+      "valor": "Estimativa geral de 15 minutos; atendimento por e-mail em média 48 horas. Protocolos que exigem documentos têm etapa estimada em 2 dias úteis; não é garantia de conclusão de situações especiais.",
+      "fonte_url": "https://www.gov.br/pt-br/servicos/inscrever-no-cpf",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "com_ressalva",
+      "motivo": "Página lida: seção Quanto tempo leva informa 15 minutos e média de 48 horas por e-mail. A etapa documental é distinta; não somar estimativas nem aplicar a todos os canais."
+    },
+    {
+      "id": "br-cadunico",
+      "campo": "prazo",
+      "valor": "Entrevista de aproximadamente 1 hora; o portal publica média geral de 1 hora. Agendamento, visita domiciliar quando cabível e conclusão cadastral dependem do município e das pendências.",
+      "fonte_url": "https://www.gov.br/pt-br/servicos/inscrever-se-no-cadastro-unico-para-programas-sociais-do-governo-federal",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "com_ressalva",
+      "motivo": "Página lida publica média geral de 1 hora, mas não estima a duração das etapas e informa execução municipal. Esse tempo não cobre espera para agendar nem saneamento cadastral."
+    },
+    {
+      "id": "br-sisu",
+      "campo": "documentos_status",
+      "valor": "Inscrição: dados e login gov.br, sem lista nacional de anexos. Matrícula: documentos conforme edital da instituição e modalidade.",
+      "fonte_url": "https://www.gov.br/pt-br/servicos/inscrever-se-no-sisu-sistema-de-selecao-unificada",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "com_ressalva",
+      "motivo": "Separar inscrição de matrícula. Página lida descreve CPF/senha gov.br, mas mantém referências antigas à senha do Enem. UFOP lida confirma listas distintas por modalidade; não universalizar sua lista."
+    },
+    {
+      "id": "br-certidao-civil-segunda-via",
+      "campo": "documentos_status",
+      "valor": null,
+      "fonte_url": "https://atos.cnj.jus.br/files/compilado141702202611096af1d5de1646f.pdf",
+      "data_consulta": "2026-11-16",
+      "confianca": "media",
+      "resolucao": "nao_confirmado",
+      "motivo": "Código Nacional do CNJ, arts. 113–114, localizado somente por trecho indexado: breve relato tem acesso livre e inteiro teor/dados sensíveis têm regras próprias. Abertura do PDF retornou 403. Não se confirmou checklist completo do cartório/UF para inteiro teor, representação, gratuidade e autenticação do portal."
+    },
+    {
+      "id": "br-certidao-civil-segunda-via",
+      "campo": "prazo",
+      "valor": "Expedição: art. 19 da Lei 6.015/1973 estabelece até 5 dias; na CRC eletrônica, art. 239 do Código Nacional prevê até 5 dias úteis após pagamento e localização do registro. Busca, exigências e entrega física exigem confirmação no cartório/UF.",
+      "fonte_url": "https://www2.camara.leg.br/legin/fed/lei/1970-1979/lei-6015-31-dezembro-1973-357511-normaatualizada-pl.html",
+      "data_consulta": "2026-11-16",
+      "confianca": "media",
+      "resolucao": "com_ressalva",
+      "motivo": "Regras nacionais localizadas em fontes oficiais indexadas; Câmara abriu 404 e CNJ 403. Referem-se à expedição, não ao prazo total de busca e entrega. Não fixar prazo único de recebimento."
+    },
+    {
+      "id": "br-titulo-alistamento",
+      "campo": "prazo",
+      "valor": "Autoatendimento: em regra até 5 dias úteis para a zona apreciar, decidir e enviar para processamento ou colocar em diligência; após envio, até 3 dias úteis para processamento pelo TSE. Exigências e biometria podem alterar a conclusão.",
+      "fonte_url": "https://www.tse.jus.br/servicos-eleitorais/titulo-eleitoral/autoatendimento-eleitoral/autoatendimento-eleitoral-titulo-net",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "com_ressalva",
+      "motivo": "Página TSE lida, itens 3.3–3.4. São marcos distintos; diligência é uma saída possível da primeira etapa. Não apresentar soma de 8 dias como prazo total garantido."
+    },
+    {
+      "id": "br-alistamento-militar",
+      "campo": "custo",
+      "valor": "Alistamento de janeiro a junho do ano dos 18 anos é gratuito. Fora do período há multa militar, corrigida trimestralmente; valor vigente não confirmado. A taxa do CDI é de outra etapa.",
+      "fonte_url": "https://alistamento.eb.mil.br/help/faq",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "com_ressalva",
+      "motivo": "FAQ oficial da Diretoria de Serviço Militar lida, perguntas 5,8–9: gratuidade no prazo e multa para atraso, com correção trimestral. Não transferir taxa de dispensa para o alistamento regular."
+    },
+    {
+      "id": "br-certificado-dispensa",
+      "campo": "custo.valor_brl",
+      "valor": null,
+      "fonte_url": "https://www.gov.br/pt-br/servicos/alistar-se-no-servico-militar-obrigatorio",
+      "data_consulta": "2026-11-16",
+      "confianca": "media",
+      "resolucao": "nao_confirmado",
+      "motivo": "Página lida exibeR$ 6,38 com reajuste trimestral; carta Defesa publicada 30/06/2026 repete esse valor. Nenhuma tabela com vigência no 4ºtrimestre 2026 foi localizada. Manter pago e valor nulo."
+    },
+    {
+      "id": "br-certificado-dispensa",
+      "campo": "prazo",
+      "valor": null,
+      "fonte_url": "https://www.gov.br/pt-br/servicos/alistar-se-no-servico-militar-obrigatorio",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "nao_confirmado",
+      "motivo": "A média de 1 hora publicada refere-se à etapa juramento/taxa/certificado, com espera/agendamento. Não confirma prazo total desde dispensa, pagamento e juramento até disponibilização."
+    },
+    {
+      "id": "br-primeira-habilitacao",
+      "campo": "documentos_status",
+      "valor": "Mínimo nacional: documento de identificação reconhecido por lei e inscrição no CPF; forma de apresentação e complementos devem ser conferidos no Detran.",
+      "fonte_url": "https://anttlegis.antt.gov.br/action/ActionDatalegis.php?acao=abrirTextoAto&cod_menu=7145&cod_modulo=420&desItem=&desItemFim=&nomeTitulo=codigos&numeroAto=00001020&orgao=CONTRAN/MT&seqAto=000&tipo=RES&valorAno=2025",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "com_ressalva",
+      "motivo": "Resolução CONTRAN 1.020/2025 lida na base oficial da ANTT, art. 17. É lista mínima nacional; não comprova checklist operacional completo de todos os estados."
+    },
+    {
+      "id": "br-primeira-habilitacao",
+      "campo": "prazo",
+      "valor": "Sem prazo nacional único de conclusão confirmado. A Resolução CONTRAN 1.020/2025, art. 13§1º, mantém o processo aberto por tempo indeterminado, sujeito às hipóteses de encerramento; conclusão exige cumprir etapas e agendas do Detran.",
+      "fonte_url": "https://anttlegis.antt.gov.br/action/ActionDatalegis.php?acao=abrirTextoAto&cod_menu=7145&cod_modulo=420&desItem=&desItemFim=&nomeTitulo=codigos&numeroAto=00001020&orgao=CONTRAN/MT&seqAto=000&tipo=RES&valorAno=2025",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "com_ressalva",
+      "motivo": "Norma lida permite processo aberto por tempo indeterminado; isso é duração administrativa, não promessa de entrega. A validade de 1 ano da PPD também não é prazo para obter a primeira habilitação."
+    },
+    {
+      "id": "br-mei-inscricao",
+      "campo": "prazo",
+      "valor": "Atendimento imediato no procedimento digital de formalização; serviço disponível 24 h por dia,7 dias por semana.",
+      "fonte_url": "https://www.gov.br/pt-br/servicos/realizar-registro-como-microempreendedor-individual-mei",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "confirmado",
+      "motivo": "A seção Quanto tempo leva da página hoje lida informa atendimento imediato. O campo da etapa continua não estimado; usar a informação geral sem incluir licenciamento/localização do estabelecimento."
+    },
+    {
+      "id": "br-mei-inscricao",
+      "campo": "status_conteudo",
+      "valor": "parcial",
+      "fonte_url": "https://www.gov.br/pt-br/servicos/solicitar-a-dispensa-de-alvara-e-licenca-de-funcionamento",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "com_ressalva",
+      "motivo": "DAS 2026 e regras nacionais de dispensa foram pesquisados. A adequação concreta do endereço/atividade ao município não foi verificada; preservar pendência e corrigir coerência para parcial/com_ressalvas. LC 238 produz efeitos de novos empregados apenas em 2027."
+    },
+    {
+      "id": "br-antecedentes-criminais",
+      "campo": "status_conteudo",
+      "valor": "parcial",
+      "fonte_url": "https://www.gov.br/pt-br/servicos/emitir-certidao-de-antecedentes-criminais",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "com_ressalva",
+      "motivo": "Ficha oficial lida confirma homônimos/divergências de CPF e encaminhamento para suporte ou unidade em urgência. Formulário ePol retornou 403, então campos exatos permanecem não confirmados; status parcial preserva essa limitação."
+    },
+    {
+      "id": "br-fgts-saque",
+      "campo": "status_conteudo",
+      "valor": "parcial",
+      "fonte_url": "https://www.caixa.gov.br/beneficios-trabalhador/fgts/saque-fgts/paginas/default.aspx",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "com_ressalva",
+      "motivo": "Páginas da CAIXA pesquisadas, mas abertura retornou loop de redirecionamento: evidência apenas indexada. Índice diferencia saque-aniversário e rescisão, novas antecipações desde 01/11/2026 e liberação extraordinária já encerrada em 01/06/2026. Não transformar isso em cobertura exaustiva."
+    },
+    {
+      "id": "br-bolsa-familia",
+      "campo": "custo",
+      "valor": "Gratuito; sem taxa para o serviço descrito.",
+      "fonte_url": "https://www.gov.br/pt-br/servicos/receber-o-bolsa-familia",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "confirmado",
+      "motivo": "Página lida afirma expressamente que o serviço é gratuito para o cidadão."
+    },
+    {
+      "id": "br-bolsa-familia",
+      "campo": "prazo",
+      "valor": "O portal estima até 180 dias corridos. Cadastro Único não garante ingresso imediato; concessão depende das regras, seleção informatizada, cobertura municipal e limite orçamentário. Marco inicial não esclarecido na ficha.",
+      "fonte_url": "https://www.gov.br/pt-br/servicos/receber-o-bolsa-familia",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "com_ressalva",
+      "motivo": "Seção Quanto tempo leva lida: até 180 dias corridos. A mesma página condiciona concessão ao processo de seleção e orçamento; não apresentar como garantia de pagamento em 180 dias."
+    },
+    {
+      "id": "br-pe-de-meia",
+      "campo": "custo",
+      "valor": "Gratuito; não há taxa de inscrição ou de inclusão no programa.",
+      "fonte_url": "https://agenciagov.ebc.com.br/noticias/202403/pe-de-meia-nao-precisa-de-cadastro-ou-pagamento-de-taxa",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "confirmado",
+      "motivo": "Notícia oficial MEC reproduzida pela Agência Gov foi lida e diz gratuidade. FAQ atual da SEEDUC/RJ, questão 37, também lido, confirma inclusão sem cadastro/envio de dados ou taxa. Não usar elegibilidade de 2024 como regra 2026."
+    },
+    {
+      "id": "br-pe-de-meia",
+      "campo": "prazo",
+      "valor": "Inclusão por cruzamento de dados; pagamentos seguem calendário operacional do ano, conforme informações da rede e validação. Em 2026 há janelas de transmissão, pagamento e correção; não há prazo total individual confirmado desde a matrícula até o crédito.",
+      "fonte_url": "https://sedu.es.gov.br/Media/pdf%20e%20Arquivos/PORTARIA%20MEC%20N%C2%BA%20169,%20DE%2018%20DE%20FEVEREIRO%20DE%202026.pdf",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "com_ressalva",
+      "motivo": "Portaria 169/2026 lida em PDF oficial da SEDU/ES confirma calendário operacional, não atendimento por requerimento. Alteração 539/2026 localizada apenas indexada; não transformar número de janelas em número de parcelas nem janela de pagamento em prazo total."
+    },
+    {
+      "id": "fontes",
+      "campo": "fontes.titulo",
+      "valor": "Serviço Militar Obrigatório: Alistamento, Seleção Geral, Seleção Complementar e Incorporação",
+      "fonte_url": "https://www.gov.br/pt-br/servicos/alistar-se-no-servico-militar-obrigatorio",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "confirmado",
+      "motivo": "Título principal da página gov.br lida. Padronizar nas fontes mil-alist e mil-cdi; a descrição do recorte dispensa deve ficar em sustenta/limitacoes, não alterar o título bibliográfico."
+    }
+  ],
+  "atualizacoes": [
+    {
+      "id": "br-cpf-inscricao",
+      "campos": {
+        "data_consulta": "2026-11-16",
+        "prazo": {
+          "status": "com_ressalva",
+          "descricao": "Estimativa geral de 15 minutos; atendimento por e-mail em média 48 horas. Protocolos que exigem documentos têm etapa estimada em 2 dias úteis; não é garantia de conclusão de situações especiais.",
+          "fontes": [
+            "cpf-ins"
+          ]
+        },
+        "pendencias": [
+          "Prazo de situações especiais e documentação de procuração, falecidos e demais casos especiais não consolidados."
+        ],
+        "fontes": [
+          {
+            "id": "cpf-ins",
+            "url": "https://www.gov.br/pt-br/servicos/inscrever-no-cpf",
+            "titulo": "Inscrever Cidadão no CPF",
+            "orgao": "Receita Federal",
+            "data_consulta": "2026-11-16",
+            "tipo_evidencia": "pagina_lida",
+            "sustenta": [
+              "nome",
+              "descricao",
+              "publico",
+              "documentos",
+              "passo_a_passo",
+              "canais",
+              "custo",
+              "observacoes",
+              "prazo"
+            ],
+            "limitacoes": [
+              "Estimativas de atendimento e da etapa documental; não constituem prazo máximo de conclusão em todos os casos."
+            ]
+          }
+        ]
+      },
+      "fontes_adicionar": []
+    },
+    {
+      "id": "br-cadunico",
+      "campos": {
+        "data_consulta": "2026-11-16",
+        "prazo": {
+          "status": "com_ressalva",
+          "descricao": "Entrevista de aproximadamente 1 hora; o portal publica média geral de 1 hora. Agendamento, visita domiciliar quando cabível e conclusão cadastral dependem do município e das pendências.",
+          "fontes": [
+            "cad"
+          ]
+        },
+        "fontes": [
+          {
+            "id": "cad",
+            "url": "https://www.gov.br/pt-br/servicos/inscrever-se-no-cadastro-unico-para-programas-sociais-do-governo-federal",
+            "titulo": "Inscrever-se no Cadastro Único",
+            "orgao": "MDS",
+            "data_consulta": "2026-11-16",
+            "tipo_evidencia": "pagina_lida",
+            "sustenta": [
+              "nome",
+              "descricao",
+              "publico",
+              "condicoes_acesso",
+              "passo_a_passo",
+              "canais",
+              "custo",
+              "observacoes",
+              "prazo"
+            ],
+            "limitacoes": [
+              "Carta contém referência antiga a CPF ou título; não usada para alterar documentos.",
+              "Média de 1 hora corresponde à entrevista/atendimento; agenda e conclusão municipal não confirmadas."
+            ]
+          },
+          {
+            "id": "cad-faq",
+            "url": "https://www.gov.br/mds/pt-br/acoes-e-programas/cadastro-unico/perguntas-frequentes-cadastro-unico",
+            "titulo": "Perguntas Frequentes — Cadastro Único",
+            "orgao": "MDS",
+            "data_consulta": "2026-11-15",
+            "tipo_evidencia": "pagina_lida",
+            "sustenta": [
+              "documentos",
+              "passo_a_passo",
+              "observacoes"
+            ],
+            "limitacoes": [
+              "Página reúne seções de anos distintos; usadas orientações documentais e de unipessoais mais recentes, sem aplicar exigência domiciliar indiscriminadamente."
+            ]
+          }
+        ]
+      },
+      "fontes_adicionar": []
+    },
+    {
+      "id": "br-sisu",
+      "campos": {
+        "data_consulta": "2026-11-16",
+        "documentos_status": "nao_se_aplica",
+        "documentos_obrigatorios": [],
+        "documentos_condicionais": [
+          {
+            "documento": "Documentação de matrícula definida pela instituição",
+            "quando": "Após convocação.",
+            "observacao": "Preparar identificação e escolaridade conforme edital; não existe lista nacional única.",
+            "fontes": [
+              "sisu-ufop"
+            ]
+          },
+          {
+            "documento": "Comprovação de cotas e formulários",
+            "quando": "Conforme modalidade de concorrência.",
+            "observacao": "Renda, trajetória escolar, deficiência e pertencimento étnico-racial dependem do edital.",
+            "fontes": [
+              "sisu-ufop"
+            ]
+          }
+        ],
+        "observacoes": [
+          "UFOP 2026 é exemplo de listas por modalidade, não requisito para todas as instituições.",
+          "A regra de três edições foi verificada para 2026; não presume continuidade em 2027.",
+          "Página oficial da UFC lida integralmente confirma Enem 2023, 2024 ou 2025 no Sisu 2026; não usar como edital de 2027.",
+          "Na inscrição no sistema, usar dados e login gov.br; documentos de matrícula e cotas são exigidos após convocação, conforme a instituição. O status nao_se_aplica refere-se aos anexos da inscrição, não à matrícula."
+        ],
+        "fontes": [
+          {
+            "id": "sisu",
+            "url": "https://www.gov.br/pt-br/servicos/inscrever-se-no-sisu-sistema-de-selecao-unificada",
+            "titulo": "Inscrever-se no Sisu",
+            "orgao": "MEC",
+            "data_consulta": "2026-11-16",
+            "tipo_evidencia": "pagina_lida",
+            "sustenta": [
+              "nome",
+              "descricao",
+              "publico",
+              "condicoes_acesso",
+              "passo_a_passo",
+              "canais",
+              "custo",
+              "prazo",
+              "documentos"
+            ],
+            "limitacoes": [
+              "Página descreve login gov.br, mas também conserva menções antigas à senha e ao número do Enem; não reproduzir essas menções como requisito atual.",
+              "Nao_se_aplica descreve anexos da inscrição, não a matrícula institucional."
+            ]
+          },
+          {
+            "id": "sisu-norma",
+            "url": "https://mecnormas.mec.gov.br/pesquisa/detalhar/959",
+            "titulo": "Portaria Normativa MEC 21/2012 — texto alterado",
+            "orgao": "MEC",
+            "data_consulta": "2026-11-15",
+            "tipo_evidencia": "trecho_indexado",
+            "sustenta": [
+              "condicoes_acesso"
+            ],
+            "limitacoes": [
+              "Página aberta sem texto legível; regra de três edições disponível somente no índice."
+            ]
+          },
+          {
+            "id": "sisu-ufop",
+            "url": "https://www.vestibular.ufop.br/sisu2026/documentos-para-matricula-sisu-edicao-unica-de-2026",
+            "titulo": "Documentos para matrícula SiSU — 2026",
+            "orgao": "UFOP",
+            "data_consulta": "2026-11-16",
+            "tipo_evidencia": "pagina_lida",
+            "sustenta": [
+              "documentos",
+              "passo_a_passo",
+              "prazo",
+              "observacoes"
+            ],
+            "limitacoes": [
+              "Exemplo institucional; não nacionalizar requisitos."
+            ]
+          },
+          {
+            "id": "sisu-2026",
+            "url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/perguntas-frequentes/sisu/notas-do-enem/quem-nao-fez-o-enem",
+            "titulo": "Quem não fez o Enem 2025 poderá participar do Sisu 2026?",
+            "orgao": "MEC",
+            "data_consulta": "2026-11-15",
+            "tipo_evidencia": "trecho_indexado",
+            "sustenta": [
+              "condicoes_acesso"
+            ],
+            "limitacoes": [
+              "Evidência indexada, sem leitura da página integral. Aplicação explicitamente limitada a 2026."
+            ]
+          },
+          {
+            "id": "sisu-ufc-2026",
+            "url": "https://sisu.ufc.br/pt/o-que-e-o-sisu-2026/",
+            "titulo": "SISU: O que é e como funciona — edição 2026",
+            "orgao": "UFC",
+            "data_consulta": "2026-11-15",
+            "tipo_evidencia": "pagina_lida",
+            "sustenta": [
+              "condicoes_acesso",
+              "passo_a_passo",
+              "custo"
+            ],
+            "limitacoes": [
+              "Conteúdo referente à edição de 2026."
+            ]
+          }
+        ]
+      },
+      "fontes_adicionar": []
+    },
+    {
+      "id": "br-certidao-civil-segunda-via",
+      "campos": {
+        "data_consulta": "2026-11-16",
+        "prazo": {
+          "status": "com_ressalva",
+          "descricao": "Expedição: art. 19 da Lei 6.015/1973 estabelece até 5 dias; na CRC eletrônica, art. 239 do Código Nacional prevê até 5 dias úteis após pagamento e localização do registro. Busca, exigências e entrega física exigem confirmação no cartório/UF.",
+          "fontes": [
+            "civil-lrp-20261116",
+            "civil-crc-20261116"
+          ]
+        },
+        "documentos_status": "pendente",
+        "documentos_obrigatorios": [],
+        "documentos_condicionais": [],
+        "observacoes": [
+          "Dados para localizar registro não foram transformados em documentos obrigatórios.",
+          "A emissão depende do cartório; o portal reúne pedidos.",
+          "Trecho indexado do CNJ diferencia breve relato de inteiro teor e dados sensíveis. Isso não confirma um checklist único para todos os pedidos ou o fluxo autenticado do portal."
+        ],
+        "pendencias": [
+          "Confirmar no cartório/UF o checklist de inteiro teor, representação e gratuidade; a pesquisa não confirma uma lista nacional completa.",
+          "Regras de expedição localizadas apenas por indexação; confirmar marco de contagem, busca e entrega no cartório.",
+          "Confirmar aceitação do formato pelo destinatário."
+        ]
+      },
+      "fontes_adicionar": [
+        {
+          "id": "civil-cnj-20261116",
+          "url": "https://atos.cnj.jus.br/files/compilado141702202611096af1d5de1646f.pdf",
+          "titulo": "Código Nacional de Normas da Corregedoria Nacional de Justiça — arts. 113–114",
+          "orgao": "CNJ",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "trecho_indexado",
+          "sustenta": [
+            "documentos",
+            "observacoes"
+          ],
+          "limitacoes": [
+            "Somente trecho indexado; abertura do PDF retornou 403.",
+            "Regras gerais não substituem checklist do cartório/UF e fluxo do canal."
+          ]
+        },
+        {
+          "id": "civil-lrp-20261116",
+          "url": "https://www2.camara.leg.br/legin/fed/lei/1970-1979/lei-6015-31-dezembro-1973-357511-normaatualizada-pl.html",
+          "titulo": "Lei nº 6.015/1973 — texto atualizado, art. 19",
+          "orgao": "Câmara dos Deputados",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "trecho_indexado",
+          "sustenta": [
+            "prazo"
+          ],
+          "limitacoes": [
+            "Somente trecho indexado; abertura retornou 404.",
+            "Prazo da expedição da certidão, sem confirmar busca e frete."
+          ]
+        },
+        {
+          "id": "civil-crc-20261116",
+          "url": "https://atos.cnj.jus.br/files/compilado194211202611066aee2d9326b2d.pdf",
+          "titulo": "Código Nacional de Normas — art. 239, certidão eletrônica na CRC",
+          "orgao": "CNJ",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "trecho_indexado",
+          "sustenta": [
+            "prazo"
+          ],
+          "limitacoes": [
+            "Somente trecho indexado; abertura retornou 403.",
+            "Prazo condicionado a registro encontrado e pagamento; não inclui entrega física."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "br-titulo-alistamento",
+      "campos": {
+        "data_consulta": "2026-11-16",
+        "prazo": {
+          "status": "com_ressalva",
+          "descricao": "Autoatendimento: em regra até 5 dias úteis para a zona apreciar, decidir e enviar para processamento ou colocar em diligência; após envio, até 3 dias úteis para processamento pelo TSE. Exigências e biometria podem alterar a conclusão.",
+          "fontes": [
+            "titulo-net-20261116"
+          ]
+        },
+        "pendencias": [
+          "Confirmar agenda da zona eleitoral para biometria e cumprir eventuais diligências; não há prazo total garantido nesta ficha."
+        ]
+      },
+      "fontes_adicionar": [
+        {
+          "id": "titulo-net-20261116",
+          "url": "https://www.tse.jus.br/servicos-eleitorais/titulo-eleitoral/autoatendimento-eleitoral/autoatendimento-eleitoral-titulo-net",
+          "titulo": "Autoatendimento Eleitoral - Título Net",
+          "orgao": "TSE",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "pagina_lida",
+          "sustenta": [
+            "prazo",
+            "passo_a_passo"
+          ],
+          "limitacoes": [
+            "Prazos em regra para análise/envio ou diligência e processamento; não representam prazo final garantido."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "br-alistamento-militar",
+      "campos": {
+        "data_consulta": "2026-11-16",
+        "custo": {
+          "status": "variavel",
+          "valor_brl": null,
+          "descricao": "Alistamento de janeiro a junho do ano dos 18 anos é gratuito. Fora do período há multa militar, corrigida trimestralmente; valor vigente não confirmado. A taxa do CDI é de outra etapa.",
+          "fontes": [
+            "mil-faq-20261116"
+          ]
+        },
+        "pendencias": [
+          "Confirmar valor vigente da multa para alistamento fora do prazo e agenda local."
+        ],
+        "fontes": [
+          {
+            "id": "mil-alist",
+            "url": "https://www.gov.br/pt-br/servicos/alistar-se-no-servico-militar-obrigatorio",
+            "titulo": "Serviço Militar Obrigatório: Alistamento, Seleção Geral, Seleção Complementar e Incorporação",
+            "orgao": "Ministério da Defesa",
+            "data_consulta": "2026-11-16",
+            "tipo_evidencia": "pagina_lida",
+            "sustenta": [
+              "nome",
+              "descricao",
+              "publico",
+              "documentos",
+              "passo_a_passo",
+              "canais",
+              "prazo",
+              "observacoes"
+            ],
+            "limitacoes": []
+          }
+        ]
+      },
+      "fontes_adicionar": [
+        {
+          "id": "mil-faq-20261116",
+          "url": "https://alistamento.eb.mil.br/help/faq",
+          "titulo": "Perguntas Frequentes — Alistamento Militar Online",
+          "orgao": "Exército Brasileiro / Diretoria de Serviço Militar",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "pagina_lida",
+          "sustenta": [
+            "custo"
+          ],
+          "limitacoes": [
+            "FAQ informa multa trimestral, mas valor vigente não foi localizado."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "br-certificado-dispensa",
+      "campos": {
+        "data_consulta": "2026-11-16",
+        "custo": {
+          "status": "pago",
+          "valor_brl": null,
+          "descricao": "Há taxa militar reajustada trimestralmente. O portal exibeR$ 6,38, sem comprovar sua vigência no 4ºtrimestre 2026; confirme o valor e eventual isenção na Junta.",
+          "fontes": [
+            "mil-cdi",
+            "mil-def"
+          ]
+        },
+        "prazo": {
+          "status": "pendente",
+          "descricao": "Prazo total não confirmado. A média publicada de 1 hora corresponde à etapa de juramento/taxa/certificado; não inclui agenda e processamento do pagamento.",
+          "fontes": [
+            "mil-cdi",
+            "mil-def"
+          ]
+        },
+        "pendencias": [
+          "Confirmar taxa vigente no trimestre e eventual isenção com a Junta.",
+          "Prazo total depende da agenda do juramento e da confirmação do pagamento; não foi confirmado.",
+          "Segunda via de reservista exige ficha própria."
+        ],
+        "fontes": [
+          {
+            "id": "mil-cdi",
+            "url": "https://www.gov.br/pt-br/servicos/alistar-se-no-servico-militar-obrigatorio",
+            "titulo": "Serviço Militar Obrigatório: Alistamento, Seleção Geral, Seleção Complementar e Incorporação",
+            "orgao": "Ministério da Defesa",
+            "data_consulta": "2026-11-16",
+            "tipo_evidencia": "pagina_lida",
+            "sustenta": [
+              "nome",
+              "descricao",
+              "publico",
+              "condicoes_acesso",
+              "documentos",
+              "custo"
+            ],
+            "limitacoes": [
+              "Fonte cobre várias etapas do serviço militar; esta ficha usa o recorte da etapa de dispensa.",
+              "Taxa deR$ 6,38 publicada com reajuste trimestral, sem comprovação de vigência em 16/11/2026.",
+              "Média de 1 hora corresponde à etapa, não ao prazo total para obter o CDI."
+            ]
+          },
+          {
+            "id": "mil-def",
+            "url": "https://www.gov.br/defesa/pt-br/carta-de-servico/servico-militar-obrigatorio-smo",
+            "titulo": "Carta de Serviço Militar Obrigatório",
+            "orgao": "Ministério da Defesa",
+            "data_consulta": "2026-11-15",
+            "tipo_evidencia": "pagina_lida",
+            "sustenta": [
+              "passo_a_passo",
+              "canais",
+              "custo",
+              "prazo"
+            ],
+            "limitacoes": [
+              "Página publicada em 30/06/2026; taxa expressamente reajustável trimestralmente."
+            ]
+          }
+        ]
+      },
+      "fontes_adicionar": []
+    },
+    {
+      "id": "br-primeira-habilitacao",
+      "campos": {
+        "data_consulta": "2026-11-16",
+        "documentos_status": "confirmado",
+        "documentos_obrigatorios": [
+          {
+            "documento": "Documento de identificação reconhecido por lei",
+            "observacao": "Mínimo nacional, verificado na abertura do Renach e coleta biométrica; conferir formato aceito pelo Detran.",
+            "fontes": [
+              "cnh-res1020-20261116"
+            ]
+          },
+          {
+            "documento": "Inscrição no CPF",
+            "observacao": "Requisito cadastral nacional; a norma não exige cartão físico do CPF. Conferir como o Detran valida a inscrição.",
+            "fontes": [
+              "cnh-res1020-20261116"
+            ]
+          }
+        ],
+        "documentos_condicionais": [],
+        "prazo": {
+          "status": "com_ressalva",
+          "descricao": "Sem prazo nacional único de conclusão confirmado. A Resolução CONTRAN 1.020/2025, art. 13§1º, mantém o processo aberto por tempo indeterminado, sujeito às hipóteses de encerramento; conclusão exige cumprir etapas e agendas do Detran.",
+          "fontes": [
+            "cnh-res1020-20261116"
+          ]
+        },
+        "observacoes": [
+          "Pode-se estudar só pela plataforma digital, só em autoescola ou combinar as duas formas.",
+          "O Ministério dos Transportes diz que não oferece serviços por SMS, e-mail, redes sociais ou telefone. Confirme se o site ou aplicativo é oficial antes de informar dados.",
+          "A CNH-e tem a mesma validade jurídica da versão impressa.",
+          "O Senatran oferece, no portal de serviços, uma ferramenta para validar a autenticidade de uma CNH.",
+          "A lista documental é o mínimo nacional da Resolução CONTRAN 1.020/2025; consulte o Detran para forma de apresentação e eventuais complementos."
+        ],
+        "pendencias": [
+          "Conferir taxas de exames, emissão e PPD no Detran do estado.",
+          "Checklist operacional e documentos complementares de cada Detran não consolidados; lista da ficha contém apenas o mínimo nacional.",
+          "Não foi confirmado prazo total individual de conclusão; agenda e cumprimento das etapas variam."
+        ]
+      },
+      "fontes_adicionar": [
+        {
+          "id": "cnh-res1020-20261116",
+          "url": "https://anttlegis.antt.gov.br/action/ActionDatalegis.php?acao=abrirTextoAto&cod_menu=7145&cod_modulo=420&desItem=&desItemFim=&nomeTitulo=codigos&numeroAto=00001020&orgao=CONTRAN/MT&seqAto=000&tipo=RES&valorAno=2025",
+          "titulo": "Resolução CONTRAN nº 1.020, de 1º de dezembro de 2025",
+          "orgao": "CONTRAN / Ministério dos Transportes — base legislativa ANTT",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "documento_lido",
+          "sustenta": [
+            "documentos",
+            "condicoes_acesso",
+            "prazo",
+            "observacoes"
+          ],
+          "limitacoes": [
+            "Texto normativo oficial lido em HTML na base ANTT; não é checklist de atendimento de um Detran.",
+            "Tempo indeterminado de processo aberto não é prazo de conclusão."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "br-mei-inscricao",
+      "campos": {
+        "data_consulta": "2026-11-16",
+        "prazo": {
+          "status": "confirmado",
+          "descricao": "Formalização digital: atendimento imediato, com serviço disponível 24 h por dia,7 dias por semana. Não inclui verificar adequação do endereço e da atividade às regras locais.",
+          "fontes": [
+            "mei-gov"
+          ]
+        },
+        "custo": {
+          "status": "gratuito",
+          "valor_brl": 0,
+          "descricao": "Inscrição gratuita. Após formalizar, DAS 2026: INSS deR$ 81,05 maisR$ 1 de ICMS e/ouR$ 5 de ISS, quando aplicáveis; transportador autônomo de cargas: INSS deR$ 194,52 mais os tributos aplicáveis.",
+          "fontes": [
+            "mei-gov",
+            "mei-das-20261116"
+          ]
+        },
+        "condicoes_acesso": [
+          "Exercer ao menos uma atividade das Tabelas A e B do Anexo XI da Resolução CGSN nº 140/2018.",
+          "Para 2026, limite anual deR$ 81.000 para atividades da TabelaA eR$ 251.600 para as da TabelaB; no ano inicial, conferir proporcionalidade. A LC 238/2026 prevê alterações futuras; não antecipar os limites de 2027/2028.",
+          "Não participar como sócio, administrador ou titular de outra empresa.",
+          "Em 2026, no máximo 1 empregado; a LC 238/2026 prevê até 2 empregados com efeitos a partir de 1º/01/2027.",
+          "Conta gov.br nível prata ou ouro (brasileiros) ou bronze (estrangeiros)."
+        ],
+        "status_conteudo": "parcial",
+        "apto_catalogo": "com_ressalvas",
+        "pendencias": [
+          "Conferir no município se o endereço e a atividade cumprem regras sanitárias, ambientais, segurança e uso do solo; a dispensa de alvará não dispensa esses requisitos."
+        ],
+        "observacoes": [
+          "O serviço é 100% digital.",
+          "Confira se a sua atividade está na lista permitida antes de começar.",
+          "A dispensa de alvará e licença ocorre na inscrição/atualização; permanece o dever de cumprir normas de funcionamento.",
+          "Novos limites e empregados da LC 238/2026 têm efeitos futuros: consultar os arts. 2º e 10 antes de aplicá-los."
+        ],
+        "fontes": [
+          {
+            "id": "mei-api",
+            "url": "https://www.servicos.gov.br/api/v1/servicos/9435",
+            "titulo": "Cadastrar/formalizar Microempreendedor Individual (registro na API de Serviços do gov.br)",
+            "orgao": "MEMP / Governo Digital",
+            "data_consulta": "2026-11-15",
+            "tipo_evidencia": "documento_lido",
+            "sustenta": [
+              "nome",
+              "descricao",
+              "publico",
+              "condicoes_acesso",
+              "documentos",
+              "passo_a_passo",
+              "canais",
+              "custo"
+            ],
+            "limitacoes": [
+              "Registro estruturado da API; não comprova a versão exibida hoje na tela do portal."
+            ]
+          },
+          {
+            "id": "mei-gov",
+            "url": "https://www.gov.br/pt-br/servicos/realizar-registro-como-microempreendedor-individual-mei",
+            "titulo": "Cadastrar/formalizar Microempreendedor Individual",
+            "orgao": "MEMP",
+            "data_consulta": "2026-11-16",
+            "tipo_evidencia": "pagina_lida",
+            "sustenta": [
+              "nome",
+              "descricao",
+              "condicoes_acesso",
+              "documentos",
+              "passo_a_passo",
+              "canais",
+              "custo",
+              "prazo"
+            ],
+            "limitacoes": [
+              "Página integral lida em 16/11/2026; informa atendimento imediato.",
+              "Valores anuais/empregados devem ser datados; LC 238/2026 tem efeitos futuros."
+            ]
+          }
+        ]
+      },
+      "fontes_adicionar": [
+        {
+          "id": "mei-das-20261116",
+          "url": "https://www8.receita.fazenda.gov.br/SIMPLESNACIONAL/noticias/NoticiaCompleta.aspx?id=c3b2044c-ff97-432a-b33c-ecf2a3df6dc3",
+          "titulo": "MEI - atualização de valores devidos em 2026",
+          "orgao": "Receita Federal / Simples Nacional",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "pagina_lida",
+          "sustenta": [
+            "custo"
+          ],
+          "limitacoes": [
+            "DAS após formalização; não é taxa de inscrição. Valores referentes a 2026."
+          ]
+        },
+        {
+          "id": "mei-dispensa-20261116",
+          "url": "https://www.gov.br/pt-br/servicos/solicitar-a-dispensa-de-alvara-e-licenca-de-funcionamento",
+          "titulo": "Solicitar a Dispensa de Alvará e Licença de Funcionamento para o Microempreendedor Individual (MEI)",
+          "orgao": "MEMP",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "pagina_lida",
+          "sustenta": [
+            "observacoes",
+            "pendencias"
+          ],
+          "limitacoes": [
+            "Regra nacional de dispensa não confirma adequação de um endereço/atividade às regras locais."
+          ]
+        },
+        {
+          "id": "mei-lc238-20261116",
+          "url": "https://legis.senado.gov.br/norma/44276013/publicacao/44280206",
+          "titulo": "Lei Complementar nº 238, de 21 de outubro de 2026",
+          "orgao": "Senado Federal",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "documento_lido",
+          "sustenta": [
+            "condicoes_acesso",
+            "observacoes"
+          ],
+          "limitacoes": [
+            "Art.10: alterações no art.18-A §§1º–2º produzem efeitos em 2028; demais dispositivos em 2027, incluindo limite transitório de 2027 e empregados."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "br-antecedentes-criminais",
+      "campos": {
+        "data_consulta": "2026-11-16",
+        "status_conteudo": "parcial",
+        "apto_catalogo": "com_ressalvas",
+        "passo_a_passo": [
+          {
+            "ordem": 1,
+            "acao": "Acessar o sistema ePol SINIC Público da Polícia Federal e preencher o formulário.",
+            "canal_url": "https://servicos.pf.gov.br/epol-sinic-publico/",
+            "fontes": [
+              "cac-api"
+            ]
+          },
+          {
+            "ordem": 2,
+            "acao": "Se preferir atendimento presencial, procurar uma unidade da Polícia Federal. Dias, horários e necessidade de agendamento variam por unidade.",
+            "canal_url": "https://www.gov.br/pf/pt-br/acesso-a-informacao/institucional/quem-e-quem/superintendencias-e-delegacias",
+            "fontes": [
+              "cac-api"
+            ]
+          },
+          {
+            "ordem": 3,
+            "acao": "Se houver indisponibilidade, verificar rede e liberação de pop-ups; persistindo o erro, usar suporte.sinic@pf.gov.br. Em urgência, procurar unidade da PF e confirmar horários/agendamento.",
+            "canal_url": "https://www.gov.br/pt-br/servicos/emitir-certidao-de-antecedentes-criminais",
+            "fontes": [
+              "cac-serv-20261116"
+            ]
+          }
+        ],
+        "pendencias": [
+          "Campos exatos do formulário ePol não confirmados: a abertura do sistema retornou 403; seguir orientações da PF."
+        ],
+        "observacoes": [
+          "O serviço não emite certidão de consta: essa informação depende de confirmação presencial na Polícia Federal, por causa dos homônimos.",
+          "O sistema da PF não reúne 100% das informações das Justiças estaduais e Polícias Civis; para antecedentes estaduais pode ser preciso pedir certidão em cada órgão.",
+          "A PF oferece o serviço Validar Certidão de Antecedentes Criminais.",
+          "Em caso de erro no sistema, escrever para suporte.sinic@pf.gov.br com a descrição do erro.",
+          "Homônimos e divergências dos dados do CPF podem impedir emissão online; a ficha oficial orienta suporte e atendimento presencial em urgência."
+        ]
+      },
+      "fontes_adicionar": [
+        {
+          "id": "cac-serv-20261116",
+          "url": "https://www.gov.br/pt-br/servicos/emitir-certidao-de-antecedentes-criminais",
+          "titulo": "Emitir Certidão de Antecedentes Criminais",
+          "orgao": "Polícia Federal",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "pagina_lida",
+          "sustenta": [
+            "passo_a_passo",
+            "observacoes",
+            "pendencias"
+          ],
+          "limitacoes": [
+            "Formulário ePol vinculado abriu 403; campos exatos não foram confirmados."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "br-fgts-saque",
+      "campos": {
+        "data_consulta": "2026-11-16",
+        "status_conteudo": "parcial",
+        "apto_catalogo": "com_ressalvas",
+        "pendencias": [
+          "Regras detalhadas de cada modalidade, documentos específicos e eventual nova liberação extraordinária não consolidados; páginas CAIXA abriram com loop de redirecionamento.",
+          "As evidências novas de saque-aniversário e MP 1331 são trechos indexados; conferir condição individual no aplicativo FGTS."
+        ],
+        "observacoes": [
+          "O pedido pode ser 100% digital, sem ir à agência da CAIXA.",
+          "Detalhes de documentos específicos de cada tipo de saque ficam no site da CAIXA.",
+          "Saque-aniversário tem consequências próprias na rescisão e antecipação por empréstimo; não equivale ao saque-rescisão.",
+          "A liberação extraordinária da MP 1331/2025 localizada na CAIXA indicava encerramento em 1º/06/2026; não foi confirmada janela extraordinária aberta em 16/11/2026."
+        ]
+      },
+      "fontes_adicionar": [
+        {
+          "id": "fgts-modalidades-20261116",
+          "url": "https://www.caixa.gov.br/beneficios-trabalhador/fgts/saque-fgts/paginas/default.aspx",
+          "titulo": "Saques do FGTS",
+          "orgao": "CAIXA",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "trecho_indexado",
+          "sustenta": [
+            "observacoes",
+            "pendencias"
+          ],
+          "limitacoes": [
+            "Somente trecho indexado; abertura da página retornou loop de redirecionamento.",
+            "Não consolida todas as modalidades ou os documentos de cada hipótese."
+          ]
+        },
+        {
+          "id": "fgts-mp1331-20261116",
+          "url": "https://www.caixa.gov.br/beneficios-trabalhador/fgts/saque-mp-1331-25/paginas/default.aspx",
+          "titulo": "Saque FGTS MP 1331/2025",
+          "orgao": "CAIXA",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "trecho_indexado",
+          "sustenta": [
+            "observacoes",
+            "pendencias"
+          ],
+          "limitacoes": [
+            "Somente trecho indexado; abertura retornou loop de redirecionamento.",
+            "Liberação extraordinária descrita encerrava em 1º/06/2026; não usar como janela atual."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "br-bolsa-familia",
+      "campos": {
+        "data_consulta": "2026-11-16",
+        "custo": {
+          "status": "gratuito",
+          "valor_brl": 0,
+          "descricao": "Serviço gratuito para o cidadão.",
+          "fontes": [
+            "bf-gov"
+          ]
+        },
+        "prazo": {
+          "status": "com_ressalva",
+          "descricao": "O portal estima até 180 dias corridos. Cadastro Único não garante ingresso imediato; concessão depende das regras, seleção informatizada, cobertura municipal e limite orçamentário. Marco inicial não esclarecido na ficha.",
+          "fontes": [
+            "bf-gov"
+          ]
+        },
+        "pendencias": [
+          "Documentos do Cadastro Único: consultar ficha br-cadunico e confirmar o atendimento municipal.",
+          "Marco inicial da estimativa de 180 dias não esclarecido; concessão individual depende dos critérios e da seleção do programa."
+        ],
+        "fontes": [
+          {
+            "id": "bf-gov",
+            "url": "https://www.gov.br/pt-br/servicos/receber-o-bolsa-familia",
+            "titulo": "Receber o Bolsa Família",
+            "orgao": "MDS",
+            "data_consulta": "2026-11-16",
+            "tipo_evidencia": "pagina_lida",
+            "sustenta": [
+              "nome",
+              "descricao",
+              "publico",
+              "condicoes_acesso",
+              "passo_a_passo",
+              "canais",
+              "observacoes",
+              "custo",
+              "prazo"
+            ],
+            "limitacoes": [
+              "Até 180 dias corridos é estimativa publicada, sem marco inicial definido e sem garantia de concessão."
+            ]
+          }
+        ]
+      },
+      "fontes_adicionar": []
+    },
+    {
+      "id": "br-pe-de-meia",
+      "campos": {
+        "data_consulta": "2026-11-16",
+        "custo": {
+          "status": "gratuito",
+          "valor_brl": 0,
+          "descricao": "Programa gratuito, sem taxa de inscrição ou inclusão; estudantes elegíveis são identificados pelo cruzamento dos dados oficiais.",
+          "fontes": [
+            "pm-gratuito-20261116",
+            "pm-rj-faq-20261116"
+          ]
+        },
+        "prazo": {
+          "status": "com_ressalva",
+          "descricao": "Inclusão por cruzamento de dados; pagamentos seguem calendário operacional do ano, conforme informações da rede e validação. Em 2026 há janelas de transmissão, pagamento e correção; não há prazo total individual confirmado desde a matrícula até o crédito.",
+          "fontes": [
+            "pm-cal2026-20261116",
+            "pm-alt539-20261116"
+          ]
+        },
+        "pendencias": [
+          "Confirmar no calendário atual do MEC/CAIXA a janela aplicável, modalidade de ensino e eventuais ajustes operacionais; alteração 539 localizada apenas por indexação.",
+          "Não foi confirmado prazo total individual de inclusão/liberação; corrigir eventuais pendências com escola, MEC e CAIXA."
+        ],
+        "observacoes": [
+          "Ensino regular: incentivo de R$ 200 por mês com matrícula e frequência, que pode ser sacado a qualquer momento.",
+          "EJA: R$ 200 ao comprovar matrícula, mais incentivos de R$ 225 por frequência, disponíveis para saque.",
+          "R$ 1.000 ao fim de cada ano concluído com aprovação, que só pode ser sacado após a formatura no ensino médio; adicional de R$ 200 pela participação no Enem. O total pode chegar a R$ 9,2 mil por aluno.",
+          "Programa instituído pela Lei nº 14.818/2024.",
+          "Calendário operacional não é prazo de atendimento: depende de envio e validação dos dados educacionais.",
+          "Janelas operacionais não equivalem ao número de parcelas; consultar regras da modalidade regular/EJA."
+        ]
+      },
+      "fontes_adicionar": [
+        {
+          "id": "pm-gratuito-20261116",
+          "url": "https://agenciagov.ebc.com.br/noticias/202403/pe-de-meia-nao-precisa-de-cadastro-ou-pagamento-de-taxa",
+          "titulo": "Pé-de-Meia não precisa de cadastro ou pagamento de taxa",
+          "orgao": "MEC / Agência Gov - EBC",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "pagina_lida",
+          "sustenta": [
+            "custo"
+          ],
+          "limitacoes": [
+            "Notícia de 28/03/2024 usada somente para gratuidade; não adotar elegibilidade de 2024 como regra atual."
+          ]
+        },
+        {
+          "id": "pm-rj-faq-20261116",
+          "url": "https://www.matriculafacil.rj.gov.br/Duvidas",
+          "titulo": "Tire suas dúvidas — questão 37, inscrição no Pé-de-Meia",
+          "orgao": "SEEDUC-RJ",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "pagina_lida",
+          "sustenta": [
+            "custo",
+            "observacoes"
+          ],
+          "limitacoes": [
+            "FAQ estadual confirma gratuidade de programa federal; não foi usado para fixar número de parcelas nem elegibilidade de todos os casos."
+          ]
+        },
+        {
+          "id": "pm-cal2026-20261116",
+          "url": "https://sedu.es.gov.br/Media/pdf%20e%20Arquivos/PORTARIA%20MEC%20N%C2%BA%20169,%20DE%2018%20DE%20FEVEREIRO%20DE%202026.pdf",
+          "titulo": "Portaria MEC nº 169, de 18 de fevereiro de 2026",
+          "orgao": "MEC / reprodução oficial SEDU-ES",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "documento_lido",
+          "sustenta": [
+            "prazo",
+            "observacoes"
+          ],
+          "limitacoes": [
+            "PDF oficial lido; há alteração pela Portaria 539/2026.",
+            "Calendário de transmissão/pagamento/correção não é prazo individual de inclusão no programa."
+          ]
+        },
+        {
+          "id": "pm-alt539-20261116",
+          "url": "https://mecnormas.mec.gov.br/pesquisa/detalhar/12350",
+          "titulo": "Portaria MEC nº 539, de 11 de junho de 2026",
+          "orgao": "MEC",
+          "data_consulta": "2026-11-16",
+          "tipo_evidencia": "trecho_indexado",
+          "sustenta": [
+            "prazo",
+            "pendencias"
+          ],
+          "limitacoes": [
+            "Somente trecho indexado; abertura da página não retornou linhas legíveis.",
+            "Não substitui consulta do calendário atual para o caso individual."
+          ]
+        }
+      ]
+    }
+  ],
+  "nao_confirmados": [
+    {
+      "id": "br-certidao-civil-segunda-via",
+      "campo": "documentos_status",
+      "valor": null,
+      "fonte_url": "https://atos.cnj.jus.br/files/compilado141702202611096af1d5de1646f.pdf",
+      "data_consulta": "2026-11-16",
+      "confianca": "media",
+      "resolucao": "nao_confirmado",
+      "motivo": "Código Nacional do CNJ, arts. 113–114, localizado somente por trecho indexado: breve relato tem acesso livre e inteiro teor/dados sensíveis têm regras próprias. Abertura do PDF retornou 403. Não se confirmou checklist completo do cartório/UF para inteiro teor, representação, gratuidade e autenticação do portal."
+    },
+    {
+      "id": "br-certificado-dispensa",
+      "campo": "custo.valor_brl",
+      "valor": null,
+      "fonte_url": "https://www.gov.br/pt-br/servicos/alistar-se-no-servico-militar-obrigatorio",
+      "data_consulta": "2026-11-16",
+      "confianca": "media",
+      "resolucao": "nao_confirmado",
+      "motivo": "Página lida exibeR$ 6,38 com reajuste trimestral; carta Defesa publicada 30/06/2026 repete esse valor. Nenhuma tabela com vigência no 4ºtrimestre 2026 foi localizada. Manter pago e valor nulo."
+    },
+    {
+      "id": "br-certificado-dispensa",
+      "campo": "prazo",
+      "valor": null,
+      "fonte_url": "https://www.gov.br/pt-br/servicos/alistar-se-no-servico-militar-obrigatorio",
+      "data_consulta": "2026-11-16",
+      "confianca": "alta",
+      "resolucao": "nao_confirmado",
+      "motivo": "A média de 1 hora publicada refere-se à etapa juramento/taxa/certificado, com espera/agendamento. Não confirma prazo total desde dispensa, pagamento e juramento até disponibilização."
+    }
+  ],
+  "notas": [
+    "Escopo confirmado pelo validador:20 avisos federais (19 por ficha e 1 de título compartilhado).",
+    "Proposta para revisão. Não aplicar em data/servicos.json, data/nordeste.json ou js/dados.js antes da aprovação das tabelas.",
+    "campos são substituições completas. Quando campos.fontes aparece, substitui a lista original para atualizar metadados de fontes existentes; depois anexar fontes_adicionar. Isso evita duplicar URLs e ids.",
+    "Fontes novas usam ids próprios; referências das propostas resolvem em fontes existentes ou fontes_adicionar. O validador atual aceita esses campos.",
+    "Leituras de web foram públicas, sem login, formulário, pagamento ou dados pessoais. Consulta em 16/11/2026 America/Sao_Paulo.",
+    "pagina_lida/documento_lido indicam conteúdo relevante lido; trecho_indexado indica busca com tentativa de abertura sem sucesso, documentada em limitacoes.",
+    "Não se converteu espera de etapa, duração da entrevista, validade da PPD ou janelas de pagamento em prazo final garantido.",
+    "As três fichas anteriormente confirmado com pendências são propostas como parcial e com_ressalvas; pendências reais permanecem visíveis.",
+    "A eventual aplicação reduzirá avisos por confirmação ou descrição qualificada, mas três avisos não foram resolvidos: documentos da certidão civil, taxa vigente CDI e prazo total CDI."
+  ]
+}

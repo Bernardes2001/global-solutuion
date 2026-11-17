@@ -1,0 +1,51 @@
+{
+  "data_consulta": "2026-11-16",
+  "metodo": "GET sem credenciais; validacao TLS pelo sistema",
+  "resultados": [
+    {
+      "url": "https://apidadosabertos.tce.rn.gov.br/api/InformacoesBasicasApi/GrupoUnidadeJurisdicionada/json",
+      "curl_exit": 28,
+      "status_type_final": "000||https://apidadosabertos.tce.rn.gov.br/api/InformacoesBasicasApi/GrupoUnidadeJurisdicionada/json",
+      "bytes": 0,
+      "arquivo": "pesquisa/2026-11-16/evidencias-http/complemento-00.txt",
+      "erro": "curl: (28) Failed to connect to apidadosabertos.tce.rn.gov.br port 443 after 10006 ms: Timeout was reached\n",
+      "preview": ""
+    },
+    {
+      "url": "https://dados-abertos.tce.pb.gov.br/assets/index-Cq25HyE6.js",
+      "curl_exit": 0,
+      "status_type_final": "200|application/javascript|https://dados-abertos.tce.pb.gov.br/assets/index-Cq25HyE6.js",
+      "bytes": 488611,
+      "arquivo": "pesquisa/2026-11-16/evidencias-http/complemento-01.txt",
+      "erro": "",
+      "preview": "function L1(n,o){for(var a=0;a<o.length;a++){const r=o[a];if(typeof r!=\"string\"&&!Array.isArray(r)){for(const s in r)if(s!==\"default\"&&!(s in n)){const u=Object.getOwnPropertyDescriptor(r,s);u&&Object.defineProperty(n,s,u.get?u:{enumerable:!0,get:()=>r[s]})}}}return Object.freeze(Object.defineProperty(n,Symbol.toStringTag,{value:\"Module\"}))}(functi"
+    },
+    {
+      "url": "https://dados.ma.gov.br/",
+      "curl_exit": 0,
+      "status_type_final": "200|text/html; charset=utf-8|https://dados.ma.gov.br/",
+      "bytes": 32132,
+      "arquivo": "pesquisa/2026-11-16/evidencias-http/complemento-02.txt",
+      "erro": "",
+      "preview": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML+RDFa 1.0//EN\"\n  \"https://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd\">\n<html lang=\"pt-br\" dir=\"ltr\"\n  xmlns:content=\"http://purl.org/rss/1.0/modules/content/\"\n  xmlns:dc=\"http://purl.org/dc/terms/\"\n  xmlns:foaf=\"http://xmlns.com/foaf/0.1/\"\n  xmlns:og=\"http://ogp.me/ns#\"\n  xmlns:rdfs=\"http://www.w3.org/2000/01/rdf"
+    },
+    {
+      "url": "https://api-dados-abertos.tce.ce.gov.br/sim/municipios?$limit=1",
+      "curl_exit": 0,
+      "status_type_final": "400|application/json;subtype=denodo-9;charset=UTF-8|https://api-dados-abertos.tce.ce.gov.br/sim/municipios?$limit=1",
+      "bytes": 65,
+      "arquivo": "pesquisa/2026-11-16/evidencias-http/complemento-03.txt",
+      "erro": "",
+      "preview": "{\"__errors__\":[{\"message\":\"The field '$limit' does not exist.\"}]}"
+    },
+    {
+      "url": "https://www.tcepi.tc.br/portaldacidadania/dados-abertos",
+      "curl_exit": 0,
+      "status_type_final": "200|text/html|https://www.tcepi.tc.br/portaldacidadania/dados-abertos",
+      "bytes": 23259,
+      "arquivo": "pesquisa/2026-11-16/evidencias-http/complemento-04.txt",
+      "erro": "",
+      "preview": "<!DOCTYPE html>\n<html lang=\"pt-BR\" data-beasties-container>\n  <head><base href=\"https://www.tcepi.tc.br/portaldacidadania/\"><script src=\"https://sistemas.tce.pi.gov.br/analytics-head.js\" type=\"text/javascript\"></script><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\""
+    }
+  ]
+}

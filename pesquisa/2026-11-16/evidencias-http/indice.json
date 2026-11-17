@@ -1,0 +1,38 @@
+{
+  "data_consulta": "2026-11-16",
+  "metodo": "GET sem Authorization, token ou cookies preexistentes",
+  "resultados": [
+    {
+      "url": "https://apidadosabertos.tce.rn.gov.br/",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)>"
+    },
+    {
+      "url": "https://apidadosabertos.tce.rn.gov.br/swagger/docs/v1",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)>"
+    },
+    {
+      "url": "https://dados-abertos.tce.pb.gov.br/",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    },
+    {
+      "url": "https://sistemas.tcepe.tc.br/DadosAbertos/Exemplo!detalhar?dadosAbertos.id=4",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1032)>"
+    },
+    {
+      "url": "https://dados.ma.gov.br/api/3/action/package_list",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    },
+    {
+      "url": "https://api.v1.transparencia.se.gov.br/v1/health",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    },
+    {
+      "url": "https://api.v1.transparencia.se.gov.br/v1/orgaos?q=se&page=1&limit=1",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    },
+    {
+      "url": "https://api-dados-abertos.tce.ce.gov.br/sim/openapi_prod.yaml",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)>"
+    }
+  ]
+}

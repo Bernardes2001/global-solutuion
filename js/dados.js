@@ -1,6 +1,6 @@
 /* Serviço Fácil — base de dados do catálogo.
- * Gerado a partir de data/servicos.json e data/nordeste.json (pesquisa do grupo, consulta em 2026-11-15).
- * Array de objetos lido pelo js/servicos.js e exibido via DOM. */
+ * ARQUIVO GERADO: não edite à mão. Edite data/servicos.json e data/nordeste.json e rode `npm run dados`.
+ * Pesquisa do grupo, consulta em 2026-11-15. Lido pelo js/servicos.js e js/impacto.js. */
 
 const servicos = [
   {
@@ -29,6 +29,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Certidão de nascimento ou casamento",
@@ -73,7 +74,7 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "variavel_confirmado",
+      "status": "variavel",
       "valor_brl": null,
       "descricao": "Gratuito na Receita; R$ 7,00 nas unidades conveniadas indicadas.",
       "fontes": [
@@ -136,6 +137,7 @@ const servicos = [
     "publico": "Pessoa já inscrita no CPF.",
     "condicoes_acesso": [],
     "documentos_obrigatorios": [],
+    "documentos_status": "nao_se_aplica",
     "documentos_condicionais": [
       {
         "documento": "Identificação oficial com foto",
@@ -253,6 +255,7 @@ const servicos = [
     "publico": "Pessoa inscrita no CPF.",
     "condicoes_acesso": [],
     "documentos_obrigatorios": [],
+    "documentos_status": "nao_se_aplica",
     "documentos_condicionais": [],
     "passo_a_passo": [
       {
@@ -344,6 +347,7 @@ const servicos = [
       "Número de CPF e conta gov.br autenticada."
     ],
     "documentos_obrigatorios": [],
+    "documentos_status": "nao_se_aplica",
     "documentos_condicionais": [],
     "passo_a_passo": [
       {
@@ -443,6 +447,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Certidões de nomes anteriores",
@@ -520,7 +525,7 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago_confirmado",
+      "status": "pago",
       "valor_brl": 257.25,
       "descricao": "Taxa comum R$ 257,25; urgência/emergência R$ 334,42; perda de passaporte válido R$ 514,50.",
       "fontes": [
@@ -528,7 +533,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "confirmado_com_condicoes",
+      "status": "com_ressalva",
       "descricao": "Portal estima 6–10 dias úteis; confirmar disponibilidade de atendimento e entrega na unidade.",
       "fontes": [
         "pass"
@@ -608,6 +613,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Documento com foto do responsável e comprovante ou declaração de residência",
@@ -749,6 +755,7 @@ const servicos = [
       "Não exige estar estudando."
     ],
     "documentos_obrigatorios": [],
+    "documentos_status": "nao_se_aplica",
     "documentos_condicionais": [
       {
         "documento": "Identificação com foto e comprovantes de renda/residência",
@@ -793,7 +800,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "confirmado_com_condicoes",
+      "status": "com_ressalva",
       "descricao": "Emissão imediata se habilitado na base; portal estima até dois dias úteis para o serviço, sem garantir sincronização cadastral.",
       "fontes": [
         "idj"
@@ -867,6 +874,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Comprovantes de renda",
@@ -928,7 +936,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "dependente_edital",
+      "status": "com_ressalva",
       "descricao": "Inscrição, comprovação e matrícula seguem edição/chamada; nenhuma janela aberta foi confirmada.",
       "fontes": [
         "prouni"
@@ -1012,6 +1020,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Comprovantes de renda e demais informações da inscrição",
@@ -1067,7 +1076,7 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "inscricao_gratuita_contrato_variavel",
+      "status": "variavel",
       "valor_brl": null,
       "descricao": "Inscrição gratuita; financiamento gera obrigações conforme contrato.",
       "fontes": [
@@ -1075,7 +1084,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "dependente_edital",
+      "status": "com_ressalva",
       "descricao": "Etapas têm prazos próprios; verificar sistema, edital e CPSA. Nenhuma inscrição aberta foi confirmada.",
       "fontes": [
         "fies",
@@ -1169,6 +1178,7 @@ const servicos = [
       "Na edição regular de 2026: Enem 2023, 2024 ou 2025, usando a melhor média ponderada para a opção. Conferir novamente em edições futuras."
     ],
     "documentos_obrigatorios": [],
+    "documentos_status": "pendente",
     "documentos_condicionais": [
       {
         "documento": "Documentação de matrícula definida pela instituição",
@@ -1230,7 +1240,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "dependente_edital",
+      "status": "com_ressalva",
       "descricao": "Seleção e matrícula seguem cronogramas distintos; nenhuma janela aberta foi confirmada.",
       "fontes": [
         "sisu",
@@ -1362,6 +1372,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Documentos para atendimento especializado ou recurso de isenção",
@@ -1412,7 +1423,7 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago_com_isencao",
+      "status": "pago",
       "valor_brl": 85,
       "descricao": "Edição 2026: R$ 85,00, salvo gratuidade; rever para edição futura.",
       "fontes": [
@@ -1420,7 +1431,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "edicao_2026_encerrada_inscricao",
+      "status": "com_ressalva",
       "descricao": "FAQ informa inscrições de 25/05 a 12/06/2026; esse período passou. Próxima edição não confirmada.",
       "fontes": [
         "enem-faq"
@@ -1530,6 +1541,7 @@ const servicos = [
       "Identificar registro e fornecer os dados pedidos no canal."
     ],
     "documentos_obrigatorios": [],
+    "documentos_status": "pendente",
     "documentos_condicionais": [],
     "passo_a_passo": [
       {
@@ -1638,6 +1650,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Comprovante de vínculo com o município",
@@ -1794,6 +1807,7 @@ const servicos = [
       "Cumprir obrigações eleitorais aplicáveis, sem impedimentos à quitação; a Justiça Eleitoral verifica o cadastro."
     ],
     "documentos_obrigatorios": [],
+    "documentos_status": "nao_se_aplica",
     "documentos_condicionais": [],
     "passo_a_passo": [
       {
@@ -1830,7 +1844,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "confirmado_com_condicoes",
+      "status": "com_ressalva",
       "descricao": "Emissão online quando habilitada; pendências exigem atendimento. Retomada em 03/11/2026.",
       "fontes": [
         "quit",
@@ -1913,6 +1927,7 @@ const servicos = [
       "Fluxo de serviço obrigatório masculino; não abrange alistamento feminino voluntário."
     ],
     "documentos_obrigatorios": [],
+    "documentos_status": "nao_se_aplica",
     "documentos_condicionais": [
       {
         "documento": "Certidão de nascimento ou prova de naturalização/opção",
@@ -1973,7 +1988,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "confirmado_com_condicoes",
+      "status": "com_ressalva",
       "descricao": "Alistamento: janeiro a junho; seleção e regularização têm calendário próprio.",
       "fontes": [
         "mil-alist"
@@ -2040,6 +2055,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Comprovante da taxa militar",
@@ -2076,7 +2092,7 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago_valor_pendente",
+      "status": "pago",
       "valor_brl": null,
       "descricao": "Há taxa reajustada trimestralmente; R$ 6,38 na carta não foi confirmado como valor do trimestre atual.",
       "fontes": [
@@ -2166,6 +2182,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [],
     "passo_a_passo": [
       {
@@ -2201,7 +2218,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "confirmado_com_condicoes",
+      "status": "com_ressalva",
       "descricao": "Pedido: do 7º ao 120º dia após dispensa. Portal estima prestação em 31–60 dias, sujeita à análise.",
       "fontes": [
         "seguro",
@@ -2261,11 +2278,951 @@ const servicos = [
     "apto_catalogo": "com_ressalvas"
   },
   {
+    "id": "br-primeira-habilitacao",
+    "nome": "Solicitar a primeira habilitação (CNH do Brasil)",
+    "nomes_populares": [
+      "primeira CNH",
+      "tirar a carteira de motorista",
+      "tirar habilitação",
+      "CNH do Brasil",
+      "primeira habilitação",
+      "tirar CNH",
+      "tirar a CNH",
+      "carteira de motorista",
+      "habilitação"
+    ],
+    "categoria": "habilitacao",
+    "abrangencia": "nacional",
+    "localidade": {
+      "uf": null,
+      "municipio": null
+    },
+    "orgao_responsavel": "Ministério dos Transportes (Senatran) e Detrans estaduais",
+    "descricao": "Abrir pelo aplicativo CNH do Brasil o processo da primeira habilitação (carro e/ou moto), com curso teórico gratuito. Exames, taxas e emissão são feitos no Detran do estado escolhido.",
+    "publico": "Pessoas que ainda não têm habilitação.",
+    "condicoes_acesso": [
+      "Conta gov.br para entrar no aplicativo CNH do Brasil.",
+      "O sistema identifica sozinho quem ainda não tem habilitação e mostra, na área Condutor, a opção Requerimento da Primeira Habilitação.",
+      "O candidato escolhe a categoria (carro e/ou moto) e o estado em que fará os exames e emitirá a habilitação."
+    ],
+    "documentos_obrigatorios": [],
+    "documentos_status": "pendente",
+    "documentos_condicionais": [],
+    "passo_a_passo": [
+      {
+        "ordem": 1,
+        "acao": "Baixar o aplicativo CNH do Brasil (Google Play ou App Store) e entrar com a conta gov.br. Quem tinha a Carteira Digital de Trânsito deve atualizar o aplicativo.",
+        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo",
+        "fontes": [
+          "cnh-mt-dez25"
+        ]
+      },
+      {
+        "ordem": 2,
+        "acao": "Em Condutor, abrir o Requerimento da Primeira Habilitação, conferir os dados trazidos do gov.br e escolher a categoria e o estado.",
+        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo",
+        "fontes": [
+          "cnh-mt-dez25"
+        ]
+      },
+      {
+        "ordem": 3,
+        "acao": "Fazer o curso teórico gratuito no aplicativo (ou em autoescola). O certificado é registrado automaticamente no Sistema Nacional de Trânsito.",
+        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo",
+        "fontes": [
+          "cnh-mt-dez25",
+          "cnh-mt-mar26"
+        ]
+      },
+      {
+        "ordem": 4,
+        "acao": "Fazer a coleta biométrica e os exames de aptidão física e mental e a avaliação psicológica, conforme as regras do Detran do estado.",
+        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo",
+        "fontes": [
+          "cnh-mt-dez25"
+        ]
+      },
+      {
+        "ordem": 5,
+        "acao": "Agendar e fazer o exame teórico no Detran: 30 questões de múltipla escolha, com mínimo de 20 acertos.",
+        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo",
+        "fontes": [
+          "cnh-mt-dez25"
+        ]
+      },
+      {
+        "ordem": 6,
+        "acao": "Fazer o curso prático com autoescola ou instrutor autorizado pelo Detran e, depois, o exame prático de direção.",
+        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo",
+        "fontes": [
+          "cnh-mt-dez25",
+          "cnh-mt-mar26"
+        ]
+      },
+      {
+        "ordem": 7,
+        "acao": "Com a aprovação, receber a Permissão para Dirigir (PPD), válida por um ano, no aplicativo; a CNH digital pode ser baixada em Ver Habilitação > Baixar CNH-e.",
+        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo",
+        "fontes": [
+          "cnh-mt-dez25"
+        ]
+      }
+    ],
+    "canais": [
+      {
+        "tipo": "aplicativo_oficial",
+        "nome": "Aplicativo CNH do Brasil (Ministério dos Transportes)",
+        "url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo"
+      },
+      {
+        "tipo": "orgao",
+        "nome": "Detran do estado escolhido (exames, taxas, emissão)",
+        "url": null
+      }
+    ],
+    "custo": {
+      "status": "variavel",
+      "valor_brl": null,
+      "descricao": "Cadastro, acesso à plataforma e curso teórico são gratuitos. Taxas de exames e de emissão da carteira física são cobradas pelo Detran do estado e variam; esta ficha não traz o valor de cada estado.",
+      "fontes": [
+        "cnh-mt-mar26"
+      ]
+    },
+    "prazo": {
+      "status": "pendente",
+      "descricao": "Sem prazo único: depende das etapas, da agenda do Detran e do ritmo do candidato. A PPD vale por um ano.",
+      "fontes": [
+        "cnh-mt-dez25"
+      ]
+    },
+    "observacoes": [
+      "Pode-se estudar só pela plataforma digital, só em autoescola ou combinar as duas formas.",
+      "O Ministério dos Transportes diz que não oferece serviços por SMS, e-mail, redes sociais ou telefone. Confirme se o site ou aplicativo é oficial antes de informar dados.",
+      "A CNH-e tem a mesma validade jurídica da versão impressa.",
+      "O Senatran oferece, no portal de serviços, uma ferramenta para validar a autenticidade de uma CNH."
+    ],
+    "fontes": [
+      {
+        "id": "cnh-mt-dez25",
+        "url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo",
+        "titulo": "CNH do Brasil: como solicitar a primeira habilitação pelo aplicativo",
+        "orgao": "Ministério dos Transportes",
+        "data_consulta": "2026-11-15",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "nome",
+          "descricao",
+          "condicoes_acesso",
+          "passo_a_passo",
+          "prazo",
+          "observacoes"
+        ],
+        "limitacoes": [
+          "Página de notícia do órgão (não é a ficha de serviço); regras de taxas e documentos por estado não constam do texto."
+        ]
+      },
+      {
+        "id": "cnh-mt-mar26",
+        "url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2026/03/cnh-do-brasil-saiba-como-solicitar-a-primeira-habilitacao-pelo-aplicativo-oficial-e-evite-canais-nao-autorizados",
+        "titulo": "CNH do Brasil: saiba como solicitar a primeira habilitação pelo aplicativo oficial e evite canais não autorizados",
+        "orgao": "Ministério dos Transportes",
+        "data_consulta": "2026-11-15",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "custo",
+          "canais",
+          "observacoes"
+        ],
+        "limitacoes": [
+          "Página de notícia do órgão (não é a ficha de serviço); regras de taxas e documentos por estado não constam do texto."
+        ]
+      }
+    ],
+    "data_consulta": "2026-11-15",
+    "status_conteudo": "parcial",
+    "pendencias": [
+      "Taxas de cada Detran (exames, emissão, PPD) não foram lidas; consultar o Detran do estado.",
+      "Documentos exigidos pelo Detran, idade mínima e regras de aulas práticas não constam das páginas lidas.",
+      "A ficha oficial de serviço no gov.br não foi localizada; o conteúdo vem de notícias do Ministério dos Transportes (alteradas em 03/07/2026)."
+    ],
+    "apto_catalogo": "com_ressalvas"
+  },
+  {
+    "id": "br-mei-inscricao",
+    "nome": "Cadastrar/formalizar Microempreendedor Individual (MEI)",
+    "nomes_populares": [
+      "abrir MEI",
+      "CNPJ MEI",
+      "inscrição de MEI",
+      "cadastro MEI",
+      "virar MEI"
+    ],
+    "categoria": "trabalho",
+    "abrangencia": "nacional",
+    "localidade": {
+      "uf": null,
+      "municipio": null
+    },
+    "orgao_responsavel": "Ministério do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte (MEMP)",
+    "descricao": "Formalizar a atividade como MEI para obter CNPJ, emitir nota fiscal, vender para o governo, acessar serviços bancários específicos, pagar tributos simplificados e contribuir para a previdência.",
+    "publico": "Pessoa que queira se formalizar como MEI e atenda às condições abaixo.",
+    "condicoes_acesso": [
+      "Exercer ao menos uma atividade das Tabelas A e B do Anexo XI da Resolução CGSN nº 140/2018.",
+      "Faturamento limitado a R$ 81.000,00 por ano (atividades da Tabela A) ou R$ 251.600,00 por ano (Tabela B), conforme a fonte.",
+      "Não participar como sócio, administrador ou titular de outra empresa.",
+      "Contratar no máximo um empregado.",
+      "Conta gov.br nível prata ou ouro (brasileiros) ou bronze (estrangeiros)."
+    ],
+    "documentos_obrigatorios": [
+      {
+        "documento": "Conta gov.br com nível de segurança adequado",
+        "observacao": "Prata ou ouro para brasileiros; bronze para estrangeiros.",
+        "fontes": [
+          "mei-api"
+        ]
+      },
+      {
+        "documento": "RG",
+        "observacao": "Citado na lista de documentos do serviço.",
+        "fontes": [
+          "mei-api"
+        ]
+      },
+      {
+        "documento": "Dados de contato e endereço",
+        "observacao": "",
+        "fontes": [
+          "mei-api"
+        ]
+      },
+      {
+        "documento": "Dados do negócio",
+        "observacao": "Tipo de atividade econômica, forma de atuação e local onde o negócio é realizado.",
+        "fontes": [
+          "mei-api"
+        ]
+      }
+    ],
+    "documentos_status": "confirmado",
+    "documentos_condicionais": [
+      {
+        "documento": "País de nacionalidade (conforme CPF) e dados de identificação civil do cadastro da Polícia Federal",
+        "quando": "Estrangeiro com conta gov.br nível bronze.",
+        "observacao": "Aceitos: Carteira Nacional de Registro Migratório, Documento Provisório de Registro Nacional Migratório ou Protocolo de Solicitação de Refúgio.",
+        "fontes": [
+          "mei-api"
+        ]
+      }
+    ],
+    "passo_a_passo": [
+      {
+        "ordem": 1,
+        "acao": "Acessar o Portal do Empreendedor e escolher o tema Quero Ser MEI.",
+        "canal_url": "https://www.gov.br/pt-br/servicos/realizar-registro-como-microempreendedor-individual-mei",
+        "fontes": [
+          "mei-api"
+        ]
+      },
+      {
+        "ordem": 2,
+        "acao": "Abrir o card Formalize-se e entrar com a conta gov.br.",
+        "canal_url": "https://www.gov.br/pt-br/servicos/realizar-registro-como-microempreendedor-individual-mei",
+        "fontes": [
+          "mei-api"
+        ]
+      },
+      {
+        "ordem": 3,
+        "acao": "Preencher o formulário de inscrição de MEI.",
+        "canal_url": "https://www.gov.br/pt-br/servicos/realizar-registro-como-microempreendedor-individual-mei",
+        "fontes": [
+          "mei-api"
+        ]
+      },
+      {
+        "ordem": 4,
+        "acao": "Assinalar as declarações e finalizar a inscrição.",
+        "canal_url": "https://www.gov.br/pt-br/servicos/realizar-registro-como-microempreendedor-individual-mei",
+        "fontes": [
+          "mei-api"
+        ]
+      }
+    ],
+    "canais": [
+      {
+        "tipo": "portal_oficial",
+        "nome": "Portal do Empreendedor (Formalize-se)",
+        "url": "https://www.gov.br/empresas-e-negocios/pt-br/empreendedor"
+      },
+      {
+        "tipo": "servico_digital",
+        "nome": "Inscrição de MEI (Receita Federal)",
+        "url": "https://mei.receita.economia.gov.br/inscricao/login"
+      }
+    ],
+    "custo": {
+      "status": "gratuito",
+      "valor_brl": 0,
+      "descricao": "A inscrição é gratuita. Depois da formalização o MEI paga tributos simplificados; o valor mensal não consta da fonte lida.",
+      "fontes": [
+        "mei-api"
+      ]
+    },
+    "prazo": {
+      "status": "pendente",
+      "descricao": "A fonte não estima o prazo.",
+      "fontes": [
+        "mei-api"
+      ]
+    },
+    "observacoes": [
+      "O serviço é 100% digital.",
+      "Confira se a sua atividade está na lista permitida antes de começar."
+    ],
+    "fontes": [
+      {
+        "id": "mei-api",
+        "url": "https://www.servicos.gov.br/api/v1/servicos/9435",
+        "titulo": "Cadastrar/formalizar Microempreendedor Individual (registro na API de Serviços do gov.br)",
+        "orgao": "MEMP / Governo Digital",
+        "data_consulta": "2026-11-15",
+        "tipo_evidencia": "documento_lido",
+        "sustenta": [
+          "nome",
+          "descricao",
+          "publico",
+          "condicoes_acesso",
+          "documentos",
+          "passo_a_passo",
+          "canais",
+          "custo"
+        ],
+        "limitacoes": [
+          "Registro estruturado da API; não comprova a versão exibida hoje na tela do portal."
+        ]
+      },
+      {
+        "id": "mei-gov",
+        "url": "https://www.gov.br/pt-br/servicos/realizar-registro-como-microempreendedor-individual-mei",
+        "titulo": "Cadastrar/formalizar Microempreendedor Individual",
+        "orgao": "gov.br",
+        "data_consulta": "2026-11-15",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "nome",
+          "descricao"
+        ],
+        "limitacoes": [
+          "Seções de requisitos e etapas ficam recolhidas na página; foram lidas pela API. Última modificação informada: 15/12/2025."
+        ]
+      }
+    ],
+    "data_consulta": "2026-11-15",
+    "status_conteudo": "confirmado",
+    "pendencias": [
+      "Valor atual do DAS mensal e limites de faturamento vigentes devem ser conferidos no Portal do Empreendedor.",
+      "Regras de licença municipal para o endereço do negócio não foram lidas."
+    ],
+    "apto_catalogo": "sim"
+  },
+  {
+    "id": "br-antecedentes-criminais",
+    "nome": "Emitir certidão de antecedentes criminais (Polícia Federal)",
+    "nomes_populares": [
+      "nada consta",
+      "certidão de antecedentes",
+      "antecedentes criminais",
+      "certidão negativa criminal"
+    ],
+    "categoria": "documentacao_civil",
+    "abrangencia": "nacional",
+    "localidade": {
+      "uf": null,
+      "municipio": null
+    },
+    "orgao_responsavel": "Polícia Federal",
+    "descricao": "Certidão que informa a existência de registros criminais nos sistemas da Polícia Federal. Para fins civis, retorna NADA CONSTA quando não há decisão condenatória com trânsito em julgado.",
+    "publico": "Todos os cidadãos.",
+    "condicoes_acesso": [],
+    "documentos_obrigatorios": [],
+    "documentos_status": "nao_se_aplica",
+    "documentos_condicionais": [],
+    "passo_a_passo": [
+      {
+        "ordem": 1,
+        "acao": "Acessar o sistema ePol SINIC Público da Polícia Federal e preencher o formulário.",
+        "canal_url": "https://servicos.pf.gov.br/epol-sinic-publico/",
+        "fontes": [
+          "cac-api"
+        ]
+      },
+      {
+        "ordem": 2,
+        "acao": "Se preferir atendimento presencial, procurar uma unidade da Polícia Federal. Dias, horários e necessidade de agendamento variam por unidade.",
+        "canal_url": "https://www.gov.br/pf/pt-br/acesso-a-informacao/institucional/quem-e-quem/superintendencias-e-delegacias",
+        "fontes": [
+          "cac-api"
+        ]
+      }
+    ],
+    "canais": [
+      {
+        "tipo": "servico_digital",
+        "nome": "ePol SINIC Público — Polícia Federal",
+        "url": "https://servicos.pf.gov.br/epol-sinic-publico/"
+      },
+      {
+        "tipo": "presencial",
+        "nome": "Unidades descentralizadas da Polícia Federal",
+        "url": "https://www.gov.br/pf/pt-br/acesso-a-informacao/institucional/quem-e-quem/superintendencias-e-delegacias"
+      }
+    ],
+    "custo": {
+      "status": "gratuito",
+      "valor_brl": 0,
+      "descricao": "Gratuito.",
+      "fontes": [
+        "cac-api",
+        "cac-pf"
+      ]
+    },
+    "prazo": {
+      "status": "confirmado",
+      "descricao": "Atendimento imediato pela internet, segundo o cadastro do serviço. A certidão emitida vale por 90 dias.",
+      "fontes": [
+        "cac-api",
+        "cac-pf"
+      ]
+    },
+    "observacoes": [
+      "O serviço não emite certidão de consta: essa informação depende de confirmação presencial na Polícia Federal, por causa dos homônimos.",
+      "O sistema da PF não reúne 100% das informações das Justiças estaduais e Polícias Civis; para antecedentes estaduais pode ser preciso pedir certidão em cada órgão.",
+      "A PF oferece o serviço Validar Certidão de Antecedentes Criminais.",
+      "Em caso de erro no sistema, escrever para suporte.sinic@pf.gov.br com a descrição do erro."
+    ],
+    "fontes": [
+      {
+        "id": "cac-api",
+        "url": "https://www.servicos.gov.br/api/v1/servicos/788",
+        "titulo": "Emitir Certidão de Antecedentes Criminais (registro na API de Serviços do gov.br)",
+        "orgao": "Polícia Federal",
+        "data_consulta": "2026-11-15",
+        "tipo_evidencia": "documento_lido",
+        "sustenta": [
+          "nome",
+          "descricao",
+          "publico",
+          "passo_a_passo",
+          "canais",
+          "custo",
+          "prazo",
+          "observacoes"
+        ],
+        "limitacoes": [
+          "Registro estruturado da API; as etapas listam apenas Preencher o formulário."
+        ]
+      },
+      {
+        "id": "cac-pf",
+        "url": "https://www.gov.br/pf/pt-br/assuntos/antecedentes-criminais",
+        "titulo": "Antecedentes Criminais — Polícia Federal",
+        "orgao": "Polícia Federal",
+        "data_consulta": "2026-11-15",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "descricao",
+          "custo",
+          "prazo"
+        ],
+        "limitacoes": []
+      }
+    ],
+    "data_consulta": "2026-11-15",
+    "status_conteudo": "confirmado",
+    "pendencias": [
+      "Campos exatos do formulário e o que fazer quando a emissão imediata não ocorre não foram lidos; seguir a orientação do sistema da PF."
+    ],
+    "apto_catalogo": "sim"
+  },
+  {
+    "id": "br-fgts-saque",
+    "nome": "Consultar e sacar o FGTS",
+    "nomes_populares": [
+      "FGTS",
+      "Fundo de Garantia",
+      "saque do FGTS",
+      "extrato do FGTS",
+      "contas inativas do FGTS"
+    ],
+    "categoria": "trabalho",
+    "abrangencia": "nacional",
+    "localidade": {
+      "uf": null,
+      "municipio": null
+    },
+    "orgao_responsavel": "Caixa Econômica Federal (CAIXA)",
+    "descricao": "Consultar saldo e pedir o saque do FGTS pelo aplicativo FGTS, sem ir à agência, quando houver direito ao saque.",
+    "publico": "Trabalhadores com contrato regido pela CLT, domésticos, rurais, temporários, intermitentes, avulsos, safreiros, atletas profissionais e diretores não empregados (critério do empregador).",
+    "condicoes_acesso": [
+      "O saque exige uma situação prevista em lei, como dispensa sem justa causa, aposentadoria, término de contrato por prazo determinado, falecimento do empregador individual ou nulidade do contrato, ou falecimento do trabalhador.",
+      "Outras situações de saque estão no Portal do FGTS."
+    ],
+    "documentos_obrigatorios": [
+      {
+        "documento": "Documento oficial de identificação com foto",
+        "observacao": "",
+        "fontes": [
+          "fgts-api"
+        ]
+      },
+      {
+        "documento": "Carteira de Trabalho e Previdência Social",
+        "observacao": "",
+        "fontes": [
+          "fgts-api"
+        ]
+      },
+      {
+        "documento": "Número de inscrição no PIS/PASEP",
+        "observacao": "",
+        "fontes": [
+          "fgts-api"
+        ]
+      }
+    ],
+    "documentos_status": "confirmado",
+    "documentos_condicionais": [],
+    "passo_a_passo": [
+      {
+        "ordem": 1,
+        "acao": "Baixar o aplicativo FGTS da CAIXA e consultar o saldo. O app também permite alterar dados cadastrais e pedir o saque.",
+        "canal_url": "https://www.caixa.gov.br/atendimento/aplicativos/fgts/Paginas/default.aspx",
+        "fontes": [
+          "fgts-api"
+        ]
+      },
+      {
+        "ordem": 2,
+        "acao": "Indicar no aplicativo uma conta da CAIXA ou de outro banco para receber o valor, enviar os documentos pelo próprio app e acompanhar o pedido.",
+        "canal_url": "https://www.caixa.gov.br/atendimento/aplicativos/fgts/Paginas/default.aspx",
+        "fontes": [
+          "fgts-api"
+        ]
+      },
+      {
+        "ordem": 3,
+        "acao": "Receber o valor na conta informada, se a documentação estiver regular e houver direito ao saque.",
+        "canal_url": "https://www.caixa.gov.br/atendimento/aplicativos/fgts/Paginas/default.aspx",
+        "fontes": [
+          "fgts-api"
+        ]
+      }
+    ],
+    "canais": [
+      {
+        "tipo": "aplicativo_oficial",
+        "nome": "Aplicativo FGTS (CAIXA)",
+        "url": "https://www.caixa.gov.br/atendimento/aplicativos/fgts/Paginas/default.aspx"
+      },
+      {
+        "tipo": "presencial",
+        "nome": "Rede de atendimento da CAIXA (espera estimada de cerca de 2 horas)",
+        "url": "https://www.caixa.gov.br/atendimento/Paginas/default.aspx"
+      }
+    ],
+    "custo": {
+      "status": "gratuito",
+      "valor_brl": 0,
+      "descricao": "Gratuito; o crédito em conta indicada no aplicativo é feito sem custo.",
+      "fontes": [
+        "fgts-api"
+      ]
+    },
+    "prazo": {
+      "status": "confirmado",
+      "descricao": "Crédito em até 5 dias úteis após o pedido, com documentação regular e direito ao saque.",
+      "fontes": [
+        "fgts-api"
+      ]
+    },
+    "observacoes": [
+      "O pedido pode ser 100% digital, sem ir à agência da CAIXA.",
+      "Detalhes de documentos específicos de cada tipo de saque ficam no site da CAIXA."
+    ],
+    "fontes": [
+      {
+        "id": "fgts-api",
+        "url": "https://www.servicos.gov.br/api/v1/servicos/61",
+        "titulo": "Sacar o FGTS (registro na API de Serviços do gov.br)",
+        "orgao": "CAIXA",
+        "data_consulta": "2026-11-15",
+        "tipo_evidencia": "documento_lido",
+        "sustenta": [
+          "nome",
+          "descricao",
+          "publico",
+          "condicoes_acesso",
+          "documentos",
+          "passo_a_passo",
+          "canais",
+          "custo",
+          "prazo"
+        ],
+        "limitacoes": [
+          "Registro estruturado da API; não comprova a versão exibida hoje na tela do portal."
+        ]
+      },
+      {
+        "id": "fgts-gov",
+        "url": "https://www.gov.br/pt-br/servicos/sacar-o-fgts",
+        "titulo": "Sacar o FGTS",
+        "orgao": "gov.br",
+        "data_consulta": "2026-11-15",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "nome"
+        ],
+        "limitacoes": [
+          "Indicada como página do serviço; o conteúdo detalhado foi lido pela API."
+        ]
+      }
+    ],
+    "data_consulta": "2026-11-15",
+    "status_conteudo": "confirmado",
+    "pendencias": [
+      "Regras de saque-aniversário e de saques extraordinários (que mudam com medidas do governo) não foram lidas; conferir no aplicativo FGTS."
+    ],
+    "apto_catalogo": "sim"
+  },
+  {
+    "id": "br-bolsa-familia",
+    "nome": "Receber o Bolsa Família",
+    "nomes_populares": [
+      "Bolsa Família",
+      "Programa Bolsa Família",
+      "auxílio",
+      "benefício do governo"
+    ],
+    "categoria": "assistencia_social",
+    "abrangencia": "nacional",
+    "localidade": {
+      "uf": null,
+      "municipio": null
+    },
+    "orgao_responsavel": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome (MDS); pagamento pela CAIXA",
+    "descricao": "Programa de transferência de renda para famílias em situação de pobreza. A família entra pelo Cadastro Único e é analisada por um sistema informatizado.",
+    "publico": "Famílias com renda mensal por pessoa de até R$ 218, inscritas no Cadastro Único.",
+    "condicoes_acesso": [
+      "Renda mensal por pessoa (renda da família dividida pelo número de pessoas) de até R$ 218.",
+      "Pode receber mesmo com carteira assinada, sendo MEI ou com outra renda, se a renda por pessoa estiver no limite.",
+      "Inscrição no Cadastro Único e análise do sistema informatizado.",
+      "A entrada não é automática: o Governo Federal considera o limite orçamentário do programa."
+    ],
+    "documentos_obrigatorios": [
+      {
+        "documento": "Documentos do Cadastro Único",
+        "observacao": "A página remete ao serviço Inscrever-se no Cadastro Único para a lista de documentos.",
+        "fontes": [
+          "bf-gov"
+        ]
+      }
+    ],
+    "documentos_status": "confirmado",
+    "documentos_condicionais": [
+      {
+        "documento": "Comprovantes da justificativa (cartão de vacina, declaração da escola etc.)",
+        "quando": "Recurso por descumprimento das condicionalidades de saúde e educação.",
+        "observacao": "Sem comprovante ainda é possível apresentar o recurso.",
+        "fontes": [
+          "bf-gov"
+        ]
+      }
+    ],
+    "passo_a_passo": [
+      {
+        "ordem": 1,
+        "acao": "Inscrever a família no Cadastro Único, presencialmente, no CRAS, posto do Cadastro Único ou setor responsável pelo Bolsa Família do município.",
+        "canal_url": "https://www.gov.br/pt-br/servicos/receber-o-bolsa-familia",
+        "fontes": [
+          "bf-gov"
+        ]
+      },
+      {
+        "ordem": 2,
+        "acao": "Aguardar a análise. Se for selecionada, a família recebe pelos Correios o cartão do Bolsa Família, emitido pela CAIXA em nome do responsável familiar.",
+        "canal_url": "https://www.gov.br/pt-br/servicos/receber-o-bolsa-familia",
+        "fontes": [
+          "bf-gov"
+        ]
+      },
+      {
+        "ordem": 3,
+        "acao": "Receber o benefício mensal em lotéricas, CAIXA Aqui ou conta da CAIXA. Cada parcela deve ser sacada em até 120 dias. O aplicativo do Bolsa Família mostra o benefício e o calendário.",
+        "canal_url": "https://www.gov.br/pt-br/servicos/receber-o-bolsa-familia",
+        "fontes": [
+          "bf-gov"
+        ]
+      },
+      {
+        "ordem": 4,
+        "acao": "Cumprir os compromissos de saúde e educação: frequência escolar mínima de 60% (4 e 5 anos) e de 75% (6 a 18 anos incompletos), vacinação e acompanhamento nutricional de crianças menores de 7 anos e pré-natal das gestantes.",
+        "canal_url": "https://www.gov.br/pt-br/servicos/receber-o-bolsa-familia",
+        "fontes": [
+          "bf-gov"
+        ]
+      },
+      {
+        "ordem": 5,
+        "acao": "Se não conseguir cumprir, apresentar recurso no setor do Bolsa Família do município ou procurar o CRAS/CREAS.",
+        "canal_url": "https://www.gov.br/pt-br/servicos/receber-o-bolsa-familia",
+        "fontes": [
+          "bf-gov"
+        ]
+      },
+      {
+        "ordem": 6,
+        "acao": "Manter o Cadastro Único atualizado a cada dois anos ou sempre que houver mudança na família.",
+        "canal_url": "https://www.gov.br/pt-br/servicos/receber-o-bolsa-familia",
+        "fontes": [
+          "bf-gov"
+        ]
+      }
+    ],
+    "canais": [
+      {
+        "tipo": "portal_oficial",
+        "nome": "Receber o Bolsa Família (gov.br)",
+        "url": "https://www.gov.br/pt-br/servicos/receber-o-bolsa-familia"
+      },
+      {
+        "tipo": "presencial",
+        "nome": "CRAS, posto do Cadastro Único ou setor do Bolsa Família do município (espera estimada de até 1 hora)",
+        "url": null
+      },
+      {
+        "tipo": "aplicativo_oficial",
+        "nome": "Aplicativo do Bolsa Família (CAIXA)",
+        "url": null
+      }
+    ],
+    "custo": {
+      "status": "pendente",
+      "valor_brl": null,
+      "descricao": "A página lida não menciona cobrança de taxa; confirmar no CRAS ao fazer o Cadastro Único.",
+      "fontes": [
+        "bf-gov"
+      ]
+    },
+    "prazo": {
+      "status": "pendente",
+      "descricao": "A página não estima o prazo. A entrada depende da análise do sistema e do limite orçamentário.",
+      "fontes": [
+        "bf-gov"
+      ]
+    },
+    "observacoes": [
+      "Valores informados na página (última modificação em 18/05/2026): R$ 142,00 por integrante (Renda de Cidadania); Benefício Complementar para famílias que receberem menos de R$ 600,00 no total; R$ 150,00 por criança de 0 a 7 anos incompletos; R$ 50,00 por gestante, nutriz ou criança e adolescente de 7 a 18 anos incompletos.",
+      "Cada município define seus protocolos de atendimento."
+    ],
+    "fontes": [
+      {
+        "id": "bf-gov",
+        "url": "https://www.gov.br/pt-br/servicos/receber-o-bolsa-familia",
+        "titulo": "Receber o Bolsa Família",
+        "orgao": "gov.br",
+        "data_consulta": "2026-11-15",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "nome",
+          "descricao",
+          "publico",
+          "condicoes_acesso",
+          "passo_a_passo",
+          "canais",
+          "observacoes"
+        ],
+        "limitacoes": [
+          "Página marcada como Nova; avaliação não implementada. Tempos de duração das etapas aparecem como não estimados."
+        ]
+      }
+    ],
+    "data_consulta": "2026-11-15",
+    "status_conteudo": "parcial",
+    "pendencias": [
+      "Lista de documentos do Cadastro Único não foi lida nesta ficha; ver ficha br-cadunico.",
+      "Custo e prazo não informados pela página."
+    ],
+    "apto_catalogo": "com_ressalvas"
+  },
+  {
+    "id": "br-pe-de-meia",
+    "nome": "Participar do Pé-de-Meia (poupança do ensino médio)",
+    "nomes_populares": [
+      "Pé-de-Meia",
+      "poupança do ensino médio",
+      "bolsa para estudante",
+      "Caixa Tem Pé-de-Meia",
+      "pe de meia"
+    ],
+    "categoria": "educacao",
+    "abrangencia": "nacional",
+    "localidade": {
+      "uf": null,
+      "municipio": null
+    },
+    "orgao_responsavel": "Ministério da Educação (MEC); conta e pagamento pela CAIXA",
+    "descricao": "Incentivo financeiro na forma de poupança para estudantes do ensino médio público, para estimular a permanência e a conclusão escolar. Não há inscrição: o MEC cruza matrícula e Cadastro Único.",
+    "publico": "Estudantes do ensino médio regular público (14 a 24 anos) ou da EJA pública (19 a 24 anos), de família inscrita no Cadastro Único.",
+    "condicoes_acesso": [
+      "Matrícula no ensino médio regular (14 a 24 anos) ou na EJA (19 a 24 anos) em rede pública.",
+      "Família inscrita no Cadastro Único, com renda de até meio salário mínimo por pessoa. Em 2026 o MEC verifica os dados do CadÚnico incluídos até 7 de agosto de 2026.",
+      "CPF regular.",
+      "Frequência escolar mínima de 80% para receber as parcelas mensais."
+    ],
+    "documentos_obrigatorios": [],
+    "documentos_status": "nao_se_aplica",
+    "documentos_condicionais": [
+      {
+        "documento": "Autorização do responsável legal para movimentar a conta",
+        "quando": "Estudante com menos de 18 anos.",
+        "observacao": "A mãe ou o pai autoriza pelo aplicativo Caixa Tem; demais responsáveis legais fazem o procedimento em agência da CAIXA.",
+        "fontes": [
+          "pm-mec-2026"
+        ]
+      }
+    ],
+    "passo_a_passo": [
+      {
+        "ordem": 1,
+        "acao": "Manter o CPF regular e o Cadastro Único atualizado dentro do prazo de verificação do MEC. Não é preciso fazer inscrição no programa.",
+        "canal_url": "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/abril/pe-de-meia-confira-tutorial-para-pais-autorizarem-uso-da-conta",
+        "fontes": [
+          "pm-mec-2026",
+          "pm-mec-2025"
+        ]
+      },
+      {
+        "ordem": 2,
+        "acao": "Conferir se o estudante foi enquadrado como público do programa e ver o extrato de pagamentos no aplicativo Jornada do Estudante.",
+        "canal_url": "https://www.gov.br/mec/pt-br/assuntos/noticias/2025/abril/pe-de-meia-2025-conheca-os-criterios-para-a-participacao",
+        "fontes": [
+          "pm-mec-2025"
+        ]
+      },
+      {
+        "ordem": 3,
+        "acao": "A CAIXA abre a conta digital automaticamente; não é preciso ir à agência.",
+        "canal_url": "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/abril/pe-de-meia-confira-tutorial-para-pais-autorizarem-uso-da-conta",
+        "fontes": [
+          "pm-mec-2026"
+        ]
+      },
+      {
+        "ordem": 4,
+        "acao": "Acessar o aplicativo Caixa Tem. Maiores de 18 anos entram com o CPF e cadastram uma senha; para menores, o responsável legal precisa liberar a conta antes.",
+        "canal_url": "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/abril/pe-de-meia-confira-tutorial-para-pais-autorizarem-uso-da-conta",
+        "fontes": [
+          "pm-mec-2026"
+        ]
+      },
+      {
+        "ordem": 5,
+        "acao": "Manter frequência mínima de 80% para receber as parcelas.",
+        "canal_url": "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/abril/pe-de-meia-confira-tutorial-para-pais-autorizarem-uso-da-conta",
+        "fontes": [
+          "pm-mec-2026"
+        ]
+      }
+    ],
+    "canais": [
+      {
+        "tipo": "aplicativo_oficial",
+        "nome": "Aplicativo Caixa Tem (CAIXA)",
+        "url": null
+      },
+      {
+        "tipo": "aplicativo_oficial",
+        "nome": "Aplicativo Jornada do Estudante (MEC)",
+        "url": null
+      },
+      {
+        "tipo": "portal_oficial",
+        "nome": "Pé-de-Meia — notícias e perguntas frequentes do MEC",
+        "url": "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/abril/pe-de-meia-confira-tutorial-para-pais-autorizarem-uso-da-conta"
+      }
+    ],
+    "custo": {
+      "status": "pendente",
+      "valor_brl": null,
+      "descricao": "As páginas lidas não mencionam taxa; o programa paga incentivos ao estudante.",
+      "fontes": [
+        "pm-mec-2026"
+      ]
+    },
+    "prazo": {
+      "status": "pendente",
+      "descricao": "Pagamentos mensais conforme o calendário do MEC; não há prazo de atendimento por pedido.",
+      "fontes": [
+        "pm-mec-2026"
+      ]
+    },
+    "observacoes": [
+      "Ensino regular: incentivo de R$ 200 por mês com matrícula e frequência, que pode ser sacado a qualquer momento.",
+      "EJA: R$ 200 ao comprovar matrícula, mais incentivos de R$ 225 por frequência, disponíveis para saque.",
+      "R$ 1.000 ao fim de cada ano concluído com aprovação, que só pode ser sacado após a formatura no ensino médio; adicional de R$ 200 pela participação no Enem. O total pode chegar a R$ 9,2 mil por aluno.",
+      "Programa instituído pela Lei nº 14.818/2024."
+    ],
+    "fontes": [
+      {
+        "id": "pm-mec-2026",
+        "url": "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/abril/pe-de-meia-confira-tutorial-para-pais-autorizarem-uso-da-conta",
+        "titulo": "Pé-de-Meia: confira tutorial para pais autorizarem uso da conta",
+        "orgao": "MEC",
+        "data_consulta": "2026-11-15",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "descricao",
+          "condicoes_acesso",
+          "passo_a_passo",
+          "observacoes"
+        ],
+        "limitacoes": [
+          "Notícia do MEC; a seção de perguntas frequentes do programa tem conteúdo recolhido que não foi lido."
+        ]
+      },
+      {
+        "id": "pm-mec-2025",
+        "url": "https://www.gov.br/mec/pt-br/assuntos/noticias/2025/abril/pe-de-meia-2025-conheca-os-criterios-para-a-participacao",
+        "titulo": "Pé-de-Meia 2025: conheça os critérios para a participação",
+        "orgao": "MEC",
+        "data_consulta": "2026-11-15",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "passo_a_passo",
+          "observacoes"
+        ],
+        "limitacoes": [
+          "Texto escrito para o ano de 2025; usado apenas para o aplicativo Jornada do Estudante e para as regras de valores, repetidas na notícia de 2026."
+        ]
+      }
+    ],
+    "data_consulta": "2026-11-15",
+    "status_conteudo": "parcial",
+    "pendencias": [
+      "Calendário de pagamentos e regras específicas por série não foram lidos.",
+      "Custo e prazo não informados nas páginas lidas.",
+      "Regras mudam a cada ano; confirmar no MEC e na CAIXA."
+    ],
+    "apto_catalogo": "com_ressalvas"
+  },
+  {
     "id": "df-cin",
+    "servico_base": "cin-primeira",
     "nome": "Solicitar a primeira CIN",
     "nomes_populares": [
       "RG",
-      "Identidade nacional"
+      "Identidade nacional",
+      "nova identidade"
     ],
     "categoria": "identificacao_civil",
     "abrangencia": "estadual",
@@ -2288,6 +3245,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "CPF",
@@ -2348,7 +3306,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "informado",
+      "status": "confirmado",
       "descricao": "20 dias corridos; inconsistências no CPF podem ampliar o prazo.",
       "fontes": [
         "df-cin-nahora"
@@ -2381,9 +3339,11 @@ const servicos = [
   },
   {
     "id": "df-cnh",
+    "servico_base": "cnh-segunda-via",
     "nome": "Solicitar segunda via da CNH",
     "nomes_populares": [
-      "Segunda via da carteira de motorista"
+      "Segunda via da carteira de motorista",
+      "carteira de motorista"
     ],
     "categoria": "habilitacao",
     "abrangencia": "estadual",
@@ -2406,6 +3366,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [],
     "passo_a_passo": [
       {
@@ -2438,7 +3399,7 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago_valor_pendente",
+      "status": "pago",
       "valor_brl": null,
       "descricao": "Há taxa; consultar tabela e guia vigente.",
       "fontes": [
@@ -2446,7 +3407,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "informado",
+      "status": "confirmado",
       "descricao": "10 dias após confirmação do pagamento, conforme seção 9 da carta Na Hora.",
       "fontes": [
         "df-cnh-nahora"
@@ -2484,10 +3445,12 @@ const servicos = [
   },
   {
     "id": "df-cnh-renovacao",
+    "servico_base": "cnh-renovacao",
     "nome": "Renovar a CNH",
     "nomes_populares": [
       "Renovar habilitação",
-      "Renovar carteira de motorista"
+      "Renovar carteira de motorista",
+      "carteira de motorista"
     ],
     "categoria": "habilitacao",
     "abrangencia": "estadual",
@@ -2510,6 +3473,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Comprovante de endereço no DF",
@@ -2548,7 +3512,7 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago_valor_pendente",
+      "status": "pago",
       "valor_brl": null,
       "descricao": "Cobrança e exames conforme caso; valor vigente não consolidado.",
       "fontes": [
@@ -2626,10 +3590,12 @@ const servicos = [
   },
   {
     "id": "go-cin",
+    "servico_base": "cin-primeira",
     "nome": "Solicitar a primeira CIN",
     "nomes_populares": [
       "RG",
-      "Identidade nacional"
+      "Identidade nacional",
+      "nova identidade"
     ],
     "categoria": "identificacao_civil",
     "abrangencia": "estadual",
@@ -2659,6 +3625,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "CPF",
@@ -2724,7 +3691,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "informado",
+      "status": "confirmado",
       "descricao": "Até 20 dias úteis na capital e interior.",
       "fontes": [
         "go-cin-vapt"
@@ -2757,9 +3724,11 @@ const servicos = [
   },
   {
     "id": "go-cnh",
+    "servico_base": "cnh-segunda-via",
     "nome": "Solicitar segunda via da CNH",
     "nomes_populares": [
-      "Segunda via da carteira de motorista"
+      "Segunda via da carteira de motorista",
+      "carteira de motorista"
     ],
     "categoria": "habilitacao",
     "abrangencia": "estadual",
@@ -2782,6 +3751,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Procuração e documentos do titular e representante",
@@ -2827,7 +3797,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "informado",
+      "status": "confirmado",
       "descricao": "Até dez dias úteis no Expresso indexado.",
       "fontes": [
         "go-cnh-expresso"
@@ -2893,10 +3863,12 @@ const servicos = [
   },
   {
     "id": "go-cnh-renovacao",
+    "servico_base": "cnh-renovacao",
     "nome": "Renovar a CNH",
     "nomes_populares": [
       "Renovar habilitação",
-      "Renovar carteira de motorista"
+      "Renovar carteira de motorista",
+      "carteira de motorista"
     ],
     "categoria": "habilitacao",
     "abrangencia": "estadual",
@@ -2919,6 +3891,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "CPF",
@@ -3034,10 +4007,12 @@ const servicos = [
   },
   {
     "id": "mt-cin",
+    "servico_base": "cin-primeira",
     "nome": "Solicitar a primeira CIN",
     "nomes_populares": [
       "RG",
-      "Identidade nacional"
+      "Identidade nacional",
+      "nova identidade"
     ],
     "categoria": "identificacao_civil",
     "abrangencia": "estadual",
@@ -3067,6 +4042,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Identificação do responsável",
@@ -3177,9 +4153,11 @@ const servicos = [
   },
   {
     "id": "mt-cnh",
+    "servico_base": "cnh-segunda-via",
     "nome": "Solicitar segunda via da CNH",
     "nomes_populares": [
-      "Segunda via da carteira de motorista"
+      "Segunda via da carteira de motorista",
+      "carteira de motorista"
     ],
     "categoria": "habilitacao",
     "abrangencia": "estadual",
@@ -3209,6 +4187,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [],
     "passo_a_passo": [
       {
@@ -3249,7 +4228,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "informado",
+      "status": "confirmado",
       "descricao": "Após conclusão: cinco dias úteis na sede; quinze em Ciretrans/núcleos.",
       "fontes": [
         "mt-cnh-carta"
@@ -3281,10 +4260,12 @@ const servicos = [
   },
   {
     "id": "mt-cnh-renovacao",
+    "servico_base": "cnh-renovacao",
     "nome": "Renovar a CNH",
     "nomes_populares": [
       "Renovar habilitação",
-      "Renovar carteira de motorista"
+      "Renovar carteira de motorista",
+      "carteira de motorista"
     ],
     "categoria": "habilitacao",
     "abrangencia": "estadual",
@@ -3307,6 +4288,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Exame toxicológico",
@@ -3356,7 +4338,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "informado",
+      "status": "confirmado",
       "descricao": "Após conclusão: cinco dias úteis na sede; quinze em Ciretrans/núcleos.",
       "fontes": [
         "mt-renovacao-carta"
@@ -3390,10 +4372,12 @@ const servicos = [
   },
   {
     "id": "ms-cin",
+    "servico_base": "cin-primeira",
     "nome": "Solicitar a primeira CIN",
     "nomes_populares": [
       "RG",
-      "Identidade nacional"
+      "Identidade nacional",
+      "nova identidade"
     ],
     "categoria": "identificacao_civil",
     "abrangencia": "estadual",
@@ -3423,6 +4407,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Averbação na certidão de casamento",
@@ -3525,9 +4510,11 @@ const servicos = [
   },
   {
     "id": "ms-cnh",
+    "servico_base": "cnh-segunda-via",
     "nome": "Solicitar segunda via da CNH",
     "nomes_populares": [
-      "Segunda via da carteira de motorista"
+      "Segunda via da carteira de motorista",
+      "carteira de motorista"
     ],
     "categoria": "habilitacao",
     "abrangencia": "estadual",
@@ -3550,6 +4537,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Boletim de ocorrência ou CNH danificada",
@@ -3591,7 +4579,7 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago_valor_pendente",
+      "status": "pago",
       "valor_brl": null,
       "descricao": "Notícia informa R$ 202,91 em fevereiro/2026; valor de novembro não confirmado.",
       "fontes": [
@@ -3679,10 +4667,12 @@ const servicos = [
   },
   {
     "id": "ms-cnh-renovacao",
+    "servico_base": "cnh-renovacao",
     "nome": "Renovar a CNH",
     "nomes_populares": [
       "Renovar habilitação",
-      "Renovar carteira de motorista"
+      "Renovar carteira de motorista",
+      "carteira de motorista"
     ],
     "categoria": "habilitacao",
     "abrangencia": "estadual",
@@ -3705,6 +4695,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Formulário RENACH",
@@ -3746,7 +4737,7 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago_valor_pendente",
+      "status": "pago",
       "valor_brl": null,
       "descricao": "Guia e exames conforme processo; valor não confirmado.",
       "fontes": [
@@ -3754,7 +4745,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "parcial",
+      "status": "com_ressalva",
       "descricao": "Carta indexada informa sete dias úteis, mas mistura serviços e não define marco inicial; reconfirmar.",
       "fontes": [
         "ms-carta-portal"
@@ -3818,10 +4809,12 @@ const servicos = [
   },
   {
     "id": "es-cin",
+    "servico_base": "cin-primeira",
     "nome": "Solicitar a primeira CIN",
     "nomes_populares": [
-      "nova identidade",
-      "RG"
+      "RG",
+      "Identidade nacional",
+      "nova identidade"
     ],
     "categoria": "identificacao_civil",
     "abrangencia": "estadual",
@@ -3851,6 +4844,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Foto 3x4",
@@ -3921,7 +4915,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "informado",
+      "status": "confirmado",
       "descricao": "Até 90 dias consecutivos para expedição, segundo FAQ.",
       "fontes": [
         "es-cin-faq"
@@ -3989,8 +4983,10 @@ const servicos = [
   },
   {
     "id": "es-cnh",
+    "servico_base": "cnh-segunda-via",
     "nome": "Solicitar segunda via da CNH",
     "nomes_populares": [
+      "Segunda via da carteira de motorista",
       "carteira de motorista"
     ],
     "categoria": "habilitacao",
@@ -4008,6 +5004,7 @@ const servicos = [
       "Sem alteração de dados ou fotografia."
     ],
     "documentos_obrigatorios": [],
+    "documentos_status": "pendente",
     "documentos_condicionais": [],
     "passo_a_passo": [
       {
@@ -4035,7 +5032,7 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago_valor_nao_confirmado",
+      "status": "pago",
       "valor_brl": null,
       "descricao": "Taxa de serviço por DUA; valor deve ser conferido na tabela oficial.",
       "fontes": [
@@ -4043,7 +5040,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "informado",
+      "status": "confirmado",
       "descricao": "Até 7 dias úteis após abertura do processo.",
       "fontes": [
         "es-cnh-pagina"
@@ -4083,8 +5080,11 @@ const servicos = [
   },
   {
     "id": "es-cnh-renovacao",
-    "nome": "Renovar CNH",
+    "servico_base": "cnh-renovacao",
+    "nome": "Renovar a CNH",
     "nomes_populares": [
+      "Renovar habilitação",
+      "Renovar carteira de motorista",
       "carteira de motorista"
     ],
     "categoria": "habilitacao",
@@ -4120,6 +5120,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Comprovante de parentesco",
@@ -4164,7 +5165,7 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago_valor_nao_confirmado",
+      "status": "pago",
       "valor_brl": null,
       "descricao": "Taxa e exames pagos; psicológico para condutor profissional.",
       "fontes": [
@@ -4172,7 +5173,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "informado_com_ressalva",
+      "status": "com_ressalva",
       "descricao": "Página informa até 5 dias úteis, sem definir marco inicial.",
       "fontes": [
         "es-renovacao"
@@ -4210,10 +5211,12 @@ const servicos = [
   },
   {
     "id": "mg-cin",
+    "servico_base": "cin-primeira",
     "nome": "Solicitar a primeira CIN",
     "nomes_populares": [
-      "nova identidade",
-      "RG"
+      "RG",
+      "Identidade nacional",
+      "nova identidade"
     ],
     "categoria": "identificacao_civil",
     "abrangencia": "estadual",
@@ -4234,6 +5237,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Número do CPF",
@@ -4294,7 +5298,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "estimado",
+      "status": "com_ressalva",
       "descricao": "Aproximadamente 15 dias úteis.",
       "fontes": [
         "mg-cin-portal"
@@ -4332,8 +5336,10 @@ const servicos = [
   },
   {
     "id": "mg-cnh",
+    "servico_base": "cnh-segunda-via",
     "nome": "Solicitar segunda via da CNH",
     "nomes_populares": [
+      "Segunda via da carteira de motorista",
       "carteira de motorista"
     ],
     "categoria": "habilitacao",
@@ -4350,6 +5356,7 @@ const servicos = [
       "CNH de outra UF exige transferência; mudanças de dados usam serviço distinto."
     ],
     "documentos_obrigatorios": [],
+    "documentos_status": "nao_se_aplica",
     "documentos_condicionais": [
       {
         "documento": "Documento oficial com foto e CPF",
@@ -4402,7 +5409,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "informado",
+      "status": "confirmado",
       "descricao": "Até 10 dias úteis após pagamento.",
       "fontes": [
         "mg-segunda"
@@ -4438,8 +5445,11 @@ const servicos = [
   },
   {
     "id": "mg-cnh-renovacao",
+    "servico_base": "cnh-renovacao",
     "nome": "Renovar CNH (A, AB ou B) ou ACC",
     "nomes_populares": [
+      "Renovar habilitação",
+      "Renovar carteira de motorista",
       "carteira de motorista"
     ],
     "categoria": "habilitacao",
@@ -4463,6 +5473,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Documentação do representante",
@@ -4507,7 +5518,7 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago_com_componentes",
+      "status": "variavel",
       "valor_brl": null,
       "descricao": "DAE R$ 138,96; exame médico R$ 232,23; psicológico, quando exigido, R$ 232,23.",
       "fontes": [
@@ -4515,7 +5526,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "informado",
+      "status": "confirmado",
       "descricao": "Até 10 dias úteis após realização dos exames.",
       "fontes": [
         "mg-renovacao"
@@ -4551,10 +5562,12 @@ const servicos = [
   },
   {
     "id": "rj-cin",
+    "servico_base": "cin-primeira",
     "nome": "Solicitar a primeira CIN",
     "nomes_populares": [
-      "nova identidade",
-      "RG"
+      "RG",
+      "Identidade nacional",
+      "nova identidade"
     ],
     "categoria": "identificacao_civil",
     "abrangencia": "estadual",
@@ -4582,6 +5595,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Comprovante do CPF",
@@ -4639,7 +5653,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "nao_confirmado",
+      "status": "pendente",
       "descricao": "Não confirmado nesta pesquisa.",
       "fontes": [
         "rj-cin-pagina"
@@ -4694,8 +5708,10 @@ const servicos = [
   },
   {
     "id": "rj-cnh",
+    "servico_base": "cnh-segunda-via",
     "nome": "Solicitar segunda via da CNH",
     "nomes_populares": [
+      "Segunda via da carteira de motorista",
       "carteira de motorista"
     ],
     "categoria": "habilitacao",
@@ -4733,6 +5749,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "DUDA pago",
@@ -4782,7 +5799,7 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago_com_isencoes",
+      "status": "pago",
       "valor_brl": 209.78,
       "descricao": "DUDA R$ 209,78; isenção por furto/roubo exige processo.",
       "fontes": [
@@ -4790,7 +5807,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "nao_confirmado",
+      "status": "pendente",
       "descricao": "Não confirmado nesta pesquisa.",
       "fontes": [
         "rj-segunda"
@@ -4821,7 +5838,7 @@ const servicos = [
       {
         "id": "rj-agendamento-novo",
         "url": "https://www.detran.rj.gov.br/noticias/agendamentos-de-identificacao-civil-no-detran-rj-passam-a-ser-exclusivamente-digitais-a-partir-desta-quarta-feira-11-11.html",
-        "titulo": "Detran-RJ — Agendamento digital",
+        "titulo": "Detran-RJ — Agendamento digital desde 11/11/2026",
         "orgao": "Detran-RJ",
         "data_consulta": "2026-11-15",
         "tipo_evidencia": "pagina_lida",
@@ -4840,8 +5857,11 @@ const servicos = [
   },
   {
     "id": "rj-cnh-renovacao",
+    "servico_base": "cnh-renovacao",
     "nome": "Renovar CNH — procedimento padrão",
     "nomes_populares": [
+      "Renovar habilitação",
+      "Renovar carteira de motorista",
       "carteira de motorista"
     ],
     "categoria": "habilitacao",
@@ -4872,6 +5892,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "DUDA pago",
@@ -4921,7 +5942,7 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago_com_isencoes",
+      "status": "pago",
       "valor_brl": 209.78,
       "descricao": "DUDA R$ 209,78, exames à parte. Página prevê isenção por idade.",
       "fontes": [
@@ -4929,7 +5950,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "nao_confirmado",
+      "status": "pendente",
       "descricao": "Não confirmado nesta pesquisa.",
       "fontes": [
         "rj-renovacao"
@@ -4962,7 +5983,7 @@ const servicos = [
       {
         "id": "rj-agendamento-novo",
         "url": "https://www.detran.rj.gov.br/noticias/agendamentos-de-identificacao-civil-no-detran-rj-passam-a-ser-exclusivamente-digitais-a-partir-desta-quarta-feira-11-11.html",
-        "titulo": "Detran-RJ — Agendamento digital",
+        "titulo": "Detran-RJ — Agendamento digital desde 11/11/2026",
         "orgao": "Detran-RJ",
         "data_consulta": "2026-11-15",
         "tipo_evidencia": "pagina_lida",
@@ -4983,10 +6004,12 @@ const servicos = [
   },
   {
     "id": "sp-cin",
+    "servico_base": "cin-primeira",
     "nome": "Solicitar a primeira CIN",
     "nomes_populares": [
-      "nova identidade",
-      "RG"
+      "RG",
+      "Identidade nacional",
+      "nova identidade"
     ],
     "categoria": "identificacao_civil",
     "abrangencia": "estadual",
@@ -5014,6 +6037,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
         "documento": "Autorização e identificação/CPF do responsável",
@@ -5074,7 +6098,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "informado",
+      "status": "confirmado",
       "descricao": "Etapa de entrega informa até 26 dias úteis.",
       "fontes": [
         "sp-cin-poupa"
@@ -5113,8 +6137,10 @@ const servicos = [
   },
   {
     "id": "sp-cnh",
+    "servico_base": "cnh-segunda-via",
     "nome": "Solicitar segunda via da CNH",
     "nomes_populares": [
+      "Segunda via da carteira de motorista",
       "carteira de motorista"
     ],
     "categoria": "habilitacao",
@@ -5130,6 +6156,7 @@ const servicos = [
       "Mantém dados e validade; alteração exige outro serviço."
     ],
     "documentos_obrigatorios": [],
+    "documentos_status": "pendente",
     "documentos_condicionais": [],
     "passo_a_passo": [
       {
@@ -5170,7 +6197,7 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago_valor_nao_confirmado",
+      "status": "pago",
       "valor_brl": null,
       "descricao": "Emissão e postagem cobradas; total não confirmado em página legível.",
       "fontes": [
@@ -5178,7 +6205,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "parcial",
+      "status": "com_ressalva",
       "descricao": "Trecho indexado: digital até 24h após expedição; física 3 dias úteis na capital ou 4 no interior, após código de rastreio.",
       "fontes": [
         "sp-segunda-indexado"
@@ -5232,8 +6259,11 @@ const servicos = [
   },
   {
     "id": "sp-cnh-renovacao",
-    "nome": "Renovar CNH",
+    "servico_base": "cnh-renovacao",
+    "nome": "Renovar a CNH",
     "nomes_populares": [
+      "Renovar habilitação",
+      "Renovar carteira de motorista",
       "carteira de motorista"
     ],
     "categoria": "habilitacao",
@@ -5257,6 +6287,7 @@ const servicos = [
         ]
       }
     ],
+    "documentos_status": "confirmado",
     "documentos_condicionais": [],
     "passo_a_passo": [
       {
@@ -5292,7 +6323,7 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago_com_componentes",
+      "status": "variavel",
       "valor_brl": null,
       "descricao": "Digital gratuita; física R$ 126,79 + R$ 11; médico R$ 90; psicológico R$ 90 quando exigido; toxicológico variável.",
       "fontes": [
@@ -5300,7 +6331,7 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "informado_com_ressalva",
+      "status": "com_ressalva",
       "descricao": "Digital até 24h após expedição; entrega física em 3 dias úteis na capital ou 4 no interior após código de rastreio.",
       "fontes": [
         "sp-renovacao"
@@ -5338,9 +6369,63 @@ const servicos = [
   }
 ];
 
+const servicosBase = [
+  {
+    "id": "cin-primeira",
+    "nome": "Solicitar a primeira CIN",
+    "categoria": "identificacao_civil",
+    "descricao": "Emitir a Carteira de Identidade Nacional (CIN), a nova identidade com o número do CPF. O pedido, o órgão e o prazo mudam conforme o estado.",
+    "nomes_populares": [
+      "RG",
+      "Identidade nacional",
+      "nova identidade"
+    ]
+  },
+  {
+    "id": "cnh-segunda-via",
+    "nome": "Solicitar segunda via da CNH",
+    "categoria": "habilitacao",
+    "descricao": "Reemitir a carteira de motorista por perda, roubo, furto ou dano. A taxa e o canal são definidos pelo Detran de cada estado.",
+    "nomes_populares": [
+      "Segunda via da carteira de motorista",
+      "carteira de motorista"
+    ]
+  },
+  {
+    "id": "cnh-renovacao",
+    "nome": "Renovar a CNH",
+    "categoria": "habilitacao",
+    "descricao": "Renovar a habilitação vencida ou perto de vencer, com os exames exigidos. Taxas, exames e canal mudam conforme o Detran do estado.",
+    "nomes_populares": [
+      "Renovar habilitação",
+      "Renovar carteira de motorista",
+      "carteira de motorista"
+    ]
+  }
+];
+
 const legendaStatus = {
   "confirmado": "Conteúdo essencial sustentado por fontes; consultar observações e custos/prazos.",
   "parcial": "Há limitação documental, conflito ou campo necessário pendente."
+};
+
+const legendaCusto = {
+  "gratuito": "Sem cobrança para o procedimento descrito; custos acessórios ficam na descrição.",
+  "pago": "Há cobrança. valor_brl traz o valor confirmado; null indica valor ainda não confirmado.",
+  "variavel": "O valor depende do caso (componentes, exames, unidade, contrato); ver descrição.",
+  "pendente": "Não foi possível confirmar se há cobrança."
+};
+
+const legendaPrazo = {
+  "confirmado": "Prazo publicado pela fonte oficial.",
+  "com_ressalva": "Prazo publicado com condições, estimativa, edital ou marco inicial incerto; ler descrição.",
+  "pendente": "Prazo não localizado ou não confirmado."
+};
+
+const legendaDocumentos = {
+  "confirmado": "documentos_obrigatorios traz a lista confirmada.",
+  "nao_se_aplica": "O pedido é feito só com dados pessoais ou login; não há documento obrigatório a apresentar. Ver documentos_condicionais.",
+  "pendente": "A lista de documentos obrigatórios ainda não foi confirmada."
 };
 
 const portaisEstaduais = [
@@ -5370,7 +6455,7 @@ const portaisEstaduais = [
       },
       {
         "nome": "Serviços estaduais do Piauí no gov.br",
-        "url": "https://www.gov.br/pt-br/servicos-estaduais",
+        "url": "https://www.gov.br/pt-br/servicos-estaduais?uf=PI",
         "utilidade": "alta"
       }
     ]
@@ -5405,7 +6490,7 @@ const portaisEstaduais = [
     "apis": [
       {
         "nome": "API de Dados Abertos do TCE-RN",
-        "requer_token": null,
+        "autenticacao": null,
         "url": "https://apidadosabertos.tce.rn.gov.br/",
         "utilidade": "baixa"
       }
@@ -5425,13 +6510,13 @@ const portaisEstaduais = [
     "apis": [
       {
         "nome": "Portal de Dados Abertos do Estado da Paraíba",
-        "requer_token": false,
+        "autenticacao": false,
         "url": "https://dados.pb.gov.br",
         "utilidade": "baixa"
       },
       {
         "nome": "Dados Abertos do TCE-PB (SAGRES)",
-        "requer_token": null,
+        "autenticacao": null,
         "url": "https://dados-abertos.tce.pb.gov.br/",
         "utilidade": "baixa"
       }
@@ -5451,7 +6536,7 @@ const portaisEstaduais = [
     "apis": [
       {
         "nome": "API de Dados Abertos do TCE-PE",
-        "requer_token": null,
+        "autenticacao": null,
         "url": "https://sistemas.tcepe.tc.br/DadosAbertos/",
         "utilidade": "baixa"
       }
@@ -5471,13 +6556,13 @@ const portaisEstaduais = [
     "apis": [
       {
         "nome": "API de Serviços do Portal Alagoas Digital (JSON)",
-        "requer_token": false,
+        "autenticacao": false,
         "url": "https://alagoasdigital.al.gov.br/api/v1/services.json",
         "utilidade": "alta"
       },
       {
         "nome": "Portal Alagoas em Dados (catálogo de dados abertos)",
-        "requer_token": false,
+        "autenticacao": false,
         "url": "https://dados.al.gov.br/catalogo/",
         "utilidade": "media"
       }
@@ -5511,13 +6596,13 @@ const portaisEstaduais = [
     "apis": [
       {
         "nome": "API de Serviços do Governo da Bahia (JSON)",
-        "requer_token": false,
+        "autenticacao": false,
         "url": "https://servicos.ba.gov.br/api/servicos",
         "utilidade": "alta"
       },
       {
         "nome": "Documentação da API de integração ao Guia de Serviços (Bahia)",
-        "requer_token": false,
+        "autenticacao": false,
         "url": "https://servicos.ba.gov.br/servicos/dados/abertos",
         "utilidade": "alta"
       }

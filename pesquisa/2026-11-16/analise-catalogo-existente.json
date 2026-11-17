@@ -1,0 +1,446 @@
+[
+  {
+    "id": "br-cpf-inscricao",
+    "servico": "Fazer inscrição no CPF",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "primeiro CPF",
+      "tirar CPF"
+    ],
+    "categoria": "documentacao_civil",
+    "status_catalogo": "parcial",
+    "comparacao": "CPF inicial; regularização é procedimento distinto.",
+    "candidatos_distintos_relacionados": [
+      "br-cpf-atualizar-regularizar"
+    ],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-cpf-comprovante",
+    "servico": "Obter comprovante de inscrição no CPF",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "cartão CPF",
+      "segunda via CPF"
+    ],
+    "categoria": "documentacao_civil",
+    "status_catalogo": "confirmado",
+    "comparacao": "Cópia do comprovante; não corrige cadastro.",
+    "candidatos_distintos_relacionados": [
+      "br-cpf-atualizar-regularizar"
+    ],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-cpf-situacao",
+    "servico": "Consultar situação cadastral do CPF",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "comprovante situação CPF",
+      "consultar CPF"
+    ],
+    "categoria": "documentacao_civil",
+    "status_catalogo": "confirmado",
+    "comparacao": "Consulta diagnóstica; não executa regularização.",
+    "candidatos_distintos_relacionados": [
+      "br-cpf-atualizar-regularizar"
+    ],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-ctps",
+    "servico": "Acessar Carteira de Trabalho Digital",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "CTPS Digital",
+      "carteira de trabalho"
+    ],
+    "categoria": "trabalho",
+    "status_catalogo": "confirmado",
+    "comparacao": "Já cobre CTPS Digital; não repetir.",
+    "candidatos_distintos_relacionados": [
+      "br-incapacidade-temporaria"
+    ],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-passaporte",
+    "servico": "Solicitar passaporte comum brasileiro",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "tirar passaporte",
+      "renovar passaporte"
+    ],
+    "categoria": "documentacao_civil",
+    "status_catalogo": "parcial",
+    "comparacao": "Já cobre passaporte comum; não repetir.",
+    "candidatos_distintos_relacionados": [],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-cadunico",
+    "servico": "Inscrever ou atualizar família no Cadastro Único",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "CadÚnico",
+      "cadastro social"
+    ],
+    "categoria": "assistencia_social",
+    "status_catalogo": "parcial",
+    "comparacao": "Cadastro prévio; benefícios possuem análise própria.",
+    "candidatos_distintos_relacionados": [
+      "br-bpc-idoso",
+      "br-bpc-pcd",
+      "br-tarifa-social-energia"
+    ],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-id-jovem",
+    "servico": "Emitir ID Jovem",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "Identidade Jovem"
+    ],
+    "categoria": "assistencia_social",
+    "status_catalogo": "confirmado",
+    "comparacao": "Documento de benefício jovem; não é EJA/Encceja.",
+    "candidatos_distintos_relacionados": [
+      "sp-matricula-eja",
+      "br-encceja"
+    ],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-prouni",
+    "servico": "Participar do ProUni e comprovar informações",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "bolsa ProUni",
+      "documentos ProUni"
+    ],
+    "categoria": "educacao",
+    "status_catalogo": "parcial",
+    "comparacao": "Bolsa superior já coberta; não repetir.",
+    "candidatos_distintos_relacionados": [],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-fies",
+    "servico": "Participar do Fies, validar e contratar financiamento",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "financiamento Fies",
+      "documentos Fies"
+    ],
+    "categoria": "educacao",
+    "status_catalogo": "parcial",
+    "comparacao": "Financiamento superior já coberto; renegociação é outro procedimento, com vigência a verificar.",
+    "candidatos_distintos_relacionados": [],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-sisu",
+    "servico": "Participar do Sisu e preparar matrícula",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "inscrição Sisu",
+      "documentos matrícula universidade"
+    ],
+    "categoria": "educacao",
+    "status_catalogo": "parcial",
+    "comparacao": "Acesso superior já coberto; EJA/Encceja são educação básica.",
+    "candidatos_distintos_relacionados": [
+      "br-encceja",
+      "sp-matricula-eja"
+    ],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-enem",
+    "servico": "Inscrever-se no Enem e preparar identificação",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "Enem",
+      "documentos prova Enem"
+    ],
+    "categoria": "educacao",
+    "status_catalogo": "parcial",
+    "comparacao": "Exame já coberto; Encceja certifica por processo próprio.",
+    "candidatos_distintos_relacionados": [
+      "br-encceja"
+    ],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-certidao-civil-segunda-via",
+    "servico": "Pedir segunda via de certidão civil",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "segunda via certidão nascimento",
+      "segunda via certidão casamento",
+      "segunda via certidão óbito"
+    ],
+    "categoria": "documentacao_civil",
+    "status_catalogo": "parcial",
+    "comparacao": "Nascimento, casamento e óbito já constam genericamente; não criar três novidades.",
+    "candidatos_distintos_relacionados": [],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-titulo-alistamento",
+    "servico": "Solicitar primeiro título eleitoral",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "tirar título de eleitor",
+      "alistamento eleitoral"
+    ],
+    "categoria": "cidadania",
+    "status_catalogo": "parcial",
+    "comparacao": "Primeiro título já coberto; não repetir.",
+    "candidatos_distintos_relacionados": [],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-quitacao",
+    "servico": "Emitir certidão de quitação eleitoral",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "quitação eleitoral",
+      "certidão eleitoral"
+    ],
+    "categoria": "cidadania",
+    "status_catalogo": "confirmado",
+    "comparacao": "Quitação eleitoral já coberta; não repetir.",
+    "candidatos_distintos_relacionados": [],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-alistamento-militar",
+    "servico": "Fazer alistamento militar obrigatório",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "alistamento militar"
+    ],
+    "categoria": "cidadania",
+    "status_catalogo": "parcial",
+    "comparacao": "Alistamento já coberto; não repetir.",
+    "candidatos_distintos_relacionados": [],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-certificado-dispensa",
+    "servico": "Obter Certificado de Dispensa de Incorporação",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "CDI",
+      "certificado militar",
+      "dispensa militar"
+    ],
+    "categoria": "cidadania",
+    "status_catalogo": "parcial",
+    "comparacao": "CDI já coberto; não confundir com reservista.",
+    "candidatos_distintos_relacionados": [],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-seguro-desemprego-formal",
+    "servico": "Solicitar seguro-desemprego do trabalhador formal",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "seguro-desemprego"
+    ],
+    "categoria": "trabalho",
+    "status_catalogo": "parcial",
+    "comparacao": "Desemprego formal já coberto; incapacidade decorre de outro risco.",
+    "candidatos_distintos_relacionados": [
+      "br-incapacidade-temporaria"
+    ],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-primeira-habilitacao",
+    "servico": "Solicitar a primeira habilitação (CNH do Brasil)",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "primeira CNH",
+      "tirar a carteira de motorista",
+      "tirar habilitação",
+      "CNH do Brasil",
+      "primeira habilitação",
+      "tirar CNH",
+      "tirar a CNH",
+      "carteira de motorista",
+      "habilitação"
+    ],
+    "categoria": "habilitacao",
+    "status_catalogo": "parcial",
+    "comparacao": "Primeira CNH já coberta; programa social depende de UF/edital.",
+    "candidatos_distintos_relacionados": [],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-mei-inscricao",
+    "servico": "Cadastrar/formalizar Microempreendedor Individual (MEI)",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "abrir MEI",
+      "CNPJ MEI",
+      "inscrição de MEI",
+      "cadastro MEI",
+      "virar MEI"
+    ],
+    "categoria": "trabalho",
+    "status_catalogo": "confirmado",
+    "comparacao": "Formalização já coberta; não repetir.",
+    "candidatos_distintos_relacionados": [],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-antecedentes-criminais",
+    "servico": "Emitir certidão de antecedentes criminais (Polícia Federal)",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "nada consta",
+      "certidão de antecedentes",
+      "antecedentes criminais",
+      "certidão negativa criminal"
+    ],
+    "categoria": "documentacao_civil",
+    "status_catalogo": "confirmado",
+    "comparacao": "Certidão criminal PF já coberta; BO é registro de fato distinto.",
+    "candidatos_distintos_relacionados": [
+      "sp-bo-online"
+    ],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-fgts-saque",
+    "servico": "Consultar e sacar o FGTS",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "FGTS",
+      "Fundo de Garantia",
+      "saque do FGTS",
+      "extrato do FGTS",
+      "contas inativas do FGTS"
+    ],
+    "categoria": "trabalho",
+    "status_catalogo": "confirmado",
+    "comparacao": "FGTS já coberto; SVR localiza recursos em instituições financeiras.",
+    "candidatos_distintos_relacionados": [
+      "br-valores-receber"
+    ],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-bolsa-familia",
+    "servico": "Receber o Bolsa Família",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "Bolsa Família",
+      "Programa Bolsa Família",
+      "auxílio",
+      "benefício do governo"
+    ],
+    "categoria": "assistencia_social",
+    "status_catalogo": "parcial",
+    "comparacao": "Transferência familiar já coberta; BPC tem requisitos próprios.",
+    "candidatos_distintos_relacionados": [
+      "br-bpc-idoso",
+      "br-bpc-pcd"
+    ],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "br-pe-de-meia",
+    "servico": "Participar do Pé-de-Meia (poupança do ensino médio)",
+    "tipo": "nacional",
+    "nomes_populares": [
+      "Pé-de-Meia",
+      "poupança do ensino médio",
+      "bolsa para estudante",
+      "Caixa Tem Pé-de-Meia",
+      "pe de meia"
+    ],
+    "categoria": "educacao",
+    "status_catalogo": "parcial",
+    "comparacao": "Poupança estudantil já coberta; matrícula EJA é acesso escolar.",
+    "candidatos_distintos_relacionados": [
+      "sp-matricula-eja"
+    ],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "cin-primeira",
+    "servico": "Solicitar a primeira CIN",
+    "tipo": "base_estadual",
+    "nomes_populares": [
+      "RG",
+      "Identidade nacional",
+      "nova identidade"
+    ],
+    "categoria": "identificacao_civil",
+    "status_catalogo": "servico_base",
+    "comparacao": "Já há CIN em oito UFs; PR é expansão de cobertura.",
+    "candidatos_distintos_relacionados": [
+      "pr-cin-primeira"
+    ],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "cnh-segunda-via",
+    "servico": "Solicitar segunda via da CNH",
+    "tipo": "base_estadual",
+    "nomes_populares": [
+      "Segunda via da carteira de motorista",
+      "carteira de motorista"
+    ],
+    "categoria": "habilitacao",
+    "status_catalogo": "servico_base",
+    "comparacao": "Já há segunda CNH em oito UFs; demais UFs são expansão futura.",
+    "candidatos_distintos_relacionados": [],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  },
+  {
+    "id": "cnh-renovacao",
+    "servico": "Renovar a CNH",
+    "tipo": "base_estadual",
+    "nomes_populares": [
+      "Renovar habilitação",
+      "Renovar carteira de motorista",
+      "carteira de motorista"
+    ],
+    "categoria": "habilitacao",
+    "status_catalogo": "servico_base",
+    "comparacao": "Já há renovação CNH em oito UFs; demais UFs são expansão futura.",
+    "candidatos_distintos_relacionados": [],
+    "decisao": "manter existente; não duplicar",
+    "evidencia": "Leitura integral de data/servicos.json em 16/11/2026; regras existentes não revalidadas externamente nesta matriz."
+  }
+]

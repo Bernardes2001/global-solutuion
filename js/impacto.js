@@ -2,8 +2,9 @@
  * Calcula os números do catálogo a partir do array `servicos` e lista o ecossistema de fontes. */
 
 function mostrarNumeros() {
-  const totalServicos = servicos.length;
+  /* Cada serviço com regras por estado (servicosBase) conta uma vez; as fichas estaduais são as variações dele. */
   const nacionais = servicos.filter((s) => !(s.localidade && s.localidade.uf)).length;
+  const totalServicos = nacionais + comoLista(servicosBase).length;
   const estados = new Set(servicos.map((s) => s.localidade && s.localidade.uf).filter(Boolean)).size;
   const categorias = new Set(servicos.map((s) => s.categoria).filter(Boolean)).size;
   const confirmados = servicos.filter((s) => s.status_conteudo === 'confirmado').length;
@@ -12,7 +13,7 @@ function mostrarNumeros() {
     { valor: totalServicos, rotulo: 'serviços no catálogo' },
     { valor: nacionais, rotulo: 'serviços nacionais' },
     { valor: estados, rotulo: 'estados com regras próprias' },
-    { valor: categorias, rotulo: `categorias (${confirmados} serviços já totalmente confirmados)` }
+    { valor: categorias, rotulo: `categorias (${confirmados} de ${servicos.length} fichas já totalmente confirmadas)` }
   ];
 
   document.querySelector('#numerosCatalogo').innerHTML = numeros.map((numero) => `

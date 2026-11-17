@@ -1,0 +1,56 @@
+{
+  "data_consulta": "2026-11-16",
+  "metodo": "GET publico sem Authorization/token/cookies; TLS sistema. PB usa Range bytes=0-3.",
+  "resultados": [
+    {
+      "url": "https://apidadosabertos.tce.rn.gov.br/api/InformacoesBasicasApi/GrupoUnidadeJurisdicionada/json",
+      "curl_exit": 28,
+      "status_type_final": "000||https://apidadosabertos.tce.rn.gov.br/api/InformacoesBasicasApi/GrupoUnidadeJurisdicionada/json",
+      "bytes": 0,
+      "arquivo": "pesquisa/2026-11-16/evidencias-http/rn-grupos.txt",
+      "cabecalhos": "pesquisa/2026-11-16/evidencias-http/rn-grupos-headers.txt",
+      "erro": "curl: (28) Failed to connect to apidadosabertos.tce.rn.gov.br port 443 after 10002 ms: Timeout was reached\n",
+      "preview": ""
+    },
+    {
+      "url": "http://apidadosabertos.tce.rn.gov.br/api/InformacoesBasicasApi/JurisdicionadosTCE/json",
+      "curl_exit": 28,
+      "status_type_final": "000||http://apidadosabertos.tce.rn.gov.br/api/InformacoesBasicasApi/JurisdicionadosTCE/json",
+      "bytes": 0,
+      "arquivo": "pesquisa/2026-11-16/evidencias-http/rn-jurisdicionados.txt",
+      "cabecalhos": "pesquisa/2026-11-16/evidencias-http/rn-jurisdicionados-headers.txt",
+      "erro": "curl: (28) Failed to connect to apidadosabertos.tce.rn.gov.br port 80 after 10003 ms: Timeout was reached\n",
+      "preview": ""
+    },
+    {
+      "url": "https://download.tce.pb.gov.br/dados-abertos/dados-consolidados/receitas/receitas-2025.zip",
+      "curl_exit": 0,
+      "status_type_final": "206|application/zip|https://download.tce.pb.gov.br/dados-abertos/dados-consolidados/receitas/receitas-2025.zip",
+      "bytes": 4,
+      "arquivo": "pesquisa/2026-11-16/evidencias-http/pb-download.txt",
+      "cabecalhos": "pesquisa/2026-11-16/evidencias-http/pb-download-headers.txt",
+      "erro": "",
+      "preview": "PK\u0003\u0004"
+    },
+    {
+      "url": "https://api-dados-abertos.tce.ce.gov.br/sim/municipios?$count=1",
+      "curl_exit": 0,
+      "status_type_final": "200|application/json;subtype=denodo-9;charset=UTF-8|https://api-dados-abertos.tce.ce.gov.br/sim/municipios?$count=1",
+      "bytes": 239,
+      "arquivo": "pesquisa/2026-11-16/evidencias-http/ce-municipios.txt",
+      "cabecalhos": "pesquisa/2026-11-16/evidencias-http/ce-municipios-headers.txt",
+      "erro": "",
+      "preview": "{\"name\":\"dv_municipios\",\"elements\":[{\"codigo_municipio\":\"001\",\"nome_municipio\":\"T.C.M.\",\"codigo_municipio_ibge\":null,\"codigo_municipio_geonames\":null}],\"links\":[{\"rel\":\"next\",\"title\":\"Next interval\",\"href\":\"?%24start_index=1&%24count=1\"}]}"
+    },
+    {
+      "url": "https://dados.pi.gov.br/",
+      "curl_exit": 0,
+      "status_type_final": "200|text/html; charset=UTF-8|https://dados.pi.gov.br/",
+      "bytes": 67779,
+      "arquivo": "pesquisa/2026-11-16/evidencias-http/pi-catalogo.txt",
+      "cabecalhos": "pesquisa/2026-11-16/evidencias-http/pi-catalogo-headers.txt",
+      "erro": "",
+      "preview": "<!doctype html>\n<html lang=\"pt-BR\" >\n<head>\n\t<meta charset=\"UTF-8\" />\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\t<title>Observatório de Dados do Piauí &#8211; Acesse dados socioeconômicos do Piauí com painéis interativos e um catálogo completo de dados, promovendo trans"
+    }
+  ]
+}

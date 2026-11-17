@@ -1,0 +1,12 @@
+{
+  "data_consulta": "2026-11-16",
+  "branch": "feat/gs-repaginada",
+  "hashes": {
+    "data/servicos.json": "575d1d841fa46d59970ed63f5f1d65357d105f94391b24e1d8bc1496e6b65bc7",
+    "data/nordeste.json": "21b3684c3bfe5468f3061ad8fa2a566dcc3827a4519dba5ee6d8ae02918d7b0d",
+    "js/dados.js": "adb926da13f15baae0d73ecb97b50f9f3f4f6c0175e895e6d525755470b4e6e2",
+    "README.md": "0594454c0351e2f50ee29d63f4bb204383c68b95734011b79c2961896aebfb4b",
+    "package.json": "2339b6fb193bd0b38fe1b7447ad67d2634febef65545d6fcdf32b517582a06a0",
+    "package-lock.json": "19eff6aa00193c7a786cde4446df28e514b02eb60165def1bd25e31927d2d55d"
+  }
+}

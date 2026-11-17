@@ -2,10 +2,12 @@
   "name": "servico-facil",
   "version": "2.0.0",
   "private": true,
-  "description": "Serviço Fácil — CitizenTech da Global Solution 2026/2 (FIAP). O site abre direto pelo index.html; o npm só é usado para recompilar o CSS do Tailwind.",
+  "description": "Serviço Fácil — CitizenTech da Global Solution 2026/2 (FIAP). O site abre direto pelo index.html; o npm só é usado para recompilar o CSS do Tailwind e gerar/validar os dados.",
   "scripts": {
     "css": "tailwindcss -i ./css/input.css -o ./css/style.css --minify",
-    "css:watch": "tailwindcss -i ./css/input.css -o ./css/style.css --watch"
+    "css:watch": "tailwindcss -i ./css/input.css -o ./css/style.css --watch",
+    "dados": "node scripts/gerar-dados.mjs && node scripts/validar-dados.mjs --sem-avisos",
+    "validar": "node scripts/validar-dados.mjs"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.17",

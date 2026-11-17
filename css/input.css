@@ -111,6 +111,15 @@ html.alto-contraste .barra-checklist::-webkit-progress-bar { background: #333333
   * { transition: none !important; }
 }
 
+/* ---------- Impressão: só o serviço aberto, para levar a lista no papel ---------- */
+@media print {
+  body > *:not(dialog) { display: none !important; }
+  dialog { position: static !important; display: block !important; width: 100% !important; max-height: none !important; overflow: visible !important; border: 0 !important; box-shadow: none !important; }
+  dialog .sticky { position: static !important; }
+  #fecharDialogo, .no-print, #trocarEstado, [for="trocarEstado"] { display: none !important; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; word-break: break-all; }
+}
+
 /* ---------- Ajuste de fonte (A− / A+) — classes aplicadas no <html> pelo js/main.js ---------- */
 html.fonte-1 { font-size: 87.5%; }
 html.fonte-3 { font-size: 112.5%; }

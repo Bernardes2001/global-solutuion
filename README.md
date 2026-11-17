@@ -2,7 +2,7 @@
 
 > Global Solution 2026/2 · **CitizenTech** · FIAP — Engenharia de Software (1ESOR)
 
-O Serviço Fácil reúne, em linguagem simples, **o que levar, o passo a passo, o custo, o prazo e o canal oficial** de 41 serviços públicos: CPF, título de eleitor, Cadastro Único, Enem, CNH e outros. Os serviços são nacionais e há variações estaduais.
+O Serviço Fácil reúne, em linguagem simples, **o que levar, o passo a passo, o custo, o prazo e o canal oficial** de 26 serviços públicos: CPF, título de eleitor, Cadastro Único, Enem, CNH e outros. São 23 serviços nacionais e 3 com regras próprias em 8 estados (CIN e CNH), somando 47 fichas.
 
 **Para quem:** pessoas com pouca familiaridade com a internet. Segundo o IBGE (PNAD Contínua TIC 2023), "não saber usar" é o motivo mais citado por quem não usa a internet (46,3%), e mais da metade dessas pessoas (51,6%) são idosas.
 
@@ -10,8 +10,9 @@ O Serviço Fácil reúne, em linguagem simples, **o que levar, o passo a passo, 
 
 ## Links
 
-- **Vídeo pitch:** _a preencher_
-- **Site publicado (GitHub Pages):** _a preencher_
+<!-- TODO (Luis): colar os links quando existirem (vídeo: AG-20, prazo interno 19/11). -->
+- **Vídeo pitch:** _PREENCHER LINK_
+- **Site publicado (GitHub Pages):** _PREENCHER LINK_
 
 ## Como abrir
 
@@ -39,7 +40,7 @@ npm run css:watch  # recompila automaticamente enquanto você edita
 
 ## Funcionalidades
 
-- **Simulação interativa:** os dados vêm de um array de objetos com 41 registros (`js/dados.js`) e são exibidos pelo DOM. A busca ignora acentos e entende nomes populares ("tirar CPF").
+- **Simulação interativa:** os dados vêm de um array de objetos com 47 fichas (`js/dados.js`, gerado de `data/`); CIN e CNH aparecem em um card só, com a escolha do estado, e são exibidos pelo DOM. A busca ignora acentos e entende nomes populares ("tirar CPF").
 - **Checklist de documentos:** o usuário marca o que já tem e vê quantos documentos ainda faltam.
 - **Formulário validado:** os erros aparecem abaixo de cada campo, com um resumo no topo, e a mensagem de sucesso aparece na própria página.
 - **Acessibilidade:**
@@ -65,20 +66,39 @@ npm run css:watch  # recompila automaticamente enquanto você edita
 │   ├── impacto.js     # números do catálogo e fontes
 │   └── contato.js     # validação do formulário
 ├── img/               # logotipo e ilustração
-└── data/              # pesquisa original em JSON (origem do js/dados.js)
+├── data/              # pesquisa original em JSON (única fonte dos dados)
+└── scripts/           # gera o js/dados.js e valida os dados
 ```
+
+## Dados
+
+Os dados ficam só em `data/servicos.json` e `data/nordeste.json`. O `js/dados.js` é **gerado** a partir deles — não edite à mão.
+
+```bash
+npm run dados     # gera o js/dados.js e confere se há erros
+npm run validar   # relatório completo: erros + o que ainda falta pesquisar
+```
+
+O validador acusa como **erro** (e encerra com código 1): ID ou nome repetido, valor fora do padrão, fonte citada que não existe, ficha "confirmado" com custo ou documentos pendentes e `js/dados.js` desatualizado. Como **aviso**, lista o que ainda está incompleto: valor da taxa, prazo, lista de documentos etc.
+
+Padrões usados nas fichas:
+
+- `custo.status`: `gratuito` · `pago` (com `valor_brl`, ou `null` se o valor não foi confirmado) · `variavel` · `pendente`
+- `prazo.status`: `confirmado` · `com_ressalva` · `pendente`
+- `documentos_status`: `confirmado` · `nao_se_aplica` (pedido só com dados/login) · `pendente` (lista ainda não pesquisada)
+- Serviços com regras por estado (CIN, 2ª via e renovação da CNH) ficam em `servicos_base`; cada ficha estadual aponta para ele em `servico_base` e herda os nomes populares.
 
 ## Integrantes
 
-<!-- TODO: completar nomes e RMs -->
+<!-- TODO (Luis): preencher os RMs (e o sobrenome do Matheus). Nomes conforme o Jira (CONTEXTO-CLAUDE.md). -->
 
 | Nome | RM |
 |---|---|
-| Luis Felipe — _sobrenome a preencher_ | _a preencher_ |
-| Gabriel — _sobrenome a preencher_ | _a preencher_ |
-| Matheus — _sobrenome a preencher_ | _a preencher_ |
-| _a preencher_ | _a preencher_ |
-| _a preencher_ | _a preencher_ |
+| Luis Felipe Schimith da Silva | _PREENCHER RM_ |
+| Felipe Tadeu Rodrigues da Silva | _PREENCHER RM_ |
+| Lucas Cauã Silva Brasil | _PREENCHER RM_ |
+| Gabriel Bernardes dos Santos | _PREENCHER RM_ |
+| Matheus _PREENCHER SOBRENOME_ | _PREENCHER RM_ |
 
 ## Fontes
 
