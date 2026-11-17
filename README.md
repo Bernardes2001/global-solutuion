@@ -72,7 +72,7 @@ npm run css:watch  # recompila automaticamente enquanto você edita
 
 ## Dados
 
-Os dados ficam só em `data/servicos.json` e `data/nordeste.json`. O `js/dados.js` é **gerado** a partir deles — não edite à mão.
+Os dados ficam em `data/servicos.json`, `data/nordeste.json` e `data/norte.json`. O `js/dados.js` é **gerado** a partir deles — não edite à mão.
 
 ```bash
 npm run dados     # gera o js/dados.js e confere se há erros

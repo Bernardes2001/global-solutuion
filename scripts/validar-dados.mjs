@@ -47,7 +47,7 @@ function fontesCitadas(valor, acc = new Set()) {
   return acc;
 }
 
-const { pesquisa, nordeste } = lerDados();
+const { pesquisa, nordeste, norte } = lerDados();
 const bases = pesquisa.servicos_base || [];
 const fichas = [...pesquisa.servicos_nacionais, ...pesquisa.variacoes_estaduais];
 
@@ -197,9 +197,31 @@ for (const e of nordeste.estados) {
 }
 for (const url of repetidos(urlsNordeste)) erro('nordeste', `URL repetida: ${url}`);
 
+/* ---------- Norte ---------- */
+const siglasNorte = norte.estados.map((e) => e.sigla);
+for (const sigla of repetidos(siglasNorte)) erro(`norte ${sigla}`, 'estado repetido');
+const urlsNorte = [];
+for (const e of norte.estados) {
+  const onde = `norte ${e.sigla}`;
+  if (!(e.portais_servicos || []).length) erro(onde, 'sem portal de serviços');
+  if (!(e.apis || []).length) aviso(onde, 'nenhuma API ou base de dados abertos listada');
+  for (const p of e.portais_servicos || []) {
+    if (!VALORES.utilidade.includes(p.utilidade)) erro(onde, `utilidade "${p.utilidade}" fora do padrão`);
+    urlsNorte.push(p.url.replace(/\/$/, ''));
+  }
+  for (const api of e.apis || []) {
+    if ('requer_token' in api) erro(onde, `${api.nome}: use "autenticacao" no lugar de "requer_token"`);
+    if (!VALORES.autenticacao.includes(api.autenticacao)) erro(onde, `${api.nome}: autenticacao deve ser true, false ou null`);
+    if (api.autenticacao === null) aviso(onde, `${api.nome}: não confirmado se exige login/token`);
+    if (!VALORES.utilidade.includes(api.utilidade)) erro(onde, `${api.nome}: utilidade "${api.utilidade}" fora do padrão`);
+    urlsNorte.push(api.url.replace(/\/$/, ''));
+  }
+}
+for (const url of repetidos(urlsNorte)) erro('norte', `URL repetida: ${url}`);
+
 /* ---------- js/dados.js em dia com o JSON ---------- */
 const dadosJsAtual = readFileSync(caminhos.dadosJs, 'utf8');
-if (dadosJsAtual !== gerarDadosJs({ pesquisa, nordeste })) {
+if (dadosJsAtual !== gerarDadosJs({ pesquisa, nordeste, norte })) {
   erro('js/dados.js', 'desatualizado em relação a data/*.json — rode `npm run dados`');
 }
 
@@ -207,7 +229,7 @@ if (dadosJsAtual !== gerarDadosJs({ pesquisa, nordeste })) {
 const semAvisos = process.argv.includes('--sem-avisos');
 const total = montarServicos(pesquisa).length;
 const contar = (filtro) => fichas.filter(filtro).length;
-console.log(`Serviço Fácil — validação dos dados (${total} fichas, ${bases.length} serviços base, ${siglas.length} estados do Nordeste)\n`);
+console.log(`Serviço Fácil — validação dos dados (${total} fichas, ${bases.length} serviços base, ${siglas.length + norte.estados.length} estados do Nordeste e Norte)\n`);
 console.log(`  Fichas confirmadas:            ${contar((s) => s.status_conteudo === 'confirmado')} de ${total}`);
 console.log(`  Documentos não confirmados:    ${contar((s) => s.documentos_status === 'pendente')}`);
 console.log(`  Pago sem valor confirmado:     ${contar((s) => s.custo?.status === 'pago' && s.custo.valor_brl === null)}`);

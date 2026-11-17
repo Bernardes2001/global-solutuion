@@ -9,13 +9,15 @@ export const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '
 export const caminhos = {
   servicos: path.join(raiz, 'data/servicos.json'),
   nordeste: path.join(raiz, 'data/nordeste.json'),
+  norte: path.join(raiz, 'data/norte.json'),
   dadosJs: path.join(raiz, 'js/dados.js')
 };
 
 export function lerDados() {
   return {
     pesquisa: JSON.parse(readFileSync(caminhos.servicos, 'utf8')),
-    nordeste: JSON.parse(readFileSync(caminhos.nordeste, 'utf8'))
+    nordeste: JSON.parse(readFileSync(caminhos.nordeste, 'utf8')),
+    norte: JSON.parse(readFileSync(caminhos.norte, 'utf8'))
   };
 }
 
@@ -51,10 +53,10 @@ export function montarServicos(pesquisa) {
 
 const json = (valor) => JSON.stringify(valor, null, 2);
 
-export function gerarDadosJs({ pesquisa, nordeste }) {
+export function gerarDadosJs({ pesquisa, nordeste, norte }) {
   const legendas = pesquisa.legendas || {};
   return `/* Serviço Fácil — base de dados do catálogo.
- * ARQUIVO GERADO: não edite à mão. Edite data/servicos.json e data/nordeste.json e rode \`npm run dados\`.
+ * ARQUIVO GERADO: não edite à mão. Edite data/servicos.json, data/nordeste.json ou data/norte.json e rode \`npm run dados\`.
  * Pesquisa do grupo, consulta em ${pesquisa.data_consulta}. Lido pelo js/servicos.js e js/impacto.js. */
 
 const servicos = ${json(montarServicos(pesquisa))};
@@ -69,7 +71,7 @@ const legendaPrazo = ${json(legendas.status_prazo || {})};
 
 const legendaDocumentos = ${json(legendas.status_documentos || {})};
 
-const portaisEstaduais = ${json(nordeste.estados || [])};
+const portaisEstaduais = ${json((nordeste.estados || []).concat(norte.estados || []))};
 
 const fontesIntegracao = ${json(pesquisa.fontes_integracao_comuns || [])};
 `;

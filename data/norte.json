@@ -1,0 +1,167 @@
+{
+	"legendas": "Ver legendas.autenticacao e legendas.utilidade em data/servicos.json.",
+	"estados": [
+		{
+			"estado": "Acre",
+			"sigla": "AC",
+			"fonte": "Catálogo de APIs do Governo do Estado do Acre (SEAD)",
+			"apis": [
+				{
+					"nome": "Consulta de Documentos SEI (por protocolo)",
+					"autenticacao": null,
+					"url": "https://api.sead.ac.gov.br/documentoSei/api/documentoSei/{documento}",
+					"utilidade": "baixa"
+				},
+				{
+					"nome": "Consulta de Processo por Usuário (SEI)",
+					"autenticacao": null,
+					"url": "https://api.sead.ac.gov.br/documentoSei/api/processso-por-usuario/{documento}",
+					"utilidade": "baixa"
+				},
+				{
+					"nome": "Consulta de Órgão por Unidade de Protocolo",
+					"autenticacao": null,
+					"url": "https://api.sead.ac.gov.br/documentoSei/api/orgaos-unidade-protocolo",
+					"utilidade": "baixa"
+				},
+				{
+					"nome": "Consulta de Assuntos Relacionados",
+					"autenticacao": null,
+					"url": "https://api.sead.ac.gov.br/documentoSei/api/assuntos-relacionados",
+					"utilidade": "baixa"
+				}
+			],
+			"portais_servicos": [
+				{
+					"nome": "Portal de Serviços do Acre",
+					"url": "https://www.ac.gov.br/w/servicos",
+					"utilidade": "alta"
+				}
+			]
+		},
+		{
+			"estado": "Amazonas",
+			"sigla": "AM",
+			"fonte": "Processamento de Dados do Amazonas (PRODAM) / Consórcio Amazônia Legal",
+			"apis": [
+				{
+					"nome": "API de Integração SPROWEB (Homologação - Documentos e Usuários)",
+					"autenticacao": null,
+					"url": "https://prodam-api.homologacao.am.gov.br/documento/{documento}",
+					"utilidade": "baixa"
+				},
+				{
+					"nome": "Portal de Dados Abertos - Consórcio Amazônia Legal",
+					"autenticacao": false,
+					"url": "https://www.consorcioamazonialegal.gov.br/dados-abertos/api-dados-abertos-json",
+					"utilidade": "media"
+				}
+			],
+			"portais_servicos": [
+				{
+					"nome": "Serviços do Governo do Amazonas",
+					"url": "https://servicos.amazonas.am.gov.br",
+					"utilidade": "alta"
+				}
+			]
+		},
+		{
+			"estado": "Pará",
+			"sigla": "PA",
+			"fonte": "Portal da Transparência de Santarém (PA)",
+			"apis": [
+				{
+					"nome": "Consulta de Documentos Públicos e Gestão Fiscal",
+					"autenticacao": false,
+					"url": "https://transparencia.santarem.pa.gov.br/api/v1/portal/publicacoes/documentos/{documento}",
+					"utilidade": "media"
+				}
+			],
+			"portais_servicos": [
+				{
+					"nome": "Portal de Serviços do Governo do Pará",
+					"url": "https://www.pa.gov.br/",
+					"utilidade": "alta"
+				}
+			]
+		},
+		{
+			"estado": "Rondônia",
+			"sigla": "RO",
+			"fonte": "Controladoria Geral e SETIC do Estado de Rondônia",
+			"apis": [
+				{
+					"nome": "API CKAN - Portal de Dados Abertos de Rondônia",
+					"autenticacao": false,
+					"url": "https://dados.ro.gov.br/api/3/action/package_list",
+					"utilidade": "alta"
+				},
+				{
+					"nome": "API Portal da Transparência de Rondônia",
+					"autenticacao": null,
+					"url": "https://transparencia.api.ro.gov.br/api/v1/",
+					"utilidade": "media"
+				}
+			],
+			"portais_servicos": [
+				{
+					"nome": "Portal de Serviços de Rondônia",
+					"url": "https://www.ro.gov.br/",
+					"utilidade": "alta"
+				}
+			]
+		},
+		{
+			"estado": "Roraima",
+			"sigla": "RR",
+			"fonte": "Controladoria-Geral do Estado de Roraima (CGE/RR)",
+			"apis": [
+				{
+					"nome": "API Portal da Transparência de Roraima",
+					"autenticacao": true,
+					"url": "https://api.transparencia.rr.gov.br/",
+					"utilidade": "media"
+				},
+				{
+					"nome": "API Portal da Transparência de Roraima v2",
+					"autenticacao": true,
+					"url": "https://api2.transparencia.rr.gov.br/transparencia/redoc.html",
+					"utilidade": "media"
+				}
+			],
+			"portais_servicos": [
+				{
+					"nome": "Portal de Serviços de Roraima",
+					"url": "https://roraima.gov.br/",
+					"utilidade": "alta"
+				}
+			]
+		},
+		{
+			"estado": "Tocantins",
+			"sigla": "TO",
+			"fonte": "Portal de Serviços e Transparência do Tocantins",
+			"apis": [],
+			"portais_servicos": [
+				{
+					"nome": "Portal de Serviços do Tocantins",
+					"url": "https://www.to.gov.br/",
+					"utilidade": "alta"
+				}
+			]
+		},
+		{
+			"estado": "Amapá",
+			"sigla": "AP",
+			"fonte": "Portal da Transparência do Amapá",
+			"apis": [],
+			"portais_servicos": [
+				{
+					"nome": "Portal de Serviços do Amapá",
+					"url": "https://www.ap.gov.br/",
+					"utilidade": "alta"
+				}
+			]
+		}
+	]
+}
