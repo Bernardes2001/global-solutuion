@@ -40,7 +40,7 @@ npm run css:watch  # recompila automaticamente enquanto você edita
 
 ## Funcionalidades
 
-- **Simulação interativa:** os dados vêm de um array de objetos com 47 fichas (`js/dados.js`, gerado de `data/`); CIN e CNH aparecem em um card só, com a escolha do estado, e são exibidos pelo DOM. A busca ignora acentos e entende nomes populares ("tirar CPF").
+- **Simulação interativa:** os dados vêm de um array de objetos com 47 fichas (`js/dados.js`, gerado de `data/`); CIN e CNH aparecem em um card só, com a escolha do estado, e são exibidos pelo DOM. Ao selecionar uma UF sem ficha estadual, a lista inclui o link ao portal oficial de serviços disponível. A busca ignora acentos e entende nomes populares ("tirar CPF").
 - **Checklist de documentos:** o usuário marca o que já tem e vê quantos documentos ainda faltam.
 - **Formulário validado:** os erros aparecem abaixo de cada campo, com um resumo no topo, e a mensagem de sucesso aparece na própria página.
 - **Acessibilidade:**

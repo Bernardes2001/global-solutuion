@@ -204,7 +204,7 @@ function criarCard(servico) {
 
 function mostrarServicos() {
   const resultado = filtrar();
-  const plural = resultado.length === 1 ? 'serviço encontrado' : 'serviços encontrados';
+  const plural = resultado.length === 1 ? 'resultado encontrado' : 'resultados encontrados';
   const total = itensDoCatalogo(filtroEstado.value).length;
   contagem.textContent = `${resultado.length} ${plural} de ${total}`;
   grade.innerHTML = resultado.map(criarCard).join('');

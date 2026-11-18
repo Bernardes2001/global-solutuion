@@ -6648,7 +6648,7 @@ const portaisEstaduais = [
     "portais_servicos": [
       {
         "nome": "Portal de Serviços do Acre",
-        "url": "https://www.ac.gov.br/w/servicos",
+        "url": "https://www.ac.gov.br/",
         "utilidade": "alta"
       }
     ]
@@ -6694,7 +6694,7 @@ const portaisEstaduais = [
     "portais_servicos": [
       {
         "nome": "Portal de Serviços do Governo do Pará",
-        "url": "https://www.pa.gov.br/",
+        "url": "https://www.pa.gov.br/servicos",
         "utilidade": "alta"
       }
     ]
@@ -6720,7 +6720,7 @@ const portaisEstaduais = [
     "portais_servicos": [
       {
         "nome": "Portal de Serviços de Rondônia",
-        "url": "https://www.ro.gov.br/",
+        "url": "https://www.ro.gov.br/Servico",
         "utilidade": "alta"
       }
     ]
@@ -6745,8 +6745,8 @@ const portaisEstaduais = [
     ],
     "portais_servicos": [
       {
-        "nome": "Portal de Serviços de Roraima",
-        "url": "https://roraima.gov.br/",
+        "nome": "Carta de Serviços do Governo de Roraima",
+        "url": "https://portal.rr.gov.br/servicos/",
         "utilidade": "alta"
       }
     ]
@@ -6759,7 +6759,7 @@ const portaisEstaduais = [
     "portais_servicos": [
       {
         "nome": "Portal de Serviços do Tocantins",
-        "url": "https://www.to.gov.br/",
+        "url": "https://servicos.to.gov.br/",
         "utilidade": "alta"
       }
     ]
@@ -6771,8 +6771,8 @@ const portaisEstaduais = [
     "apis": [],
     "portais_servicos": [
       {
-        "nome": "Portal de Serviços do Amapá",
-        "url": "https://www.ap.gov.br/",
+        "nome": "AP Digital — Serviços para o cidadão",
+        "url": "https://apdigital.portal.ap.gov.br/todos-os-servicos?specific_public=cidad%C3%A3o&page=1",
         "utilidade": "alta"
       }
     ]
