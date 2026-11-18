@@ -1,0 +1,174 @@
+{
+  "projeto": "Serviço Fácil",
+  "versao": "2.1",
+  "data_consulta": "2026-11-18",
+  "idioma": "pt-BR",
+  "escopo": "Pesquisa informativa; não executa serviços nem implementa site/API.",
+  "responsabilidades": {
+    "pesquisa": "Região Sul"
+  },
+  "legendas": {
+    "tipos_fonte": {
+      "portal_servicos": "Busca e reúne vários serviços.",
+      "portal_orgao": "Site institucional do órgão.",
+      "pagina_servico": "Ficha específica de orientação ao cidadão.",
+      "catalogo_dados_abertos": "Índice de bases e arquivos; não implica catálogo de serviços.",
+      "api_dados_abertos": "Interface estruturada de dados abertos."
+    },
+    "utilidade": "Alta: conteúdo útil ao cidadão; média: apoio ao catálogo; baixa: pouca relação direta.",
+    "autenticacao": "false: consulta testada sem credencial no escopo indicado; null: não confirmada."
+  },
+  "regiao": "Sul",
+  "ufs": [
+    {
+      "uf": "PR",
+      "nome": "Paraná",
+      "portais": [
+        {
+          "nome": "Governo do Paraná — Dados Abertos",
+          "orgao": "IPARDES / Governo do Paraná",
+          "tipo": "catalogo_dados_abertos",
+          "url": "https://www.dados.pr.gov.br/",
+          "descricao": "Portal estadual de dados abertos e Base de Dados do Estado.",
+          "utilidade": "alta",
+          "verificacao": {
+            "data": "2026-11-18",
+            "metodo": "Abertura de página oficial pública.",
+            "resultado": "Portal oficial aberto e conteúdo lido.",
+            "limitacoes": ["Não substitui cartas de serviço nem comprova requisitos da CIN/CNH."]
+          }
+        },
+        {
+          "nome": "Polícia Civil do Paraná — CIN",
+          "orgao": "Instituto de Identificação / Polícia Civil do Paraná",
+          "tipo": "pagina_servico",
+          "url": "https://www.policiacivil.pr.gov.br/Pagina/INFORMACOES-SOBRE-CARTEIRA-DE-IDENTIDADE-NACIONAL-CIN",
+          "descricao": "Fonte oficial para a primeira CIN no Paraná.",
+          "utilidade": "alta",
+          "verificacao": {
+            "data": "2026-11-18",
+            "metodo": "Abertura de página oficial pública.",
+            "resultado": "Conteúdo lido: públicos, documentos gerais, modalidades, custo, prazo e entrega.",
+            "limitacoes": ["Situações civis e menores exigem leitura completa da checklist oficial."]
+          }
+        },
+        {
+          "nome": "Detran-PR",
+          "orgao": "Departamento de Trânsito do Paraná",
+          "tipo": "portal_orgao",
+          "url": "https://www.detran.pr.gov.br/",
+          "descricao": "Portal oficial para habilitação e serviços de trânsito.",
+          "utilidade": "alta",
+          "verificacao": {
+            "data": "2026-11-18",
+            "metodo": "Abertura de página oficial pública.",
+            "resultado": "Portal oficial aberto; canal de serviços identificado.",
+            "limitacoes": ["Documentos, custos e prazos específicos ainda precisam ser auditados em fichas próprias."]
+          }
+        }
+      ],
+      "apis": [],
+      "busca_apis": {
+        "resultado": "Catálogo estatal identificado como dados estatísticos; API pública útil para fichas de CIN/CNH não localizada nesta etapa.",
+        "consultas": ["dados.pr.gov.br", "Portal de serviços PR", "API CIN/CNH"],
+        "alternativa_oficial": "Manter fontes editoriais com os portais oficiais da Polícia Civil e Detran."
+      }
+    },
+    {
+      "uf": "RS",
+      "nome": "Rio Grande do Sul",
+      "portais": [
+        {
+          "nome": "RS — Portal de Serviços",
+          "orgao": "Governo do Rio Grande do Sul",
+          "tipo": "portal_servicos",
+          "url": "https://www.rs.gov.br/servicos",
+          "descricao": "Catálogo e carteira digital de serviços do Estado.",
+          "utilidade": "alta",
+          "verificacao": {"data": "2026-11-18", "metodo": "Abertura de página oficial pública.", "resultado": "Portal oficial aberto e listado como principal catálogo estadual.", "limitacoes": ["Não substitui ficha operacional específica."]}
+        },
+        {
+          "nome": "Detran-RS",
+          "orgao": "Departamento Estadual de Trânsito do Rio Grande do Sul",
+          "tipo": "portal_orgao",
+          "url": "https://www.detran.rs.gov.br/",
+          "descricao": "Habilitação, veículos e serviços de trânsito.",
+          "utilidade": "alta",
+          "verificacao": {"data": "2026-11-18", "metodo": "Abertura de página oficial pública.", "resultado": "Portais de CNH, renovação e segunda via identificados.", "limitacoes": ["Checklist, custo e prazo exigem pesquisa específica por modalidade."]}
+        },
+        {
+          "nome": "Dados Abertos RS",
+          "orgao": "Governo do Rio Grande do Sul",
+          "tipo": "catalogo_dados_abertos",
+          "url": "https://dados.rs.gov.br/",
+          "descricao": "Portal CKAN estadual com conjuntos de dados públicos.",
+          "utilidade": "alta",
+          "verificacao": {"data": "2026-11-18", "metodo": "Abertura de página oficial pública.", "resultado": "Catálogo público identificado; 416 conjuntos informados na página.", "limitacoes": ["Os dados não foram usados para preencher regras de atendimento."]}
+        }
+      ],
+      "apis": [
+        {
+          "id": "rs-ckan",
+          "nome": "CKAN Dados Abertos RS",
+          "orgao": "Governo do Rio Grande do Sul",
+          "tipo": "api_dados_abertos",
+          "url_base": "https://dados.rs.gov.br/api/3/action/",
+          "url_documentacao": "https://docs.ckan.org/en/2.11/api/",
+          "url_oficial": "https://dados.rs.gov.br/",
+          "autenticacao": {"necessaria": false, "escopo": "Consulta pública CKAN documentada no portal.", "evidencia": "Portal oferece API CKAN e catálogo sem login.", "fonte": "https://dados.rs.gov.br/"},
+          "utilidade": "media",
+          "informacoes": ["Pesquisa pública de metadados e recursos do portal estadual."],
+          "verificacao": {"data": "2026-11-18", "metodo": "Identificação de API CKAN oficial pelo próprio portal.", "resultado": "API CKAN publicada pelo portal; uso operacional não detalhado nesta entrega.", "limites": ["Não comprovada como fonte de requisitos ou checklist dos serviços."]}
+        }
+      ]
+    },
+    {
+      "uf": "SC",
+      "nome": "Santa Catarina",
+      "portais": [
+        {
+          "nome": "Portal de Serviços de Santa Catarina",
+          "orgao": "Governo de Santa Catarina",
+          "tipo": "portal_servicos",
+          "url": "https://www.sc.gov.br/",
+          "descricao": "Portal estadual com serviços ao cidadão por categoria.",
+          "utilidade": "alta",
+          "verificacao": {"data": "2026-11-18", "metodo": "Abertura de página oficial pública.", "resultado": "Catálogo estadual aberto com serviços e categorias.", "limitacoes": ["Não substitui fichas específicas de documentos e prazos."]}
+        },
+        {
+          "nome": "Detran-SC",
+          "orgao": "Departamento Estadual de Trânsito de Santa Catarina",
+          "tipo": "portal_orgao",
+          "url": "https://www.detran.sc.gov.br/",
+          "descricao": "Portal oficial de habilitação e trânsito.",
+          "utilidade": "alta",
+          "verificacao": {"data": "2026-11-18", "metodo": "Abertura de página oficial pública.", "resultado": "Canais oficiais de consulta, renovação e agendamento identificados.", "limitacoes": ["Taxas e checklist completo ainda precisam de confirmação em fichas específicas."]}
+        },
+        {
+          "nome": "Dados Abertos SC",
+          "orgao": "Controladoria-Geral do Estado",
+          "tipo": "catalogo_dados_abertos",
+          "url": "https://dados.sc.gov.br/",
+          "descricao": "Portal CKAN estadual com conjuntos publicados pelos órgãos.",
+          "utilidade": "alta",
+          "verificacao": {"data": "2026-11-18", "metodo": "Abertura de página oficial pública.", "resultado": "Portal CKAN aberto e API documentada no próprio catálogo.", "limitacoes": ["Dados não usados como fonte de documentos ou prazos de serviços."]}
+        }
+      ],
+      "apis": [
+        {
+          "id": "sc-ckan",
+          "nome": "CKAN Dados Abertos SC",
+          "orgao": "Controladoria-Geral do Estado",
+          "tipo": "api_dados_abertos",
+          "url_base": "https://dados.sc.gov.br/api/3/action/",
+          "url_documentacao": "https://docs.ckan.org/en/2.8/api/",
+          "url_oficial": "https://dados.sc.gov.br/",
+          "autenticacao": {"necessaria": false, "escopo": "Consulta pública CKAN documentada no portal.", "evidencia": "Portal oferece API CKAN e catálogo sem login.", "fonte": "https://dados.sc.gov.br/"},
+          "utilidade": "media",
+          "informacoes": ["Pesquisa pública de metadados e recursos do portal estadual."],
+          "verificacao": {"data": "2026-11-18", "metodo": "Identificação de API CKAN oficial pelo próprio portal.", "resultado": "API CKAN publicada pelo portal; uso operacional não detalhado nesta entrega.", "limites": ["Não comprovada como fonte de requisitos ou checklist dos serviços."]}
+        }
+      ]
+    }
+  ]
+}

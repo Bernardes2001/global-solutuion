@@ -12,6 +12,7 @@ export const caminhos = {
   norte: path.join(raiz, 'data/norte.json'),
   sudeste: path.join(raiz, 'data/sudeste.json'),
   centroOeste: path.join(raiz, 'data/centro-oeste.json'),
+  sul: path.join(raiz, 'data/sul.json'),
   dadosJs: path.join(raiz, 'js/dados.js')
 };
 
@@ -64,7 +65,8 @@ export function lerDados() {
     nordeste: JSON.parse(readFileSync(caminhos.nordeste, 'utf8')),
     norte: JSON.parse(readFileSync(caminhos.norte, 'utf8')),
     sudeste: normalizarPesquisaRegional(caminhos.sudeste),
-    centroOeste: normalizarPesquisaRegional(caminhos.centroOeste)
+    centroOeste: normalizarPesquisaRegional(caminhos.centroOeste),
+    sul: normalizarPesquisaRegional(caminhos.sul)
   };
 }
 
@@ -100,7 +102,7 @@ export function montarServicos(pesquisa) {
 
 const json = (valor) => JSON.stringify(valor, null, 2);
 
-export function gerarDadosJs({ pesquisa, nordeste, norte, sudeste, centroOeste }) {
+export function gerarDadosJs({ pesquisa, nordeste, norte, sudeste, centroOeste, sul }) {
   const legendas = pesquisa.legendas || {};
   return `/* Serviço Fácil — base de dados do catálogo.
  * ARQUIVO GERADO: não edite à mão. Edite os arquivos em data/ e rode \`npm run dados\`.
@@ -118,7 +120,7 @@ const legendaPrazo = ${json(legendas.status_prazo || {})};
 
 const legendaDocumentos = ${json(legendas.status_documentos || {})};
 
-const portaisEstaduais = ${json((nordeste.estados || []).concat(norte.estados || [], sudeste.estados || [], centroOeste.estados || []))};
+const portaisEstaduais = ${json((nordeste.estados || []).concat(norte.estados || [], sudeste.estados || [], centroOeste.estados || [], sul.estados || []))};
 
 const fontesIntegracao = ${json(pesquisa.fontes_integracao_comuns || [])};
 `;

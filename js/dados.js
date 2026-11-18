@@ -7199,6 +7199,89 @@ const portaisEstaduais = [
         "utilidade": "media"
       }
     ]
+  },
+  {
+    "estado": "Paraná",
+    "sigla": "PR",
+    "fonte": "Instituto de Identificação / Polícia Civil do Paraná",
+    "apis": [],
+    "portais_servicos": [
+      {
+        "nome": "Governo do Paraná — Dados Abertos",
+        "url": "https://www.dados.pr.gov.br/",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Polícia Civil do Paraná — CIN",
+        "url": "https://www.policiacivil.pr.gov.br/Pagina/INFORMACOES-SOBRE-CARTEIRA-DE-IDENTIDADE-NACIONAL-CIN",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Detran-PR",
+        "url": "https://www.detran.pr.gov.br/",
+        "utilidade": "alta"
+      }
+    ]
+  },
+  {
+    "estado": "Rio Grande do Sul",
+    "sigla": "RS",
+    "fonte": "Governo do Rio Grande do Sul",
+    "apis": [
+      {
+        "nome": "CKAN Dados Abertos RS",
+        "autenticacao": false,
+        "url": "https://dados.rs.gov.br/api/3/action/",
+        "utilidade": "media"
+      }
+    ],
+    "portais_servicos": [
+      {
+        "nome": "RS — Portal de Serviços",
+        "url": "https://www.rs.gov.br/servicos",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Detran-RS",
+        "url": "https://www.detran.rs.gov.br/",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Dados Abertos RS",
+        "url": "https://dados.rs.gov.br/",
+        "utilidade": "alta"
+      }
+    ]
+  },
+  {
+    "estado": "Santa Catarina",
+    "sigla": "SC",
+    "fonte": "Governo de Santa Catarina",
+    "apis": [
+      {
+        "nome": "CKAN Dados Abertos SC",
+        "autenticacao": false,
+        "url": "https://dados.sc.gov.br/api/3/action/",
+        "utilidade": "media"
+      }
+    ],
+    "portais_servicos": [
+      {
+        "nome": "Portal de Serviços de Santa Catarina",
+        "url": "https://www.sc.gov.br/",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Detran-SC",
+        "url": "https://www.detran.sc.gov.br/",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Dados Abertos SC",
+        "url": "https://dados.sc.gov.br/",
+        "utilidade": "alta"
+      }
+    ]
   }
 ];
 

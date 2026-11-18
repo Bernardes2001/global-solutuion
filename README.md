@@ -2,7 +2,7 @@
 
 > Global Solution 2026/2 · **CitizenTech** · FIAP — Engenharia de Software (1ESOR)
 
-O Serviço Fácil reúne, em linguagem simples, **o que levar, o passo a passo, o custo, o prazo e o canal oficial** de 26 serviços públicos: CPF, título de eleitor, Cadastro Único, Enem, CNH e outros. São 23 serviços nacionais e 3 com regras próprias em estados das regiões Norte, Nordeste, Sudeste e Centro-Oeste, somando 47 fichas.
+O Serviço Fácil reúne, em linguagem simples, **o que levar, o passo a passo, o custo, o prazo e o canal oficial** de 26 serviços públicos: CPF, título de eleitor, Cadastro Único, Enem, CNH e outros. São 23 serviços nacionais e 3 com regras próprias em estados das regiões Norte, Nordeste, Sudeste, Centro-Oeste e Sul, somando 47 fichas.
 
 **Para quem:** pessoas com pouca familiaridade com a internet. Segundo o IBGE (PNAD Contínua TIC 2023), "não saber usar" é o motivo mais citado por quem não usa a internet (46,3%), e mais da metade dessas pessoas (51,6%) são idosas.
 
@@ -72,7 +72,7 @@ npm run css:watch  # recompila automaticamente enquanto você edita
 
 ## Dados
 
-Os dados ficam em `data/servicos.json`, `data/nordeste.json` e `data/norte.json`. O `js/dados.js` é **gerado** a partir deles — não edite à mão.
+Os dados ficam em `data/servicos.json`, `data/nordeste.json`, `data/norte.json`, `data/sudeste.json`, `data/centro-oeste.json` e `data/sul.json`. O `js/dados.js` é **gerado** a partir deles — não edite à mão.
 
 ```bash
 npm run dados     # gera o js/dados.js e confere se há erros
