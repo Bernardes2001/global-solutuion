@@ -1,6 +1,6 @@
 /* Serviço Fácil — base de dados do catálogo.
  * ARQUIVO GERADO: não edite à mão. Edite os arquivos em data/ e rode `npm run dados`.
- * Pesquisa do grupo, consulta em 2026-11-15. Lido pelo js/servicos.js e js/impacto.js. */
+ * Pesquisa do grupo, consulta em 2026-11-18. Lido pelo js/servicos.js e js/impacto.js. */
 
 const servicos = [
   {
@@ -46,6 +46,38 @@ const servicos = [
         "fontes": [
           "cpf-ins"
         ]
+      },
+      {
+        "documento": "Identificação e CPF do procurador e procuração pública ou particular",
+        "quando": "Pedido por procurador.",
+        "observacao": "Apresentar também documentos do titular; procuração do exterior exige apostila ou legalização consular, salvo exceção legal.",
+        "fontes": [
+          "cpf-norma"
+        ]
+      },
+      {
+        "documento": "Laudo médico e prova do vínculo, ou termo de curatela",
+        "quando": "Pedido de pessoa com deficiência adulta feito por familiar ou curador.",
+        "observacao": "Levar identificação/certidão do titular e do requerente; documentos variam conforme a representação.",
+        "fontes": [
+          "cpf-ins"
+        ]
+      },
+      {
+        "documento": "Certidão de óbito, identificação do requerente, prova de legitimidade e justificativa da inscrição",
+        "quando": "Inscrição de falecido.",
+        "observacao": "Acrescentar identificação/certidão do falecido se o óbito não trouxer nascimento, naturalidade/nacionalidade e filiação.",
+        "fontes": [
+          "cpf-ins"
+        ]
+      },
+      {
+        "documento": "Foto do solicitante segurando identificação próxima ao rosto",
+        "quando": "Atendimento por e-mail.",
+        "observacao": "Documento completo e legível; se necessário, uma foto da frente e outra do verso.",
+        "fontes": [
+          "cpf-ins"
+        ]
       }
     ],
     "passo_a_passo": [
@@ -59,7 +91,7 @@ const servicos = [
       },
       {
         "ordem": 2,
-        "acao": "Cumprir eventual exigência da Receita e obter comprovante.",
+        "acao": "Se houver protocolo ou exigência, apresentar protocolo e documentos à Receita (ou consulado, no exterior) e obter o comprovante; o atendente pode pedir complementos.",
         "canal_url": "https://www.gov.br/pt-br/servicos/inscrever-no-cpf",
         "fontes": [
           "cpf-ins"
@@ -82,8 +114,8 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "pendente",
-      "descricao": "Prazo final depende do canal e da análise; não confirmado.",
+      "status": "com_ressalva",
+      "descricao": "Média publicada: 15 minutos; por e-mail, 48 horas. Havendo protocolo que exija apresentação de documentos, essa etapa tem média de 2 dias úteis. São estimativas, conforme o canal e eventual exigência.",
       "fontes": [
         "cpf-ins"
       ]
@@ -95,9 +127,9 @@ const servicos = [
       {
         "id": "cpf-ins",
         "url": "https://www.gov.br/pt-br/servicos/inscrever-no-cpf",
-        "titulo": "Inscrever Cidadão no CPF",
+        "titulo": "Inscrever Cidadão no Cadastro de Pessoas Físicas (CPF)",
         "orgao": "Receita Federal",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "nome",
@@ -107,17 +139,30 @@ const servicos = [
           "passo_a_passo",
           "canais",
           "custo",
-          "observacoes"
+          "observacoes",
+          "prazo"
         ],
         "limitacoes": []
+      },
+      {
+        "id": "cpf-norma",
+        "url": "https://normas.receita.fazenda.gov.br/sijut2consulta/link.action?idAto=135611",
+        "titulo": "Instrução Normativa RFB nº 2.172/2024 — texto alterado",
+        "orgao": "Receita Federal",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "documentos_condicionais"
+        ],
+        "limitacoes": [
+          "Abertura sem texto legível; art. 34 e alterações consultados no índice oficial."
+        ]
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Prazo final por canal; documentação de procuração, falecidos e demais situações especiais não consolidada."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "br-cpf-comprovante",
@@ -436,12 +481,13 @@ const servicos = [
     "descricao": "Solicitar documento de viagem.",
     "publico": "Brasileiros em território brasileiro.",
     "condicoes_acesso": [
-      "Comparecimento presencial inclusive de menores; requisitos individualizados pela PF."
+      "Comparecimento presencial inclusive de menores; requisitos individualizados pela PF.",
+      "CPF válido inclusive para menores; CPF suspenso, cancelado ou nulo impede emissão. A PF consulta regularidade eleitoral e militar quando aplicável."
     ],
     "documentos_obrigatorios": [
       {
         "documento": "Identificação e documento com CPF",
-        "observacao": "Consultar alternativas admitidas pela PF.",
+        "observacao": "Originais. Menor de 12 anos pode usar certidão de nascimento legível; documento digital exige validade legal e mecanismo de autenticação.",
         "fontes": [
           "pass-doc"
         ]
@@ -460,7 +506,7 @@ const servicos = [
       {
         "documento": "Passaporte anterior ou documentação da ocorrência",
         "quando": "Já possui passaporte.",
-        "observacao": "Conferir regra de validade/perda.",
+        "observacao": "Passaporte válido: apresentar. Roubo/furto: ocorrência policial; apreensão: termo. Perda/extravio/destruição: comunicação de ocorrência da PF e taxa majorada, ressalvadas exceções da lista.",
         "fontes": [
           "pass-doc"
         ]
@@ -488,15 +534,40 @@ const servicos = [
         "fontes": [
           "pass-doc"
         ]
+      },
+      {
+        "documento": "Certificado de naturalização, portaria ou certidão positiva de naturalização",
+        "quando": "Brasileiro naturalizado.",
+        "observacao": "Forma de comprovação depende da data da naturalização, conforme lista da PF.",
+        "fontes": [
+          "pass-doc"
+        ]
+      },
+      {
+        "documento": "Certidão ou documento oficial que complete dados da identificação e comprove o sexo",
+        "quando": "Dados ausentes, desatualizados ou sexo não demonstrado na identificação.",
+        "observacao": "Apresentar complemento conforme lista da PF.",
+        "fontes": [
+          "pass-doc"
+        ]
+      },
+      {
+        "documento": "Certidão de nascimento/traslado no livro E ou prova de opção de nacionalidade",
+        "quando": "Brasileiro nascido no exterior solicitando primeiro passaporte pela PF.",
+        "observacao": "A alternativa depende do registro consular, idade e situação de nacionalidade; responder à lista individualizada.",
+        "fontes": [
+          "pass-doc"
+        ]
       }
     ],
     "passo_a_passo": [
       {
         "ordem": 1,
-        "acao": "Conferir lista individualizada e preencher formulário oficial.",
+        "acao": "Conferir a lista geral e gerar a lista individualizada da PF, inclusive nacionalidade, menor, nome anterior e passaporte válido; preencher o formulário. Divergências podem gerar documentos adicionais.",
         "canal_url": "https://www.gov.br/pt-br/servicos/obter-passaporte-comum-para-brasileiro",
         "fontes": [
-          "pass"
+          "pass",
+          "pass-doc"
         ]
       },
       {
@@ -534,7 +605,7 @@ const servicos = [
     },
     "prazo": {
       "status": "com_ressalva",
-      "descricao": "Portal estima 6–10 dias úteis; confirmar disponibilidade de atendimento e entrega na unidade.",
+      "descricao": "Após o atendimento presencial, entrega geralmente em 6–10 dias úteis, conforme unidade. Pagamento e agendamento são etapas anteriores; o portal estima 24–72 horas para pagamento e 1–15 dias úteis para agendamento. Confirmar o prazo informado pela unidade.",
       "fontes": [
         "pass"
       ]
@@ -548,7 +619,7 @@ const servicos = [
         "url": "https://www.gov.br/pt-br/servicos/obter-passaporte-comum-para-brasileiro",
         "titulo": "Obter passaporte",
         "orgao": "PF",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "nome",
@@ -565,25 +636,24 @@ const servicos = [
       {
         "id": "pass-doc",
         "url": "https://www.gov.br/pf/pt-br/assuntos/passaporte/documentacao/lista-brasileiro",
-        "titulo": "Documentação necessária — solicitante brasileiro",
+        "titulo": "Documentação necessária",
         "orgao": "PF",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "documentos",
-          "condicoes_acesso"
+          "condicoes_acesso",
+          "documentos_condicionais"
         ],
         "limitacoes": [
           "Lista resumida; consultar orientações completas para nacionalidade, menores, mudanças cadastrais e regularidade."
         ]
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Exceções documentais devem ser verificadas na lista individualizada da PF."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "br-cadunico",
@@ -602,14 +672,15 @@ const servicos = [
     "descricao": "Registrar composição e condições da família para políticas sociais.",
     "publico": "Famílias de baixa renda; acima de meio salário mínimo por pessoa, quando vinculadas a programa específico.",
     "condicoes_acesso": [
-      "Responsável familiar a partir de 16 anos; representante legal quando necessário."
+      "Responsável familiar a partir de 16 anos; representante legal quando necessário.",
+      "Família unipessoal que busca transferência de renda exige entrevista domiciliar. Exceções: indígena, quilombola, situação de rua, domicílio coletivo, área de violência/difícil acesso, calamidade/emergência/desastre ou proteção/medida protetiva."
     ],
     "documentos_obrigatorios": [
       {
         "documento": "CPF/documento com CPF dos integrantes",
-        "observacao": "Levar documentos de todos; falta documental requer orientação do posto.",
+        "observacao": "CPF é a chave do cadastro. Sem CPF, a entrevista pode ser iniciada, mas o registro fica aguardando regularização e pode ser excluído se não for completado.",
         "fontes": [
-          "cad-faq"
+          "cad-atual"
         ]
       }
     ],
@@ -632,9 +703,9 @@ const servicos = [
         ]
       },
       {
-        "documento": "Termo de responsabilidade",
-        "quando": "Família unipessoal, conforme enquadramento.",
-        "observacao": "Há exceções; atendimento domiciliar pode ser necessário.",
+        "documento": "Documento com foto e Termo de Responsabilidade assinado",
+        "quando": "Inclusão ou atualização de família unipessoal.",
+        "observacao": "Indígenas, quilombolas e pessoas em situação de rua são dispensados deste procedimento específico.",
         "fontes": [
           "cad-faq"
         ]
@@ -651,11 +722,11 @@ const servicos = [
       },
       {
         "ordem": 2,
-        "acao": "Participar da entrevista; atualizar mudanças e, no máximo, a cada dois anos.",
+        "acao": "Participar da entrevista e completar documentos pendentes; sem documentação o cadastro fica incompleto e não dá acesso aos programas. Atualizar mudanças e, no máximo, a cada dois anos.",
         "canal_url": "https://www.gov.br/mds/pt-br/acoes-e-programas/cadastro-unico/perguntas-frequentes-cadastro-unico",
         "fontes": [
           "cad",
-          "cad-faq"
+          "cad-atual"
         ]
       }
     ],
@@ -680,10 +751,11 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "pendente",
-      "descricao": "Agendamento e conclusão dependem do município.",
+      "status": "com_ressalva",
+      "descricao": "Portal estima média de 1 hora de atendimento. Local e agendamento variam por município; entrevista domiciliar e complementação documental podem exigir outro atendimento. Não é prazo para concessão de benefício.",
       "fontes": [
-        "cad"
+        "cad",
+        "cad-faq"
       ]
     },
     "observacoes": [
@@ -695,7 +767,7 @@ const servicos = [
         "url": "https://www.gov.br/pt-br/servicos/inscrever-se-no-cadastro-unico-para-programas-sociais-do-governo-federal",
         "titulo": "Inscrever-se no Cadastro Único",
         "orgao": "MDS",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "nome",
@@ -705,7 +777,8 @@ const servicos = [
           "passo_a_passo",
           "canais",
           "custo",
-          "observacoes"
+          "observacoes",
+          "prazo"
         ],
         "limitacoes": [
           "Carta contém referência antiga a CPF ou título."
@@ -716,24 +789,38 @@ const servicos = [
         "url": "https://www.gov.br/mds/pt-br/acoes-e-programas/cadastro-unico/perguntas-frequentes-cadastro-unico",
         "titulo": "Perguntas Frequentes — Cadastro Único",
         "orgao": "MDS",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "documentos",
+          "passo_a_passo",
+          "observacoes",
+          "documentos_condicionais",
+          "condicoes_acesso"
+        ],
+        "limitacoes": [
+          "Página reúne seções de anos distintos; usadas orientações documentais e de unipessoais mais recentes, sem aplicar exigência domiciliar indiscriminadamente."
+        ]
+      },
+      {
+        "id": "cad-atual",
+        "url": "https://www.gov.br/mds/pt-br/acoes-e-programas/cadastro-unico/Cadastro-unico/",
+        "titulo": "Cadastro-Único",
+        "orgao": "MDS",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "documentos",
           "passo_a_passo",
           "observacoes"
         ],
-        "limitacoes": [
-          "Página reúne seções de anos distintos; usadas orientações documentais e de unipessoais mais recentes, sem aplicar exigência domiciliar indiscriminadamente."
-        ]
+        "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Confirmar agenda municipal e tratamento de famílias sem documentos; consolidar exceções de unipessoais no município."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "br-id-jovem",
@@ -851,43 +938,148 @@ const servicos = [
       "municipio": null
     },
     "orgao_responsavel": "MEC; comprovação pela instituição de ensino",
-    "descricao": "Concorrer a bolsa integral ou parcial em faculdade privada.",
+    "descricao": "Concorrer a bolsa integral ou parcial em faculdade privada. Após a pré-seleção, comprovar as informações do candidato e do grupo familiar na instituição de ensino.",
     "publico": "Brasileiros sem graduação, conforme critérios do edital.",
     "condicoes_acesso": [
       "Enem: média mínima 450, redação acima de zero; edições admitidas no edital.",
-      "Renda por pessoa: até 1,5 salário mínimo para bolsa integral e três para parcial; professores têm regra específica."
+      "Renda por pessoa: até 1,5 salário mínimo para bolsa integral e três para parcial; professores têm regra específica.",
+      "A documentação abaixo é para a comprovação após a pré-seleção; na inscrição inicial, são informados os dados. A faculdade define o canal de entrega e os comprovantes aplicáveis a cada situação.",
+      "Os exemplos de renda não precisam ser enviados todos juntos: o coordenador do ProUni define quais comprovantes apresentar. Professores que concorrem pela regra específica de docência têm dispensa do requisito de renda."
     ],
     "documentos_obrigatorios": [
       {
-        "documento": "Identificação do candidato e familiares",
-        "observacao": "Na comprovação após pré-seleção.",
+        "documento": "Documento de identificação e CPF do candidato",
+        "observacao": "RG/CIN ou outra identificação aceita pelo MEC, como CNH válida.",
+        "fontes": [
+          "prouni",
+          "prouni-doc"
+        ]
+      },
+      {
+        "documento": "Identificação dos integrantes do grupo familiar declarado",
+        "observacao": "Preparar os documentos das pessoas informadas na inscrição; conferir no checklist da faculdade a exigência de CPF dos familiares.",
         "fontes": [
           "prouni-doc"
         ]
       },
       {
-        "documento": "Comprovante de residência e escolaridade",
-        "observacao": "Na instituição; conferir histórico/conclusão exigidos.",
+        "documento": "Comprovante de residência",
+        "observacao": "Em nome do candidato ou de integrante do grupo familiar; por exemplo, conta de água, energia, gás ou telefone.",
+        "fontes": [
+          "prouni-doc"
+        ]
+      },
+      {
+        "documento": "Histórico e comprovante de conclusão do ensino médio",
+        "observacao": "Certificado ou declaração aceita pela faculdade; comprovar a trajetória escolar informada.",
         "fontes": [
           "prouni",
-          "prouni-doc"
+          "prouni-doc",
+          "prouni-exemplo-ies"
+        ]
+      },
+      {
+        "documento": "Comprovação de renda do candidato e do grupo familiar",
+        "observacao": "Preparar os comprovantes por atividade indicados abaixo, conforme solicitação da faculdade e eventual dispensa aplicável.",
+        "fontes": [
+          "prouni",
+          "prouni-renda"
+        ]
+      },
+      {
+        "documento": "Resultado do Enem",
+        "observacao": "Resultado da edição utilizada na seleção, conforme edital e orientações da instituição.",
+        "fontes": [
+          "prouni"
         ]
       }
     ],
     "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
-        "documento": "Comprovantes de renda",
-        "quando": "Quando renda integrar a elegibilidade.",
-        "observacao": "Documentos variam por atividade de cada familiar; não exigir só três holerites.",
+        "documento": "Holerites ou contracheques",
+        "quando": "Trabalho assalariado.",
+        "observacao": "Referência do MEC: 3 últimos para renda fixa ou 6 quando houver comissão ou horas extras; a faculdade define os comprovantes do caso.",
+        "fontes": [
+          "prouni-renda"
+        ]
+      },
+      {
+        "documento": "CTPS, extratos bancários e declaração de Imposto de Renda com recibo",
+        "quando": "Quando solicitados para comprovar a renda.",
+        "observacao": "O MEC relaciona extratos de pelo menos 3 meses; declaração de IR e recibo quando aplicáveis. Não presumir que todos sejam exigidos juntos.",
+        "fontes": [
+          "prouni-renda"
+        ]
+      },
+      {
+        "documento": "Extrato recente de pagamento do benefício",
+        "quando": "Aposentado ou pensionista.",
+        "observacao": "Extrato do benefício previdenciário; outros comprovantes podem ser pedidos pela instituição.",
+        "fontes": [
+          "prouni-renda"
+        ]
+      },
+      {
+        "documento": "Comprovantes de atividade por conta própria ou empresa",
+        "quando": "Autônomo, profissional liberal, MEI, sócio ou dirigente.",
+        "observacao": "Conforme atividade: declarações tributárias, recolhimento ao INSS, extratos bancários ou comprovantes de remuneração; conferir documentos pessoais e da empresa pedidos pelo coordenador.",
+        "fontes": [
+          "prouni-renda"
+        ]
+      },
+      {
+        "documento": "CTPS e declaração de ausência de renda",
+        "quando": "Candidato ou familiar declarou não ter renda e a faculdade pede esses comprovantes.",
+        "observacao": "Usar o modelo da instituição. Exemplo: a FAMEESP exige os dois; isso não constitui uma lista nacional obrigatória para todas as faculdades.",
+        "fontes": [
+          "prouni-exemplo-ies"
+        ]
+      },
+      {
+        "documento": "Declaração de bolsa no ensino médio particular",
+        "quando": "Quando foi declarada a condição de bolsista na escola privada.",
+        "observacao": "Solicitar à escola o comprovante dos períodos e da condição informada.",
         "fontes": [
           "prouni-doc"
         ]
       },
       {
-        "documento": "Comprovações de deficiência, docência, composição familiar ou pensão",
-        "quando": "Conforme situação declarada e edital.",
-        "observacao": "Instituição pode solicitar complementos.",
+        "documento": "Comprovante de separação, divórcio ou óbito dos pais",
+        "quando": "Um dos pais não integra o grupo familiar por esse motivo.",
+        "observacao": "Para outras razões de ausência, o coordenador pode solicitar declaração específica.",
+        "fontes": [
+          "prouni-doc"
+        ]
+      },
+      {
+        "documento": "Decisão, acordo homologado ou escritura de pensão alimentícia",
+        "quando": "Pensão paga foi deduzida da renda bruta declarada.",
+        "observacao": "Apresentar o documento que determina o pagamento.",
+        "fontes": [
+          "prouni-doc"
+        ]
+      },
+      {
+        "documento": "Laudo médico de deficiência",
+        "quando": "Candidato concorre nessa condição.",
+        "observacao": "Laudo com espécie, grau e CID, conforme edital.",
+        "fontes": [
+          "prouni-doc"
+        ]
+      },
+      {
+        "documento": "Comprovante de exercício do magistério na educação básica pública",
+        "quando": "Professor concorre pela regra específica de docência.",
+        "observacao": "Comprovar vínculo efetivo no quadro permanente, conforme os critérios da bolsa.",
+        "fontes": [
+          "prouni-doc"
+        ]
+      },
+      {
+        "documento": "Documentos de ensino médio no exterior e tradução juramentada",
+        "quando": "Escolaridade cursada fora do Brasil.",
+        "observacao": "Apresentar originais e tradução para o português, conforme orientação do MEC.",
         "fontes": [
           "prouni-doc"
         ]
@@ -904,19 +1096,22 @@ const servicos = [
       },
       {
         "ordem": 2,
-        "acao": "Se pré-selecionado, obter checklist e comprovar informações na instituição.",
+        "acao": "Após a pré-seleção, consultar o checklist e o prazo da faculdade. Entregar os documentos do candidato e do grupo familiar pelo canal eletrônico indicado ou presencialmente; no presencial, levar originais para conferência das cópias.",
         "canal_url": "https://www.gov.br/pt-br/servicos/obter-bolsa-de-estudo-do-prouni",
         "fontes": [
           "prouni",
-          "prouni-doc"
+          "prouni-doc",
+          "prouni-pos-selecao",
+          "prouni-entrega"
         ]
       },
       {
         "ordem": 3,
-        "acao": "Acompanhar validação e matrícula nos prazos da chamada.",
+        "acao": "Guardar o protocolo de recebimento da documentação, acompanhar eventuais pedidos de complementação e concluir a matrícula nos prazos da chamada.",
         "canal_url": "https://www.gov.br/pt-br/servicos/obter-bolsa-de-estudo-do-prouni",
         "fontes": [
-          "prouni"
+          "prouni",
+          "prouni-entrega"
         ]
       }
     ],
@@ -937,13 +1132,16 @@ const servicos = [
     },
     "prazo": {
       "status": "com_ressalva",
-      "descricao": "Inscrição, comprovação e matrícula seguem edição/chamada; nenhuma janela aberta foi confirmada.",
+      "descricao": "Portal estima de 1 a 3 meses. Inscrição, chamadas, comprovação e matrícula seguem o edital de cada edição; conferir prazos e documentos com a instituição selecionada.",
       "fontes": [
-        "prouni"
+        "prouni",
+        "prouni-doc"
       ]
     },
     "observacoes": [
-      "Inscrição não exige antecipar toda documentação de comprovação."
+      "Inscrição inicial e comprovação documental são etapas distintas.",
+      "A instituição pode solicitar documentos adicionais; a lista principal não substitui o checklist da faculdade.",
+      "O MEC veda exigir autenticação das cópias em cartório; a conferência é feita com os originais."
     ],
     "fontes": [
       {
@@ -951,7 +1149,7 @@ const servicos = [
         "url": "https://www.gov.br/pt-br/servicos/obter-bolsa-de-estudo-do-prouni",
         "titulo": "Obter bolsa de estudo pelo ProUni",
         "orgao": "MEC",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "nome",
@@ -973,24 +1171,83 @@ const servicos = [
         "url": "https://prouniportal.mec.gov.br/tire-suas-duvidas-pesquisa/documentacao",
         "titulo": "ProUni — Documentação",
         "orgao": "MEC",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "trecho_indexado",
         "sustenta": [
           "documentos",
           "passo_a_passo",
-          "observacoes"
+          "observacoes",
+          "documentos_condicionais"
         ],
         "limitacoes": [
-          "Abertura retornou 403; evidência apenas indexada. Há texto antigo sobre escolaridade privada, não usado para excluir candidatos."
+          "Abertura bloqueada (403); checklist oficial consultado por trechos indexados. Coordenador define comprovantes e pode solicitar complementos."
         ]
+      },
+      {
+        "id": "prouni-renda",
+        "url": "https://prouniportal.mec.gov.br/tire-suas-duvidas-pesquisa/documentacao/76-comprovantes-de-rendimentos",
+        "titulo": "ProUni — Comprovantes de rendimentos",
+        "orgao": "MEC",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "documentos",
+          "documentos_condicionais",
+          "condicoes_acesso"
+        ],
+        "limitacoes": [
+          "Abertura direta bloqueada (403); conteúdo recuperado no índice oficial. São possibilidades de comprovação, selecionadas pelo coordenador."
+        ],
+        "data_consulta": "2026-11-18"
+      },
+      {
+        "id": "prouni-pos-selecao",
+        "url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/perguntas-frequentes/programa-universidade-para-todos-prouni/processo-seletivo/o-que-fazer-depois-da",
+        "titulo": "O que fazer depois da pré-seleção?",
+        "orgao": "MEC",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "passo_a_passo",
+          "condicoes_acesso"
+        ],
+        "limitacoes": [
+          "Abertura mostrou verificação de acesso; orientação oficial recuperada no índice. O cronograma depende da edição."
+        ],
+        "data_consulta": "2026-11-18"
+      },
+      {
+        "id": "prouni-entrega",
+        "url": "https://prouniportal.mec.gov.br/images/legislacao/2022/portaria_nr_524_de_26_de_julho_de_2022.pdf",
+        "titulo": "Portaria MEC nº 524/2022 — entrega e protocolo da documentação",
+        "orgao": "MEC",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "passo_a_passo"
+        ],
+        "limitacoes": [
+          "Abertura bloqueada (403); arts. 14 e 15 recuperados no índice. Não utilizada para datas de seleção."
+        ],
+        "data_consulta": "2026-11-18"
+      },
+      {
+        "id": "prouni-exemplo-ies",
+        "url": "https://www.faculdademetropolitana.edu.br/prouni",
+        "titulo": "ProUni — documentação para comprovação de informações na FAMEESP",
+        "orgao": "Faculdade Metropolitana do Estado de São Paulo (FAMEESP)",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "documentos",
+          "documentos_condicionais"
+        ],
+        "limitacoes": [
+          "Exemplo institucional: a exigência de CTPS e declaração de ausência de renda é dessa faculdade; outras instituições definem seu próprio checklist."
+        ],
+        "data_consulta": "2026-11-18"
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Checklist definitivo e edital da instituição/edição; confirmar hipóteses e comprovantes específicos."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "br-fies",
@@ -1009,7 +1266,8 @@ const servicos = [
     "descricao": "Concorrer a financiamento de graduação privada.",
     "publico": "Candidatos que cumpram requisitos do edital.",
     "condicoes_acesso": [
-      "Enem desde 2010, sem treineiro: média mínima 450 e redação acima de zero; renda familiar até três salários mínimos por pessoa."
+      "Enem desde 2010, sem treineiro: média mínima 450 e redação acima de zero; renda familiar até três salários mínimos por pessoa.",
+      "Regras de Fies Social, garantias e comprovação dependem da modalidade e do edital; a pré-seleção gera expectativa de vaga, condicionada à validação e contratação."
     ],
     "documentos_obrigatorios": [
       {
@@ -1025,10 +1283,10 @@ const servicos = [
       {
         "documento": "Comprovantes de renda e demais informações da inscrição",
         "quando": "Validação na CPSA conforme modalidade.",
-        "observacao": "Checklist da instituição; não universalizar dispensa do Fies Social.",
+        "observacao": "CPSA define os comprovantes. Nas remanescentes 1/2026, Fies Social (CadÚnico e renda até meio salário mínimo por pessoa) dispensa comprovar renda, mas discrepâncias permitem exigir documentos; demais dados continuam sujeitos à validação.",
         "fontes": [
           "fies",
-          "fies-faq"
+          "fies-edital-2026"
         ]
       },
       {
@@ -1038,6 +1296,14 @@ const servicos = [
         "fontes": [
           "fies",
           "fies-caixa"
+        ]
+      },
+      {
+        "documento": "Laudo médico com espécie, grau e CID",
+        "quando": "Concorrência como pessoa com deficiência.",
+        "observacao": "Exigência verificada no edital das remanescentes 1/2026; seguir seleção pretendida.",
+        "fontes": [
+          "fies-edital-2026"
         ]
       }
     ],
@@ -1060,11 +1326,11 @@ const servicos = [
       },
       {
         "ordem": 3,
-        "acao": "Após validação, cumprir exigências do agente financeiro e formalizar contrato.",
+        "acao": "Após validação, conferir prazo e documentos com o agente financeiro e contratar. A CAIXA oferece app para quem não tem fiador, cônjuge ou representante; outros perfis seguem o atendimento indicado.",
         "canal_url": "https://www.gov.br/pt-br/servicos/obter-financiamento-do-fies",
         "fontes": [
           "fies",
-          "fies-faq"
+          "fies-caixa-digital"
         ]
       }
     ],
@@ -1085,14 +1351,14 @@ const servicos = [
     },
     "prazo": {
       "status": "com_ressalva",
-      "descricao": "Etapas têm prazos próprios; verificar sistema, edital e CPSA. Nenhuma inscrição aberta foi confirmada.",
+      "descricao": "Portal estima de 15 a 60 dias úteis. Complementação, CPSA e contrato têm prazos próprios no sistema/edital/DRI. Perder prazo pode encerrar a inscrição; não há janela aberta confirmada nesta ficha.",
       "fontes": [
         "fies",
-        "fies-faq"
+        "fies-edital-2026"
       ]
     },
     "observacoes": [
-      "DRI é gerado na validação; FAQ do MEC dispensa sua apresentação ao banco, que usa dados eletrônicos.",
+      "Nas remanescentes 1/2026, o edital dispensa apresentação do DRI ao banco, que consulta dados eletrônicos; o prazo de contratação continua obrigatório.",
       "Matrícula, validação da CPSA e contratação são etapas distintas."
     ],
     "fontes": [
@@ -1101,7 +1367,7 @@ const servicos = [
         "url": "https://www.gov.br/pt-br/servicos/obter-financiamento-do-fies",
         "titulo": "Obter Financiamento Estudantil",
         "orgao": "MEC",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "nome",
@@ -1112,7 +1378,8 @@ const servicos = [
           "passo_a_passo",
           "canais",
           "custo",
-          "prazo"
+          "prazo",
+          "documentos_condicionais"
         ],
         "limitacoes": [
           "Agenda ainda exibe 2025; não usada como prazo atual."
@@ -1148,14 +1415,43 @@ const servicos = [
         "limitacoes": [
           "Abertura apresentou redirecionamento circular; texto indexado informa DRI facultativo."
         ]
+      },
+      {
+        "id": "fies-edital-2026",
+        "url": "https://mecnormas.mec.gov.br/pesquisa/detalhar/9254",
+        "titulo": "Edital SESu nº 24/2026 — vagas remanescentes Fies 1/2026",
+        "orgao": "MEC",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "documentos_condicionais",
+          "passo_a_passo",
+          "prazo"
+        ],
+        "limitacoes": [
+          "Texto oficial indexado; abertura integral sem linhas legíveis. Regras específicas citadas pertencem às remanescentes 1/2026; verificar edital da seleção pretendida."
+        ]
+      },
+      {
+        "id": "fies-caixa-digital",
+        "url": "https://www.caixa.gov.br/appfies/Paginas/default.aspx",
+        "titulo": "FIES — Financiamento Estudantil",
+        "orgao": "CAIXA",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "passo_a_passo",
+          "documentos_condicionais"
+        ],
+        "limitacoes": [
+          "Conteúdo oficial indexado; contratação depende do perfil e do canal indicado pelo agente financeiro."
+        ]
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Lista documental final da CPSA/agente financeiro; exceções do Fies Social, modalidade e edição precisam de confirmação individual."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "br-sisu",
@@ -1171,20 +1467,21 @@ const servicos = [
       "municipio": null
     },
     "orgao_responsavel": "MEC; matrícula pela instituição pública",
-    "descricao": "Concorrer a vaga pública usando nota do Enem.",
+    "descricao": "Concorrer a vaga pública usando nota do Enem. A inscrição é feita com login e dados no Sisu; a matrícula e sua documentação são realizadas depois, na instituição convocante.",
     "publico": "Participante regular do Enem, sem redação zerada.",
     "condicoes_acesso": [
       "Conta gov.br; atender notas mínimas e modalidade da vaga.",
       "Na edição regular de 2026: Enem 2023, 2024 ou 2025, usando a melhor média ponderada para a opção. Conferir novamente em edições futuras."
     ],
     "documentos_obrigatorios": [],
-    "documentos_status": "pendente",
+    "documentos_status": "nao_se_aplica",
     "documentos_condicionais": [
       {
         "documento": "Documentação de matrícula definida pela instituição",
         "quando": "Após convocação.",
         "observacao": "Preparar identificação e escolaridade conforme edital; não existe lista nacional única.",
         "fontes": [
+          "sisu-norma",
           "sisu-ufop"
         ]
       },
@@ -1216,10 +1513,10 @@ const servicos = [
       },
       {
         "ordem": 3,
-        "acao": "Consultar site da instituição convocante e cumprir matrícula e validações.",
+        "acao": "Se convocado, abrir o edital de matrícula da instituição e cumprir seu checklist, cotas, canais e prazos. O Sisu não substitui essa matrícula.",
         "canal_url": "https://www.gov.br/pt-br/servicos/inscrever-se-no-sisu-sistema-de-selecao-unificada",
         "fontes": [
-          "sisu",
+          "sisu-norma",
           "sisu-ufop"
         ]
       }
@@ -1241,10 +1538,10 @@ const servicos = [
     },
     "prazo": {
       "status": "com_ressalva",
-      "descricao": "Seleção e matrícula seguem cronogramas distintos; nenhuma janela aberta foi confirmada.",
+      "descricao": "Portal estima cerca de 1 mês da inscrição à matrícula na seleção regular. Datas de inscrição, chamadas e lista de espera seguem o edital da edição; matrícula tem procedimentos, documentos e prazos definidos pela instituição.",
       "fontes": [
         "sisu",
-        "sisu-ufop"
+        "sisu-norma"
       ]
     },
     "observacoes": [
@@ -1258,7 +1555,7 @@ const servicos = [
         "url": "https://www.gov.br/pt-br/servicos/inscrever-se-no-sisu-sistema-de-selecao-unificada",
         "titulo": "Inscrever-se no Sisu",
         "orgao": "MEC",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "nome",
@@ -1279,13 +1576,16 @@ const servicos = [
         "url": "https://mecnormas.mec.gov.br/pesquisa/detalhar/959",
         "titulo": "Portaria Normativa MEC 21/2012 — texto alterado",
         "orgao": "MEC",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "trecho_indexado",
         "sustenta": [
-          "condicoes_acesso"
+          "condicoes_acesso",
+          "documentos_condicionais",
+          "prazo",
+          "passo_a_passo"
         ],
         "limitacoes": [
-          "Página aberta sem texto legível; regra de três edições disponível somente no índice."
+          "Texto consolidado indexado; abertura integral sem linhas legíveis. Art. 9º atribui documentos e procedimentos de matrícula à instituição."
         ]
       },
       {
@@ -1336,12 +1636,10 @@ const servicos = [
         ]
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Anexar edital, chamada e checklist da instituição escolhida; conferir edições válidas na seleção desejada."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "br-enem",
@@ -1357,16 +1655,16 @@ const servicos = [
       "municipio": null
     },
     "orgao_responsavel": "Inep",
-    "descricao": "Participar do exame conforme a edição.",
+    "descricao": "Participar do Enem conforme a edição. Esta ficha resume a aplicação regular de 2026; novas edições, Enem PPL e certificação têm procedimentos próprios no Inep.",
     "publico": "Interessados conforme edital; treineiros têm condições próprias.",
     "condicoes_acesso": [
       "CPF e acesso à Página do Participante.",
-      "Em 2026 existe inscrição automática para concluintes da rede pública, com providências no sistema."
+      "Inscrição automática 2026 para concluintes da rede pública: acessar o sistema e preencher o Questionário Socioeconômico para ver local. Prazo de língua estrangeira foi 18/10/2026; sem escolha, atribuição de inglês, sem alteração."
     ],
     "documentos_obrigatorios": [
       {
         "documento": "Documento oficial original com foto aceito",
-        "observacao": "Na prova: consultar lista; digitais apenas em aplicativos autorizados, incluindo gov.br.",
+        "observacao": "Na prova: RG/CIN, identificação de conselho profissional válida por lei, passaporte, CNH ou CTPS impressa após 27/01/1997. Digitais: e-Título, CNH, RG ou CIN nos apps oficiais/gov.br; não são aceitos prints/cópias.",
         "fontes": [
           "enem-prova"
         ]
@@ -1375,22 +1673,47 @@ const servicos = [
     "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
-        "documento": "Documentos para atendimento especializado ou recurso de isenção",
-        "quando": "Quando solicitados no edital.",
-        "observacao": "Não são exigidos de todos.",
+        "documento": "Documento de atendimento especializado com nome, diagnóstico/condição e assinatura/registro do profissional",
+        "quando": "Pedido de atendimento especializado.",
+        "observacao": "TEA pode usar CIPTEA; transtorno funcional pode usar declaração/parecer. Tempo adicional e acompanhante exigem justificar necessidade; seguir edital e resultado no sistema.",
         "fontes": [
           "enem-faq"
+        ]
+      },
+      {
+        "documento": "Certidão de nascimento do lactente ou documento de gestação; declaração hospitalar",
+        "quando": "Lactante ou participante em classe hospitalar.",
+        "observacao": "Cada hipótese tem requisitos próprios na FAQ/edital. Documento anterior aprovado de 2021–2025 pode ser reaproveitado para a mesma condição, exceto lactante/classe hospitalar.",
+        "fontes": [
+          "enem-faq"
+        ]
+      },
+      {
+        "documento": "Comprovantes da condição declarada para isenção, justificativa ou recurso",
+        "quando": "Solicitação dessas etapas.",
+        "observacao": "O edital correspondente define os documentos por motivo; não são exigidos de todos.",
+        "fontes": [
+          "enem-faq"
+        ]
+      },
+      {
+        "documento": "Identificação migratória ou documento estrangeiro admitido",
+        "quando": "Participante estrangeiro.",
+        "observacao": "Passaporte, documento do MJ, CRNM, documento provisório migratório ou identidade de país do Mercosul admitida no acordo, conforme lista do Inep.",
+        "fontes": [
+          "enem-prova"
         ]
       }
     ],
     "passo_a_passo": [
       {
         "ordem": 1,
-        "acao": "Consultar edital e acessar Página do Participante para inscrição/confirmação aplicável.",
+        "acao": "Acessar a Página do Participante e conferir edital/retificações no índice do Inep; na inscrição automática de 2026, observar as providências e prazos específicos.",
         "canal_url": "https://www.gov.br/inep/pt-br/acesso-a-informacao/perguntas-frequentes/exame-nacional-do-ensino-medio-enem",
         "fontes": [
           "enem-faq",
-          "enem-ret"
+          "enem-ret",
+          "enem-legis"
         ]
       },
       {
@@ -1420,6 +1743,11 @@ const servicos = [
         "tipo": "portal_oficial",
         "nome": "No Dia do Exame",
         "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/orientacoes/no-dia-do-exame"
+      },
+      {
+        "tipo": "portal_oficial",
+        "nome": "Editais e retificações do Enem",
+        "url": "https://www.gov.br/inep/pt-br/centrais-de-conteudo/legislacao/enem"
       }
     ],
     "custo": {
@@ -1432,7 +1760,7 @@ const servicos = [
     },
     "prazo": {
       "status": "com_ressalva",
-      "descricao": "FAQ informa inscrições de 25/05 a 12/06/2026; esse período passou. Próxima edição não confirmada.",
+      "descricao": "Edição 2026: inscrições de 25/5 a 12/6 e provas em 8 e 15/11 (períodos encerrados). Reaplicação: pedido de 16 a 20/11 e provas em 15–16/12; resultado previsto para 18/1/2027. Calendário e condições são próprios da edição.",
       "fontes": [
         "enem-faq"
       ]
@@ -1448,7 +1776,7 @@ const servicos = [
         "url": "https://www.gov.br/inep/pt-br/acesso-a-informacao/perguntas-frequentes/exame-nacional-do-ensino-medio-enem",
         "titulo": "Enem — Perguntas frequentes",
         "orgao": "Inep",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "nome",
@@ -1460,7 +1788,8 @@ const servicos = [
           "canais",
           "custo",
           "prazo",
-          "observacoes"
+          "observacoes",
+          "documentos_condicionais"
         ],
         "limitacoes": [
           "Página mistura orientações pré-edital e regras de 2026; não inferir inscrição aberta."
@@ -1471,7 +1800,7 @@ const servicos = [
         "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/orientacoes/no-dia-do-exame",
         "titulo": "No Dia do Exame",
         "orgao": "Inep",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "documentos",
@@ -1485,15 +1814,14 @@ const servicos = [
         "url": "https://mecnormas.mec.gov.br/pesquisa/detalhar/15620",
         "titulo": "Retificação de 07/10/2026 do Edital 64/2026",
         "orgao": "MEC / Inep",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "trecho_indexado",
         "sustenta": [
           "condicoes_acesso",
           "passo_a_passo"
         ],
         "limitacoes": [
-          "Lido somente trecho indexado; retificação distingue providências de inscritos automaticamente.",
-          "Abertura direta retornou página sem texto legível."
+          "Retificação oficial indexada; abertura integral sem texto legível. Aplica-se à inscrição automática da edição 2026."
         ]
       },
       {
@@ -1511,14 +1839,26 @@ const servicos = [
         "limitacoes": [
           "Conteúdo referente à edição de 2026."
         ]
+      },
+      {
+        "id": "enem-legis",
+        "url": "https://www.gov.br/inep/pt-br/centrais-de-conteudo/legislacao/enem",
+        "titulo": "Enem — Legislação",
+        "orgao": "Inep",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "canais"
+        ],
+        "limitacoes": [
+          "Índice oficial identifica edital 64/2026 e retificações; conteúdo dos painéis não aparece na abertura sem JavaScript."
+        ]
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Conferir edital consolidado e retificações antes de orientar casos especiais ou próxima edição."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "br-certidao-civil-segunda-via",
@@ -1536,28 +1876,59 @@ const servicos = [
     },
     "orgao_responsavel": "Cartório de Registro Civil responsável pelo registro; portal Registro Civil",
     "descricao": "Solicitar nova via de nascimento, casamento ou óbito.",
-    "publico": "Interessados em certidão, conforme regras do registro e tipo solicitado.",
+    "publico": "Qualquer pessoa pode requerer certidão, observadas as restrições legais de conteúdo, tipo e acesso ao registro.",
     "condicoes_acesso": [
-      "Identificar registro e fornecer os dados pedidos no canal."
+      "Portal: criar cadastro com nome, CPF, e-mail e telefone; identificar o registro e fornecer os dados pedidos. Para breve relato, o pedido usual é feito com dados; inteiro teor e registros restritos têm exigências adicionais.",
+      "No pedido comum, a lei permite solicitação por qualquer pessoa sem justificar interesse; exigências de representação/legitimidade se aplicam aos casos de acesso restrito analisados pelo cartório."
     ],
     "documentos_obrigatorios": [],
-    "documentos_status": "pendente",
-    "documentos_condicionais": [],
+    "documentos_status": "nao_se_aplica",
+    "documentos_condicionais": [
+      {
+        "documento": "Requerimento escrito, identificação e assinatura validada",
+        "quando": "Certidão em inteiro teor, ressalvado óbito.",
+        "observacao": "Informar requerente, motivo, parentesco se houver e se o registrado faleceu; assinatura por firma reconhecida, ICP-Brasil, gov.br ou conferência com identidade original. No cartório, assinatura perante oficial/preposto dispensa reconhecimento.",
+        "fontes": [
+          "civil-cnj"
+        ]
+      },
+      {
+        "documento": "Autorização judicial ou comprovação de legitimidade",
+        "quando": "Registro com dados restritos, sensíveis ou sigilosos.",
+        "observacao": "O cartório analisa o enquadramento; não há uma autorização universal exigida de todos. Óbito tem regra própria de acesso na norma do CNJ.",
+        "fontes": [
+          "civil-cnj",
+          "civil-termos"
+        ]
+      },
+      {
+        "documento": "Declaração de hipossuficiência econômica",
+        "quando": "Pedido de gratuidade.",
+        "observacao": "Solicitar no cartório ou no formulário eletrônico disponibilizado pelo operador. Havendo dúvida fundada, o registrador pode submeter o pedido ao juízo.",
+        "fontes": [
+          "civil-grat"
+        ]
+      }
+    ],
     "passo_a_passo": [
       {
         "ordem": 1,
-        "acao": "Acessar portal oficial, escolher certidão e preencher dados do registro.",
+        "acao": "Criar acesso no portal, escolher nascimento/casamento/óbito, identificar cartório/registro e conferir o tipo de certidão exigido pelo destinatário.",
         "canal_url": "https://www.registrocivil.org.br/",
         "fontes": [
-          "civil"
+          "civil",
+          "civil-termos"
         ]
       },
       {
         "ordem": 2,
-        "acao": "Selecionar formato/entrega e conferir valor; concluir pedido e acompanhar.",
+        "acao": "Conferir exigências, valor e formato/entrega; concluir e acompanhar em Meus Pedidos. Se buscar gratuidade ou inteiro teor restrito, seguir procedimento do cartório/CNJ.",
         "canal_url": "https://www.registrocivil.org.br/",
         "fontes": [
-          "civil"
+          "civil-faq",
+          "civil-termos",
+          "civil-cnj",
+          "civil-grat"
         ]
       }
     ],
@@ -1576,16 +1947,19 @@ const servicos = [
     "custo": {
       "status": "variavel",
       "valor_brl": null,
-      "descricao": "Emolumentos estaduais/distritais; frete e outros acréscimos podem existir. Valor e gratuidade devem ser conferidos no cartório.",
+      "descricao": "Emolumentos/encargos conforme tabela estadual/distrital; frete e materialização podem acrescentar custos. Pessoas sem recursos podem pedir gratuidade de emolumentos por declaração. Essa gratuidade não cobre remessa, diligências ou notificações, salvo cobertura prevista na lei local.",
       "fontes": [
-        "civil"
+        "civil-termos",
+        "civil-grat"
       ]
     },
     "prazo": {
-      "status": "pendente",
-      "descricao": "Sem prazo nacional confirmado para emissão e entrega.",
+      "status": "com_ressalva",
+      "descricao": "Certidão eletrônica: até 5 dias úteis após confirmação dos pagamentos, inclusive eventual complemento, se o registro for localizado. Frete/Correios é prazo adicional; inteiro teor sujeito a autorização judicial pode demorar mais.",
       "fontes": [
-        "civil"
+        "civil-faq",
+        "civil-termos",
+        "civil-cnj"
       ]
     },
     "observacoes": [
@@ -1611,14 +1985,89 @@ const servicos = [
           "Guia de 2019: útil para fluxo, não para preço ou prazo atual.",
           "Portal de solicitação aberto em 15/11/2026 sem conteúdo legível pelo extrator; fluxo autenticado não testado."
         ]
+      },
+      {
+        "id": "civil-faq",
+        "url": "https://www.registrocivil.org.br/faq",
+        "titulo": "FAQ — Atos de Registro Civil no Brasil",
+        "orgao": "ON-RCPN",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "prazo",
+          "canais"
+        ],
+        "limitacoes": [
+          "Portal abre sem conteúdo textual; FAQ consultada no índice oficial. Prazo de emissão é separado da entrega postal."
+        ]
+      },
+      {
+        "id": "civil-termos",
+        "url": "https://www.registrocivil.org.br/termos-aceite",
+        "titulo": "Termos de uso e condições do portal registrocivil.org.br",
+        "orgao": "ON-RCPN",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "documentos",
+          "condicoes_acesso",
+          "custo",
+          "prazo"
+        ],
+        "limitacoes": [
+          "Portal abre sem conteúdo textual; termos oficiais indexados. Inteiro teor pode depender de autorização judicial, conforme conteúdo."
+        ]
+      },
+      {
+        "id": "civil-cnj",
+        "url": "https://atos.cnj.jus.br/atos/detalhar/5243",
+        "titulo": "Código Nacional de Normas — Provimento CNJ nº 149/2023, texto consolidado",
+        "orgao": "CNJ",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "documentos_condicionais",
+          "prazo"
+        ],
+        "limitacoes": [
+          "Abertura bloqueada (403); arts. 117–119 e 239 consultados no índice oficial."
+        ]
+      },
+      {
+        "id": "civil-grat",
+        "url": "https://atos.cnj.jus.br/atos/detalhar/6875",
+        "titulo": "Provimento CNJ nº 221, de 22/04/2026 — gratuidade de emolumentos em registro civil",
+        "orgao": "CNJ",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "custo",
+          "documentos_condicionais"
+        ],
+        "limitacoes": [
+          "Abertura bloqueada (403); procedimento de declaração de hipossuficiência consultado em trecho oficial."
+        ]
+      },
+      {
+        "id": "civil-lei",
+        "url": "https://www2.camara.leg.br/legin/fed/lei/1970-1979/lei-6015-31-dezembro-1973-357511-normaatualizada-pl.html",
+        "titulo": "Lei nº 6.015/1973 — texto atualizado",
+        "orgao": "Câmara dos Deputados",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "publico",
+          "condicoes_acesso"
+        ],
+        "limitacoes": [
+          "Art. 17 consultado no índice oficial; observar restrições específicas de dados e inteiro teor do CNJ."
+        ]
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Checklist do cartório; requisitos de inteiro teor, representação, gratuidade e prazo; confirmar aceitação do formato pelo destinatário."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "br-titulo-alistamento",
@@ -1688,10 +2137,10 @@ const servicos = [
       },
       {
         "ordem": 2,
-        "acao": "Enviar pedido, acompanhar e comparecer para biometria/conclusão quando orientado.",
+        "acao": "Enviar os arquivos legíveis (PNG/JPG/JPEG/PDF até 5 MB cada), anotar protocolo e acompanhar no Autoatendimento; cumprir diligências e comparecer para biometria quando orientado.",
         "canal_url": "https://www.tse.jus.br/servicos-eleitorais/titulo-eleitoral/titulo-eleitoral-faq",
         "fontes": [
-          "titulo",
+          "titulo-auto",
           "titulo-doc"
         ]
       }
@@ -1712,10 +2161,10 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "pendente",
-      "descricao": "Análise conforme cartório. Cadastro reaberto em 03/11/2026.",
+      "status": "com_ressalva",
+      "descricao": "Pedido virtual: em regra, até 5 dias úteis para análise, decisão e envio ao processamento ou diligência; após envio, processamento pelo TSE em até 3 dias úteis. Exigências/biometria e agenda local podem alterar a conclusão. Cadastro reaberto em 3/11/2026.",
       "fontes": [
-        "titulo",
+        "titulo-auto",
         "titulo-reabre"
       ]
     },
@@ -1777,14 +2226,26 @@ const servicos = [
         "limitacoes": [
           "Datas anteriores à eleição não usadas como prazo atual."
         ]
+      },
+      {
+        "id": "titulo-auto",
+        "url": "https://www.tse.jus.br/servicos-eleitorais/titulo-eleitoral/autoatendimento-eleitoral",
+        "titulo": "Autoatendimento Eleitoral - Título Net",
+        "orgao": "TSE",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "prazo",
+          "passo_a_passo",
+          "documentos_condicionais"
+        ],
+        "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Prazo de conclusão e agenda da zona eleitoral."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "br-quitacao",
@@ -1952,6 +2413,22 @@ const servicos = [
         "fontes": [
           "mil-alist"
         ]
+      },
+      {
+        "documento": "Atestado de pobreza expedido por assistência social oficial ou autoridade competente",
+        "quando": "Pedido de isenção de multa por impossibilidade de pagar.",
+        "observacao": "Apresentar à Junta, nos termos do art. 225 do Regulamento.",
+        "fontes": [
+          "mil-reg"
+        ]
+      },
+      {
+        "documento": "Parecer médico e documento de tutela/curatela, se houver",
+        "quando": "Análise de deficiência/incapacidade ou representação.",
+        "observacao": "O alistamento continua obrigatório; a Junta analisa eventual Certificado de Isenção.",
+        "fontes": [
+          "mil-faq"
+        ]
       }
     ],
     "passo_a_passo": [
@@ -1980,18 +2457,20 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pendente",
+      "status": "variavel",
       "valor_brl": null,
-      "descricao": "Taxas/multas dependem da situação; valor não consolidado para esta etapa.",
+      "descricao": "Alistamento de janeiro a junho do ano dos 18 anos é gratuito. Fora do prazo, há multa militar corrigida trimestralmente; a Junta informa a cobrança vigente. Impossibilidade de pagar por pobreza permite pedir isenção.",
       "fontes": [
-        "mil-alist"
+        "mil-faq",
+        "mil-reg"
       ]
     },
     "prazo": {
       "status": "com_ressalva",
-      "descricao": "Alistamento: janeiro a junho; seleção e regularização têm calendário próprio.",
+      "descricao": "Alistamento: janeiro a junho do ano dos 18 anos; a carta informa atendimento imediato (espera presencial de até 1 hora). Atrasados procuram a Junta; seleção, dispensa e incorporação seguem convocação própria.",
       "fontes": [
-        "mil-alist"
+        "mil-alist",
+        "mil-faq"
       ]
     },
     "observacoes": [
@@ -2002,9 +2481,9 @@ const servicos = [
       {
         "id": "mil-alist",
         "url": "https://www.gov.br/pt-br/servicos/alistar-se-no-servico-militar-obrigatorio",
-        "titulo": "Serviço Militar Obrigatório",
+        "titulo": "Serviço Militar Obrigatório: Alistamento, Seleção Geral, Seleção Complementar e Incorporação",
         "orgao": "Ministério da Defesa",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "nome",
@@ -2017,14 +2496,40 @@ const servicos = [
           "observacoes"
         ],
         "limitacoes": []
+      },
+      {
+        "id": "mil-faq",
+        "url": "https://alistamento.eb.mil.br/help/faq",
+        "titulo": "Alistamento Militar Online — Perguntas Frequentes",
+        "orgao": "Exército Brasileiro",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "custo",
+          "prazo",
+          "documentos_condicionais",
+          "passo_a_passo"
+        ],
+        "limitacoes": []
+      },
+      {
+        "id": "mil-reg",
+        "url": "https://www2.camara.leg.br/legin/fed/decret/1960-1969/decreto-57654-20-janeiro-1966-398253-normaatualizada-pe.html",
+        "titulo": "Decreto nº 57.654/1966 — Regulamento da Lei do Serviço Militar",
+        "orgao": "Câmara dos Deputados",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "custo",
+          "documentos_condicionais"
+        ],
+        "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Custos de atraso e situações especiais; agenda local."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "br-certificado-dispensa",
@@ -2053,6 +2558,13 @@ const servicos = [
         "fontes": [
           "mil-cdi"
         ]
+      },
+      {
+        "documento": "Comprovante de residência",
+        "observacao": "No atendimento da Junta, conforme FAQ do Exército.",
+        "fontes": [
+          "mil-faq"
+        ]
       }
     ],
     "documentos_status": "confirmado",
@@ -2064,15 +2576,25 @@ const servicos = [
         "fontes": [
           "mil-cdi"
         ]
+      },
+      {
+        "documento": "Atestado de pobreza expedido por assistência social oficial ou autoridade competente",
+        "quando": "Pedido de isenção da taxa por impossibilidade de pagar.",
+        "observacao": "Análise pela Junta nos termos do art. 225 do Regulamento.",
+        "fontes": [
+          "mil-reg"
+        ]
       }
     ],
     "passo_a_passo": [
       {
         "ordem": 1,
-        "acao": "Acessar Emita seu certificado e requerer dispensa; pagar taxa aplicável.",
+        "acao": "Requerer dispensa no portal oficial ou na Junta; pagar a taxa vigente por Pix/cartão/GRU ou pedir isenção quando cabível. GRU exige comprovar pagamento na Junta; Pix/cartão têm confirmação automática.",
         "canal_url": "https://www.gov.br/defesa/pt-br/carta-de-servico/servico-militar-obrigatorio-smo",
         "fontes": [
-          "mil-def"
+          "mil-def",
+          "mil-faq",
+          "mil-reg"
         ]
       },
       {
@@ -2092,20 +2614,20 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago",
+      "status": "variavel",
       "valor_brl": null,
-      "descricao": "Há taxa reajustada trimestralmente; R$ 6,38 na carta não foi confirmado como valor do trimestre atual.",
+      "descricao": "Taxa militar com reajuste trimestral: usar o valor apresentado na cobrança oficial, sem tratar R$ 6,38 da carta como cotação do trimestre atual. Quem comprovar impossibilidade de pagar por pobreza pode pedir isenção à Junta.",
       "fontes": [
         "mil-cdi",
-        "mil-def"
+        "mil-reg"
       ]
     },
     "prazo": {
-      "status": "pendente",
-      "descricao": "Depende do pagamento, juramento e disponibilização; confirmar na Junta.",
+      "status": "com_ressalva",
+      "descricao": "Prazo do CDI varia conforme capacidade de cada Junta. Após confirmação do pagamento, a Junta informa a data do juramento/entrega. A média de 1 hora da carta refere-se à etapa de atendimento, sem garantir toda a tramitação.",
       "fontes": [
-        "mil-cdi",
-        "mil-def"
+        "mil-faq",
+        "mil-cdi"
       ]
     },
     "observacoes": [
@@ -2115,9 +2637,9 @@ const servicos = [
       {
         "id": "mil-cdi",
         "url": "https://www.gov.br/pt-br/servicos/alistar-se-no-servico-militar-obrigatorio",
-        "titulo": "Serviço Militar Obrigatório — etapa de dispensa",
+        "titulo": "Serviço Militar Obrigatório: Alistamento, Seleção Geral, Seleção Complementar e Incorporação",
         "orgao": "Ministério da Defesa",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "nome",
@@ -2125,16 +2647,17 @@ const servicos = [
           "publico",
           "condicoes_acesso",
           "documentos",
-          "custo"
+          "custo",
+          "prazo"
         ],
         "limitacoes": []
       },
       {
         "id": "mil-def",
         "url": "https://www.gov.br/defesa/pt-br/carta-de-servico/servico-militar-obrigatorio-smo",
-        "titulo": "Carta de Serviço Militar Obrigatório",
+        "titulo": "Serviço Militar Obrigatório: Alistamento, Seleção Geral, Seleção Complementar e Incorporação (SMO)",
         "orgao": "Ministério da Defesa",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "passo_a_passo",
@@ -2145,14 +2668,39 @@ const servicos = [
         "limitacoes": [
           "Página publicada em 30/06/2026; taxa expressamente reajustável trimestralmente."
         ]
+      },
+      {
+        "id": "mil-faq",
+        "url": "https://alistamento.eb.mil.br/help/faq",
+        "titulo": "Alistamento Militar Online — Perguntas Frequentes",
+        "orgao": "Exército Brasileiro",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "prazo",
+          "documentos",
+          "passo_a_passo"
+        ],
+        "limitacoes": []
+      },
+      {
+        "id": "mil-reg",
+        "url": "https://www2.camara.leg.br/legin/fed/decret/1960-1969/decreto-57654-20-janeiro-1966-398253-normaatualizada-pe.html",
+        "titulo": "Decreto nº 57.654/1966 — Regulamento da Lei do Serviço Militar",
+        "orgao": "Câmara dos Deputados",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "custo",
+          "documentos_condicionais"
+        ],
+        "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Taxa vigente, possibilidade de isenção e prazo local; segunda via de reservista exige ficha própria."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "br-seguro-desemprego-formal",
@@ -2170,7 +2718,7 @@ const servicos = [
     "descricao": "Solicitar assistência financeira temporária após dispensa.",
     "publico": "Trabalhador formal dispensado sem justa causa e desempregado.",
     "condicoes_acesso": [
-      "Sem renda suficiente para sustento; respeitar incompatibilidades de benefícios.",
+      "Estar desempregado e sem renda própria suficiente para sustento. Pela Resolução CODEFAT nº 957/2022, não receber benefício previdenciário continuado, exceto auxílio-acidente e pensão por morte.",
       "Salários: 12 de 18 meses na primeira solicitação; 9 de 12 na segunda; seis meses nas demais."
     ],
     "documentos_obrigatorios": [
@@ -2183,7 +2731,25 @@ const servicos = [
       }
     ],
     "documentos_status": "confirmado",
-    "documentos_condicionais": [],
+    "documentos_condicionais": [
+      {
+        "documento": "Identificação civil com foto e números de CPF e NIS",
+        "quando": "Pedido presencial.",
+        "observacao": "Alternativa quando não for possível usar o portal/CTPS Digital.",
+        "fontes": [
+          "seguro-codefat"
+        ]
+      },
+      {
+        "documento": "Documentos solicitados na notificação ou que comprovem o motivo do recurso",
+        "quando": "Inconsistência cadastral, impedimento ou recurso.",
+        "observacao": "A exigência depende do motivo; consultar a notificação. O portal permite anexar documentos ao recurso.",
+        "fontes": [
+          "seguro-codefat",
+          "seguro-faq"
+        ]
+      }
+    ],
     "passo_a_passo": [
       {
         "ordem": 1,
@@ -2219,15 +2785,16 @@ const servicos = [
     },
     "prazo": {
       "status": "com_ressalva",
-      "descricao": "Pedido: do 7º ao 120º dia após dispensa. Portal estima prestação em 31–60 dias, sujeita à análise.",
+      "descricao": "Pedido do 7º ao 120º dia após dispensa. Primeira parcela prevista 30 dias após requerimento, se cumpridos os requisitos; parcelas seguintes a cada 30 dias. Portal estima serviço em 31–60 dias; inconsistências e recurso exigem análise.",
       "fontes": [
         "seguro",
-        "seguro-faq"
+        "seguro-faq",
+        "seguro-codefat"
       ]
     },
     "observacoes": [
       "Ficha exclusiva do trabalhador formal; domésticos e outras modalidades têm regras próprias.",
-      "Fontes divergem ao listar exceções de benefícios previdenciários; caso concreto deve ser conferido no MTE."
+      "Exceções previdenciárias desta ficha seguem a Resolução CODEFAT nº 957/2022, art. 6º; a carta de serviço apresenta enumeração diferente."
     ],
     "fontes": [
       {
@@ -2235,7 +2802,7 @@ const servicos = [
         "url": "https://www.gov.br/pt-br/servicos/solicitar-o-seguro-desemprego",
         "titulo": "Solicitar o Seguro-Desemprego",
         "orgao": "MTE",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "nome",
@@ -2257,25 +2824,38 @@ const servicos = [
         "url": "https://www.gov.br/pt-br/temas/perguntas-frequentes-seguro-desemprego",
         "titulo": "Perguntas Frequentes — Seguro-Desemprego",
         "orgao": "Governo Federal / MTE",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "publico",
           "condicoes_acesso",
           "prazo",
-          "observacoes"
+          "observacoes",
+          "documentos_condicionais"
         ],
         "limitacoes": [
           "Há trechos antigos sobre canais de domésticos; não usados nesta ficha."
         ]
+      },
+      {
+        "id": "seguro-codefat",
+        "url": "https://portalfat.trabalho.gov.br/wp-content/uploads/2026/09/Resolucao-no-957-de-21-de-setembro-de-2022-Revisao-do-SD.pdf",
+        "titulo": "Resolução CODEFAT nº 957/2022 — texto atualizado",
+        "orgao": "MTE/CODEFAT",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "documento_lido",
+        "sustenta": [
+          "condicoes_acesso",
+          "documentos_condicionais",
+          "prazo"
+        ],
+        "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Confirmar incompatibilidades/exceções de benefícios previdenciários; documentos de eventual exigência dependem do motivo."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "br-primeira-habilitacao",
@@ -2298,73 +2878,104 @@ const servicos = [
       "municipio": null
     },
     "orgao_responsavel": "Ministério dos Transportes (Senatran) e Detrans estaduais",
-    "descricao": "Abrir pelo aplicativo CNH do Brasil o processo da primeira habilitação (carro e/ou moto), com curso teórico gratuito. Exames, taxas e emissão são feitos no Detran do estado escolhido.",
-    "publico": "Pessoas que ainda não têm habilitação.",
+    "descricao": "Orientação nacional para iniciar a primeira habilitação nas categorias A (moto) e/ou B (carro) pelo aplicativo CNH do Brasil. A abertura e o curso teórico digital são gratuitos; as etapas presenciais e os valores são definidos pelo Detran do estado de residência.",
+    "publico": "Pessoas a partir de 18 anos, que saibam ler e escrever e ainda não tenham habilitação.",
     "condicoes_acesso": [
-      "Conta gov.br para entrar no aplicativo CNH do Brasil.",
-      "O sistema identifica sozinho quem ainda não tem habilitação e mostra, na área Condutor, a opção Requerimento da Primeira Habilitação.",
-      "O candidato escolhe a categoria (carro e/ou moto) e o estado em que fará os exames e emitirá a habilitação."
+      "Entrar com conta gov.br e escolher a categoria e o estado de residência no requerimento.",
+      "Apresentar identificação e CPF na abertura do Renach e coleta biométrica; o Detran informa os comprovantes locais e agenda os exames.",
+      "Aprovação em avaliações psicológica, médica, teórica e prática. Aulas práticas: mínimo de 2 horas para A ou B; se escolher AB, mínimo de 2 horas em cada categoria.",
+      "A primeira habilitação A/B também exige resultado negativo em exame toxicológico. Consulte o Detran sobre o marco de aplicação ao seu processo e use laboratório credenciado pela Senatran."
     ],
-    "documentos_obrigatorios": [],
-    "documentos_status": "pendente",
-    "documentos_condicionais": [],
+    "documentos_obrigatorios": [
+      {
+        "documento": "Documento de identificação reconhecido por lei",
+        "observacao": "Apresentar na abertura do Renach e coleta biométrica.",
+        "fontes": [
+          "cnh-res1020"
+        ]
+      },
+      {
+        "documento": "CPF",
+        "observacao": "É necessário estar inscrito no CPF; a identificação com número do CPF permite comprovar os dois requisitos.",
+        "fontes": [
+          "cnh-res1020"
+        ]
+      }
+    ],
+    "documentos_status": "confirmado",
+    "documentos_condicionais": [
+      {
+        "documento": "Comprovantes para o cadastro estadual",
+        "quando": "Ao abrir o Renach no Detran do estado de residência.",
+        "observacao": "Confira o checklist da unidade antes de agendar; esta ficha cobre requisitos nacionais, não substitui a documentação estadual.",
+        "fontes": [
+          "cnh-res1020"
+        ]
+      },
+      {
+        "documento": "Resultado negativo do exame toxicológico",
+        "quando": "Primeira habilitação nas categorias A/B, conforme aplicação ao processo pelo Detran.",
+        "observacao": "O resultado é registrado por laboratório credenciado e é requisito para liberação da habilitação.",
+        "fontes": [
+          "cnh-toxicologico-2026"
+        ]
+      }
+    ],
     "passo_a_passo": [
       {
         "ordem": 1,
-        "acao": "Baixar o aplicativo CNH do Brasil (Google Play ou App Store) e entrar com a conta gov.br. Quem tinha a Carteira Digital de Trânsito deve atualizar o aplicativo.",
-        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo",
+        "acao": "Acessar o portal CNH do Brasil, baixar ou atualizar o aplicativo e entrar com gov.br.",
+        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/cnh-do-brasil",
         "fontes": [
-          "cnh-mt-dez25"
+          "cnh-mt-mar26"
         ]
       },
       {
         "ordem": 2,
-        "acao": "Em Condutor, abrir o Requerimento da Primeira Habilitação, conferir os dados trazidos do gov.br e escolher a categoria e o estado.",
-        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo",
+        "acao": "Em Condutor, abrir o Requerimento da Primeira Habilitação, conferir os dados e escolher a categoria e o estado.",
+        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/cnh-do-brasil",
         "fontes": [
-          "cnh-mt-dez25"
+          "cnh-mt-mar26"
         ]
       },
       {
         "ordem": 3,
-        "acao": "Fazer o curso teórico gratuito no aplicativo (ou em autoescola). O certificado é registrado automaticamente no Sistema Nacional de Trânsito.",
-        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo",
+        "acao": "Concluir o curso teórico gratuito no aplicativo ou estudar em autoescola.",
+        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/cnh-do-brasil",
         "fontes": [
-          "cnh-mt-dez25",
           "cnh-mt-mar26"
         ]
       },
       {
         "ordem": 4,
-        "acao": "Fazer a coleta biométrica e os exames de aptidão física e mental e a avaliação psicológica, conforme as regras do Detran do estado.",
-        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo",
+        "acao": "No Detran, abrir o Renach, coletar biometria e realizar as avaliações psicológica e médica.",
+        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/cnh-do-brasil",
         "fontes": [
-          "cnh-mt-dez25"
+          "cnh-res1020"
         ]
       },
       {
         "ordem": 5,
-        "acao": "Agendar e fazer o exame teórico no Detran: 30 questões de múltipla escolha, com mínimo de 20 acertos.",
-        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo",
+        "acao": "Fazer a prova teórica e as aulas práticas com instrutor autorizado pelo Detran; depois, realizar o exame de direção.",
+        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/cnh-do-brasil",
         "fontes": [
-          "cnh-mt-dez25"
-        ]
-      },
-      {
-        "ordem": 6,
-        "acao": "Fazer o curso prático com autoescola ou instrutor autorizado pelo Detran e, depois, o exame prático de direção.",
-        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo",
-        "fontes": [
-          "cnh-mt-dez25",
           "cnh-mt-mar26"
         ]
       },
       {
-        "ordem": 7,
-        "acao": "Com a aprovação, receber a Permissão para Dirigir (PPD), válida por um ano, no aplicativo; a CNH digital pode ser baixada em Ver Habilitação > Baixar CNH-e.",
-        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo",
+        "ordem": 6,
+        "acao": "Providenciar o exame toxicológico em laboratório credenciado e acompanhar o registro do resultado negativo.",
+        "canal_url": "https://www.detran.pr.gov.br/Noticia/Detran-PR-reforca-que-exame-toxicologico-e-obrigatorio-para-tirar-CNH-de-carro-e-moto",
         "fontes": [
-          "cnh-mt-dez25"
+          "cnh-toxicologico-2026"
+        ]
+      },
+      {
+        "ordem": 7,
+        "acao": "Após as aprovações e a liberação pelo Detran, acompanhar a emissão da PPD no aplicativo. A permissão tem validade de um ano.",
+        "canal_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/cnh-do-brasil",
+        "fontes": [
+          "cnh-res1020"
         ]
       }
     ],
@@ -2372,7 +2983,7 @@ const servicos = [
       {
         "tipo": "aplicativo_oficial",
         "nome": "Aplicativo CNH do Brasil (Ministério dos Transportes)",
-        "url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo"
+        "url": "https://www.gov.br/transportes/pt-br/assuntos/transito/cnh-do-brasil"
       },
       {
         "tipo": "orgao",
@@ -2383,16 +2994,16 @@ const servicos = [
     "custo": {
       "status": "variavel",
       "valor_brl": null,
-      "descricao": "Cadastro, acesso à plataforma e curso teórico são gratuitos. Taxas de exames e de emissão da carteira física são cobradas pelo Detran do estado e variam; esta ficha não traz o valor de cada estado.",
+      "descricao": "Abertura, aplicativo e curso teórico digital gratuitos. Exames, aulas práticas e emissão física têm custos conforme o Detran e o prestador credenciado; não existe um total nacional único. Confira as guias estaduais antes de pagar.",
       "fontes": [
         "cnh-mt-mar26"
       ]
     },
     "prazo": {
-      "status": "pendente",
-      "descricao": "Sem prazo único: depende das etapas, da agenda do Detran e do ritmo do candidato. A PPD vale por um ano.",
+      "status": "com_ressalva",
+      "descricao": "O processo fica aberto por tempo indeterminado, conforme art. 13 da Resolução Contran 1.020/2025. Isso não é prazo de entrega: a conclusão depende dos agendamentos e aprovações no Detran. Ao final, a PPD vale por um ano.",
       "fontes": [
-        "cnh-mt-dez25"
+        "cnh-res1020"
       ]
     },
     "observacoes": [
@@ -2403,49 +3014,60 @@ const servicos = [
     ],
     "fontes": [
       {
-        "id": "cnh-mt-dez25",
-        "url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2025/12/cnh-do-brasil-como-solicitar-a-primeira-habilitacao-pelo-aplicativo",
-        "titulo": "CNH do Brasil: como solicitar a primeira habilitação pelo aplicativo",
+        "id": "cnh-mt-mar26",
+        "url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2026/03/cnh-do-brasil-saiba-como-solicitar-a-primeira-habilitacao-pelo-aplicativo-oficial-e-evite-canais-nao-autorizados",
+        "titulo": "CNH do Brasil: saiba como solicitar a primeira habilitação pelo aplicativo oficial e evite canais não autorizados",
         "orgao": "Ministério dos Transportes",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
-          "nome",
           "descricao",
-          "condicoes_acesso",
+          "custo",
           "passo_a_passo",
-          "prazo",
-          "observacoes"
+          "canais"
         ],
         "limitacoes": [
           "Página de notícia do órgão (não é a ficha de serviço); regras de taxas e documentos por estado não constam do texto."
         ]
       },
       {
-        "id": "cnh-mt-mar26",
-        "url": "https://www.gov.br/transportes/pt-br/assuntos/noticias/2026/03/cnh-do-brasil-saiba-como-solicitar-a-primeira-habilitacao-pelo-aplicativo-oficial-e-evite-canais-nao-autorizados",
-        "titulo": "CNH do Brasil: saiba como solicitar a primeira habilitação pelo aplicativo oficial e evite canais não autorizados",
-        "orgao": "Ministério dos Transportes",
-        "data_consulta": "2026-11-15",
+        "id": "cnh-res1020",
+        "url": "https://anttlegis.antt.gov.br/action/ActionDatalegis.php?acao=abrirTextoAto&cod_menu=7145&cod_modulo=420&nomeTitulo=codigos&numeroAto=00001020&orgao=CONTRAN/MT&seqAto=000&tipo=RES&valorAno=2025",
+        "titulo": "Resolução Contran nº 1.020, de 1º de dezembro de 2025",
+        "orgao": "Contran / ANTT Legis",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
-          "custo",
-          "canais",
-          "observacoes"
+          "documentos",
+          "condicoes_acesso",
+          "prazo",
+          "passo_a_passo"
         ],
         "limitacoes": [
-          "Página de notícia do órgão (não é a ficha de serviço); regras de taxas e documentos por estado não constam do texto."
+          "Requisitos nacionais; o cadastro e o agendamento são executados pelo Detran estadual."
+        ]
+      },
+      {
+        "id": "cnh-toxicologico-2026",
+        "url": "https://www.detran.pr.gov.br/Noticia/Detran-PR-reforca-que-exame-toxicologico-e-obrigatorio-para-tirar-CNH-de-carro-e-moto",
+        "titulo": "Detran-PR reforça que exame toxicológico é obrigatório para tirar CNH de carro e moto",
+        "orgao": "Detran-PR",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "documentos_condicionais",
+          "condicoes_acesso",
+          "passo_a_passo"
+        ],
+        "limitacoes": [
+          "Notícia estadual de 16/10/2026 sobre exigência de lei federal; datas de implementação diferem entre Detrans."
         ]
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Taxas de cada Detran (exames, emissão, PPD) não foram lidas; consultar o Detran do estado.",
-      "Documentos exigidos pelo Detran, idade mínima e regras de aulas práticas não constam das páginas lidas.",
-      "A ficha oficial de serviço no gov.br não foi localizada; o conteúdo vem de notícias do Ministério dos Transportes (alteradas em 03/07/2026)."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "br-mei-inscricao",
@@ -2471,7 +3093,8 @@ const servicos = [
       "Faturamento limitado a R$ 81.000,00 por ano (atividades da Tabela A) ou R$ 251.600,00 por ano (Tabela B), conforme a fonte.",
       "Não participar como sócio, administrador ou titular de outra empresa.",
       "Contratar no máximo um empregado.",
-      "Conta gov.br nível prata ou ouro (brasileiros) ou bronze (estrangeiros)."
+      "Conta gov.br nível prata ou ouro (brasileiros) ou bronze (estrangeiros).",
+      "A dispensa de alvará ocorre na formalização, mas exige cumprir regras sanitárias, ambientais, tributárias, segurança e uso do solo. Conferir na prefeitura a compatibilidade da atividade com o endereço."
     ],
     "documentos_obrigatorios": [
       {
@@ -2541,10 +3164,11 @@ const servicos = [
       },
       {
         "ordem": 4,
-        "acao": "Assinalar as declarações e finalizar a inscrição.",
+        "acao": "Ler e assinalar declarações, inclusive responsabilidade por requisitos locais de funcionamento, e finalizar a inscrição.",
         "canal_url": "https://www.gov.br/pt-br/servicos/realizar-registro-como-microempreendedor-individual-mei",
         "fontes": [
-          "mei-api"
+          "mei-api",
+          "mei-alvara"
         ]
       }
     ],
@@ -2563,16 +3187,17 @@ const servicos = [
     "custo": {
       "status": "gratuito",
       "valor_brl": 0,
-      "descricao": "A inscrição é gratuita. Depois da formalização o MEI paga tributos simplificados; o valor mensal não consta da fonte lida.",
+      "descricao": "Inscrição gratuita. Após formalização, DAS mensal 2026: R$ 81,05 de INSS + R$ 1 de ICMS e/ou R$ 5 de ISS, conforme atividade. MEI transportador autônomo de cargas: INSS de R$ 194,52, mais impostos aplicáveis.",
       "fontes": [
-        "mei-api"
+        "mei-gov",
+        "mei-das-2026"
       ]
     },
     "prazo": {
-      "status": "pendente",
-      "descricao": "A fonte não estima o prazo.",
+      "status": "confirmado",
+      "descricao": "Atendimento imediato; serviço digital disponível 24 horas por dia, 7 dias por semana.",
       "fontes": [
-        "mei-api"
+        "mei-gov"
       ]
     },
     "observacoes": [
@@ -2606,23 +3231,50 @@ const servicos = [
         "url": "https://www.gov.br/pt-br/servicos/realizar-registro-como-microempreendedor-individual-mei",
         "titulo": "Cadastrar/formalizar Microempreendedor Individual",
         "orgao": "gov.br",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "nome",
-          "descricao"
+          "descricao",
+          "custo",
+          "prazo",
+          "condicoes_acesso"
         ],
         "limitacoes": [
           "Seções de requisitos e etapas ficam recolhidas na página; foram lidas pela API. Última modificação informada: 15/12/2025."
         ]
+      },
+      {
+        "id": "mei-das-2026",
+        "url": "https://www8.receita.fazenda.gov.br/simplesnacional/Noticias/NoticiaCompleta.aspx?id=c3b2044c-ff97-432a-b33c-ecf2a3df6dc3",
+        "titulo": "MEI — atualização de valores devidos em 2026",
+        "orgao": "Receita Federal/Simples Nacional",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "custo"
+        ],
+        "limitacoes": []
+      },
+      {
+        "id": "mei-alvara",
+        "url": "https://www.gov.br/pt-br/servicos/solicitar-a-dispensa-de-alvara-e-licenca-de-funcionamento",
+        "titulo": "Solicitar a Dispensa de Alvará e Licença de Funcionamento para o Microempreendedor Individual (MEI)",
+        "orgao": "MEMP",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "condicoes_acesso",
+          "passo_a_passo"
+        ],
+        "limitacoes": [
+          "Regras gerais de dispensa; não substitui verificação municipal do endereço e atividade."
+        ]
       }
     ],
-    "data_consulta": "2026-11-15",
+    "data_consulta": "2026-11-18",
     "status_conteudo": "confirmado",
-    "pendencias": [
-      "Valor atual do DAS mensal e limites de faturamento vigentes devem ser conferidos no Portal do Empreendedor.",
-      "Regras de licença municipal para o endereço do negócio não foram lidas."
-    ],
+    "pendencias": [],
     "apto_catalogo": "sim"
   },
   {
@@ -2643,10 +3295,21 @@ const servicos = [
     "orgao_responsavel": "Polícia Federal",
     "descricao": "Certidão que informa a existência de registros criminais nos sistemas da Polícia Federal. Para fins civis, retorna NADA CONSTA quando não há decisão condenatória com trânsito em julgado.",
     "publico": "Todos os cidadãos.",
-    "condicoes_acesso": [],
+    "condicoes_acesso": [
+      "Preencher dados pessoais sem abreviação, como CPF, nome, filiação e identificação no formulário. Na emissão online não é necessário anexar documentos."
+    ],
     "documentos_obrigatorios": [],
     "documentos_status": "nao_se_aplica",
-    "documentos_condicionais": [],
+    "documentos_condicionais": [
+      {
+        "documento": "Protocolo gerado pelo sistema e originais dos documentos que devem constar da certidão",
+        "quando": "Emissão online impedida por homônimo ou divergência de dados.",
+        "observacao": "Levar a uma unidade da PF; o próprio cidadão ou procurador pode apresentar o protocolo.",
+        "fontes": [
+          "cac-gov"
+        ]
+      }
+    ],
     "passo_a_passo": [
       {
         "ordem": 1,
@@ -2658,10 +3321,10 @@ const servicos = [
       },
       {
         "ordem": 2,
-        "acao": "Se preferir atendimento presencial, procurar uma unidade da Polícia Federal. Dias, horários e necessidade de agendamento variam por unidade.",
+        "acao": "Se o sistema gerar protocolo por homônimo/divergência, levá-lo à PF com os originais necessários. Se houver indisponibilidade, verificar conexão e pop-ups; persistindo, contatar suporte.sinic@pf.gov.br ou a unidade da PF em caso urgente.",
         "canal_url": "https://www.gov.br/pf/pt-br/acesso-a-informacao/institucional/quem-e-quem/superintendencias-e-delegacias",
         "fontes": [
-          "cac-api"
+          "cac-gov"
         ]
       }
     ],
@@ -2687,10 +3350,10 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "confirmado",
-      "descricao": "Atendimento imediato pela internet, segundo o cadastro do serviço. A certidão emitida vale por 90 dias.",
+      "status": "com_ressalva",
+      "descricao": "Online: imediato, quando o sistema consegue emitir. Homônimo/divergência: após apresentar protocolo e originais à PF, até 15 dias. A certidão emitida tem validade de 90 dias.",
       "fontes": [
-        "cac-api",
+        "cac-gov",
         "cac-pf"
       ]
     },
@@ -2735,13 +3398,38 @@ const servicos = [
           "prazo"
         ],
         "limitacoes": []
+      },
+      {
+        "id": "cac-gov",
+        "url": "https://www.gov.br/pt-br/servicos/emitir-certidao-de-antecedentes-criminais",
+        "titulo": "Emitir Certidão de Antecedentes Criminais",
+        "orgao": "Polícia Federal",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "prazo",
+          "documentos_condicionais",
+          "passo_a_passo"
+        ],
+        "limitacoes": []
+      },
+      {
+        "id": "cac-orient",
+        "url": "https://www.gov.br/pt-br/noticias/justica-e-seguranca/2021/04/como-emitir-certidao-de-antecedentes-criminais",
+        "titulo": "Como emitir certidão de antecedentes criminais",
+        "orgao": "gov.br/MJSP",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "condicoes_acesso",
+          "documentos"
+        ],
+        "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
+    "data_consulta": "2026-11-18",
     "status_conteudo": "confirmado",
-    "pendencias": [
-      "Campos exatos do formulário e o que fazer quando a emissão imediata não ocorre não foram lidos; seguir a orientação do sistema da PF."
-    ],
+    "pendencias": [],
     "apto_catalogo": "sim"
   },
   {
@@ -2761,11 +3449,12 @@ const servicos = [
       "municipio": null
     },
     "orgao_responsavel": "Caixa Econômica Federal (CAIXA)",
-    "descricao": "Consultar saldo e pedir o saque do FGTS pelo aplicativo FGTS, sem ir à agência, quando houver direito ao saque.",
+    "descricao": "Consultar saldo e pedir saque pelo aplicativo FGTS quando houver direito e valor liberado. A documentação e o saldo disponível dependem da hipótese legal; esta ficha apresenta o procedimento geral.",
     "publico": "Trabalhadores com contrato regido pela CLT, domésticos, rurais, temporários, intermitentes, avulsos, safreiros, atletas profissionais e diretores não empregados (critério do empregador).",
     "condicoes_acesso": [
       "O saque exige uma situação prevista em lei, como dispensa sem justa causa, aposentadoria, término de contrato por prazo determinado, falecimento do empregador individual ou nulidade do contrato, ou falecimento do trabalhador.",
-      "Outras situações de saque estão no Portal do FGTS."
+      "Outras situações de saque estão no Portal do FGTS.",
+      "Saque-aniversário é opcional: na demissão, em regra libera só a multa rescisória, sem saldo integral, salvo outras hipóteses legais. Retorno ao saque-rescisão, sem antecipação contratada, produz efeito no primeiro dia do 25º mês após pedido."
     ],
     "documentos_obrigatorios": [
       {
@@ -2791,14 +3480,25 @@ const servicos = [
       }
     ],
     "documentos_status": "confirmado",
-    "documentos_condicionais": [],
+    "documentos_condicionais": [
+      {
+        "documento": "Comprovação específica da hipótese de saque",
+        "quando": "Conforme motivo escolhido no aplicativo ou atendimento.",
+        "observacao": "A CAIXA exige documentos adicionais à identificação, CTPS e PIS/PASEP; consultar a opção correspondente no portal oficial e as instruções do app.",
+        "fontes": [
+          "fgts-doc"
+        ]
+      }
+    ],
     "passo_a_passo": [
       {
         "ordem": 1,
-        "acao": "Baixar o aplicativo FGTS da CAIXA e consultar o saldo. O app também permite alterar dados cadastrais e pedir o saque.",
+        "acao": "Consultar no aplicativo o saldo liberado, a modalidade e o motivo de saque; ler requisitos e documentos da hipótese. Liberações extraordinárias têm período e público próprios, que devem ser consultados no portal FGTS.",
         "canal_url": "https://www.caixa.gov.br/atendimento/aplicativos/fgts/Paginas/default.aspx",
         "fontes": [
-          "fgts-api"
+          "fgts-gov",
+          "fgts-aniv",
+          "fgts-doc"
         ]
       },
       {
@@ -2835,14 +3535,14 @@ const servicos = [
       "valor_brl": 0,
       "descricao": "Gratuito; o crédito em conta indicada no aplicativo é feito sem custo.",
       "fontes": [
-        "fgts-api"
+        "fgts-gov"
       ]
     },
     "prazo": {
       "status": "confirmado",
       "descricao": "Crédito em até 5 dias úteis após o pedido, com documentação regular e direito ao saque.",
       "fontes": [
-        "fgts-api"
+        "fgts-gov"
       ]
     },
     "observacoes": [
@@ -2877,21 +3577,48 @@ const servicos = [
         "url": "https://www.gov.br/pt-br/servicos/sacar-o-fgts",
         "titulo": "Sacar o FGTS",
         "orgao": "gov.br",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "trecho_indexado",
         "sustenta": [
-          "nome"
+          "nome",
+          "custo",
+          "prazo"
         ],
         "limitacoes": [
           "Indicada como página do serviço; o conteúdo detalhado foi lido pela API."
         ]
+      },
+      {
+        "id": "fgts-aniv",
+        "url": "https://www.fgts.gov.br/Paginas/trabalhador/saque/saque-aniversario.aspx",
+        "titulo": "Saque-Aniversário do FGTS",
+        "orgao": "CAIXA/FGTS",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "condicoes_acesso",
+          "observacoes"
+        ],
+        "limitacoes": []
+      },
+      {
+        "id": "fgts-doc",
+        "url": "https://www.caixa.gov.br/beneficios-trabalhador/fgts/perguntas-frequentes/Paginas/default.aspx",
+        "titulo": "Perguntas Frequentes — FGTS",
+        "orgao": "CAIXA",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "documentos_condicionais"
+        ],
+        "limitacoes": [
+          "Abertura em laço de redirecionamento; FAQ oficial indexada confirma documentos adicionais conforme hipótese de saque."
+        ]
       }
     ],
-    "data_consulta": "2026-11-15",
+    "data_consulta": "2026-11-18",
     "status_conteudo": "confirmado",
-    "pendencias": [
-      "Regras de saque-aniversário e de saques extraordinários (que mudam com medidas do governo) não foram lidas; conferir no aplicativo FGTS."
-    ],
+    "pendencias": [],
     "apto_catalogo": "sim"
   },
   {
@@ -2920,10 +3647,10 @@ const servicos = [
     ],
     "documentos_obrigatorios": [
       {
-        "documento": "Documentos do Cadastro Único",
-        "observacao": "A página remete ao serviço Inscrever-se no Cadastro Único para a lista de documentos.",
+        "documento": "CPF de todos os integrantes da família",
+        "observacao": "Levar à entrevista do Cadastro Único; sem CPF, o registro fica aguardando regularização.",
         "fontes": [
-          "bf-gov"
+          "bf-cad-atual"
         ]
       }
     ],
@@ -2935,6 +3662,22 @@ const servicos = [
         "observacao": "Sem comprovante ainda é possível apresentar o recurso.",
         "fontes": [
           "bf-gov"
+        ]
+      },
+      {
+        "documento": "Identificação com foto do responsável e comprovante ou declaração de residência",
+        "quando": "Regra geral da entrevista do Cadastro Único.",
+        "observacao": "Indígenas, quilombolas e famílias em situação de rua têm exceções documentais; conferir orientação do posto.",
+        "fontes": [
+          "bf-cad-faq"
+        ]
+      },
+      {
+        "documento": "Prova de representação legal ou Termo de Responsabilidade unipessoal",
+        "quando": "Representante legal ou família unipessoal.",
+        "observacao": "Unipessoais que buscam transferência de renda exigem entrevista domiciliar, ressalvadas as exceções oficiais do Cadastro Único.",
+        "fontes": [
+          "bf-cad-faq"
         ]
       }
     ],
@@ -3006,16 +3749,17 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pendente",
-      "valor_brl": null,
-      "descricao": "A página lida não menciona cobrança de taxa; confirmar no CRAS ao fazer o Cadastro Único.",
+      "status": "gratuito",
+      "valor_brl": 0,
+      "descricao": "Serviço gratuito, inclusive inscrição/atualização no Cadastro Único.",
       "fontes": [
-        "bf-gov"
+        "bf-gov",
+        "bf-cad-atual"
       ]
     },
     "prazo": {
-      "status": "pendente",
-      "descricao": "A página não estima o prazo. A entrada depende da análise do sistema e do limite orçamentário.",
+      "status": "com_ressalva",
+      "descricao": "Portal estima até 180 dias corridos. Cadastro não garante ingresso: seleção informatizada depende de elegibilidade, atendimento no município e orçamento do programa; confirmar situação nos canais oficiais.",
       "fontes": [
         "bf-gov"
       ]
@@ -3030,7 +3774,7 @@ const servicos = [
         "url": "https://www.gov.br/pt-br/servicos/receber-o-bolsa-familia",
         "titulo": "Receber o Bolsa Família",
         "orgao": "gov.br",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "nome",
@@ -3039,20 +3783,44 @@ const servicos = [
           "condicoes_acesso",
           "passo_a_passo",
           "canais",
-          "observacoes"
+          "observacoes",
+          "prazo",
+          "custo"
         ],
         "limitacoes": [
           "Página marcada como Nova; avaliação não implementada. Tempos de duração das etapas aparecem como não estimados."
         ]
+      },
+      {
+        "id": "bf-cad-atual",
+        "url": "https://www.gov.br/mds/pt-br/acoes-e-programas/cadastro-unico/Cadastro-unico/",
+        "titulo": "Cadastro-Único",
+        "orgao": "MDS",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "documentos",
+          "condicoes_acesso"
+        ],
+        "limitacoes": []
+      },
+      {
+        "id": "bf-cad-faq",
+        "url": "https://www.gov.br/mds/pt-br/acoes-e-programas/cadastro-unico/perguntas-frequentes-cadastro-unico",
+        "titulo": "Perguntas Frequentes — Cadastro Único",
+        "orgao": "MDS",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "documentos_condicionais"
+        ],
+        "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Lista de documentos do Cadastro Único não foi lida nesta ficha; ver ficha br-cadunico.",
-      "Custo e prazo não informados pela página."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "br-pe-de-meia",
@@ -3077,7 +3845,10 @@ const servicos = [
       "Matrícula no ensino médio regular (14 a 24 anos) ou na EJA (19 a 24 anos) em rede pública.",
       "Família inscrita no Cadastro Único, com renda de até meio salário mínimo por pessoa. Em 2026 o MEC verifica os dados do CadÚnico incluídos até 7 de agosto de 2026.",
       "CPF regular.",
-      "Frequência escolar mínima de 80% para receber as parcelas mensais."
+      "Frequência escolar mínima de 80% para receber as parcelas mensais.",
+      "Parcela de matrícula exige matrícula até 2 meses após início das aulas; matrícula posterior pode permitir frequência/conclusão, cumpridos os critérios. Ensino regular: até 9 parcelas de frequência; EJA: até 4 por semestre.",
+      "Conclusão exige aprovação; o saque dessa poupança depende da conclusão de todo o ensino médio. Bônus Enem exige os dois dias do exame no ano de conclusão. Inclusão durante 2026 não gera parcelas anteriores à entrada.",
+      "Os incentivos não podem ser acumulados com o Bolsa Família por estudante integrante de família unipessoal, conforme a Lei nº 14.818/2024."
     ],
     "documentos_obrigatorios": [],
     "documentos_status": "nao_se_aplica",
@@ -3103,10 +3874,11 @@ const servicos = [
       },
       {
         "ordem": 2,
-        "acao": "Conferir se o estudante foi enquadrado como público do programa e ver o extrato de pagamentos no aplicativo Jornada do Estudante.",
-        "canal_url": "https://www.gov.br/mec/pt-br/assuntos/noticias/2025/abril/pe-de-meia-2025-conheca-os-criterios-para-a-participacao",
+        "acao": "Entrar na Consulta Pé-de-Meia com conta gov.br para conferir elegibilidade, pagamentos e pendências; a CAIXA também informa o calendário. Divergências de matrícula/frequência devem ser verificadas com a rede de ensino.",
+        "canal_url": "https://estudante.pedemeia.mec.gov.br/",
         "fontes": [
-          "pm-mec-2025"
+          "pm-consulta",
+          "pm-caixa"
         ]
       },
       {
@@ -3127,10 +3899,11 @@ const servicos = [
       },
       {
         "ordem": 5,
-        "acao": "Manter frequência mínima de 80% para receber as parcelas.",
+        "acao": "Manter frequência mínima de 80%, cumprir aprovação/conclusão e consultar o calendário individual; parcelas de matrícula, frequência, conclusão e Enem têm critérios distintos.",
         "canal_url": "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/abril/pe-de-meia-confira-tutorial-para-pais-autorizarem-uso-da-conta",
         "fontes": [
-          "pm-mec-2026"
+          "pm-consulta",
+          "pm-cal-2026"
         ]
       }
     ],
@@ -3149,21 +3922,33 @@ const servicos = [
         "tipo": "portal_oficial",
         "nome": "Pé-de-Meia — notícias e perguntas frequentes do MEC",
         "url": "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/abril/pe-de-meia-confira-tutorial-para-pais-autorizarem-uso-da-conta"
+      },
+      {
+        "tipo": "portal_oficial",
+        "nome": "Consulta Pé-de-Meia",
+        "url": "https://www.gov.br/pt-br/servicos/consultar-elegibilidade-para-o-programa-pe-de-meia"
+      },
+      {
+        "tipo": "portal_oficial",
+        "nome": "Calendário e informações CAIXA",
+        "url": "https://www.caixa.gov.br/programas-sociais/pe-de-meia/Paginas/default.aspx"
       }
     ],
     "custo": {
-      "status": "pendente",
-      "valor_brl": null,
-      "descricao": "As páginas lidas não mencionam taxa; o programa paga incentivos ao estudante.",
+      "status": "gratuito",
+      "valor_brl": 0,
+      "descricao": "Programa e consulta gratuitos, sem taxa de inscrição. A inclusão e a abertura da conta pela CAIXA são automáticas para estudantes elegíveis indicados pelo MEC.",
       "fontes": [
-        "pm-mec-2026"
+        "pm-consulta",
+        "pm-grat"
       ]
     },
     "prazo": {
-      "status": "pendente",
-      "descricao": "Pagamentos mensais conforme o calendário do MEC; não há prazo de atendimento por pedido.",
+      "status": "com_ressalva",
+      "descricao": "Calendário 2026: 15 janelas de março/2026 a junho/2027, conforme transmissão/correção de dados. Próximos períodos publicados: 23–30/11 e 21–28/12/2026; conclusão/Enem: 22/2–1/3/2027. A data individual segue nascimento, modalidade e elegibilidade.",
       "fontes": [
-        "pm-mec-2026"
+        "pm-cal-2026",
+        "pm-caixa"
       ]
     },
     "observacoes": [
@@ -3204,16 +3989,84 @@ const servicos = [
         "limitacoes": [
           "Texto escrito para o ano de 2025; usado apenas para o aplicativo Jornada do Estudante e para as regras de valores, repetidas na notícia de 2026."
         ]
+      },
+      {
+        "id": "pm-consulta",
+        "url": "https://www.gov.br/pt-br/servicos/consultar-elegibilidade-para-o-programa-pe-de-meia",
+        "titulo": "Consultar elegibilidade para o programa Pé-de-Meia",
+        "orgao": "MEC",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "custo",
+          "passo_a_passo",
+          "condicoes_acesso"
+        ],
+        "limitacoes": []
+      },
+      {
+        "id": "pm-cal-2026",
+        "url": "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/fevereiro/pe-de-meia-divulgado-calendario-de-pagamentos-de-2026/",
+        "titulo": "Pé-de-Meia: divulgado calendário de pagamentos de 2026",
+        "orgao": "MEC",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "prazo",
+          "condicoes_acesso"
+        ],
+        "limitacoes": [
+          "Abertura bloqueada por proteção do portal; calendário oficial indexado, sujeito a correções operacionais e à modalidade."
+        ]
+      },
+      {
+        "id": "pm-caixa",
+        "url": "https://www.caixa.gov.br/programas-sociais/pe-de-meia/Paginas/default.aspx",
+        "titulo": "Programa Pé-de-Meia",
+        "orgao": "CAIXA",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "prazo",
+          "passo_a_passo"
+        ],
+        "limitacoes": [
+          "Abertura indisponível; conteúdo oficial indexado. Consultar data individual pelo mês de nascimento e situação dos dados enviados pela rede."
+        ]
+      },
+      {
+        "id": "pm-grat",
+        "url": "https://www.matriculafacil.rj.gov.br/Duvidas/Index",
+        "titulo": "Matrícula Fácil — dúvidas sobre o Programa Pé-de-Meia",
+        "orgao": "SEEDUC/RJ",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "custo"
+        ],
+        "limitacoes": [
+          "Usado somente para a confirmação expressa de gratuidade do programa; calendário e elegibilidade seguem fontes federais."
+        ]
+      },
+      {
+        "id": "pm-unip",
+        "url": "https://www.srca.cefetmg.br/pe-de-meia/",
+        "titulo": "Pé-de-Meia — orientações de elegibilidade",
+        "orgao": "CEFET-MG",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "condicoes_acesso"
+        ],
+        "limitacoes": [
+          "Instituição federal explica a vedação de acúmulo em família unipessoal com Bolsa Família, citando art. 3º, § 3º, II da Lei nº 14.818/2024."
+        ]
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Calendário de pagamentos e regras específicas por série não foram lidos.",
-      "Custo e prazo não informados nas páginas lidas.",
-      "Regras mudam a cada ano; confirmar no MEC e na CAIXA."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "df-cin",
@@ -3319,7 +4172,7 @@ const servicos = [
         "url": "https://www.nahora.df.gov.br/policia_civil",
         "titulo": "Na Hora — Instituto de Identificação / primeira CIN",
         "orgao": "PCDF / Na Hora",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "documentos",
@@ -3332,7 +4185,7 @@ const servicos = [
         "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
+    "data_consulta": "2026-11-18",
     "status_conteudo": "confirmado",
     "pendencias": [],
     "apto_catalogo": "sim"
@@ -3355,19 +4208,30 @@ const servicos = [
     "descricao": "Reemitir a habilitação válida.",
     "publico": "Titular da CNH.",
     "condicoes_acesso": [
-      "CNH não vencida; correções são tratadas nas unidades do Detran."
+      "CNH não vencida; correções são tratadas nas unidades do Detran.",
+      "Biometria pode ser reutilizada dentro do prazo dos exames; nova coleta exige pagamento."
     ],
     "documentos_obrigatorios": [
       {
-        "documento": "Identificação e cópia",
-        "observacao": "Exigidas no atendimento presencial.",
+        "documento": "Documento oficial de identificação",
+        "observacao": "Original legível ou documento digital oficial validável. No atendimento Na Hora, a carta também solicita cópia para emissão do borderô.",
         "fontes": [
+          "df-identificacao-471",
           "df-cnh-nahora"
         ]
       }
     ],
     "documentos_status": "confirmado",
-    "documentos_condicionais": [],
+    "documentos_condicionais": [
+      {
+        "documento": "CPF",
+        "quando": "Não constar no documento de identificação",
+        "observacao": "Apresentar cartão ou consulta cadastral emitida na Receita Federal.",
+        "fontes": [
+          "df-identificacao-471"
+        ]
+      }
+    ],
     "passo_a_passo": [
       {
         "ordem": 1,
@@ -3399,10 +4263,12 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago",
+      "status": "variavel",
       "valor_brl": null,
-      "descricao": "Há taxa; consultar tabela e guia vigente.",
+      "descricao": "Tabela 2026: serviço de segunda via R$ 144,00 e documento físico R$ 68,00. Nova coleta de biometria/digitalização/imagem, se realizada, custa R$ 53,00. A Instrução 471/2024 permite reutilizar a biometria dentro do prazo dos exames e exige pagamento para nova coleta; confira os componentes aplicáveis na guia.",
       "fontes": [
+        "df-taxas-2026",
+        "df-identificacao-471",
         "df-cnh-nahora"
       ]
     },
@@ -3414,7 +4280,7 @@ const servicos = [
       ]
     },
     "observacoes": [
-      "Carta antiga de 2018 indicava 20 dias; priorizado texto Na Hora atualizado em 2026."
+      "Valores unitários publicados em tabela oficial indexada; a guia aplica os componentes do procedimento efetivamente realizado."
     ],
     "fontes": [
       {
@@ -3422,7 +4288,7 @@ const servicos = [
         "url": "https://agenciabrasilia.df.gov.br/web/nahora/detran-3",
         "titulo": "Na Hora — Detran-DF, itens 7 e 9",
         "orgao": "Detran-DF / Na Hora",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "segunda via",
@@ -3432,16 +4298,48 @@ const servicos = [
           "prazo"
         ],
         "limitacoes": [
-          "Tabela de valores não incorporada."
+          "A carta remete à tabela de preços; valores unitários registrados em fonte própria."
         ]
+      },
+      {
+        "id": "df-taxas-2026",
+        "url": "https://www.agenciabrasilia.df.gov.br/documents/d/departamento-de-tr%C3%A2nsito/tp2026-16-pdf",
+        "titulo": "Tabela de preços públicos Detran-DF 2026 — anexos I, II e III",
+        "orgao": "Detran-DF",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "taxas 2026",
+          "segunda via",
+          "renovação",
+          "biometria",
+          "documento físico"
+        ],
+        "limitacoes": [
+          "Valores recuperados no índice oficial; PDF consolidado mais recente vinculado pela página de preços retornou erro de acesso."
+        ]
+      },
+      {
+        "id": "df-identificacao-471",
+        "url": "https://www.sinj.df.gov.br/sinj/Norma/b101e1c2591142fdbb61fdc89c203295/Instru_o_471_26_07_2024.html",
+        "titulo": "Instrução 471/2024 compilada — identificação e biometria",
+        "orgao": "Detran-DF / SINJ",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "documentos de identificação",
+          "documentos digitais",
+          "CPF",
+          "reutilização de biometria",
+          "cobrança de nova coleta"
+        ],
+        "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Confirmar valor vigente."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "df-cnh-renovacao",
@@ -3459,48 +4357,97 @@ const servicos = [
       "municipio": null
     },
     "orgao_responsavel": "Detran-DF",
-    "descricao": "Renovar exames e habilitação pelo procedimento estadual.",
+    "descricao": "Renovar a habilitação pelo procedimento estadual convencional, com os exames exigidos para o perfil do condutor.",
     "publico": "Condutor com CNH vencida ou a vencer.",
     "condicoes_acesso": [
-      "Biometria anterior aos exames; FAQ dispensa nova coleta quando realizada há menos de dez anos."
+      "Conferir a necessidade de biometria antes dos exames: a FAQ dispensa nova coleta quando realizada há menos de dez anos.",
+      "Concluir ou desistir de processo de alteração/inclusão de categoria em andamento antes da emissão da CNH renovada.",
+      "Esta ficha cobre a renovação estadual convencional; o enquadramento na modalidade simplificada deve ser conferido no canal oficial.",
+      "Deficiência ou condição clínica que comprometa a segurança pode exigir avaliação por junta ou núcleo médico do Detran, conforme encaminhamento."
     ],
     "documentos_obrigatorios": [
       {
-        "documento": "Identificação, CPF e CNH",
-        "observacao": "Carta de 2018 pede originais e cópias; reconfirmar exigência atual.",
+        "documento": "Documento oficial de identificação",
+        "observacao": "Original legível e com foto que permita identificar o titular; CNH é aceita. Documento digital oficial também pode ser validado conforme a Instrução 471/2024.",
         "fontes": [
-          "df-carta-2018"
+          "df-identificacao-471",
+          "df-clinicas-731"
         ]
       }
     ],
     "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
-        "documento": "Comprovante de endereço no DF",
-        "quando": "CNH de outra UF ou coleta biométrica",
-        "observacao": "Transferência: procurar unidade do Detran.",
+        "documento": "CPF",
+        "quando": "Não constar no documento de identificação",
+        "observacao": "Apresentar cartão ou consulta emitida na Receita Federal. A abertura clínica do Renach também utiliza o CPF.",
         "fontes": [
-          "df-detran-faq",
-          "df-cnh-nahora"
+          "df-identificacao-471",
+          "df-clinicas-731"
+        ]
+      },
+      {
+        "documento": "Comprovante de endereço no DF",
+        "quando": "Coleta biométrica ou CNH de outra UF",
+        "observacao": "Na transferência, comparecer primeiro à unidade do Detran para identificação biométrica e depois à clínica.",
+        "fontes": [
+          "df-cnh-nahora",
+          "df-detran-faq"
+        ]
+      },
+      {
+        "documento": "Duas fotos 3x4 recentes, coloridas e idênticas, com fundo claro",
+        "quando": "Abertura do Renach pela clínica credenciada",
+        "observacao": "Exigência expressa no art. 45, § 2º, da Instrução 731/2012 compilada; verificar com a clínica se o processo já está aberto após a coleta biométrica.",
+        "fontes": [
+          "df-clinicas-731"
+        ]
+      },
+      {
+        "documento": "Exame toxicológico",
+        "quando": "Categorias C, D ou E no procedimento convencional",
+        "observacao": "Fazer em laboratório credenciado; avaliação psicológica também é exigida quando o condutor exerce atividade remunerada.",
+        "fontes": [
+          "df-exames-resolucao-1020"
+        ]
+      },
+      {
+        "documento": "Documento de identificação com dados atualizados",
+        "quando": "Alteração de nome, filiação ou outro dado",
+        "observacao": "A alteração já deve constar no documento de identificação apresentado.",
+        "fontes": [
+          "df-identificacao-471"
         ]
       }
     ],
     "passo_a_passo": [
       {
         "ordem": 1,
-        "acao": "Conferir necessidade de biometria e comparecer ao posto.",
+        "acao": "Conferir a biometria no Detran/Na Hora; se necessária, comparecer com identificação, CPF e endereço. CNH de outra UF passa primeiro pela unidade do Detran.",
         "canal_url": "https://agenciabrasilia.df.gov.br/pt/web/departamento-de-tr%C3%A2nsito/perguntas-frequentes-detran",
         "fontes": [
-          "df-detran-faq"
+          "df-detran-faq",
+          "df-cnh-nahora",
+          "df-identificacao-471"
         ]
       },
       {
         "ordem": 2,
-        "acao": "Realizar exames na clínica credenciada e quitar cobranças.",
+        "acao": "Procurar clínica credenciada, apresentar a identificação e realizar os exames exigidos; se a clínica abrir o Renach, observar a exigência de duas fotos 3x4. Quitar a guia e os valores da clínica.",
         "canal_url": "https://agenciabrasilia.df.gov.br/pt/web/departamento-de-tr%C3%A2nsito/perguntas-frequentes-detran",
         "fontes": [
           "df-detran-faq",
-          "df-carta-2018"
+          "df-clinicas-731",
+          "df-exames-resolucao-1020",
+          "df-instrucao-309"
+        ]
+      },
+      {
+        "ordem": 3,
+        "acao": "Manter o endereço atualizado e acompanhar a entrega pelos Correios; em caso de devolução, consultar o posto no portal/aplicativo ou pelo telefone 154.",
+        "canal_url": "https://portal.detran.df.gov.br/",
+        "fontes": [
+          "df-entrega-cnh"
         ]
       }
     ],
@@ -3512,22 +4459,25 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago",
+      "status": "variavel",
       "valor_brl": null,
-      "descricao": "Cobrança e exames conforme caso; valor vigente não consolidado.",
+      "descricao": "Tabela 2026: solicitação de renovação R$ 144,00; documento físico R$ 68,00; biometria, se exigida, R$ 53,00. Desde a Instrução 309/2026, exame médico na clínica R$ 231,00 e psicológico R$ 267,00 quando necessário, até decisão final do TCDF. Toxicológico e serviços adicionais à parte; confira a guia e a clínica.",
       "fontes": [
-        "df-carta-2018"
+        "df-taxas-2026",
+        "df-exames-setembro-2026",
+        "df-instrucao-309"
       ]
     },
     "prazo": {
-      "status": "pendente",
-      "descricao": "Prazo vigente não confirmado; documento de 2018 não usado como garantia.",
+      "status": "com_ressalva",
+      "descricao": "Estimativa oficial de entrega física: até 20 dias no endereço cadastrado. A notícia não define o marco inicial nem se inclui a espera por exames. Após três tentativas, a CNH permanece sete dias nos Correios antes de retornar ao Detran; consulte o andamento no portal/aplicativo ou pelo 154.",
       "fontes": [
-        "df-carta-2018"
+        "df-entrega-cnh"
       ]
     },
     "observacoes": [
-      "Ficha cobre renovação estadual convencional; eventual renovação automática deve ser verificada no canal oficial."
+      "Checklist de identificação baseado na Instrução 471/2024 e na Instrução 731/2012 compilada, com alterações em 2026; a carta de 2018 não foi usada para impor cópias no fluxo atual.",
+      "A estimativa oficial de até 20 dias não esclarece o início da contagem nem a inclusão do tempo de espera por exames; essa limitação está visível no prazo."
     ],
     "fontes": [
       {
@@ -3535,7 +4485,7 @@ const servicos = [
         "url": "https://agenciabrasilia.df.gov.br/web/nahora/detran-3",
         "titulo": "Na Hora — Detran-DF, itens 7 e 9",
         "orgao": "Detran-DF / Na Hora",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "segunda via",
@@ -3553,7 +4503,7 @@ const servicos = [
         "url": "https://agenciabrasilia.df.gov.br/pt/web/departamento-de-tr%C3%A2nsito/perguntas-frequentes-detran",
         "titulo": "Perguntas frequentes — Habilitação",
         "orgao": "Detran-DF",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "renovação",
@@ -3564,29 +4514,125 @@ const servicos = [
         "limitacoes": []
       },
       {
-        "id": "df-carta-2018",
-        "url": "https://www.detran.df.gov.br/wp-content/uploads/2018/06/Vers%C3%A3o-resumida-HABILITA%C3%87%C3%83O-30.05.2018.pdf",
-        "titulo": "Carta resumida de habilitação — 2018, seção 6",
+        "id": "df-taxas-2026",
+        "url": "https://www.agenciabrasilia.df.gov.br/documents/d/departamento-de-tr%C3%A2nsito/tp2026-16-pdf",
+        "titulo": "Tabela de preços públicos Detran-DF 2026 — anexos I, II e III",
         "orgao": "Detran-DF",
-        "data_consulta": "2026-11-15",
-        "tipo_evidencia": "documento_lido",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
         "sustenta": [
-          "documentação de renovação",
-          "exames",
-          "cobrança"
+          "taxas 2026",
+          "segunda via",
+          "renovação",
+          "biometria",
+          "documento físico"
         ],
         "limitacoes": [
-          "Documento antigo; requisitos, cópias e prazo precisam ser reconfirmados. Não utilizado como prazo vigente."
+          "Valores recuperados no índice oficial; PDF consolidado mais recente vinculado pela página de preços retornou erro de acesso."
+        ]
+      },
+      {
+        "id": "df-exames-setembro-2026",
+        "url": "https://agenciabrasilia.df.gov.br/topicos?_com_liferay_portal_search_web_search_results_portlet_SearchResultsPortlet_INSTANCE_cpHel9qmBgwH_assetEntryId=31037736&_com_liferay_portal_search_web_search_results_portlet_SearchResultsPortlet_INSTANCE_cpHel9qmBgwH_mvcPath=%2Fview_content.jsp&_com_liferay_portal_search_web_search_results_portlet_SearchResultsPortlet_INSTANCE_cpHel9qmBgwH_redirect=%2Ftopicos%3Fdelta%3D60%26start%3D29&_com_liferay_portal_search_web_search_results_portlet_SearchResultsPortlet_INSTANCE_cpHel9qmBgwH_type=content&p_l_back_url=%2Ftopicos%3Fdelta%3D60%26start%3D29&p_l_back_url_title=T%C3%B3picos&p_p_id=com_liferay_portal_search_web_search_results_portlet_SearchResultsPortlet_INSTANCE_cpHel9qmBgwH&p_p_lifecycle=0&p_p_mode=view&p_p_state=maximized",
+        "titulo": "Detran-DF restabelece valores dos exames — 15/09/2026",
+        "orgao": "Detran-DF / Agência Brasília",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "exame médico",
+          "avaliação psicológica",
+          "pagamento à clínica"
+        ],
+        "limitacoes": [
+          "Notícia oficial recuperada no índice; valores restabelecidos até julgamento final do TCDF."
+        ]
+      },
+      {
+        "id": "df-instrucao-309",
+        "url": "https://www.sinj.df.gov.br/sinj/Norma/c6c13208c2364684a94809b1d5fc885d/detran_ins_309_2026.html",
+        "titulo": "Instrução Detran-DF 309/2026 — exames nas clínicas",
+        "orgao": "SINJ / Detran-DF",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "restabelecimento de valores",
+          "pagamento direto às clínicas"
+        ],
+        "limitacoes": [
+          "Regra condicionada ao julgamento final do TCDF."
+        ]
+      },
+      {
+        "id": "df-entrega-cnh",
+        "url": "https://agenciabrasilia.df.gov.br/topicos?_com_liferay_portal_search_web_search_results_portlet_SearchResultsPortlet_INSTANCE_cpHel9qmBgwH_assetEntryId=26141062&_com_liferay_portal_search_web_search_results_portlet_SearchResultsPortlet_INSTANCE_cpHel9qmBgwH_mvcPath=%2Fview_content.jsp&_com_liferay_portal_search_web_search_results_portlet_SearchResultsPortlet_INSTANCE_cpHel9qmBgwH_redirect=%2Ftopicos%3Fdelta%3D60%26start%3D106&_com_liferay_portal_search_web_search_results_portlet_SearchResultsPortlet_INSTANCE_cpHel9qmBgwH_type=content&p_l_back_url=%2Ftopicos%3Fdelta%3D60%26start%3D106&p_l_back_url_title=T%C3%B3picos&p_p_id=com_liferay_portal_search_web_search_results_portlet_SearchResultsPortlet_INSTANCE_cpHel9qmBgwH&p_p_lifecycle=0&p_p_mode=view&p_p_state=maximized",
+        "titulo": "CNHs devolvidas aguardam retirada — notícia oficial atualizada em 2026",
+        "orgao": "Detran-DF / Agência Brasília",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "prazo de entrega da CNH física",
+          "Correios",
+          "endereço"
+        ],
+        "limitacoes": [
+          "A notícia não explicita o marco inicial da contagem nem classifica os 20 dias como úteis."
+        ]
+      },
+      {
+        "id": "df-identificacao-471",
+        "url": "https://www.sinj.df.gov.br/sinj/Norma/b101e1c2591142fdbb61fdc89c203295/Instru_o_471_26_07_2024.html",
+        "titulo": "Instrução 471/2024 compilada — identificação e biometria",
+        "orgao": "Detran-DF / SINJ",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "documentos de identificação",
+          "documentos digitais",
+          "CPF",
+          "reutilização de biometria",
+          "cobrança de nova coleta"
+        ],
+        "limitacoes": []
+      },
+      {
+        "id": "df-clinicas-731",
+        "url": "https://www.sinj.df.gov.br/sinj/Norma/72756/Instru_o_731_06_11_2012.html",
+        "titulo": "Instrução 731/2012 compilada, com alterações de 2026 — clínicas",
+        "orgao": "Detran-DF / SINJ",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "identificação na clínica",
+          "CPF",
+          "fotos na abertura clínica do Renach",
+          "exames médicos e psicológicos",
+          "casos de deficiência"
+        ],
+        "limitacoes": [
+          "A exigência de duas fotos 3x4 refere-se à abertura do Renach pela clínica; não foi generalizada para todo atendimento biométrico."
+        ]
+      },
+      {
+        "id": "df-exames-resolucao-1020",
+        "url": "https://www.agenciabrasilia.df.gov.br/documents/d/departamento-de-tr%C3%A2nsito/resolucao-do-contran-n-1-02025-pdf",
+        "titulo": "Resolução Contran 1.020/2025, art. 92 — cópia oficial no Detran-DF",
+        "orgao": "Detran-DF / SINJ",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "aptidão física e mental",
+          "avaliação psicológica EAR",
+          "toxicológico C/D/E"
+        ],
+        "limitacoes": [
+          "Aplicada ao procedimento estadual convencional; não descreve a renovação simplificada de bons condutores."
         ]
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Revalidar checklist atual, cópias, exames condicionais e taxas.",
-      "Confirmar prazo e modalidade de entrega."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "go-cin",
@@ -3704,7 +4750,7 @@ const servicos = [
         "url": "https://vaptvupt.go.gov.br/servico/solicitar-carteira-de-identidade-nacional--cin-ssp--secretaria-de-estado-da-seguranca-publica-6a610024b4e2b?removeLayout=1",
         "titulo": "Solicitar Carteira de Identidade Nacional — CIN",
         "orgao": "SSP-GO / Vapt Vupt",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "documentos",
@@ -3717,7 +4763,7 @@ const servicos = [
         "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
+    "data_consulta": "2026-11-18",
     "status_conteudo": "confirmado",
     "pendencias": [],
     "apto_catalogo": "sim"
@@ -3737,10 +4783,12 @@ const servicos = [
       "municipio": null
     },
     "orgao_responsavel": "Detran-GO",
-    "descricao": "Reemitir a habilitação sem alterar dados pessoais ou foto.",
-    "publico": "Condutor ou procurador.",
+    "descricao": "Reemitir CNH já emitida em Goiás, sem alterar dados pessoais ou foto.",
+    "publico": "Titular de CNH emitida em Goiás ou procurador, conforme modalidade de atendimento.",
     "condicoes_acesso": [
-      "Aplicativo pode impedir pedido com bloqueio ou dados desatualizados."
+      "CNH emitida em Goiás; esta ficha não cobre transferência de CNH de outra UF.",
+      "Sem alteração de dados pessoais ou foto; endereço, telefone e e-mail podem ser atualizados conforme o canal.",
+      "Bloqueio no prontuário ou cadastro desatualizado pode impedir o pedido pelo aplicativo."
     ],
     "documentos_obrigatorios": [
       {
@@ -3790,7 +4838,7 @@ const servicos = [
     "custo": {
       "status": "pago",
       "valor_brl": 208.05,
-      "descricao": "Taxa 2026; confirmar guia antes de pagar.",
+      "descricao": "Taxa de R$ 208,05, vigente desde 1º de fevereiro de 2026; confirmar a guia antes de pagar.",
       "fontes": [
         "go-detran-vapt",
         "go-cnh-expresso"
@@ -3798,19 +4846,22 @@ const servicos = [
     },
     "prazo": {
       "status": "confirmado",
-      "descricao": "Até dez dias úteis no Expresso indexado.",
+      "descricao": "Até dez dias úteis, conforme carta do Portal Expresso revisada em 11/06/2026; acompanhe a disponibilidade para retirada.",
       "fontes": [
         "go-cnh-expresso"
       ]
     },
-    "observacoes": [],
+    "observacoes": [
+      "CNH de outra UF ficou fora do escopo desta ficha: as cartas Vapt Vupt e Expresso apresentam orientações divergentes.",
+      "Prazo e fluxo do Expresso recuperados no índice oficial; abertura direta exige aplicação sem texto no extrator."
+    ],
     "fontes": [
       {
         "id": "go-cnh-vapt",
         "url": "https://vaptvupt.go.gov.br/servico/2-via-da-cnh-detran--departamento-estadual-de-transito-6a88577bbb334",
         "titulo": "2ª via da CNH",
         "orgao": "Detran-GO / Vapt Vupt",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "documentos",
@@ -3819,7 +4870,7 @@ const servicos = [
           "restrições"
         ],
         "limitacoes": [
-          "Diverge do Expresso sobre CNH de outra UF."
+          "Divergência sobre CNH de outra UF não aplicada ao escopo desta ficha, restrita à CNH emitida em Goiás."
         ]
       },
       {
@@ -3827,7 +4878,7 @@ const servicos = [
         "url": "https://www.go.gov.br/servicos/servico/solicitar-segunda-via-da-carteira-nacional-de-habilitacao-cnh",
         "titulo": "Solicitar segunda via da CNH",
         "orgao": "Detran-GO / Expresso",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "trecho_indexado",
         "sustenta": [
           "fluxo digital",
@@ -3836,7 +4887,8 @@ const servicos = [
           "transferência"
         ],
         "limitacoes": [
-          "Página aberta, mas sem texto no extrator; conteúdo recuperado em busca oficial indexada."
+          "Página direta sem texto no extrator; conteúdo oficial revisado em 11/06/2026 recuperado no índice.",
+          "Orientação de transferência de outra UF não aplicada a esta ficha."
         ]
       },
       {
@@ -3844,7 +4896,7 @@ const servicos = [
         "url": "https://vaptvupt.go.gov.br/orgao/detran--departamento-estadual-de-transito",
         "titulo": "Detran — requisitos gerais e taxas 2026",
         "orgao": "Detran-GO / Vapt Vupt",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "taxas 2026",
@@ -3853,13 +4905,10 @@ const servicos = [
         "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Resolver divergência para CNH de outra UF: Vapt Vupt orienta UF de origem; Expresso orienta transferência concomitante.",
-      "Prazo recuperado apenas em conteúdo indexado."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "go-cnh-renovacao",
@@ -3880,13 +4929,15 @@ const servicos = [
     "descricao": "Renovar a habilitação e exames pelo procedimento estadual.",
     "publico": "Condutor habilitado.",
     "condicoes_acesso": [
-      "Solicitação pessoal; exames dependem de categoria e atividade."
+      "Solicitação pessoal; exames dependem de categoria e atividade.",
+      "Checklist específico completo e prazo da renovação ainda pendentes de confirmação no Detran-GO."
     ],
     "documentos_obrigatorios": [
       {
-        "documento": "CNH ou identificação equivalente",
-        "observacao": "Carta antiga admite identificação conforme vencimento; confirmar checklist.",
+        "documento": "CNH ou documento oficial de identificação com foto e CPF",
+        "observacao": "Documento legível e sem danos; CPF separado se não constar na identificação. A orientação geral atual do Vapt Vupt solicita original e cópia. Checklist específico completo da renovação ainda não foi revalidado.",
         "fontes": [
+          "go-detran-vapt",
           "go-carta-2023"
         ]
       }
@@ -3922,9 +4973,9 @@ const servicos = [
       {
         "ordem": 1,
         "acao": "Consultar renovação no Expresso ou unidade oficial.",
-        "canal_url": "https://www.go.gov.br/servicos/servico/obter-a-renovacao-da-cnh",
+        "canal_url": "https://www.go.gov.br/servicos/servico/solicitar-renovacao-da-carteira-nacional-de-habilitacao-cnh",
         "fontes": [
-          "go-carta-2023"
+          "go-renovacao-canal-atual"
         ]
       },
       {
@@ -3940,7 +4991,7 @@ const servicos = [
       {
         "tipo": "web",
         "nome": "Canal oficial do serviço",
-        "url": "https://www.go.gov.br/servicos/servico/obter-a-renovacao-da-cnh"
+        "url": "https://www.go.gov.br/servicos/servico/solicitar-renovacao-da-carteira-nacional-de-habilitacao-cnh"
       },
       {
         "tipo": "web",
@@ -3972,7 +5023,7 @@ const servicos = [
         "url": "https://vaptvupt.go.gov.br/orgao/detran--departamento-estadual-de-transito",
         "titulo": "Detran — requisitos gerais e taxas 2026",
         "orgao": "Detran-GO / Vapt Vupt",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "taxas 2026",
@@ -3995,13 +5046,28 @@ const servicos = [
         "limitacoes": [
           "Carta antiga; validar exigências atuais e prazo."
         ]
+      },
+      {
+        "id": "go-renovacao-canal-atual",
+        "url": "https://goias.gov.br/detran/informacoes-sobre-cnh/",
+        "titulo": "Informações sobre CNH — link atual para renovação",
+        "orgao": "Detran-GO",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "canal atual da renovação"
+        ],
+        "limitacoes": [
+          "Link de renovação abre aplicação sem texto extraível; buscas não recuperaram checklist e prazo atual.",
+          "Valores antigos de outros serviços nessa página não foram aplicados."
+        ]
       }
     ],
-    "data_consulta": "2026-11-15",
+    "data_consulta": "2026-11-18",
     "status_conteudo": "parcial",
     "pendencias": [
-      "Checklist de renovação deriva de carta antiga; confirmar exigências atuais.",
-      "Confirmar prazo."
+      "Revalidar checklist específico atual da renovação e documentos dos casos especiais.",
+      "Confirmar prazo específico da renovação."
     ],
     "apto_catalogo": "com_ressalvas"
   },
@@ -4022,7 +5088,7 @@ const servicos = [
     },
     "orgao_responsavel": "Politec-MT",
     "descricao": "Emitir a identidade nacional em Mato Grosso.",
-    "publico": "Pessoa que solicita a primeira CIN.",
+    "publico": "Brasileiros e portugueses com igualdade de direitos que solicitam a primeira CIN.",
     "condicoes_acesso": [
       "CPF e certidão devem ter dados compatíveis."
     ],
@@ -4036,7 +5102,7 @@ const servicos = [
       },
       {
         "documento": "Certidão de nascimento ou casamento",
-        "observacao": "Original ou cópia autenticada.",
+        "observacao": "Original legível ou cópia autenticada; certidão de casamento com averbação de divórcio/separação ou viuvez, conforme estado civil.",
         "fontes": [
           "mt-cin-portal"
         ]
@@ -4045,9 +5111,25 @@ const servicos = [
     "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
-        "documento": "Identificação do responsável",
+        "documento": "Documento original do genitor ou responsável e autorização, quando aplicável",
         "quando": "Menor de 16 anos",
-        "observacao": "Responsável retira o documento; checklist de acompanhamento deve ser conferido.",
+        "observacao": "Comparecer com os pais ou representante legal. Na impossibilidade de comparecimento do genitor/responsável, enviar a identificação original e o formulário de autorização assinado conforme o documento. A retirada é feita apenas por genitor ou responsável legal.",
+        "fontes": [
+          "mt-cin-portal"
+        ]
+      },
+      {
+        "documento": "Certificado ou Portaria de Naturalização",
+        "quando": "Brasileiro naturalizado",
+        "observacao": "Certificado original legível ou cópia autenticada; também aceita Portaria publicada no DOU.",
+        "fontes": [
+          "mt-cin-portal"
+        ]
+      },
+      {
+        "documento": "Certificado ou Ato de Igualdade de Direitos",
+        "quando": "Português equiparado",
+        "observacao": "Certificado original legível/cópia autenticada ou ato de outorga publicado no DOU.",
         "fontes": [
           "mt-cin-portal"
         ]
@@ -4072,11 +5154,11 @@ const servicos = [
       },
       {
         "ordem": 3,
-        "acao": "Consultar pedido e retirar no mesmo local com protocolo.",
-        "canal_url": "https://portal.mt.gov.br/catalog/emitir-1a-via-da-carteira-de-identidade-nacional-%28cin%29",
+        "acao": "Consultar com CPF as etapas e o prazo médio em Consulta CIN; retirar no mesmo posto com protocolo. Para menor de 16 anos, somente genitor ou responsável legal retira.",
+        "canal_url": "https://portal.sesp.mt.gov.br/consulta-cin-app",
         "fontes": [
           "mt-cin-portal",
-          "mt-cin-politec"
+          "mt-cin-acompanhamento"
         ]
       }
     ],
@@ -4090,6 +5172,11 @@ const servicos = [
         "tipo": "web",
         "nome": "Canal oficial do serviço",
         "url": "https://portal.mt.gov.br/catalog/emitir-1a-via-da-carteira-de-identidade-nacional-%28cin%29"
+      },
+      {
+        "tipo": "web",
+        "nome": "Consulta CIN — andamento e prazo médio",
+        "url": "https://portal.sesp.mt.gov.br/consulta-cin-app"
       }
     ],
     "custo": {
@@ -4101,30 +5188,38 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "pendente",
-      "descricao": "Prazo não localizado nas páginas consultadas.",
+      "status": "com_ressalva",
+      "descricao": "O prazo médio do pedido é informado na Consulta CIN, com o CPF do requerente. A orientação da Politec de 31/10/2026 é acompanhar essa estimativa e a etapa de emissão; não foi publicada nessa orientação uma duração única garantida.",
       "fontes": [
-        "mt-cin-portal",
-        "mt-cin-politec"
+        "mt-cin-acompanhamento",
+        "mt-cin-consulta-2026"
       ]
     },
-    "observacoes": [],
+    "observacoes": [
+      "Documentos e checklist especial recuperados no catálogo oficial indexado, atualizado há um mês; aplicação direta não apresentou texto ao extrator.",
+      "A entrega por terceiro de documento de maior de 16 anos exige protocolo e documento oficial com foto, conforme catálogo."
+    ],
     "fontes": [
       {
         "id": "mt-cin-portal",
         "url": "https://portal.mt.gov.br/catalog/emitir-1a-via-da-carteira-de-identidade-nacional-%28cin%29",
         "titulo": "Emitir 1ª via da CIN",
         "orgao": "Politec-MT / Portal MT",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "trecho_indexado",
         "sustenta": [
           "documentos",
           "etapas",
           "CPF",
-          "custo"
+          "custo",
+          "menores de 16 anos",
+          "naturalizados",
+          "portugueses equiparados",
+          "averbações",
+          "retirada"
         ],
         "limitacoes": [
-          "Abertura direta não expõe texto; conteúdo consultado no índice oficial."
+          "Conteúdo recuperado no índice oficial; página direta sem texto no extrator."
         ]
       },
       {
@@ -4132,7 +5227,7 @@ const servicos = [
         "url": "https://www.politec.mt.gov.br/identifica%C3%A7%C3%A3o-t%C3%A9cnica",
         "titulo": "Identificação Técnica — perguntas frequentes",
         "orgao": "Politec-MT",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "gratuidade",
@@ -4141,15 +5236,44 @@ const servicos = [
           "retirada"
         ],
         "limitacoes": []
+      },
+      {
+        "id": "mt-cin-acompanhamento",
+        "url": "https://www.politec.mt.gov.br/acompanhamento-de-emissao-da-cin",
+        "titulo": "Acompanhamento de Emissão da CIN",
+        "orgao": "Politec-MT",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "consulta por CPF",
+          "etapas",
+          "prazo médio individual",
+          "postos"
+        ],
+        "limitacoes": [
+          "A consulta exige CPF do requerente; nenhuma consulta individual foi realizada."
+        ]
+      },
+      {
+        "id": "mt-cin-consulta-2026",
+        "url": "https://www.politec.mt.gov.br/pt/-/cidad%C3%A3o-pode-consultar-andamento-da-carteira-de-identidade-nacional-pelo-site-da-politec",
+        "titulo": "Consulta CIN informa etapas e prazo médio — 31/10/2026",
+        "orgao": "Politec-MT",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "consulta por CPF",
+          "prazo médio individual"
+        ],
+        "limitacoes": [
+          "A notícia direciona à estimativa do pedido, sem publicar um prazo único garantido."
+        ]
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Confirmar prazo e checklist especial de menores/naturalizados.",
-      "Parte dos documentos e etapas depende de conteúdo indexado."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "mt-cnh",
@@ -4241,7 +5365,7 @@ const servicos = [
         "url": "https://www.detran.mt.gov.br/web/DETRAN/servicos?c=9895454&e=10062270",
         "titulo": "Segunda via da CNH",
         "orgao": "Detran-MT",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "documentos",
@@ -4253,7 +5377,7 @@ const servicos = [
         "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
+    "data_consulta": "2026-11-18",
     "status_conteudo": "confirmado",
     "pendencias": [],
     "apto_catalogo": "sim"
@@ -4353,7 +5477,7 @@ const servicos = [
         "url": "https://www.detran.mt.gov.br/servicos?c=9895454&e=10062261",
         "titulo": "Renovação de CNH",
         "orgao": "Detran-MT",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "documentos",
@@ -4365,7 +5489,7 @@ const servicos = [
         "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
+    "data_consulta": "2026-11-18",
     "status_conteudo": "confirmado",
     "pendencias": [],
     "apto_catalogo": "sim"
@@ -4389,7 +5513,9 @@ const servicos = [
     "descricao": "Emitir a identidade nacional em Mato Grosso do Sul.",
     "publico": "Pessoa que solicita a primeira CIN.",
     "condicoes_acesso": [
-      "Escolher posto e horário disponíveis no agendamento oficial."
+      "Escolher posto e horário disponíveis no agendamento oficial.",
+      "Para menores e pessoas representadas, confirmar previamente documentos do acompanhante: a carta atual não detalha esse checklist.",
+      "Menores de idade devem comparecer com pai, mãe ou responsável legal. Não é necessário levar foto 3x4."
     ],
     "documentos_obrigatorios": [
       {
@@ -4400,9 +5526,10 @@ const servicos = [
         ]
       },
       {
-        "documento": "Certidão original de nascimento ou casamento",
-        "observacao": "Conforme estado civil.",
+        "documento": "Certidão de nascimento ou casamento",
+        "observacao": "Original e cópia; a carta atual exige ambos. Divórcio e viuvez devem constar da averbação correspondente.",
         "fontes": [
+          "ms-cin-carta-2026",
           "ms-cin-documentos"
         ]
       }
@@ -4415,6 +5542,22 @@ const servicos = [
         "observacao": "Apresentar certidão com anotação correspondente.",
         "fontes": [
           "ms-cin-documentos"
+        ]
+      },
+      {
+        "documento": "Certificado de naturalização",
+        "quando": "Brasileiro naturalizado",
+        "observacao": "Apresentar original e cópia.",
+        "fontes": [
+          "ms-cin-carta-2026"
+        ]
+      },
+      {
+        "documento": "Certificado de Igualdade",
+        "quando": "Português com igualdade de direitos",
+        "observacao": "Apresentar original e cópia.",
+        "fontes": [
+          "ms-cin-carta-2026"
         ]
       }
     ],
@@ -4447,6 +5590,11 @@ const servicos = [
         "tipo": "web",
         "nome": "Canal oficial do serviço",
         "url": "https://www.cgp.sejusp.ms.gov.br/policia-cientifica-tem-vagas-disponiveis-para-emissao-do-novo-rg-em-tres-lagoas/"
+      },
+      {
+        "tipo": "web",
+        "nome": "Carta estadual — documentos e prazo",
+        "url": "https://www.ms.gov.br/servico/expedicao-de-carteira-de-identidade127"
       }
     ],
     "custo": {
@@ -4454,15 +5602,15 @@ const servicos = [
       "valor_brl": 0,
       "descricao": "Primeira CIN gratuita.",
       "fontes": [
-        "ms-cin-agendamento"
+        "ms-cin-agendamento",
+        "ms-cin-carta-2026"
       ]
     },
     "prazo": {
-      "status": "pendente",
-      "descricao": "Prazo de entrega não confirmado.",
+      "status": "confirmado",
+      "descricao": "20 dias úteis, conforme carta estadual revisada em 29/09/2026.",
       "fontes": [
-        "ms-cin-documentos",
-        "ms-cin-agendamento"
+        "ms-cin-carta-2026"
       ]
     },
     "observacoes": [
@@ -4499,14 +5647,48 @@ const servicos = [
         "limitacoes": [
           "Vagas e números da notícia são históricos."
         ]
+      },
+      {
+        "id": "ms-cin-carta-2026",
+        "url": "https://www.ms.gov.br/servico/expedicao-de-carteira-de-identidade127",
+        "titulo": "Solicitar carteira de identidade — revisão 29/09/2026",
+        "orgao": "CGP-MS / Portal MS",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "certidões",
+          "naturalização",
+          "igualdade de direitos",
+          "prazo",
+          "primeira CIN gratuita",
+          "agendamento"
+        ],
+        "limitacoes": [
+          "Conteúdo recuperado no índice oficial; a aplicação direta exige JavaScript.",
+          "Carta ainda usa a denominação RG em parte do texto e não detalha acompanhantes de menores."
+        ]
+      },
+      {
+        "id": "ms-cin-menores-2026",
+        "url": "https://agenciadenoticias.ms.gov.br/novo-rg-mutirao-no-centro-de-campo-grande-oferece-500-senhas-sem-agendamento/",
+        "titulo": "Novo RG: mutirão no centro de Campo Grande oferece 500 senhas sem agendamento na sexta e sábado",
+        "orgao": "Polícia Científica / Agência de Notícias de Mato Grosso do Sul",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "condicoes_acesso",
+          "documentos",
+          "gratuidade"
+        ],
+        "limitacoes": [
+          "Agenda do mutirão de outubro é histórica; a ficha usa somente as orientações documentais e o acompanhamento de menores."
+        ]
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Confirmar prazo e documentos especiais para menores, representantes e naturalizados."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "ms-cnh",
@@ -4523,28 +5705,21 @@ const servicos = [
       "municipio": null
     },
     "orgao_responsavel": "Detran-MS",
-    "descricao": "Solicitar reemissão da CNH ou PPD.",
+    "descricao": "Solicitar a segunda via da CNH ou PPD cuja última emissão foi feita pelo Detran-MS, sem alteração de dados.",
     "publico": "Condutor habilitado.",
     "condicoes_acesso": [
-      "Conferir endereço antes da emissão impressa."
+      "Conferir o endereço cadastrado antes de pagar e pedir a impressão.",
+      "A identidade do condutor com última CNH emitida pelo Detran-MS é validada no banco de dados e imagens, conforme Portaria 84/2020. Para CNH de outra UF, consultar primeiro o procedimento de transferência."
     ],
-    "documentos_obrigatorios": [
-      {
-        "documento": "CNH original ou identificação",
-        "observacao": "Orientação de manual antigo; checklist atual pendente.",
-        "fontes": [
-          "ms-guia-2017"
-        ]
-      }
-    ],
-    "documentos_status": "confirmado",
+    "documentos_obrigatorios": [],
+    "documentos_status": "nao_se_aplica",
     "documentos_condicionais": [
       {
-        "documento": "Boletim de ocorrência ou CNH danificada",
-        "quando": "Extravio ou dano",
-        "observacao": "Consta de checklist antigo; confirmar aplicabilidade atual.",
+        "documento": "Documento de identificação válido e CPF, se não constar nele",
+        "quando": "Se for necessário corrigir dados ou a identificação exigir verificação adicional.",
+        "observacao": "Na segunda via com última emissão pelo Detran-MS, a Portaria 84/2020 dispensa apresentar a identificação; o órgão valida seu banco de dados e imagens.",
         "fontes": [
-          "ms-guia-2017"
+          "ms-identificacao-84-2020"
         ]
       }
     ],
@@ -4629,20 +5804,6 @@ const servicos = [
         ]
       },
       {
-        "id": "ms-guia-2017",
-        "url": "https://servonline.detran.ms.gov.br/despachantes/download/guia_cnh_digital_vs%204.3_cfc.pdf",
-        "titulo": "Guia CNH Digital v4.3 — checklists",
-        "orgao": "Detran-MS",
-        "data_consulta": "2026-11-15",
-        "tipo_evidencia": "documento_lido",
-        "sustenta": [
-          "documentação histórica"
-        ],
-        "limitacoes": [
-          "Manual antigo; não comprova checklist vigente em novembro/2026."
-        ]
-      },
-      {
         "id": "ms-cnh-entrega",
         "url": "https://www.detran.ms.gov.br/nova-entrega-da-cnh-sera-por-sedex-e-documento-que-retornar-ficara-nos-correios/",
         "titulo": "Nova entrega da CNH por Sedex — 23/10/2026",
@@ -4656,12 +5817,40 @@ const servicos = [
         "limitacoes": [
           "Não informa duração total do serviço; data de início escrita como segunda-feira (29), inconsistente com publicação."
         ]
+      },
+      {
+        "id": "ms-uferms-novembro-2026",
+        "url": "https://aacpdappls.net.ms.gov.br/appls/legislacao/serc/legato.nsf/7382b3a89b695e7a04256b1f00725c1e/6b3ffc49b559834c04258e9d00484bd5",
+        "titulo": "Resolução SEFAZ 3.529/2026 — UFERMS novembro",
+        "orgao": "SEFAZ-MS",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "UFERMS novembro de 2026"
+        ],
+        "limitacoes": []
+      },
+      {
+        "id": "ms-identificacao-84-2020",
+        "url": "https://www.detran.ms.gov.br/wp-content/uploads/2020/08/Portaria-DETRAN-MS-84-2020-Documentos-de-Identifica%C3%A7%C3%A3o-2-1.pdf",
+        "titulo": "Portaria Detran-MS N nº 84/2020 — documentos de identificação",
+        "orgao": "Detran-MS",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "documento_lido",
+        "sustenta": [
+          "documentos",
+          "documentos_condicionais",
+          "condicoes_acesso"
+        ],
+        "limitacoes": [
+          "Disciplina a identificação, não comprova valor da guia nem prazo de emissão."
+        ]
       }
     ],
-    "data_consulta": "2026-11-15",
+    "data_consulta": "2026-11-18",
     "status_conteudo": "parcial",
     "pendencias": [
-      "Confirmar checklist atual, taxa vigente e prazo específico."
+      "Confirmar o valor total vigente da guia da segunda via e o prazo específico de emissão/entrega; as fontes consultadas não publicam esses dois dados de novembro de 2026."
     ],
     "apto_catalogo": "com_ressalvas"
   },
@@ -4684,25 +5873,34 @@ const servicos = [
     "descricao": "Renovar os exames necessários à habilitação.",
     "publico": "Condutor habilitado.",
     "condicoes_acesso": [
-      "Atendimento e exames segundo perfil."
+      "Solicitar a renovação no CNH Ágil, conferir os dados e cumprir os exames indicados no processo.",
+      "A dispensa de apresentar identificação vale para CNH vencida cuja última emissão tenha sido pelo Detran-MS; os demais casos seguem a Portaria 84/2020."
     ],
     "documentos_obrigatorios": [
       {
-        "documento": "CNH original ou documento de identificação",
-        "observacao": "Manual antigo; reconfirmar documentação vigente.",
+        "documento": "Documento de identificação válido",
+        "observacao": "A apresentação é dispensada se a CNH estiver vencida e a última emissão tiver sido pelo Detran-MS; nesse caso, a identidade é validada no banco de dados e imagens.",
         "fontes": [
-          "ms-guia-2017"
+          "ms-identificacao-84-2020"
         ]
       }
     ],
     "documentos_status": "confirmado",
     "documentos_condicionais": [
       {
-        "documento": "Formulário RENACH",
-        "quando": "Processo presencial conforme manual",
-        "observacao": "Manual dispensa no processo digital; confirmar regra atual.",
+        "documento": "CPF",
+        "quando": "O número não consta na identificação apresentada.",
+        "observacao": "Comprovante de inscrição e situação cadastral da Receita Federal.",
         "fontes": [
-          "ms-guia-2017"
+          "ms-identificacao-84-2020"
+        ]
+      },
+      {
+        "documento": "Resultado dos exames conforme o perfil do condutor",
+        "quando": "Na renovação convencional.",
+        "observacao": "Cumprir exame médico, avaliação psicológica quando exigida e toxicológico quando aplicável à categoria, conforme instruções do processo no CNH Ágil.",
+        "fontes": [
+          "ms-carta-portal"
         ]
       }
     ],
@@ -4737,16 +5935,18 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago",
+      "status": "variavel",
       "valor_brl": null,
-      "descricao": "Guia e exames conforme processo; valor não confirmado.",
+      "descricao": "Exame médico R$ 75,00; psicológico R$ 105,00 quando exigido, desde 23/01/2026. Carta atual de renovação com EAR informa 5,43 UFERMS + R$ 180,00; em novembro a UFERMS é R$ 56,33. Taxa e composição da renovação sem EAR ainda não confirmadas; emitir a guia oficial antes de pagar.",
       "fontes": [
-        "ms-carta-portal"
+        "ms-exames-2026",
+        "ms-renovacao-ear-2026",
+        "ms-uferms-novembro-2026"
       ]
     },
     "prazo": {
       "status": "com_ressalva",
-      "descricao": "Carta indexada informa sete dias úteis, mas mistura serviços e não define marco inicial; reconfirmar.",
+      "descricao": "A carta estadual de renovação informa estimativa de 7 dias úteis sem definir o marco inicial. O prazo não deve ser contado como garantia desde o pedido, incluindo espera por exames; acompanhe o processo no CNH Ágil.",
       "fontes": [
         "ms-carta-portal"
       ]
@@ -4786,24 +5986,70 @@ const servicos = [
         ]
       },
       {
-        "id": "ms-guia-2017",
-        "url": "https://servonline.detran.ms.gov.br/despachantes/download/guia_cnh_digital_vs%204.3_cfc.pdf",
-        "titulo": "Guia CNH Digital v4.3 — checklists",
-        "orgao": "Detran-MS",
-        "data_consulta": "2026-11-15",
-        "tipo_evidencia": "documento_lido",
+        "id": "ms-uferms-novembro-2026",
+        "url": "https://aacpdappls.net.ms.gov.br/appls/legislacao/serc/legato.nsf/7382b3a89b695e7a04256b1f00725c1e/6b3ffc49b559834c04258e9d00484bd5",
+        "titulo": "Resolução SEFAZ 3.529/2026 — UFERMS novembro",
+        "orgao": "SEFAZ-MS",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
         "sustenta": [
-          "documentação histórica"
+          "UFERMS novembro de 2026"
+        ],
+        "limitacoes": []
+      },
+      {
+        "id": "ms-exames-2026",
+        "url": "https://www.detran.ms.gov.br/detran-ms-publica-portaria-que-reduz-valores-dos-exames-da-cnh-do-brasil/",
+        "titulo": "Portaria N 201/2026 — novos valores de exames",
+        "orgao": "Detran-MS",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "exame médico R$ 75",
+          "avaliação psicológica R$ 105",
+          "vigência desde 23/01/2026"
+        ],
+        "limitacoes": []
+      },
+      {
+        "id": "ms-renovacao-ear-2026",
+        "url": "https://www.ms.gov.br/transito-e-transportes/incluir-ear-na-carteira-nacional-de-habilitacao-cnh34",
+        "titulo": "Solicitar renovação da CNH com EAR — revisão 30/09/2026",
+        "orgao": "Detran-MS / Portal MS",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "taxa EAR em UFERMS",
+          "exames EAR",
+          "canal CNH Ágil",
+          "prazo EAR"
         ],
         "limitacoes": [
-          "Manual antigo; não comprova checklist vigente em novembro/2026."
+          "Somente renovação com EAR; não comprova taxa da renovação comum.",
+          "Informa sete dias úteis sem explicitar marco inicial; aplicação direta sem texto no extrator."
+        ]
+      },
+      {
+        "id": "ms-identificacao-84-2020",
+        "url": "https://www.detran.ms.gov.br/wp-content/uploads/2020/08/Portaria-DETRAN-MS-84-2020-Documentos-de-Identifica%C3%A7%C3%A3o-2-1.pdf",
+        "titulo": "Portaria Detran-MS N nº 84/2020 — documentos de identificação",
+        "orgao": "Detran-MS",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "documento_lido",
+        "sustenta": [
+          "documentos",
+          "documentos_condicionais",
+          "condicoes_acesso"
+        ],
+        "limitacoes": [
+          "Disciplina a identificação, não comprova valor da guia nem prazo de emissão."
         ]
       }
     ],
-    "data_consulta": "2026-11-15",
+    "data_consulta": "2026-11-18",
     "status_conteudo": "parcial",
     "pendencias": [
-      "Confirmar checklist, exames condicionais, taxas e marco inicial do prazo."
+      "Confirmar a composição da taxa administrativa da renovação sem EAR; os exames e a renovação com EAR têm valores publicados, mas a guia da renovação comum ainda precisa de confirmação."
     ],
     "apto_catalogo": "com_ressalvas"
   },
@@ -4824,28 +6070,31 @@ const servicos = [
     },
     "orgao_responsavel": "Polícia Científica do Espírito Santo — Instituto de Identificação",
     "descricao": "Emitir a primeira identidade nacional no Espírito Santo.",
-    "publico": "Pessoas que solicitam a primeira CIN.",
+    "publico": "Brasileiros e portugueses com igualdade de direitos.",
     "condicoes_acesso": [
-      "No Faça Fácil: brasileiro nato e CPF regular ou pendente de regularização."
+      "Primeira CIN: nunca emitida em outra UF. Atendimento pode ocorrer em qualquer município; o posto define agendamento online, local ou livre demanda.",
+      "No Faça Fácil, a carta limita o atendimento a brasileiros natos com CPF regular ou pendente de regularização. Para outros casos, consulte posto do Instituto de Identificação.",
+      "Sem CPF, a rota aqui orientada é inscrever-se primeiro na Receita Federal e depois usar o CPF para acessar o agendamento. A inscrição federal é gratuita pela Receita; conveniados cobram R$ 7,00. O atendimento simultâneo de CPF/CIN deve ser consultado diretamente no posto."
     ],
     "documentos_obrigatorios": [
       {
         "documento": "Certidão do estado civil",
-        "observacao": "Original ou cópia autenticada; nascimento para solteiro; casamento e averbações cabíveis.",
+        "observacao": "Nascimento para solteiros; casamento com averbações cabíveis. Original, cópia autenticada ou arquivo digital validável.",
         "fontes": [
-          "es-cin-ff"
-        ]
-      },
-      {
-        "documento": "Comprovante ou declaração de residência",
-        "observacao": "Original; faturas aceitas com até 60 dias no Faça Fácil.",
-        "fontes": [
-          "es-cin-ff"
+          "es-cin-is50"
         ]
       }
     ],
     "documentos_status": "confirmado",
     "documentos_condicionais": [
+      {
+        "documento": "Comprovante ou declaração de residência",
+        "observacao": "Aceita declaração assinada; faturas com até 60 dias.",
+        "fontes": [
+          "es-cin-is50"
+        ],
+        "quando": "Para comprovar endereço"
+      },
       {
         "documento": "Foto 3x4",
         "quando": "Crianças de 0 a 3 anos no Faça Fácil",
@@ -4855,25 +6104,57 @@ const servicos = [
         ]
       },
       {
-        "documento": "Identificação e CPF do responsável",
-        "quando": "Menor de 16 anos",
-        "observacao": "Comprovar representação ou autorização conforme o caso.",
+        "documento": "Identificação, CPF e comprovação de representação",
+        "observacao": "Acompanhar com pai, mãe, responsável legal ou avós com parentesco comprovado. Terceiro: autorização do Anexo I e identificação do autorizante.",
         "fontes": [
-          "es-cin-ff"
-        ]
+          "es-cin-is50"
+        ],
+        "quando": "Menor de 16 anos"
+      },
+      {
+        "documento": "Documento de naturalização",
+        "observacao": "Portaria no DOU, certificado ou certidão positiva de naturalização.",
+        "fontes": [
+          "es-cin-is50"
+        ],
+        "quando": "Brasileiro naturalizado"
+      },
+      {
+        "documento": "Igualdade de direitos e obrigações",
+        "observacao": "Certificado/portaria de concessão publicada no DOU.",
+        "fontes": [
+          "es-cin-is50"
+        ],
+        "quando": "Português equiparado"
+      },
+      {
+        "documento": "Certidão transcrita no livro E",
+        "observacao": "Apresentar traslado; opção de nacionalidade quando exigida pelo art. 19.",
+        "fontes": [
+          "es-cin-is50"
+        ],
+        "quando": "Filho de brasileiro nascido no exterior"
       }
     ],
     "passo_a_passo": [
       {
         "ordem": 1,
-        "acao": "Consultar posto e agendar.",
-        "canal_url": "https://agenda.es.gov.br/",
+        "acao": "Se ainda não possui CPF, solicitar inscrição pelo serviço da Receita Federal e concluir eventuais exigências antes do agendamento da CIN.",
+        "canal_url": "https://www.gov.br/pt-br/servicos/inscrever-no-cpf",
         "fontes": [
-          "es-cin-ff"
+          "es-cin-cpf-inscricao"
         ]
       },
       {
         "ordem": 2,
+        "acao": "Consultar o posto; agendar online ou diretamente na unidade, conforme a modalidade local.",
+        "canal_url": "https://pci.es.gov.br/endereco-telefone-horario",
+        "fontes": [
+          "es-cin-is50"
+        ]
+      },
+      {
+        "ordem": 3,
         "acao": "Comparecer com a documentação.",
         "canal_url": "https://facafacil.es.gov.br/servicos/cin-carteira-de-identidade-nacional-primeira-e-segunda-via",
         "fontes": [
@@ -4881,11 +6162,11 @@ const servicos = [
         ]
       },
       {
-        "ordem": 3,
-        "acao": "Consultar emissão pelo canal da PCIES.",
-        "canal_url": "https://cin-pci.sesp.es.gov.br/Vsoft.iDSPS.Agendamento/",
+        "ordem": 4,
+        "acao": "Consultar emissão; pedidos com biometria desde 21/02 usam a consulta atual da PCIES.",
+        "canal_url": "https://pci.es.gov.br/consultacin",
         "fontes": [
-          "es-cin-faq"
+          "es-cin-pci"
         ]
       }
     ],
@@ -4909,14 +6190,15 @@ const servicos = [
     "custo": {
       "status": "gratuito",
       "valor_brl": 0,
-      "descricao": "Primeira CIN gratuita.",
+      "descricao": "Primeira CIN gratuita. A inscrição prévia no CPF é outro serviço: gratuita pelos canais da Receita Federal e R$ 7,00 na rede conveniada.",
       "fontes": [
-        "es-cin-faq"
+        "es-cin-faq",
+        "es-cin-cpf-inscricao"
       ]
     },
     "prazo": {
       "status": "confirmado",
-      "descricao": "Até 90 dias consecutivos para expedição, segundo FAQ.",
+      "descricao": "Até 90 dias consecutivos para expedição, segundo FAQ; envolve análises internas e periciais.",
       "fontes": [
         "es-cin-faq"
       ]
@@ -4948,12 +6230,12 @@ const servicos = [
         "url": "https://pci.es.gov.br/perguntas-frequentes?contato=3-carteira-de-identidade-nacional",
         "titulo": "PCIES — Perguntas frequentes",
         "orgao": "PCIES",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "gratuidade",
-          "prazo",
-          "consulta de emissão"
+          "prazo de expedição",
+          "urgência"
         ],
         "limitacoes": []
       },
@@ -4962,24 +6244,70 @@ const servicos = [
         "url": "https://pci.es.gov.br/cin",
         "titulo": "PCIES — CIN",
         "orgao": "PCIES",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
           "órgão",
           "postos",
-          "orientações"
+          "consulta de emissão"
         ],
         "limitacoes": [
-          "Documentação incorporada por Infogram não teve texto extraído."
+          "Quadros Infogram não foram extraídos."
+        ]
+      },
+      {
+        "id": "es-cin-is50",
+        "url": "https://pci.es.gov.br/Media/Boletim/BI_-_Ed_30_-22-07-2025.pdf",
+        "titulo": "PCIES — IS 050/2025, arts. 2, 4, 15–22",
+        "orgao": "PCIES",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "documentos estaduais",
+          "representação de menores",
+          "naturalização",
+          "igualdade de direitos",
+          "atendimento"
+        ],
+        "limitacoes": [
+          "PDF alternativo oficial da mesma edição; link terminado em -1.pdf no portal não abriu."
+        ]
+      },
+      {
+        "id": "es-cin-cpf-federal",
+        "url": "https://www.gov.br/governodigital/pt-br/identidade/cin/cefic/tratamento-de-dados",
+        "titulo": "Governo Digital — Tratamento de dados da CIN",
+        "orgao": "MGI / Governo Digital",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "inscrição no CPF por órgão de identificação"
+        ],
+        "limitacoes": [
+          "A inscrição prévia pela Receita Federal é a rota orientada para acesso ao agendamento com CPF; o atendimento simultâneo em cada posto não foi auditado."
+        ]
+      },
+      {
+        "id": "es-cin-cpf-inscricao",
+        "url": "https://www.gov.br/pt-br/servicos/inscrever-no-cpf",
+        "titulo": "Inscrever Cidadão no Cadastro de Pessoas Físicas (CPF)",
+        "orgao": "Receita Federal",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "rota de inscrição prévia no CPF",
+          "canais de inscrição",
+          "custos do serviço federal"
+        ],
+        "limitacoes": [
+          "Rota alternativa anterior ao agendamento da CIN; não prova disponibilidade de inscrição simultânea em cada posto estadual."
         ]
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Revalidar exigências fora do Faça Fácil, inclusive emissão sem CPF e nacionalidades específicas."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "es-cnh",
@@ -5001,11 +6329,21 @@ const servicos = [
     "condicoes_acesso": [
       "CNH emitida no ES após 29/11/2007, sem impedimento, suspensão, cassação ou permissão cancelada.",
       "Exame médico não pode vencer em até 30 dias.",
-      "Sem alteração de dados ou fotografia."
+      "Sem alteração de dados ou fotografia.",
+      "Atendimento presencial: confirmar previamente a documentação na Ciretran/PAV/CAR; a carta do serviço não apresenta a lista mencionada."
     ],
     "documentos_obrigatorios": [],
     "documentos_status": "pendente",
-    "documentos_condicionais": [],
+    "documentos_condicionais": [
+      {
+        "documento": "DUA",
+        "quando": "Pagamento da segunda via por perda/dano",
+        "observacao": "Emitir e pagar a guia; a lista documental do atendimento presencial permanece sem publicação na carta.",
+        "fontes": [
+          "es-cnh-pagina"
+        ]
+      }
+    ],
     "passo_a_passo": [
       {
         "ordem": 1,
@@ -5033,9 +6371,10 @@ const servicos = [
     ],
     "custo": {
       "status": "pago",
-      "valor_brl": null,
-      "descricao": "Taxa de serviço por DUA; valor deve ser conferido na tabela oficial.",
+      "valor_brl": 271.61,
+      "descricao": "Taxa da segunda via: R$ 271,61 na tabela oficial consultada. Pagamento por DUA, inclusive Pix.",
       "fontes": [
+        "es-taxas-sit",
         "es-cnh-pagina"
       ]
     },
@@ -5055,33 +6394,42 @@ const servicos = [
         "url": "https://detran.es.gov.br/perda-ou-dano-2",
         "titulo": "Detran-ES — Perda ou dano",
         "orgao": "Detran-ES",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
-          "descrição",
-          "público",
           "condições",
-          "documentação",
-          "etapas",
-          "custo",
+          "fluxo",
+          "DUA",
           "prazo"
         ],
         "limitacoes": [
-          "Página menciona documentos abaixo, mas não apresenta a lista."
+          "A carta remete a documentos abaixo, mas não lista os documentos para atendimento presencial."
         ]
+      },
+      {
+        "id": "es-taxas-sit",
+        "url": "https://renach2.es.gov.br/Habilitacao/Publico/hab_valor_servico.aspx",
+        "titulo": "Detran-ES / SIT — Valores dos serviços",
+        "orgao": "Detran-ES",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "taxa de segunda via"
+        ],
+        "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
+    "data_consulta": "2026-11-18",
     "status_conteudo": "parcial",
     "pendencias": [
-      "Lista documental e valor da taxa não confirmados."
+      "Confirmar lista documental para atendimento presencial; a fonte pública do serviço não a apresenta."
     ],
     "apto_catalogo": "com_ressalvas"
   },
   {
     "id": "es-cnh-renovacao",
     "servico_base": "cnh-renovacao",
-    "nome": "Renovar a CNH",
+    "nome": "Renovar a CNH — procedimento convencional",
     "nomes_populares": [
       "Renovar habilitação",
       "Renovar carteira de motorista",
@@ -5094,9 +6442,13 @@ const servicos = [
       "municipio": null
     },
     "orgao_responsavel": "Detran-ES",
-    "descricao": "Renovar a habilitação.",
+    "descricao": "Renovar a habilitação pelo procedimento convencional com exames e emissão pelo Detran-ES.",
     "publico": "Condutor.",
-    "condicoes_acesso": [],
+    "condicoes_acesso": [
+      "Ficha do procedimento convencional. Eventual benefício do RNPC deve ser consultado no aplicativo CNH do Brasil e no Detran antes de pagar a taxa.",
+      "Toxicológico para categorias C, D e E, independentemente de atividade remunerada; avaliação psicológica para EAR.",
+      "O prazo publicado é uma estimativa sem marco expresso; agendamento e exames têm duração própria."
+    ],
     "documentos_obrigatorios": [
       {
         "documento": "Identificação oficial com foto",
@@ -5142,10 +6494,11 @@ const servicos = [
       },
       {
         "ordem": 2,
-        "acao": "Comparecer à clínica indicada para exames.",
+        "acao": "Realizar exame médico na clínica indicada; avaliação psicológica para EAR e toxicológico para C/D/E.",
         "canal_url": "https://detran.es.gov.br/renovacao-de-cnh",
         "fontes": [
-          "es-renovacao"
+          "es-renovacao",
+          "es-toxico-cde"
         ]
       },
       {
@@ -5165,49 +6518,87 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago",
+      "status": "variavel",
       "valor_brl": null,
-      "descricao": "Taxa e exames pagos; psicológico para condutor profissional.",
+      "descricao": "Taxa Detran R$ 276,54. Tabela: apenas médico R$ 128,40; médico e psicológico juntos R$ 180,00. Toxicológico C/D/E é adicional: a relação oficial mostra preços diferentes por laboratório; consultar o escolhido.",
       "fontes": [
-        "es-renovacao"
+        "es-taxas-sit",
+        "es-renovacao",
+        "es-toxico-precos"
       ]
     },
     "prazo": {
       "status": "com_ressalva",
-      "descricao": "Página informa até 5 dias úteis, sem definir marco inicial.",
+      "descricao": "Carta declara até 5 dias úteis para finalizar, sem definir o marco inicial. Não contar esse prazo desde o pedido nem tratá-lo como total que inclua espera por biometria e exames; acompanhar o processo no Detran.",
       "fontes": [
         "es-renovacao"
       ]
     },
-    "observacoes": [
-      "A redação sobre toxicológico é genérica para condutor profissional; confirmar incidência por categoria."
-    ],
+    "observacoes": [],
     "fontes": [
       {
         "id": "es-renovacao",
         "url": "https://detran.es.gov.br/renovacao-de-cnh",
         "titulo": "Detran-ES — Renovação",
         "orgao": "Detran-ES",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
-          "descrição",
-          "público",
-          "condições",
-          "documentação",
+          "documentos",
           "etapas",
-          "custo",
-          "prazo"
+          "prazo declarado"
+        ],
+        "limitacoes": [
+          "A carta informa cinco dias úteis, sem fixar marco inicial."
+        ]
+      },
+      {
+        "id": "es-taxas-sit",
+        "url": "https://renach2.es.gov.br/Habilitacao/Publico/hab_valor_servico.aspx",
+        "titulo": "Detran-ES / SIT — Valores dos serviços",
+        "orgao": "Detran-ES",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "taxa de renovação",
+          "exames médico e psicológico"
         ],
         "limitacoes": []
+      },
+      {
+        "id": "es-toxico-cde",
+        "url": "https://detran.es.gov.br/institucional-2-2-2",
+        "titulo": "Detran-ES — Esclarecimentos sobre exame toxicológico",
+        "orgao": "Detran-ES",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "toxicológico na renovação C/D/E independentemente de EAR"
+        ],
+        "limitacoes": [
+          "Usados apenas os itens 1 e 2; calendário periódico antigo não incorporado."
+        ]
+      },
+      {
+        "id": "es-toxico-precos",
+        "url": "https://detran.es.gov.br/exame-toxicologico",
+        "titulo": "Detran-ES — Laboratórios e valores do exame toxicológico",
+        "orgao": "Detran-ES",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "preços diferentes por laboratório",
+          "consulta de laboratório"
+        ],
+        "limitacoes": [
+          "Relação contém valores informados pelos laboratórios e itens sem preço; não são uma tarifa estadual única nem orçamento garantido."
+        ]
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Valores e marco inicial do prazo não confirmados; conferir regra do toxicológico."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "mg-cin",
@@ -5227,7 +6618,9 @@ const servicos = [
     "orgao_responsavel": "Polícia Civil de Minas Gerais",
     "descricao": "Emitir a primeira identidade nacional.",
     "publico": "Brasileiros.",
-    "condicoes_acesso": [],
+    "condicoes_acesso": [
+      "Menor de 16 anos deve estar acompanhado; o agendamento pode ser feito com gov.br dos pais ou responsável legal."
+    ],
     "documentos_obrigatorios": [
       {
         "documento": "Certidão de nascimento ou casamento",
@@ -5254,6 +6647,15 @@ const servicos = [
         "fontes": [
           "mg-cin-portal"
         ]
+      },
+      {
+        "documento": "Identificação do responsável e termo de guarda",
+        "observacao": "Comparecer com pai, mãe ou representante legal, com documento oficial com foto; se não for pai ou mãe, termo de guarda original e cópia.",
+        "fontes": [
+          "mg-cin-menores",
+          "mg-cin-portal"
+        ],
+        "quando": "Menor de 16 anos"
       }
     ],
     "passo_a_passo": [
@@ -5275,7 +6677,7 @@ const servicos = [
       },
       {
         "ordem": 3,
-        "acao": "Receber pelos Correios e acessar CIN digital no gov.br.",
+        "acao": "Receber pelos Correios quando disponível; se a entrega domiciliar não for possível, retirar na unidade indicada. Acessar CIN digital no gov.br.",
         "canal_url": "https://www.mg.gov.br/servico/obter-carteira-de-identidade-nacional",
         "fontes": [
           "mg-cin-portal"
@@ -5298,8 +6700,8 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "com_ressalva",
-      "descricao": "Aproximadamente 15 dias úteis.",
+      "status": "confirmado",
+      "descricao": "Aproximadamente 15 dias úteis, conforme estimativa do Portal MG.",
       "fontes": [
         "mg-cin-portal"
       ]
@@ -5312,27 +6714,47 @@ const servicos = [
         "id": "mg-cin-portal",
         "url": "https://www.mg.gov.br/servico/obter-carteira-de-identidade-nacional",
         "titulo": "Portal MG — Obter CIN",
-        "orgao": "Polícia Civil de Minas Gerais",
-        "data_consulta": "2026-11-15",
+        "orgao": "PCMG",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
-          "descrição",
-          "público",
-          "condições",
-          "documentação",
+          "documentos",
           "etapas",
+          "acompanhamento de menores",
           "custo",
           "prazo"
         ],
         "limitacoes": []
+      },
+      {
+        "id": "mg-cin-menores",
+        "url": "https://www.cmc.mg.gov.br/identidade/forms/informe.php",
+        "titulo": "Câmara Municipal de Contagem — Informações de identificação",
+        "orgao": "Câmara Municipal de Contagem / PCMG",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "identificação e guarda de representante de menor"
+        ],
+        "limitacoes": []
+      },
+      {
+        "id": "mg-cin-agenda",
+        "url": "https://www.mg.gov.br/pagina/como-agendar-carteira-de-identidade-nacional",
+        "titulo": "Portal MG — Como agendar CIN",
+        "orgao": "Governo de Minas Gerais",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "agendamento de menor com conta do responsável"
+        ],
+        "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Regras completas de representação de menores devem ser conferidas na unidade."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "mg-cnh",
@@ -5359,12 +6781,20 @@ const servicos = [
     "documentos_status": "nao_se_aplica",
     "documentos_condicionais": [
       {
-        "documento": "Documento oficial com foto e CPF",
-        "quando": "Retirada presencial",
-        "observacao": "Representante necessita documentação adicional conforme vínculo e local.",
+        "documento": "Identificação oficial com foto e CPF; código de rastreamento",
+        "observacao": "Titular apresenta identificação e código. Representante apresenta identificação própria e procuração registrada ou autorização manuscrita, sem reconhecimento de firma.",
         "fontes": [
           "mg-segunda"
-        ]
+        ],
+        "quando": "Retirada nos Correios"
+      },
+      {
+        "documento": "Documentos do representante",
+        "observacao": "Parentes, procurador e advogado têm listas distintas na carta; apresentar identificação e comprovação do vínculo ou representação exigida para o caso.",
+        "fontes": [
+          "mg-segunda"
+        ],
+        "quando": "Retirada em UAI/Ciretran por terceiro"
       }
     ],
     "passo_a_passo": [
@@ -5424,21 +6854,19 @@ const servicos = [
         "url": "https://www.mg.gov.br/servico/solicitar-2a-da-cnh-ppd-ou-acc-sem-alterar-dados",
         "titulo": "Portal MG — Segunda via sem alterar dados",
         "orgao": "Detran-MG",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
-          "descrição",
-          "público",
-          "condições",
-          "documentação",
+          "documentos de retirada",
           "etapas",
-          "custo",
-          "prazo"
+          "taxa",
+          "prazo",
+          "condições"
         ],
         "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
+    "data_consulta": "2026-11-18",
     "status_conteudo": "confirmado",
     "pendencias": [],
     "apto_catalogo": "sim"
@@ -5462,7 +6890,8 @@ const servicos = [
     "descricao": "Renovar habilitação nas categorias A, AB ou B, ou ACC.",
     "publico": "Condutor dessas categorias.",
     "condicoes_acesso": [
-      "Conta gov.br prata ou ouro; registro de outra UF exige transferência."
+      "Conta gov.br prata ou ouro; registro de outra UF exige transferência.",
+      "Esta ficha cobre A, AB, B e ACC. Para C, AC, D, AD, E ou AE, usar o serviço específico do Detran-MG."
     ],
     "documentos_obrigatorios": [
       {
@@ -5527,7 +6956,7 @@ const servicos = [
     },
     "prazo": {
       "status": "confirmado",
-      "descricao": "Até 10 dias úteis após realização dos exames.",
+      "descricao": "Entrega em até 10 dias úteis após os exames; a estimativa não inclui espera pelo agendamento dos exames.",
       "fontes": [
         "mg-renovacao"
       ]
@@ -5539,26 +6968,22 @@ const servicos = [
         "url": "https://www.mg.gov.br/servico/renovar-cnh-categorias-ab-ou-b-ou-acc",
         "titulo": "Portal MG — Renovar CNH A, AB, B ou ACC",
         "orgao": "Detran-MG",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
-          "descrição",
-          "público",
-          "condições",
-          "documentação",
+          "escopo",
+          "documentos",
           "etapas",
-          "custo",
+          "valores",
           "prazo"
         ],
         "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Categorias C/D/E não cobertas: link oficial direcionou a página sem conteúdo legível. Valores devem ser reconferidos na guia/clínica."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "rj-cin",
@@ -5578,7 +7003,9 @@ const servicos = [
     "orgao_responsavel": "Detran-RJ — Identificação Civil",
     "descricao": "Emitir primeira CIN.",
     "publico": "Quem nunca solicitou CIN em qualquer UF.",
-    "condicoes_acesso": [],
+    "condicoes_acesso": [
+      "Sem CPF, a rota aqui orientada é inscrever-se primeiro na Receita Federal e depois usar o CPF para acessar o agendamento. A inscrição federal é gratuita pela Receita; conveniados cobram R$ 7,00. O atendimento simultâneo de CPF/CIN deve ser consultado diretamente no posto."
+    ],
     "documentos_obrigatorios": [
       {
         "documento": "Certidão conforme estado civil",
@@ -5617,6 +7044,14 @@ const servicos = [
     "passo_a_passo": [
       {
         "ordem": 1,
+        "acao": "Se ainda não possui CPF, solicitar inscrição pelo serviço da Receita Federal e concluir eventuais exigências antes do agendamento da CIN.",
+        "canal_url": "https://www.gov.br/pt-br/servicos/inscrever-no-cpf",
+        "fontes": [
+          "rj-cin-cpf-inscricao"
+        ]
+      },
+      {
+        "ordem": 2,
         "acao": "Agendar pelo Detran RJ Digital com gov.br.",
         "canal_url": "https://servicos.detran.rj.gov.br/",
         "fontes": [
@@ -5624,7 +7059,7 @@ const servicos = [
         ]
       },
       {
-        "ordem": 2,
+        "ordem": 3,
         "acao": "Comparecer com documentos e guardar protocolo.",
         "canal_url": "https://www.detran.rj.gov.br/todos-os-servicos/servicos-dic/1-via-de-identidade.html",
         "fontes": [
@@ -5647,14 +7082,15 @@ const servicos = [
     "custo": {
       "status": "gratuito",
       "valor_brl": 0,
-      "descricao": "Primeira CIN gratuita.",
+      "descricao": "Primeira CIN gratuita. A inscrição prévia no CPF é outro serviço: gratuita pelos canais da Receita Federal e R$ 7,00 na rede conveniada.",
       "fontes": [
-        "rj-cin-pagina"
+        "rj-cin-pagina",
+        "rj-cin-cpf-inscricao"
       ]
     },
     "prazo": {
-      "status": "pendente",
-      "descricao": "Não confirmado nesta pesquisa.",
+      "status": "confirmado",
+      "descricao": "12 dias úteis desde o requerimento; consultas ao cartório, exigências ou análises da Receita Federal podem ampliar o prazo.",
       "fontes": [
         "rj-cin-pagina"
       ]
@@ -5668,19 +7104,16 @@ const servicos = [
         "url": "https://www.detran.rj.gov.br/todos-os-servicos/servicos-dic/1-via-de-identidade.html",
         "titulo": "Detran-RJ — Primeira CIN",
         "orgao": "Detran-RJ",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
-          "descrição",
+          "documentos",
           "público",
-          "condições",
-          "documentação",
-          "etapas",
-          "custo",
+          "primeira via gratuita",
           "prazo"
         ],
         "limitacoes": [
-          "Não esclarece agendamento de pessoa sem CPF."
+          "A inscrição prévia pela Receita Federal é a rota orientada para acesso ao agendamento com CPF; o atendimento simultâneo em cada posto não foi auditado."
         ]
       },
       {
@@ -5696,15 +7129,28 @@ const servicos = [
           "telefone apenas orientativo"
         ],
         "limitacoes": []
+      },
+      {
+        "id": "rj-cin-cpf-inscricao",
+        "url": "https://www.gov.br/pt-br/servicos/inscrever-no-cpf",
+        "titulo": "Inscrever Cidadão no Cadastro de Pessoas Físicas (CPF)",
+        "orgao": "Receita Federal",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "rota de inscrição prévia no CPF",
+          "canais de inscrição",
+          "custos do serviço federal"
+        ],
+        "limitacoes": [
+          "Rota alternativa anterior ao agendamento da CIN; não prova disponibilidade de inscrição simultânea em cada posto estadual."
+        ]
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Prazo não confirmado.",
-      "Sem CPF: inscrição simultânea consta na carta, mas acesso ao agendamento exige gov.br; canal aplicável continua pendente."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "rj-cnh",
@@ -5724,7 +7170,9 @@ const servicos = [
     "descricao": "Reemitir CNH por dano, perda, furto ou roubo.",
     "publico": "Condutor.",
     "condicoes_acesso": [
-      "Registro de outra UF requer transferência; requerimento anterior deve estar encerrado."
+      "Registro de outra UF requer transferência; requerimento anterior deve estar encerrado.",
+      "Digital: última CNH e domínio atual no RJ, exame médico não pode vencer nos 30 dias seguintes, sem alterar dados; imagens aproveitadas não podem ter mais de 10 anos.",
+      "Isenção por roubo/furto exige processo administrativo presencial; não está disponível no pedido digital."
     ],
     "documentos_obrigatorios": [
       {
@@ -5771,18 +7219,28 @@ const servicos = [
     "passo_a_passo": [
       {
         "ordem": 1,
-        "acao": "Pagar taxa aplicável e agendar digitalmente.",
+        "acao": "Pagar DUDA 214-3 quando devido. Para pedido digital, acessar gov.br, informar o pagamento, conferir dados e escolher o posto de retirada.",
         "canal_url": "https://servicos.detran.rj.gov.br/",
         "fontes": [
-          "rj-agendamento-novo"
+          "rj-segunda",
+          "rj-cnh-digital"
         ]
       },
       {
         "ordem": 2,
-        "acao": "Apresentar documentos no posto.",
+        "acao": "Digital: imprimir Renach e acompanhar; não exige nova coleta de imagens. Presencial: agendar no portal e levar os documentos.",
         "canal_url": "https://detran.rj.gov.br/todos-os-servicos/servicos-hab/2-via-de-habilitacao.html",
         "fontes": [
-          "rj-segunda"
+          "rj-segunda",
+          "rj-cnh-digital"
+        ]
+      },
+      {
+        "ordem": 3,
+        "acao": "Retirar o documento no posto escolhido após confirmação da emissão.",
+        "canal_url": "https://servicos.detran.rj.gov.br/",
+        "fontes": [
+          "rj-cnh-digital"
         ]
       }
     ],
@@ -5791,11 +7249,6 @@ const servicos = [
         "tipo": "web",
         "nome": "Detran-RJ — Segunda via da habilitação",
         "url": "https://detran.rj.gov.br/todos-os-servicos/servicos-hab/2-via-de-habilitacao.html"
-      },
-      {
-        "tipo": "web",
-        "nome": "Detran-RJ — Agendamento digital",
-        "url": "https://www.detran.rj.gov.br/noticias/agendamentos-de-identificacao-civil-no-detran-rj-passam-a-ser-exclusivamente-digitais-a-partir-desta-quarta-feira-11-11.html"
       }
     ],
     "custo": {
@@ -5807,10 +7260,11 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "pendente",
-      "descricao": "Não confirmado nesta pesquisa.",
+      "status": "confirmado",
+      "descricao": "Pedido digital: orientação de retirada após 10 dias úteis. Presencial agendado: carta geral informa até 15 dias úteis; processo administrativo até 30 dias, sem exigências externas.",
       "fontes": [
-        "rj-segunda"
+        "rj-cnh-digital",
+        "rj-carta2026"
       ]
     },
     "observacoes": [],
@@ -5820,40 +7274,50 @@ const servicos = [
         "url": "https://detran.rj.gov.br/todos-os-servicos/servicos-hab/2-via-de-habilitacao.html",
         "titulo": "Detran-RJ — Segunda via da habilitação",
         "orgao": "Detran-RJ",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
-          "descrição",
-          "público",
+          "documentos",
           "condições",
-          "documentação",
-          "etapas",
-          "custo",
-          "prazo"
+          "taxa",
+          "serviço digital"
         ],
         "limitacoes": [
-          "Telefone de agendamento na carta foi superado por notícia de 10/11."
+          "Referência antiga sobre validade da CNH como identidade não incorporada."
         ]
       },
       {
-        "id": "rj-agendamento-novo",
-        "url": "https://www.detran.rj.gov.br/noticias/agendamentos-de-identificacao-civil-no-detran-rj-passam-a-ser-exclusivamente-digitais-a-partir-desta-quarta-feira-11-11.html",
-        "titulo": "Detran-RJ — Agendamento digital desde 11/11/2026",
+        "id": "rj-cnh-digital",
+        "url": "https://www.detran.rj.gov.br/noticias/saiba-como-pedir-a-renovacao-ou-a-segunda-via-da-cnh-pelo-posto-digital-do-detran-rj-sem-agendamento-4.html",
+        "titulo": "Detran-RJ — Segunda via e renovação pelo Posto Digital",
         "orgao": "Detran-RJ",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
-          "agendamento"
+          "fluxo digital",
+          "segunda via em 10 dias úteis"
+        ],
+        "limitacoes": [
+          "Notícia de 2025: valores de taxa e faixa etária foram substituídos por fontes atuais."
+        ]
+      },
+      {
+        "id": "rj-carta2026",
+        "url": "https://www.detran.rj.gov.br/images/geral/Carta_de_Servicos_07-10-2026.pdf",
+        "titulo": "Detran-RJ — Carta de Serviços 07/10/2026, seção Habilitação",
+        "orgao": "Detran-RJ",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "prazo geral presencial agendado e processo administrativo"
         ],
         "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Prazo de emissão não confirmado."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "rj-cnh-renovacao",
@@ -5872,9 +7336,11 @@ const servicos = [
     },
     "orgao_responsavel": "Detran-RJ",
     "descricao": "Renovar habilitação vencida ou próxima do vencimento.",
-    "publico": "Condutor que segue a renovação padrão.",
+    "publico": "Condutor que utiliza a renovação convencional com exames.",
     "condicoes_acesso": [
-      "Transferir registro de outra UF antes do pedido."
+      "Transferir registro de outra UF antes do pedido.",
+      "Ficha do procedimento convencional; eventuais benefícios do RNPC exigem consulta específica antes de pagar.",
+      "A partir de 60 anos, há isenção do DUDA de renovação, inclusive no serviço online; deixar seu campo em branco para reconhecimento da idade."
     ],
     "documentos_obrigatorios": [
       {
@@ -5909,21 +7375,39 @@ const servicos = [
         "fontes": [
           "rj-renovacao"
         ]
+      },
+      {
+        "documento": "Renach impresso",
+        "observacao": "Levar para coleta de foto, digitais e assinatura, antes dos exames.",
+        "fontes": [
+          "rj-renovacao",
+          "rj-renovacao-isencao60"
+        ],
+        "quando": "Pedido iniciado no Detran RJ Digital"
       }
     ],
     "passo_a_passo": [
       {
         "ordem": 1,
-        "acao": "Pagar taxa cabível e iniciar pelo Detran RJ Digital.",
+        "acao": "Pagar DUDA 204-6 se devido. Iniciar no Detran RJ Digital ou agendar atendimento presencial pelo portal.",
         "canal_url": "https://servicos.detran.rj.gov.br/",
         "fontes": [
-          "rj-agendamento-novo"
+          "rj-renovacao",
+          "rj-renovacao-isencao60"
         ]
       },
       {
         "ordem": 2,
-        "acao": "Fazer biometria e exames: médico; psicológico para EAR; toxicológico C/D/E.",
+        "acao": "No digital, imprimir Renach e ir ao posto sem agendamento para biometria. Fazer exame médico; psicológico para EAR; toxicológico C/D/E antes do médico.",
         "canal_url": "https://www.detran.rj.gov.br/todos-os-servicos/servicos-hab/renovacao-da-habilitacao.html",
+        "fontes": [
+          "rj-renovacao"
+        ]
+      },
+      {
+        "ordem": 3,
+        "acao": "Consultar emissão e retirar no posto escolhido.",
+        "canal_url": "https://servicos.detran.rj.gov.br/",
         "fontes": [
           "rj-renovacao"
         ]
@@ -5934,71 +7418,89 @@ const servicos = [
         "tipo": "web",
         "nome": "Detran-RJ — Renovação da habilitação",
         "url": "https://www.detran.rj.gov.br/todos-os-servicos/servicos-hab/renovacao-da-habilitacao.html"
-      },
-      {
-        "tipo": "web",
-        "nome": "Detran-RJ — Agendamento digital",
-        "url": "https://www.detran.rj.gov.br/noticias/agendamentos-de-identificacao-civil-no-detran-rj-passam-a-ser-exclusivamente-digitais-a-partir-desta-quarta-feira-11-11.html"
       }
     ],
     "custo": {
-      "status": "pago",
-      "valor_brl": 209.78,
-      "descricao": "DUDA R$ 209,78, exames à parte. Página prevê isenção por idade.",
+      "status": "variavel",
+      "valor_brl": null,
+      "descricao": "DUDA R$ 209,78; isento a partir de 60 anos. Médico R$ 90; psicológico R$ 90 quando exigido. Toxicológico C/D/E pago à parte ao laboratório.",
       "fontes": [
-        "rj-renovacao"
+        "rj-renovacao",
+        "rj-renovacao-isencao60",
+        "rj-exames2026"
       ]
     },
     "prazo": {
-      "status": "pendente",
-      "descricao": "Não confirmado nesta pesquisa.",
+      "status": "com_ressalva",
+      "descricao": "Carta geral: serviço de habilitação agendado em até 15 dias úteis e processo administrativo em até 30 dias, se não houver exigências externas. Não informa prazo específico da renovação iniciada digitalmente.",
       "fontes": [
-        "rj-renovacao"
+        "rj-carta2026"
       ]
     },
-    "observacoes": [
-      "Não generalizar o procedimento padrão a quem tiver renovação automática."
-    ],
+    "observacoes": [],
     "fontes": [
       {
         "id": "rj-renovacao",
         "url": "https://www.detran.rj.gov.br/todos-os-servicos/servicos-hab/renovacao-da-habilitacao.html",
         "titulo": "Detran-RJ — Renovação da habilitação",
         "orgao": "Detran-RJ",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
-          "descrição",
-          "público",
+          "documentos",
           "condições",
-          "documentação",
+          "taxa",
           "etapas",
-          "custo",
-          "prazo"
+          "exames"
         ],
         "limitacoes": [
-          "Página mistura atualização recente e referências antigas."
+          "Faixa de isenção contraditória na carta: priorizada notícia oficial de julho de 2026.",
+          "Descrição da renovação automática na carta não foi aplicada ao procedimento convencional."
         ]
       },
       {
-        "id": "rj-agendamento-novo",
-        "url": "https://www.detran.rj.gov.br/noticias/agendamentos-de-identificacao-civil-no-detran-rj-passam-a-ser-exclusivamente-digitais-a-partir-desta-quarta-feira-11-11.html",
-        "titulo": "Detran-RJ — Agendamento digital desde 11/11/2026",
+        "id": "rj-carta2026",
+        "url": "https://www.detran.rj.gov.br/images/geral/Carta_de_Servicos_07-10-2026.pdf",
+        "titulo": "Detran-RJ — Carta de Serviços 07/10/2026, seção Habilitação",
         "orgao": "Detran-RJ",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
-          "agendamento"
+          "prazo geral presencial agendado e processo administrativo"
+        ],
+        "limitacoes": []
+      },
+      {
+        "id": "rj-renovacao-isencao60",
+        "url": "https://www.detran.rj.gov.br/noticias/detran-rj-concede-a-cidadaos-a-partir-dos-60-anos-isencao-de-taxas-para-renovacao-da-cnh.html",
+        "titulo": "Detran-RJ — Isenção de renovação a partir de 60 anos",
+        "orgao": "Detran-RJ",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "pagina_lida",
+        "sustenta": [
+          "isenção inclusive aos 60 anos",
+          "procedimento de isenção"
+        ],
+        "limitacoes": []
+      },
+      {
+        "id": "rj-exames2026",
+        "url": "https://www.ioerj.com.br/portal/modules/conteudoonline/mostra_edicao.php?session=VFZSR1EwMHdWWGhPVkUxMFRYcEdRMDFETURCT1ZHUkdURlZGZWxGcVJYUk9lbXQ1VG1wbk5WSkVXa1ZSYTFVd1RWUmpOVTVFYXpGT1JFRXhUVUU5UFE9PQ%3D%3D",
+        "titulo": "DOERJ — Portaria Detran 7014/2026",
+        "orgao": "Detran-RJ / IOERJ",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "exame médico R$ 90",
+          "avaliação psicológica R$ 90"
         ],
         "limitacoes": []
       }
     ],
-    "data_consulta": "2026-11-15",
+    "data_consulta": "2026-11-18",
     "status_conteudo": "parcial",
     "pendencias": [
-      "Prazo não confirmado.",
-      "Conferir isenção no limite de 60 anos: página alterna mais de 60 e 60 ou mais.",
-      "Renovação automática é modalidade separada mencionada pela fonte; requisitos não auditados integralmente."
+      "Confirmar prazo específico da renovação iniciada no Detran RJ Digital."
     ],
     "apto_catalogo": "com_ressalvas"
   },
@@ -6019,7 +7521,7 @@ const servicos = [
     },
     "orgao_responsavel": "IIRGD / Poupatempo",
     "descricao": "Emitir a primeira identidade nacional em São Paulo.",
-    "publico": "Brasileiros e demais públicos admitidos na carta.",
+    "publico": "Brasileiros natos ou naturalizados e pessoas com Título de Igualdade admitidas pela carta.",
     "condicoes_acesso": [],
     "documentos_obrigatorios": [
       {
@@ -6054,6 +7556,22 @@ const servicos = [
         "fontes": [
           "sp-cin-poupa"
         ]
+      },
+      {
+        "documento": "Título de Igualdade de Direitos e Deveres",
+        "observacao": "Apresentar o título ou cópia da publicação no Diário Oficial da União.",
+        "fontes": [
+          "sp-cin-ssp-igualdade"
+        ],
+        "quando": "Português com igualdade reconhecida"
+      },
+      {
+        "documento": "Transcrição da certidão de nascimento",
+        "observacao": "Apresentar a transcrição conforme a condição de nacionalidade indicada na carta.",
+        "fontes": [
+          "sp-cin-ssp-igualdade"
+        ],
+        "quando": "Filho de brasileiro nascido no exterior"
       }
     ],
     "passo_a_passo": [
@@ -6099,7 +7617,7 @@ const servicos = [
     },
     "prazo": {
       "status": "confirmado",
-      "descricao": "Etapa de entrega informa até 26 dias úteis.",
+      "descricao": "Até 26 dias úteis para o documento ficar pronto; acompanhar a emissão antes de ir retirar.",
       "fontes": [
         "sp-cin-poupa"
       ]
@@ -6114,26 +7632,38 @@ const servicos = [
         "url": "https://www.poupatempo.sp.gov.br/carta/D97C3844-A2D9-4C9E-B364-CB4FEB26A1FB",
         "titulo": "Poupatempo — Obter CIN",
         "orgao": "IIRGD / Poupatempo",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
-          "descrição",
+          "documentos",
           "público",
-          "condições",
-          "documentação",
           "etapas",
-          "custo",
+          "gratuidade",
           "prazo"
         ],
-        "limitacoes": []
+        "limitacoes": [
+          "Seção de reciprocidade repete texto da naturalização; documento específico obtido na SSP."
+        ]
+      },
+      {
+        "id": "sp-cin-ssp-igualdade",
+        "url": "https://www.portal.ssp.sp.gov.br/servicos/emissao-cin",
+        "titulo": "SSP-SP — Emissão CIN: pessoas não nascidas no Brasil",
+        "orgao": "SSP-SP",
+        "data_consulta": "2026-11-18",
+        "tipo_evidencia": "trecho_indexado",
+        "sustenta": [
+          "título de igualdade de direitos e deveres"
+        ],
+        "limitacoes": [
+          "Abertura direta não fornece texto; conteúdo oficial indexado."
+        ]
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Carta repete documentação de naturalização na seção de reciprocidade; confirmar caso de igualdade de direitos."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "sp-cnh",
@@ -6153,11 +7683,37 @@ const servicos = [
     "descricao": "Reemitir CNH por perda, dano, roubo ou furto.",
     "publico": "Motorista ou procurador.",
     "condicoes_acesso": [
-      "Mantém dados e validade; alteração exige outro serviço."
+      "Mantém dados e validade; alteração exige outro serviço.",
+      "A carta pública está temporariamente indisponível na abertura direta; regras abaixo foram conferidas no conteúdo oficial indexado em 18/11/2026."
     ],
-    "documentos_obrigatorios": [],
-    "documentos_status": "pendente",
-    "documentos_condicionais": [],
+    "documentos_obrigatorios": [
+      {
+        "documento": "CPF para acesso online",
+        "observacao": "Usado no login; não é exigido documento físico para a etapa online.",
+        "fontes": [
+          "sp-segunda-indexado"
+        ]
+      }
+    ],
+    "documentos_status": "confirmado",
+    "documentos_condicionais": [
+      {
+        "documento": "RG ou identificação equivalente",
+        "observacao": "Apresentar documento de identificação.",
+        "fontes": [
+          "sp-segunda-indexado"
+        ],
+        "quando": "Atendimento presencial"
+      },
+      {
+        "documento": "Comprovante ou declaração de residência",
+        "observacao": "A carta não permite alterar nome, filiação, nascimento, nome social ou categoria neste serviço.",
+        "fontes": [
+          "sp-segunda-indexado"
+        ],
+        "quando": "Quando aplicável ao atendimento presencial"
+      }
+    ],
     "passo_a_passo": [
       {
         "ordem": 1,
@@ -6182,6 +7738,14 @@ const servicos = [
         "fontes": [
           "sp-segunda-indexado"
         ]
+      },
+      {
+        "ordem": 4,
+        "acao": "Para atendimento presencial, agendar e apresentar identificação e comprovante/declaração de residência quando aplicável.",
+        "canal_url": "https://poupatempo.sp.gov.br/carta/D6BB72BC-80D9-4AC4-924C-7C8503F37367?source=busca",
+        "fontes": [
+          "sp-segunda-indexado"
+        ]
       }
     ],
     "canais": [
@@ -6197,16 +7761,16 @@ const servicos = [
       }
     ],
     "custo": {
-      "status": "pago",
+      "status": "variavel",
       "valor_brl": null,
-      "descricao": "Emissão e postagem cobradas; total não confirmado em página legível.",
+      "descricao": "Digital gratuita; se pedir a CNH física, emissão R$ 126,79 + envio R$ 11,00 = R$ 137,79. Pagamento via Pix dentro do serviço.",
       "fontes": [
         "sp-segunda-indexado"
       ]
     },
     "prazo": {
-      "status": "com_ressalva",
-      "descricao": "Trecho indexado: digital até 24h após expedição; física 3 dias úteis na capital ou 4 no interior, após código de rastreio.",
+      "status": "confirmado",
+      "descricao": "Duração total não estimada pela carta. Digital até 24h após expedição; física até 3 dias úteis na capital ou 4 no interior após criação do código de rastreio.",
       "fontes": [
         "sp-segunda-indexado"
       ]
@@ -6217,22 +7781,21 @@ const servicos = [
     "fontes": [
       {
         "id": "sp-segunda-indexado",
-        "url": "https://www.poupatempo.sp.gov.br/carta/D6BB72BC-80D9-4AC4-924C-7C8503F37367",
+        "url": "https://poupatempo.sp.gov.br/carta/D6BB72BC-80D9-4AC4-924C-7C8503F37367?source=busca",
         "titulo": "Poupatempo — Emitir segunda via da CNH",
         "orgao": "Detran-SP",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "trecho_indexado",
         "sustenta": [
-          "descrição",
-          "público",
+          "documentos",
           "condições",
-          "documentação",
           "etapas",
-          "custo",
-          "prazo"
+          "preço",
+          "prazos por etapa"
         ],
         "limitacoes": [
-          "Conteúdo indexado; abertura direta retornou 500/indisponibilidade."
+          "Carta oficial indexada com atualização 12/08/2026; abertura direta ainda retorna 500 e espelho Serviços SP informa indisponibilidade.",
+          "Subseção presencial contém texto incoerente; priorizada lista geral de documentação e fluxo de segunda via sem alteração de dados."
         ]
       },
       {
@@ -6250,12 +7813,10 @@ const servicos = [
         ]
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Página de serviço indisponível; documentação, valor e fluxo completo aguardam leitura direta."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   },
   {
     "id": "sp-cnh-renovacao",
@@ -6276,7 +7837,8 @@ const servicos = [
     "descricao": "Solicitar renovação e realizar exames obrigatórios.",
     "publico": "Motorista.",
     "condicoes_acesso": [
-      "Acesso gov.br."
+      "Acesso gov.br.",
+      "Ficha do pedido convencional com exames. Verificar benefício do RNPC e eventual prorrogação da validade antes de iniciar e pagar."
     ],
     "documentos_obrigatorios": [
       {
@@ -6331,8 +7893,8 @@ const servicos = [
       ]
     },
     "prazo": {
-      "status": "com_ressalva",
-      "descricao": "Digital até 24h após expedição; entrega física em 3 dias úteis na capital ou 4 no interior após código de rastreio.",
+      "status": "confirmado",
+      "descricao": "Prazos por etapa: digital até 24h após expedição; física até 3 dias úteis na capital ou 4 no interior após criação do código de rastreio. Não incluem espera por agendamento e exames.",
       "fontes": [
         "sp-renovacao"
       ]
@@ -6344,28 +7906,25 @@ const servicos = [
       {
         "id": "sp-renovacao",
         "url": "https://servicos.sp.gov.br/fcarta/F8D2DBE7-66BE-4AEC-9B0F-25912922D566",
-        "titulo": "Serviços SP — Renovar CNH",
+        "titulo": "Serviços SP — Renovar CNH (atualização 23/09/2026)",
         "orgao": "Detran-SP",
-        "data_consulta": "2026-11-15",
+        "data_consulta": "2026-11-18",
         "tipo_evidencia": "pagina_lida",
         "sustenta": [
-          "descrição",
-          "público",
-          "condições",
-          "documentação",
+          "documentos",
           "etapas",
-          "custo",
-          "prazo"
+          "preços",
+          "prazos de emissão e entrega"
         ],
-        "limitacoes": []
+        "limitacoes": [
+          "Os quatro dias anunciados não representam tempo total incluindo agendamento e exames."
+        ]
       }
     ],
-    "data_consulta": "2026-11-15",
-    "status_conteudo": "parcial",
-    "pendencias": [
-      "Não interpretar os 4 dias anunciados na carta como prazo total incluindo exames."
-    ],
-    "apto_catalogo": "com_ressalvas"
+    "data_consulta": "2026-11-18",
+    "status_conteudo": "confirmado",
+    "pendencias": [],
+    "apto_catalogo": "sim"
   }
 ];
 
