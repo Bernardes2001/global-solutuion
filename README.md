@@ -94,11 +94,11 @@ Padrões usados nas fichas:
 
 | Nome | RM |
 |---|---|
-| Luis Felipe Schimith da Silva | _PREENCHER RM_ |
-| Felipe Tadeu Rodrigues da Silva | _PREENCHER RM_ |
-| Lucas Cauã Silva Brasil | _PREENCHER RM_ |
-| Gabriel Bernardes dos Santos | _PREENCHER RM_ |
-| Matheus _PREENCHER SOBRENOME_ | _PREENCHER RM_ |
+| Luis Felipe Schimith da Silva | RM575273 |
+| Felipe Tadeu Rodrigues da Silva | RM575989 |
+| Lucas Cauã Silva Brasil | RM575138 |
+| Gabriel Bernardes dos Santos | RM575795 |
+| Matheus Antonio Pereira Girelli | RM576211 |
 
 ## Fontes
 
