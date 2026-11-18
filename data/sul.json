@@ -67,11 +67,38 @@
           }
         }
       ],
-      "apis": [],
+      "apis": [
+        {
+          "id": "pr-bdeweb",
+          "nome": "BDEweb — Base de Dados do Estado",
+          "orgao": "IPARDES",
+          "tipo": "catalogo_dados_abertos",
+          "url_base": null,
+          "url_documentacao": null,
+          "url_oficial": "https://www.dados.pr.gov.br/",
+          "autenticacao": {"necessaria": null, "escopo": "Nenhuma API pública documentada foi localizada para CIN/CNH nesta análise.", "evidencia": "O portal oferece dados estatísticos e a BDEweb, não uma API de cartas de serviços.", "fonte": "https://www.dados.pr.gov.br/"},
+          "utilidade": "media",
+          "informacoes": ["Dados estatísticos por município e região: população, PIB/IDH, emprego, finanças e agropecuária.", "A Base de Dados do Estado não substitui fichas de serviços nem confirma requisitos da CIN/CNH."],
+          "verificacao": {"data": "2026-11-18", "metodo": "Abertura da página oficial e teste HTTP do portal.", "resultado": "Portal público HTTP 200; não foi identificado endpoint REST documentado.", "limites": ["API pública útil para catálogo cidadão não confirmada.", "Não inferir API REST a partir de páginas HTML."]}
+        },
+        {
+          "id": "pr-govbr-estaduais",
+          "nome": "API dos Serviços Estaduais gov.br",
+          "orgao": "MGI/SGD",
+          "tipo": "documentacao_api",
+          "url_base": "https://gov.br/apiestados",
+          "url_documentacao": "https://www.gov.br/conecta/catalogo/apis/api-dos-servicos-estaduais",
+          "url_oficial": "https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/atendimento-gov.br/integracao-dos-servicos-estaduais",
+          "autenticacao": {"necessaria": true, "escopo": "Credenciais de gestor estadual para cadastro, consulta, atualização e exclusão.", "evidencia": "A documentação oficial exige solicitação de credenciais antes das operações de manutenção.", "fonte": "https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/atendimento-gov.br/integracao-dos-servicos-estaduais"},
+          "utilidade": "media",
+          "informacoes": ["Integração REST para manter os serviços estaduais publicados no gov.br.", "API voltada à gestão institucional, não a consultas públicas irrestritas."],
+          "verificacao": {"data": "2026-11-18", "metodo": "Leitura da documentação oficial e teste HTTP da página publicada.", "resultado": "Documentação pública HTTP 200; requisito de credenciais confirmado.", "limites": ["Nenhuma operação autenticada ou escrita foi executada.", "Não realizar cadastro ou alteração no projeto acadêmico."]}
+        }
+      ],
       "busca_apis": {
-        "resultado": "Catálogo estatal identificado como dados estatísticos; API pública útil para fichas de CIN/CNH não localizada nesta etapa.",
-        "consultas": ["dados.pr.gov.br", "Portal de serviços PR", "API CIN/CNH"],
-        "alternativa_oficial": "Manter fontes editoriais com os portais oficiais da Polícia Civil e Detran."
+        "resultado": "BDEweb identifica dados estatísticos; a única API funcional identificada é de manutenção autenticada dos serviços estaduais no gov.br.",
+        "consultas": ["dados.pr.gov.br", "Portal de serviços PR", "API dos Serviços Estaduais gov.br"],
+        "alternativa_oficial": "Manter fontes editoriais com os portais oficiais da Polícia Civil e Detran; não publicar a API gov.br como consulta cidadã pública."
       }
     },
     {
@@ -115,10 +142,10 @@
           "url_base": "https://dados.rs.gov.br/api/3/action/",
           "url_documentacao": "https://docs.ckan.org/en/2.11/api/",
           "url_oficial": "https://dados.rs.gov.br/",
-          "autenticacao": {"necessaria": false, "escopo": "Consulta pública CKAN documentada no portal.", "evidencia": "Portal oferece API CKAN e catálogo sem login.", "fonte": "https://dados.rs.gov.br/"},
+          "autenticacao": {"necessaria": false, "escopo": "GET público no package_search de metadados testado.", "evidencia": "Resposta JSON com success=true e ausência de credencial no teste.", "fonte": "https://dados.rs.gov.br/api/3/action/package_search?q=servicos&rows=1"},
           "utilidade": "media",
-          "informacoes": ["Pesquisa pública de metadados e recursos do portal estadual."],
-          "verificacao": {"data": "2026-11-18", "metodo": "Identificação de API CKAN oficial pelo próprio portal.", "resultado": "API CKAN publicada pelo portal; uso operacional não detalhado nesta entrega.", "limites": ["Não comprovada como fonte de requisitos ou checklist dos serviços."]}
+          "informacoes": ["Pesquisa pública de metadados e recursos do portal estadual.", "package_search respondeu a uma consulta de metadados sem autenticação."],
+          "verificacao": {"data": "2026-11-18", "metodo": "GET público direto na ação package_search documentada pelo CKAN.", "resultado": "HTTP 200 application/json;charset=utf-8; success=true e um resultado na amostra.", "testes": [{"url": "https://dados.rs.gov.br/api/3/action/package_search?q=servicos&rows=1", "metodo": "GET", "status_http": 200, "formato": "application/json;charset=utf-8", "evidencia": "success=true; 1 conjunto retornado na amostra.", "limites": "Amostra limitada; não comprova requisitos nem dados operacionais de CIN/CNH."}], "limites": ["Não comprovada como fonte de requisitos ou checklist dos serviços."]}
         }
       ]
     },
@@ -163,10 +190,10 @@
           "url_base": "https://dados.sc.gov.br/api/3/action/",
           "url_documentacao": "https://docs.ckan.org/en/2.8/api/",
           "url_oficial": "https://dados.sc.gov.br/",
-          "autenticacao": {"necessaria": false, "escopo": "Consulta pública CKAN documentada no portal.", "evidencia": "Portal oferece API CKAN e catálogo sem login.", "fonte": "https://dados.sc.gov.br/"},
+          "autenticacao": {"necessaria": false, "escopo": "GET público no package_search de metadados testado.", "evidencia": "Resposta JSON com success=true e ausência de credencial no teste.", "fonte": "https://dados.sc.gov.br/api/3/action/package_search?q=servicos&rows=1"},
           "utilidade": "media",
-          "informacoes": ["Pesquisa pública de metadados e recursos do portal estadual."],
-          "verificacao": {"data": "2026-11-18", "metodo": "Identificação de API CKAN oficial pelo próprio portal.", "resultado": "API CKAN publicada pelo portal; uso operacional não detalhado nesta entrega.", "limites": ["Não comprovada como fonte de requisitos ou checklist dos serviços."]}
+          "informacoes": ["Pesquisa pública de metadados e recursos do portal estadual.", "package_search respondeu a uma consulta de metadados sem autenticação."],
+          "verificacao": {"data": "2026-11-18", "metodo": "GET público direto na ação package_search documentada pelo CKAN.", "resultado": "HTTP 200 application/json;charset=utf-8; success=true e um resultado na amostra.", "testes": [{"url": "https://dados.sc.gov.br/api/3/action/package_search?q=servicos&rows=1", "metodo": "GET", "status_http": 200, "formato": "application/json;charset=utf-8", "evidencia": "success=true; 1 conjunto retornado na amostra.", "limites": "Amostra limitada; não comprova requisitos nem dados operacionais de CIN/CNH."}], "limites": ["Não comprovada como fonte de requisitos ou checklist dos serviços."]}
         }
       ]
     }

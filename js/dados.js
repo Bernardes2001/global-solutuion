@@ -7204,13 +7204,21 @@ const portaisEstaduais = [
     "estado": "Paraná",
     "sigla": "PR",
     "fonte": "Instituto de Identificação / Polícia Civil do Paraná",
-    "apis": [],
-    "portais_servicos": [
+    "apis": [
       {
-        "nome": "Governo do Paraná — Dados Abertos",
+        "nome": "BDEweb — Base de Dados do Estado",
+        "autenticacao": null,
         "url": "https://www.dados.pr.gov.br/",
-        "utilidade": "alta"
+        "utilidade": "media"
       },
+      {
+        "nome": "API dos Serviços Estaduais gov.br",
+        "autenticacao": true,
+        "url": "https://gov.br/apiestados",
+        "utilidade": "media"
+      }
+    ],
+    "portais_servicos": [
       {
         "nome": "Polícia Civil do Paraná — CIN",
         "url": "https://www.policiacivil.pr.gov.br/Pagina/INFORMACOES-SOBRE-CARTEIRA-DE-IDENTIDADE-NACIONAL-CIN",

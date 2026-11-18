@@ -1,7 +1,7 @@
 {
   "projeto": "Serviço Fácil",
   "versao": "2.0",
-  "data_consulta": "2026-11-15",
+  "data_consulta": "2026-11-18",
   "idioma": "pt-BR",
   "escopo": "Pesquisa informativa; não executa serviços nem implementa site/API.",
   "responsabilidades": {
@@ -213,9 +213,9 @@
             "fonte": "https://dados.es.gov.br/api/3/action/package_search?q=servicos&rows=3"
           },
           "verificacao": {
-            "data": "2026-11-15",
-            "metodo": "Leitura de fonte oficial e somente GET público nas rotas documentadas.",
-            "resultado": "GET 200 JSON; busca serviços retornou 66 conjuntos.",
+            "data": "2026-11-18",
+            "metodo": "GET público direto nas ações CKAN documentadas.",
+            "resultado": "GET 200 JSON; busca q=servicos retornou 67 conjuntos na rodada atual.",
             "testes": [
               {
                 "url": "https://dados.es.gov.br/api/3/action/package_search?q=servicos&rows=3",
@@ -382,17 +382,17 @@
             "fonte": "https://dados.mg.gov.br/api/3/action/package_search?q=servicos&rows=3"
           },
           "verificacao": {
-            "data": "2026-11-15",
-            "metodo": "Leitura de fonte oficial e somente GET público nas rotas documentadas.",
-            "resultado": "GET 403 HTML; sem retorno de dados.",
+            "data": "2026-11-18",
+            "metodo": "GET público direto na rota CKAN indicada pelo catálogo.",
+            "resultado": "GET 403 text/html; sem JSON de metadados.",
             "testes": [
               {
-                "url": "https://dados.mg.gov.br/api/3/action/package_search?q=servicos&rows=3",
+                "url": "https://dados.mg.gov.br/api/3/action/package_search?q=servicos&rows=1",
                 "metodo": "GET",
                 "status_http": 403,
                 "formato": "text/html",
                 "evidencia": "Request forbidden by administrative rules.",
-                "limites": "Sem credenciais nem dados pessoais; amostra limitada."
+                "limites": "O bloqueio pode ser de rede/política, não prova ausência de acesso público nem exigência de credencial."
               }
             ]
           },
