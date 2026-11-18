@@ -1,5 +1,5 @@
 /* Serviço Fácil — base de dados do catálogo.
- * ARQUIVO GERADO: não edite à mão. Edite data/servicos.json, data/nordeste.json ou data/norte.json e rode `npm run dados`.
+ * ARQUIVO GERADO: não edite à mão. Edite os arquivos em data/ e rode `npm run dados`.
  * Pesquisa do grupo, consulta em 2026-11-15. Lido pelo js/servicos.js e js/impacto.js. */
 
 const servicos = [
@@ -6774,6 +6774,429 @@ const portaisEstaduais = [
         "nome": "AP Digital — Serviços para o cidadão",
         "url": "https://apdigital.portal.ap.gov.br/todos-os-servicos?specific_public=cidad%C3%A3o&page=1",
         "utilidade": "alta"
+      }
+    ]
+  },
+  {
+    "estado": "Espírito Santo",
+    "sigla": "ES",
+    "fonte": "Faça Fácil / PCIES",
+    "apis": [
+      {
+        "nome": "API CKAN de dados abertos ES",
+        "autenticacao": false,
+        "url": "https://dados.es.gov.br/api/3/action/",
+        "utilidade": "baixa"
+      }
+    ],
+    "portais_servicos": [
+      {
+        "nome": "ES.GOV",
+        "url": "https://portal.es.gov.br/",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "PCIES",
+        "url": "https://pci.es.gov.br/",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Detran-ES",
+        "url": "https://detran.es.gov.br/",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Dados Abertos ES",
+        "url": "https://dados.es.gov.br/dataset",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Faça Fácil — CIN",
+        "url": "https://facafacil.es.gov.br/servicos/cin-carteira-de-identidade-nacional-primeira-e-segunda-via",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "PCIES — Perguntas frequentes",
+        "url": "https://pci.es.gov.br/perguntas-frequentes?contato=3-carteira-de-identidade-nacional",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "PCIES — CIN",
+        "url": "https://pci.es.gov.br/cin",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Detran-ES — Perda ou dano",
+        "url": "https://detran.es.gov.br/perda-ou-dano-2",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Detran-ES — Renovação",
+        "url": "https://detran.es.gov.br/renovacao-de-cnh",
+        "utilidade": "alta"
+      }
+    ]
+  },
+  {
+    "estado": "Minas Gerais",
+    "sigla": "MG",
+    "fonte": "Governo de Minas Gerais",
+    "apis": [
+      {
+        "nome": "API CKAN indicada pelo catálogo MG",
+        "autenticacao": null,
+        "url": "https://dados.mg.gov.br/api/3/action/",
+        "utilidade": "media"
+      }
+    ],
+    "portais_servicos": [
+      {
+        "nome": "Portal MG — Serviços",
+        "url": "https://www.mg.gov.br/servicos",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Polícia Civil MG",
+        "url": "https://www.policiacivil.mg.gov.br/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Detran-MG",
+        "url": "https://detran.mg.gov.br/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Dados Abertos MG",
+        "url": "https://dados.mg.gov.br/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Portal MG — Obter CIN",
+        "url": "https://www.mg.gov.br/servico/obter-carteira-de-identidade-nacional",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Portal MG — Segunda via sem alterar dados",
+        "url": "https://www.mg.gov.br/servico/solicitar-2a-da-cnh-ppd-ou-acc-sem-alterar-dados",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Portal MG — Renovar CNH A, AB, B ou ACC",
+        "url": "https://www.mg.gov.br/servico/renovar-cnh-categorias-ab-ou-b-ou-acc",
+        "utilidade": "alta"
+      }
+    ]
+  },
+  {
+    "estado": "Rio de Janeiro",
+    "sigla": "RJ",
+    "fonte": "SETD",
+    "apis": [
+      {
+        "nome": "API CKAN e snapshot de serviços RJ Digital",
+        "autenticacao": false,
+        "url": "https://dadosabertos.rj.gov.br/api/3/action/",
+        "utilidade": "alta"
+      }
+    ],
+    "portais_servicos": [
+      {
+        "nome": "Portal RJ Digital",
+        "url": "https://www.rj.gov.br/",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Detran-RJ",
+        "url": "https://www.detran.rj.gov.br/",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Dados Abertos RJ",
+        "url": "https://dadosabertos.rj.gov.br/dataset/",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Serviços no Portal RJ Digital",
+        "url": "https://dadosabertos.rj.gov.br/dataset/testedeintegracao1",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Detran-RJ — Primeira CIN",
+        "url": "https://www.detran.rj.gov.br/todos-os-servicos/servicos-dic/1-via-de-identidade.html",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Detran-RJ — Agendamento digital desde 11/11/2026",
+        "url": "https://www.detran.rj.gov.br/noticias/agendamentos-de-identificacao-civil-no-detran-rj-passam-a-ser-exclusivamente-digitais-a-partir-desta-quarta-feira-11-11.html",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Detran-RJ — Segunda via da habilitação",
+        "url": "https://detran.rj.gov.br/todos-os-servicos/servicos-hab/2-via-de-habilitacao.html",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Detran-RJ — Renovação da habilitação",
+        "url": "https://www.detran.rj.gov.br/todos-os-servicos/servicos-hab/renovacao-da-habilitacao.html",
+        "utilidade": "alta"
+      }
+    ]
+  },
+  {
+    "estado": "São Paulo",
+    "sigla": "SP",
+    "fonte": "Governo de São Paulo",
+    "apis": [
+      {
+        "nome": "Catálogo de APIs Prodesp / Integrador",
+        "autenticacao": null,
+        "url": "https://rota.sp.gov.br/wps/portal/integrador/catalogoApis",
+        "utilidade": "media"
+      }
+    ],
+    "portais_servicos": [
+      {
+        "nome": "Serviços SP",
+        "url": "https://servicos.sp.gov.br/",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Poupatempo — Carta CIN / IIRGD",
+        "url": "https://www.poupatempo.sp.gov.br/carta/D97C3844-A2D9-4C9E-B364-CB4FEB26A1FB",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "SSP-SP — Emissão CIN",
+        "url": "https://www.portal.ssp.sp.gov.br/servicos/emissao-cin",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Detran-SP",
+        "url": "https://www.detran.sp.gov.br/detransp",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Catálogo Prodesp",
+        "url": "https://api.prodesp.sp.gov.br/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Poupatempo — Emitir segunda via da CNH",
+        "url": "https://www.poupatempo.sp.gov.br/carta/D6BB72BC-80D9-4AC4-924C-7C8503F37367",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Serviços SP — Indisponibilidade",
+        "url": "https://servicos.sp.gov.br/fcarta/D6BB72BC-80D9-4AC4-924C-7C8503F37367",
+        "utilidade": "alta"
+      },
+      {
+        "nome": "Serviços SP — Renovar CNH",
+        "url": "https://servicos.sp.gov.br/fcarta/F8D2DBE7-66BE-4AEC-9B0F-25912922D566",
+        "utilidade": "alta"
+      }
+    ]
+  },
+  {
+    "estado": "Distrito Federal",
+    "sigla": "DF",
+    "fonte": "PCDF / Na Hora",
+    "apis": [
+      {
+        "nome": "Referência pública à API CKAN do DF",
+        "autenticacao": null,
+        "url": "https://agenciabrasilia.df.gov.br/web/dados-abertos/faq",
+        "utilidade": "media"
+      }
+    ],
+    "portais_servicos": [
+      {
+        "nome": "Na Hora",
+        "url": "https://www.nahora.df.gov.br/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Polícia Civil do DF",
+        "url": "https://www.pcdf.df.gov.br/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Carta CIN — Na Hora",
+        "url": "https://www.nahora.df.gov.br/policia_civil",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Detran-DF",
+        "url": "https://www.detran.df.gov.br/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Carta Detran — Na Hora",
+        "url": "https://agenciabrasilia.df.gov.br/web/nahora/detran-3",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Detran Digital",
+        "url": "https://portal.detran.df.gov.br/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Dados Abertos DF",
+        "url": "https://www.dados.df.gov.br/dataset",
+        "utilidade": "media"
+      }
+    ]
+  },
+  {
+    "estado": "Goiás",
+    "sigla": "GO",
+    "fonte": "Polícia Civil de Goiás",
+    "apis": [],
+    "portais_servicos": [
+      {
+        "nome": "Expresso",
+        "url": "https://www.go.gov.br/servicos",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Instituto de Identificação",
+        "url": "https://goias.gov.br/policiacivil/instituto-de-identificacao/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "CIN — Vapt Vupt",
+        "url": "https://vaptvupt.go.gov.br/servico/solicitar-carteira-de-identidade-nacional--cin-ssp--secretaria-de-estado-da-seguranca-publica-6a610024b4e2b?removeLayout=1",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Detran-GO",
+        "url": "https://goias.gov.br/detran/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Segunda via — Vapt Vupt",
+        "url": "https://vaptvupt.go.gov.br/servico/2-via-da-cnh-detran--departamento-estadual-de-transito-6a88577bbb334",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Detran — taxas 2026",
+        "url": "https://vaptvupt.go.gov.br/orgao/detran--departamento-estadual-de-transito",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Dados Abertos Goiás",
+        "url": "https://dadosabertos.go.gov.br/",
+        "utilidade": "media"
+      }
+    ]
+  },
+  {
+    "estado": "Mato Grosso",
+    "sigla": "MT",
+    "fonte": "Politec-MT",
+    "apis": [
+      {
+        "nome": "API do catálogo de dados abertos MT",
+        "autenticacao": false,
+        "url": "https://dadosabertos.mt.gov.br/api/3",
+        "utilidade": "media"
+      }
+    ],
+    "portais_servicos": [
+      {
+        "nome": "Portal MT",
+        "url": "https://portal.mt.gov.br/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Politec",
+        "url": "https://www.politec.mt.gov.br/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Identificação Técnica",
+        "url": "https://www.politec.mt.gov.br/identifica%C3%A7%C3%A3o-t%C3%A9cnica",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Detran-MT",
+        "url": "https://www.detran.mt.gov.br/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Segunda via de CNH",
+        "url": "https://www.detran.mt.gov.br/web/DETRAN/servicos?c=9895454&e=10062270",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Renovação de CNH",
+        "url": "https://www.detran.mt.gov.br/servicos?c=9895454&e=10062261",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Portal de serviços digitais",
+        "url": "https://portal-servicos.detran.mt.gov.br/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Dados Abertos MT",
+        "url": "https://dadosabertos.mt.gov.br/dataset/",
+        "utilidade": "media"
+      }
+    ]
+  },
+  {
+    "estado": "Mato Grosso do Sul",
+    "sigla": "MS",
+    "fonte": "Detran-MS",
+    "apis": [
+      {
+        "nome": "API do catálogo de dados abertos MS",
+        "autenticacao": false,
+        "url": "https://www.dados.ms.gov.br/api/3",
+        "utilidade": "media"
+      }
+    ],
+    "portais_servicos": [
+      {
+        "nome": "Portal Único MS",
+        "url": "https://www.ms.gov.br/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Polícia Científica",
+        "url": "https://www.cgp.sejusp.ms.gov.br/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Agendamento Sejusp",
+        "url": "https://servicos.sejusp.ms.gov.br/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Detran-MS",
+        "url": "https://www.detran.ms.gov.br/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Segunda via da CNH",
+        "url": "https://www.detran.ms.gov.br/servicos-em-destaque/solicitar-segunda-via-da-carteira-nacional-de-habilitacao-cnh-ou-permissao-para-dirigir-ppd/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Renovação da CNH",
+        "url": "https://www.detran.ms.gov.br/servicos-em-destaque/pedir-renovacao-da-carteira-nacional-de-habilitacao-cnh/",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Meu Detran — Habilitação",
+        "url": "https://www2.meudetran.ms.gov.br/habilitacao.php",
+        "utilidade": "media"
+      },
+      {
+        "nome": "Dados Abertos MS",
+        "url": "https://www.dados.ms.gov.br/dataset/",
+        "utilidade": "media"
       }
     ]
   }

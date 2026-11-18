@@ -1,0 +1,679 @@
+{
+  "projeto": "Serviço Fácil",
+  "versao": "2.0",
+  "data_consulta": "2026-11-15",
+  "idioma": "pt-BR",
+  "escopo": "Pesquisa informativa; não executa serviços nem implementa site/API.",
+  "responsabilidades": {
+    "pesquisa": "Luis Felipe — Centro-Oeste e Sudeste",
+    "layout": "Gabriel",
+    "proposta_api_propria": "Matheus"
+  },
+  "legendas": {
+    "tipos_fonte": {
+      "portal_servicos": "Busca e reúne vários serviços.",
+      "pagina_servico": "Ficha específica de orientação ao cidadão.",
+      "portal_orgao": "Site institucional do órgão.",
+      "api_servicos": "Interface de dados estruturados sobre serviços; disponibilidade depende da verificação.",
+      "documentacao_api": "Manual/Swagger: descreve uma interface, não comprova funcionamento dos endpoints.",
+      "catalogo_dados_abertos": "Índice de bases e arquivos; não implica catálogo de serviços.",
+      "api_dados_abertos": "Interface estruturada de dados, possivelmente sem relação com requisitos de serviços.",
+      "transparencia_gestao": "Informação fiscal, processos ou gestão administrativa."
+    },
+    "autenticacao": {
+      "true": "Exigência documentada ou comprovada para o escopo indicado.",
+      "false": "Consulta documentada/testada sem credencial, somente no escopo indicado.",
+      "null": "Não foi possível confirmar. Não significa acesso público."
+    },
+    "evidencia": {
+      "pagina_lida": "Página aberta e conteúdo relevante lido.",
+      "trecho_indexado": "Somente conteúdo retornado pelo buscador; abertura integral limitada.",
+      "documento_lido": "Conteúdo de manual/PDF/documento oficial lido."
+    },
+    "status_conteudo": {
+      "confirmado": "Conteúdo essencial sustentado por fontes; consultar observações e custos/prazos.",
+      "parcial": "Há limitação documental, conflito ou campo necessário pendente."
+    },
+    "apto_catalogo": {
+      "sim": "Pode integrar o catálogo informativo com fontes e data.",
+      "com_ressalvas": "Pode orientar busca, exibindo pendências e encaminhamento oficial. Não apresentar como lista exaustiva.",
+      "nao": "Completar evidência antes de publicar a ficha."
+    },
+    "ausencias": "null e lista vazia não significam inexistência ou dispensa. Ler status e pendencias.",
+    "utilidade": "Alta: conteúdo de serviços; média: apoio ao catálogo; baixa: pouca relação com a orientação ao cidadão."
+  },
+  "regiao": "Centro-Oeste",
+  "ufs": [
+    {
+      "uf": "DF",
+      "nome": "Distrito Federal",
+      "portais": [
+        {
+          "nome": "Na Hora",
+          "orgao": "GDF / Na Hora",
+          "tipo": "portal_servicos",
+          "url": "https://www.nahora.df.gov.br/",
+          "descricao": "Serviços e unidades integradas.",
+          "utilidade": "Encaminhamento por órgão.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        },
+        {
+          "nome": "Polícia Civil do DF",
+          "orgao": "PCDF",
+          "tipo": "portal_orgao",
+          "url": "https://www.pcdf.df.gov.br/",
+          "descricao": "Órgão emissor da CIN.",
+          "utilidade": "Referência institucional.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        },
+        {
+          "nome": "Carta CIN — Na Hora",
+          "orgao": "PCDF / Na Hora",
+          "tipo": "pagina_servico",
+          "url": "https://www.nahora.df.gov.br/policia_civil",
+          "descricao": "Requisitos de identificação civil.",
+          "utilidade": "Fonte principal da ficha.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        },
+        {
+          "nome": "Detran-DF",
+          "orgao": "Detran-DF",
+          "tipo": "portal_orgao",
+          "url": "https://www.detran.df.gov.br/",
+          "descricao": "Órgão de trânsito.",
+          "utilidade": "Entrada institucional.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Abertura expirou no extrator.",
+            "limitacoes": [
+              "Não interpretar timeout como indisponibilidade definitiva."
+            ]
+          }
+        },
+        {
+          "nome": "Carta Detran — Na Hora",
+          "orgao": "Detran-DF / Na Hora",
+          "tipo": "pagina_servico",
+          "url": "https://agenciabrasilia.df.gov.br/web/nahora/detran-3",
+          "descricao": "Serviços de habilitação e veículos.",
+          "utilidade": "Segunda via e biometria.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        },
+        {
+          "nome": "Detran Digital",
+          "orgao": "Detran-DF",
+          "tipo": "portal_servicos",
+          "url": "https://portal.detran.df.gov.br/",
+          "descricao": "Portal de execução dos pedidos.",
+          "utilidade": "Encaminhar usuário para área oficial.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "HTML sem texto extraível.",
+            "limitacoes": [
+              "Fluxo autenticado não acessado."
+            ]
+          }
+        },
+        {
+          "nome": "Dados Abertos DF",
+          "orgao": "Controladoria-Geral do DF",
+          "tipo": "catalogo_dados_abertos",
+          "url": "https://www.dados.df.gov.br/dataset",
+          "descricao": "Catálogo de dados públicos.",
+          "utilidade": "Descoberta complementar.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página aberta; estrutura atual do portal, sem lista extraída.",
+            "limitacoes": []
+          }
+        }
+      ],
+      "apis": [
+        {
+          "id": "df-ckan-declaracao",
+          "nome": "Referência pública à API CKAN do DF",
+          "orgao": "GDF / Portal de Dados Abertos",
+          "abrangencia": "distrital",
+          "tipo": "documentacao_api",
+          "url_oficial": "https://www.dados.df.gov.br/dataset",
+          "url_documentacao": "https://agenciabrasilia.df.gov.br/web/dados-abertos/faq",
+          "url_base": null,
+          "informacoes": "FAQ declara API pública CKAN e ausência de limite impeditivo; não fornece rota operacional no trecho consultado.",
+          "autenticacao": {
+            "necessaria": null,
+            "escopo": "API não testada",
+            "evidencia": "Declaração de API pública não basta para estabelecer requisitos de cada operação.",
+            "fonte": "https://agenciabrasilia.df.gov.br/web/dados-abertos/faq"
+          },
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Leitura da FAQ e abertura do catálogo.",
+            "resultado": "Referência localizada; API operacional não comprovada.",
+            "testes": []
+          },
+          "utilidade": "Possível catálogo de dados; sem utilidade direta comprovada para fichas CIN/CNH.",
+          "limitacoes": [
+            "URL base não localizada nesta pesquisa; não criada por adivinhação.",
+            "Não classificado como API de serviços funcionando."
+          ]
+        }
+      ],
+      "busca_apis": {
+        "resultado": "API pública útil para requisitos/solicitação de CIN e CNH não localizada nesta pesquisa. Há declaração de CKAN de dados abertos.",
+        "consultas": [
+          "Distrito Federal API serviços catálogo dados abertos API",
+          "site:df.gov.br API CKAN api/3 documentação"
+        ],
+        "alternativa_oficial": [
+          "https://www.nahora.df.gov.br/",
+          "https://www.nahora.df.gov.br/policia_civil",
+          "https://agenciabrasilia.df.gov.br/web/nahora/detran-3"
+        ]
+      }
+    },
+    {
+      "uf": "GO",
+      "nome": "Goiás",
+      "portais": [
+        {
+          "nome": "Expresso",
+          "orgao": "Governo de Goiás",
+          "tipo": "portal_servicos",
+          "url": "https://www.go.gov.br/servicos",
+          "descricao": "Carta e acesso a serviços estaduais.",
+          "utilidade": "Encaminhar ao serviço.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página aberta sem texto extraível.",
+            "limitacoes": [
+              "Conteúdo das fichas depende de JavaScript; busca indexada distinguida."
+            ]
+          }
+        },
+        {
+          "nome": "Instituto de Identificação",
+          "orgao": "Polícia Civil de Goiás",
+          "tipo": "portal_orgao",
+          "url": "https://goias.gov.br/policiacivil/instituto-de-identificacao/",
+          "descricao": "Órgão emissor da CIN.",
+          "utilidade": "Links institucionais da identidade.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        },
+        {
+          "nome": "CIN — Vapt Vupt",
+          "orgao": "SSP-GO / Vapt Vupt",
+          "tipo": "pagina_servico",
+          "url": "https://vaptvupt.go.gov.br/servico/solicitar-carteira-de-identidade-nacional--cin-ssp--secretaria-de-estado-da-seguranca-publica-6a610024b4e2b?removeLayout=1",
+          "descricao": "Carta detalhada de identificação.",
+          "utilidade": "Documentos, prazo e atendimento.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        },
+        {
+          "nome": "Detran-GO",
+          "orgao": "Detran-GO",
+          "tipo": "portal_orgao",
+          "url": "https://goias.gov.br/detran/",
+          "descricao": "Órgão de trânsito.",
+          "utilidade": "Acesso oficial.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        },
+        {
+          "nome": "Segunda via — Vapt Vupt",
+          "orgao": "Detran-GO / Vapt Vupt",
+          "tipo": "pagina_servico",
+          "url": "https://vaptvupt.go.gov.br/servico/2-via-da-cnh-detran--departamento-estadual-de-transito-6a88577bbb334",
+          "descricao": "Requisitos de segunda via.",
+          "utilidade": "Documentação e restrições.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        },
+        {
+          "nome": "Detran — taxas 2026",
+          "orgao": "Detran-GO / Vapt Vupt",
+          "tipo": "pagina_servico",
+          "url": "https://vaptvupt.go.gov.br/orgao/detran--departamento-estadual-de-transito",
+          "descricao": "Requisitos gerais e tabela de custos.",
+          "utilidade": "Conferir valores por modalidade.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        },
+        {
+          "nome": "Dados Abertos Goiás",
+          "orgao": "Governo de Goiás",
+          "tipo": "catalogo_dados_abertos",
+          "url": "https://dadosabertos.go.gov.br/",
+          "descricao": "Catálogo estadual de dados.",
+          "utilidade": "Descoberta complementar.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página aberta; contadores exibiam zero.",
+            "limitacoes": [
+              "Contadores não provam inexistência de dados; API útil não localizada."
+            ]
+          }
+        }
+      ],
+      "apis": [],
+      "busca_apis": {
+        "resultado": "API pública de catálogo ou execução de serviços CIN/CNH não localizada nesta pesquisa. Catálogo de dados abertos localizado, sem endpoint útil confirmado.",
+        "consultas": [
+          "site:go.gov.br API Expresso documentação catálogo serviços",
+          "Portal Dados Abertos Goiás e lista de conjuntos"
+        ],
+        "alternativa_oficial": [
+          "https://www.go.gov.br/servicos",
+          "https://vaptvupt.go.gov.br/servico/solicitar-carteira-de-identidade-nacional--cin-ssp--secretaria-de-estado-da-seguranca-publica-6a610024b4e2b?removeLayout=1",
+          "https://vaptvupt.go.gov.br/servico/2-via-da-cnh-detran--departamento-estadual-de-transito-6a88577bbb334"
+        ]
+      }
+    },
+    {
+      "uf": "MT",
+      "nome": "Mato Grosso",
+      "portais": [
+        {
+          "nome": "Portal MT",
+          "orgao": "Governo de Mato Grosso",
+          "tipo": "portal_servicos",
+          "url": "https://portal.mt.gov.br/",
+          "descricao": "Catálogo de serviços estaduais.",
+          "utilidade": "Carta estadual.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página aberta sem corpo de texto extraível.",
+            "limitacoes": [
+              "JavaScript limita leitura."
+            ]
+          }
+        },
+        {
+          "nome": "Politec",
+          "orgao": "Politec-MT",
+          "tipo": "portal_orgao",
+          "url": "https://www.politec.mt.gov.br/",
+          "descricao": "Órgão emissor da CIN.",
+          "utilidade": "Identificação civil.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        },
+        {
+          "nome": "Identificação Técnica",
+          "orgao": "Politec-MT",
+          "tipo": "pagina_servico",
+          "url": "https://www.politec.mt.gov.br/identifica%C3%A7%C3%A3o-t%C3%A9cnica",
+          "descricao": "Perguntas frequentes da CIN.",
+          "utilidade": "Agendamento, custos e retirada.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        },
+        {
+          "nome": "Detran-MT",
+          "orgao": "Detran-MT",
+          "tipo": "portal_orgao",
+          "url": "https://www.detran.mt.gov.br/",
+          "descricao": "Órgão de trânsito.",
+          "utilidade": "Canais oficiais.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        },
+        {
+          "nome": "Segunda via de CNH",
+          "orgao": "Detran-MT",
+          "tipo": "pagina_servico",
+          "url": "https://www.detran.mt.gov.br/web/DETRAN/servicos?c=9895454&e=10062270",
+          "descricao": "Carta de segunda via.",
+          "utilidade": "Documentos, etapas, taxas e prazo.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        },
+        {
+          "nome": "Renovação de CNH",
+          "orgao": "Detran-MT",
+          "tipo": "pagina_servico",
+          "url": "https://www.detran.mt.gov.br/servicos?c=9895454&e=10062261",
+          "descricao": "Carta de renovação.",
+          "utilidade": "Exames, custos e prazo.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        },
+        {
+          "nome": "Portal de serviços digitais",
+          "orgao": "Detran-MT",
+          "tipo": "portal_servicos",
+          "url": "https://portal-servicos.detran.mt.gov.br/",
+          "descricao": "Solicitações digitais.",
+          "utilidade": "Encaminhamento.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página aberta, exige JavaScript.",
+            "limitacoes": [
+              "Login não realizado."
+            ]
+          }
+        },
+        {
+          "nome": "Dados Abertos MT",
+          "orgao": "SEPLAG-MT",
+          "tipo": "catalogo_dados_abertos",
+          "url": "https://dadosabertos.mt.gov.br/dataset/",
+          "descricao": "Catálogo de conjuntos de dados.",
+          "utilidade": "API de metadados documentada.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        }
+      ],
+      "apis": [
+        {
+          "id": "mt-ckan",
+          "nome": "API do catálogo de dados abertos MT",
+          "orgao": "SEPLAG-MT",
+          "abrangencia": "estadual",
+          "tipo": "api_dados_abertos",
+          "url_oficial": "https://dadosabertos.mt.gov.br/dataset/",
+          "url_documentacao": "https://docs.ckan.org/en/2.11/api/",
+          "url_base": "https://dadosabertos.mt.gov.br/api/3",
+          "informacoes": "Metadados de conjuntos de dados; não é carta de serviços nem emissão de documentos.",
+          "autenticacao": {
+            "necessaria": false,
+            "escopo": "GET package_list?limit=5, exclusivamente catálogo público",
+            "evidencia": "Requisição sem credenciais respondeu HTTP 200, JSON e success=true.",
+            "fonte": "https://dadosabertos.mt.gov.br/api/3/action/package_list?limit=5"
+          },
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Link API/documentação seguido no catálogo; GET público com curl, validação TLS ativa.",
+            "resultado": "Consulta de metadados confirmada.",
+            "testes": [
+              {
+                "url": "https://dadosabertos.mt.gov.br/api/3/action/package_list?limit=5",
+                "metodo": "GET",
+                "status_http": 200,
+                "formato": "application/json;charset=utf-8",
+                "evidencia": "success=true; cinco identificadores; exemplos: assentamentos-julho-2024, base-de-dados-geograficos-de-referencia-utilizados-na-sema-mt",
+                "limites": "Somente uma página de cinco identificadores; sem dados pessoais e sem testar demais funções."
+              }
+            ]
+          },
+          "utilidade": "Complementar descoberta de dados e mapas; não fornece requisitos, custos ou emissão de CIN/CNH confirmados.",
+          "limitacoes": [
+            "Nenhuma API pública de catálogo de serviços CIN/CNH localizada nesta pesquisa.",
+            "Ausência de autenticação comprovada apenas para a consulta executada."
+          ]
+        }
+      ],
+      "busca_apis": {
+        "resultado": "API CKAN de dados abertos confirmada; API pública útil de serviços CIN/CNH não localizada nesta pesquisa.",
+        "consultas": [
+          "site:mt.gov.br API serviços documentação dados abertos",
+          "Catálogo MT: links API e documentação CKAN"
+        ],
+        "alternativa_oficial": [
+          "https://www.politec.mt.gov.br/identifica%C3%A7%C3%A3o-t%C3%A9cnica",
+          "https://www.detran.mt.gov.br/web/DETRAN/servicos?c=9895454&e=10062270",
+          "https://www.detran.mt.gov.br/servicos?c=9895454&e=10062261"
+        ]
+      }
+    },
+    {
+      "uf": "MS",
+      "nome": "Mato Grosso do Sul",
+      "portais": [
+        {
+          "nome": "Portal Único MS",
+          "orgao": "Governo de Mato Grosso do Sul",
+          "tipo": "portal_servicos",
+          "url": "https://www.ms.gov.br/",
+          "descricao": "Portal estadual de serviços.",
+          "utilidade": "Descoberta de cartas.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página aberta, exige JavaScript.",
+            "limitacoes": [
+              "Texto da carta CNH recuperado somente no índice."
+            ]
+          }
+        },
+        {
+          "nome": "Polícia Científica",
+          "orgao": "Polícia Científica-MS / Sejusp",
+          "tipo": "portal_orgao",
+          "url": "https://www.cgp.sejusp.ms.gov.br/",
+          "descricao": "Instituto de Identificação.",
+          "utilidade": "Orientação oficial da CIN.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        },
+        {
+          "nome": "Agendamento Sejusp",
+          "orgao": "Sejusp-MS",
+          "tipo": "portal_servicos",
+          "url": "https://servicos.sejusp.ms.gov.br/",
+          "descricao": "Canal indicado para identidade.",
+          "utilidade": "Agendamento de CIN.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Timeout na abertura; referência confirmada na notícia oficial.",
+            "limitacoes": [
+              "Agenda não consultada."
+            ]
+          }
+        },
+        {
+          "nome": "Detran-MS",
+          "orgao": "Detran-MS",
+          "tipo": "portal_orgao",
+          "url": "https://www.detran.ms.gov.br/",
+          "descricao": "Órgão de trânsito.",
+          "utilidade": "Referência institucional.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Home expirou; páginas internas lidas.",
+            "limitacoes": [
+              "Falha da home não invalida páginas de serviços."
+            ]
+          }
+        },
+        {
+          "nome": "Segunda via da CNH",
+          "orgao": "Detran-MS",
+          "tipo": "pagina_servico",
+          "url": "https://www.detran.ms.gov.br/servicos-em-destaque/solicitar-segunda-via-da-carteira-nacional-de-habilitacao-cnh-ou-permissao-para-dirigir-ppd/",
+          "descricao": "Descrição curta do serviço.",
+          "utilidade": "Confirmar órgão e objeto.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        },
+        {
+          "nome": "Renovação da CNH",
+          "orgao": "Detran-MS",
+          "tipo": "pagina_servico",
+          "url": "https://www.detran.ms.gov.br/servicos-em-destaque/pedir-renovacao-da-carteira-nacional-de-habilitacao-cnh/",
+          "descricao": "Descrição curta de renovação.",
+          "utilidade": "Confirmar objeto.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        },
+        {
+          "nome": "Meu Detran — Habilitação",
+          "orgao": "Detran-MS",
+          "tipo": "portal_servicos",
+          "url": "https://www2.meudetran.ms.gov.br/habilitacao.php",
+          "descricao": "CNH Ágil e segunda via.",
+          "utilidade": "Encaminhar aos serviços.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Menu público lido.",
+            "limitacoes": [
+              "Nenhuma consulta de condutor realizada."
+            ]
+          }
+        },
+        {
+          "nome": "Dados Abertos MS",
+          "orgao": "SETDIG-MS",
+          "tipo": "catalogo_dados_abertos",
+          "url": "https://www.dados.ms.gov.br/dataset/",
+          "descricao": "Catálogo de dados estaduais.",
+          "utilidade": "API documentada de metadados.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "abertura_web",
+            "resultado": "Página pública aberta e conteúdo lido.",
+            "limitacoes": []
+          }
+        }
+      ],
+      "apis": [
+        {
+          "id": "ms-ckan",
+          "nome": "API do catálogo de dados abertos MS",
+          "orgao": "SETDIG-MS",
+          "abrangencia": "estadual",
+          "tipo": "api_dados_abertos",
+          "url_oficial": "https://www.dados.ms.gov.br/dataset/",
+          "url_documentacao": "https://docs.ckan.org/en/2.11/api/",
+          "url_base": "https://www.dados.ms.gov.br/api/3",
+          "informacoes": "Metadados de conjuntos de dados; não é carta de serviços nem emissão de documentos.",
+          "autenticacao": {
+            "necessaria": false,
+            "escopo": "GET package_list?limit=5, exclusivamente catálogo público",
+            "evidencia": "Requisição sem credenciais respondeu HTTP 200, JSON e success=true.",
+            "fonte": "https://www.dados.ms.gov.br/api/3/action/package_list?limit=5"
+          },
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Link API/documentação seguido no catálogo; GET público com curl, validação TLS ativa.",
+            "resultado": "Consulta de metadados confirmada.",
+            "testes": [
+              {
+                "url": "https://www.dados.ms.gov.br/api/3/action/package_list?limit=5",
+                "metodo": "GET",
+                "status_http": 200,
+                "formato": "application/json;charset=utf-8",
+                "evidencia": "success=true; cinco identificadores; exemplos: agencias-agraer, altimetria-ms",
+                "limites": "Somente uma página de cinco identificadores; sem dados pessoais e sem testar demais funções."
+              }
+            ]
+          },
+          "utilidade": "Complementar descoberta de dados e mapas; não fornece requisitos, custos ou emissão de CIN/CNH confirmados.",
+          "limitacoes": [
+            "Nenhuma API pública de catálogo de serviços CIN/CNH localizada nesta pesquisa.",
+            "Ausência de autenticação comprovada apenas para a consulta executada."
+          ]
+        }
+      ],
+      "busca_apis": {
+        "resultado": "API CKAN de dados abertos confirmada; API pública útil de requisitos/solicitação de CIN/CNH não localizada nesta pesquisa.",
+        "consultas": [
+          "site:ms.gov.br API documentação catálogo serviços dados abertos",
+          "Catálogo MS: links API e documentação CKAN"
+        ],
+        "alternativa_oficial": [
+          "https://www.cgp.sejusp.ms.gov.br/",
+          "https://www2.meudetran.ms.gov.br/habilitacao.php",
+          "https://www.ms.gov.br/transito-e-transportes/emissao-da-carteira-nacional-de-habilitacao174/imprimir"
+        ]
+      }
+    }
+  ],
+  "fontes_comuns": {
+    "arquivo": "servico-facil-base-servicos.json",
+    "campo": "fontes_integracao_comuns",
+    "ids": [
+      "br-api-servico-individual",
+      "br-api-lista-servicos",
+      "br-api-manutencao-estaduais",
+      "br-ibge-localidades"
+    ]
+  }
+}
