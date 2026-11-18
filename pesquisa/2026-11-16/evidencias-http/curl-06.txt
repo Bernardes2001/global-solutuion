@@ -1,1 +1,0 @@
-{"data":[{"id":11011,"cd_unidade_gestora":"011011","nm_unidade_gestora":"ALESE - ASSEMBLÉIA LEGISLATIVA","sg_unidade_gestora":"ALESE","sg_orgao_supervisor":null}],"page":1,"limit":1,"hasMore":true}
