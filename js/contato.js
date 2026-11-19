@@ -15,25 +15,29 @@ Object.keys(nomesUf).sort().forEach((uf) => seletorUf.add(new Option(`${nomesUf[
 
 /* Cada regra devolve a mensagem de erro, ou '' quando o campo está certo. */
 const regras = {
-  nome: (valor) => {
-    const texto = valor.trim();
+  nome: (valor, campo) => {
+    const texto = valor.trim().replace(/\s+/g, ' ');
     if (!texto) return 'Informe seu nome.';
-    if (texto.length < 3) return 'O nome precisa ter pelo menos 3 letras.';
-    if (!texto.includes(' ')) return 'Informe nome e sobrenome.';
+    if (texto.length < 3) return 'O nome precisa ter pelo menos 3 caracteres.';
+    if (texto.length > campo.maxLength) return `Use até ${campo.maxLength} caracteres no nome.`;
+    if (!/^[\p{L}\p{M} .’'-]+$/u.test(texto)) return 'Use apenas letras, espaços, pontos, apóstrofos ou hífens no nome.';
+    if (texto.split(' ').filter((parte) => /\p{L}/u.test(parte)).length < 2) return 'Informe nome e sobrenome.';
     return '';
   },
-  email: (valor) => {
+  email: (valor, campo) => {
     const texto = valor.trim();
     if (!texto) return 'Informe seu e-mail.';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(texto)) return 'Digite um e-mail válido, como nome@exemplo.com.';
+    if (texto.length > campo.maxLength) return `Use até ${campo.maxLength} caracteres no e-mail.`;
+    if (campo.validity.typeMismatch || !/^[^\s@.]+(?:\.[^\s@.]+)*@(?:[a-z\d](?:[a-z\d-]*[a-z\d])?\.)+[a-z]{2,}$/i.test(texto)) return 'Digite um e-mail válido, como nome@exemplo.com.';
     return '';
   },
   telefone: (valor) => (!valor || /^\(\d{2}\) \d{4,5}-\d{4}$/.test(valor) ? '' : 'Informe um telefone com DDD, como (11) 91234-5678.'),
   assunto: (valor) => (valor ? '' : 'Escolha um assunto.'),
-  mensagem: (valor) => {
+  mensagem: (valor, campo) => {
     const tamanho = valor.trim().length;
     if (!tamanho) return 'Escreva sua mensagem.';
     if (tamanho < MINIMO_MENSAGEM) return `Escreva pelo menos ${MINIMO_MENSAGEM} caracteres (faltam ${MINIMO_MENSAGEM - tamanho}).`;
+    if (valor.length > campo.maxLength) return `Use até ${campo.maxLength} caracteres na mensagem.`;
     return '';
   },
   consentimento: (_valor, campo) => (campo.checked ? '' : 'Marque a autorização para podermos responder.')
@@ -79,29 +83,58 @@ function mostrarResumo(erros) {
 }
 
 function atualizarContador() {
-  contadorMensagem.textContent = campoMensagem.value.trim().length;
+  contadorMensagem.textContent = campoMensagem.value.length;
 }
 
 campoMensagem.addEventListener('input', atualizarContador);
 
-/* Mantém a máscara do formulário original, para telefone fixo ou celular. */
-formulario.elements.telefone.addEventListener('input', (evento) => {
-  const digitos = evento.target.value.replace(/\D/g, '').slice(0, 11);
+/* Formata ao sair do campo e antes de validar o envio, inclusive no preenchimento automático. */
+function formatarCampo(campo) {
+  if (campo.name === 'nome') campo.value = campo.value.trim().replace(/\s+/g, ' ');
+  if (campo.name === 'email') campo.value = campo.value.trim().toLowerCase();
+  if (campo.name !== 'telefone') return;
+
+  const valorAnterior = campo.value;
+  const cursor = campo.selectionStart;
+  const digitosAntes = valorAnterior.slice(0, cursor).replace(/\D/g, '').length;
+  const digitos = valorAnterior.replace(/\D/g, '').slice(0, 11);
   const corte = digitos.length > 10 ? 7 : 6;
-  evento.target.value = digitos.length <= 2
+  campo.value = digitos.length <= 2
     ? (digitos ? `(${digitos}` : '')
     : `(${digitos.slice(0, 2)}) ${digitos.slice(2, corte)}${digitos.length > corte ? '-' + digitos.slice(corte) : ''}`;
-});
+
+  /* Evita levar o cursor ao fim quando a pessoa edita no meio do número. */
+  if (cursor !== null && cursor < valorAnterior.length && campo.value !== valorAnterior) {
+    let posicao = 0;
+    let contagem = 0;
+    while (posicao < campo.value.length && contagem < digitosAntes) {
+      if (/\d/.test(campo.value[posicao])) contagem++;
+      posicao++;
+    }
+    campo.setSelectionRange(posicao, posicao);
+  }
+}
+
+formulario.elements.telefone.addEventListener('input', (evento) => formatarCampo(evento.target));
+
+function coletarErros() {
+  return Object.keys(regras)
+    .map((nomeCampo) => ({ campo: nomeCampo, mensagem: validarCampo(nomeCampo) }))
+    .filter((item) => item.mensagem);
+}
 
 /* Depois da primeira tentativa, revalida enquanto a pessoa corrige. */
 Object.keys(regras).forEach((nomeCampo) => {
   const campo = formulario.elements[nomeCampo];
   const evento = campo.type === 'checkbox' || campo.tagName === 'SELECT' ? 'change' : 'input';
   campo.addEventListener(evento, () => {
-    if (jaTentouEnviar) validarCampo(nomeCampo);
+    if (jaTentouEnviar) mostrarResumo(coletarErros());
+    else if (campo.hasAttribute('aria-invalid')) validarCampo(nomeCampo);
   });
   campo.addEventListener('blur', () => {
-    if (jaTentouEnviar || campo.value) validarCampo(nomeCampo);
+    formatarCampo(campo);
+    validarCampo(nomeCampo);
+    if (jaTentouEnviar) mostrarResumo(coletarErros());
   });
 });
 
@@ -109,9 +142,8 @@ formulario.addEventListener('submit', (evento) => {
   evento.preventDefault();
   jaTentouEnviar = true;
 
-  const erros = Object.keys(regras)
-    .map((nomeCampo) => ({ campo: nomeCampo, mensagem: validarCampo(nomeCampo) }))
-    .filter((item) => item.mensagem);
+  Object.keys(regras).forEach((nomeCampo) => formatarCampo(formulario.elements[nomeCampo]));
+  const erros = coletarErros();
 
   mostrarResumo(erros);
 
@@ -135,7 +167,9 @@ formulario.addEventListener('reset', () => {
   jaTentouEnviar = false;
   Object.keys(regras).forEach((nomeCampo) => {
     formulario.elements[nomeCampo].removeAttribute('aria-invalid');
-    document.querySelector('#' + idsErro[nomeCampo]).hidden = true;
+    const paragrafoErro = document.querySelector('#' + idsErro[nomeCampo]);
+    paragrafoErro.textContent = '';
+    paragrafoErro.hidden = true;
   });
   mostrarResumo([]);
   contadorMensagem.textContent = '0';

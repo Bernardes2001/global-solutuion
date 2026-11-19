@@ -81,12 +81,12 @@
           <div class="grid gap-5 sm:grid-cols-2">
             <div>
               <label for="nome" class="rotulo">Nome completo <span class="obrigatorio" aria-hidden="true">*</span></label>
-              <input id="nome" name="nome" type="text" class="campo" autocomplete="name" maxlength="80" required aria-describedby="erroNome">
+              <input id="nome" name="nome" type="text" class="campo" autocomplete="name" minlength="3" maxlength="80" placeholder="Ex.: Ana Silva" required aria-describedby="erroNome">
               <p id="erroNome" class="erro-campo" hidden></p>
             </div>
             <div>
               <label for="email" class="rotulo">E-mail <span class="obrigatorio" aria-hidden="true">*</span></label>
-              <input id="email" name="email" type="email" class="campo" autocomplete="email" required aria-describedby="erroEmail">
+              <input id="email" name="email" type="email" class="campo" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="254" placeholder="Ex.: ana@exemplo.com" required aria-describedby="erroEmail">
               <p id="erroEmail" class="erro-campo" hidden></p>
             </div>
             <div class="sm:col-span-2">
@@ -97,7 +97,7 @@
             <div>
               <label for="assunto" class="rotulo">Assunto <span class="obrigatorio" aria-hidden="true">*</span></label>
               <select id="assunto" name="assunto" class="campo" required aria-describedby="erroAssunto">
-                <option value="">Selecione</option>
+                <option value="">Selecione o assunto</option>
                 <option value="desatualizada">Informação desatualizada</option>
                 <option value="sugestao">Sugestão de serviço</option>
                 <option value="duvida">Dúvida</option>
@@ -108,14 +108,14 @@
             <div>
               <label for="uf" class="rotulo">Estado <span class="font-medium text-suave">(opcional)</span></label>
               <select id="uf" name="uf" class="campo">
-                <option value="">Selecione</option>
+                <option value="">Selecione seu estado (opcional)</option>
               </select>
             </div>
           </div>
 
           <div class="mt-5">
             <label for="mensagem" class="rotulo">Mensagem <span class="obrigatorio" aria-hidden="true">*</span></label>
-            <textarea id="mensagem" name="mensagem" rows="5" class="campo py-3.5" maxlength="500" required aria-describedby="dicaMensagem erroMensagem"></textarea>
+            <textarea id="mensagem" name="mensagem" rows="5" class="campo py-3.5" minlength="20" maxlength="500" placeholder="Descreva sua dúvida, sugestão ou a informação que precisa ser corrigida." required aria-describedby="dicaMensagem erroMensagem"></textarea>
             <p id="dicaMensagem" class="mt-2 text-sm text-suave"><span id="contadorMensagem">0</span> de 500 caracteres · mínimo de 20</p>
             <p id="erroMensagem" class="erro-campo" hidden></p>
           </div>
