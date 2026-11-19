@@ -1,0 +1,831 @@
+{
+  "projeto": "Serviço Fácil",
+  "versao": "2.0",
+  "data_consulta": "2026-11-18",
+  "idioma": "pt-BR",
+  "escopo": "Pesquisa informativa; não executa serviços nem implementa site/API.",
+  "responsabilidades": {
+    "pesquisa": "Luis Felipe — Centro-Oeste e Sudeste",
+    "layout": "Gabriel",
+    "proposta_api_propria": "Matheus"
+  },
+  "legendas": {
+    "tipos_fonte": {
+      "portal_servicos": "Busca e reúne vários serviços.",
+      "pagina_servico": "Ficha específica de orientação ao cidadão.",
+      "portal_orgao": "Site institucional do órgão.",
+      "api_servicos": "Interface de dados estruturados sobre serviços; disponibilidade depende da verificação.",
+      "documentacao_api": "Manual/Swagger: descreve uma interface, não comprova funcionamento dos endpoints.",
+      "catalogo_dados_abertos": "Índice de bases e arquivos; não implica catálogo de serviços.",
+      "api_dados_abertos": "Interface estruturada de dados, possivelmente sem relação com requisitos de serviços.",
+      "transparencia_gestao": "Informação fiscal, processos ou gestão administrativa."
+    },
+    "autenticacao": {
+      "true": "Exigência documentada ou comprovada para o escopo indicado.",
+      "false": "Consulta documentada/testada sem credencial, somente no escopo indicado.",
+      "null": "Não foi possível confirmar. Não significa acesso público."
+    },
+    "evidencia": {
+      "pagina_lida": "Página aberta e conteúdo relevante lido.",
+      "trecho_indexado": "Somente conteúdo retornado pelo buscador; abertura integral limitada.",
+      "documento_lido": "Conteúdo de manual/PDF/documento oficial lido."
+    },
+    "status_conteudo": {
+      "confirmado": "Conteúdo essencial sustentado por fontes; consultar observações e custos/prazos.",
+      "parcial": "Há limitação documental, conflito ou campo necessário pendente."
+    },
+    "apto_catalogo": {
+      "sim": "Pode integrar o catálogo informativo com fontes e data.",
+      "com_ressalvas": "Pode orientar busca, exibindo pendências e encaminhamento oficial. Não apresentar como lista exaustiva.",
+      "nao": "Completar evidência antes de publicar a ficha."
+    },
+    "ausencias": "null e lista vazia não significam inexistência ou dispensa. Ler status e pendencias.",
+    "utilidade": "Alta: conteúdo de serviços; média: apoio ao catálogo; baixa: pouca relação com a orientação ao cidadão."
+  },
+  "regiao": "Sudeste",
+  "ufs": [
+    {
+      "uf": "ES",
+      "nome": "Espírito Santo",
+      "portais": [
+        {
+          "nome": "ES.GOV",
+          "orgao": "Governo do Espírito Santo",
+          "tipo": "portal_servicos",
+          "url": "https://portal.es.gov.br/",
+          "descricao": "Catálogo estadual de serviços.",
+          "utilidade": "Alta para descoberta manual.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Abertura da página inicial expirou; carta CIN abriu estrutura sem descrição.",
+            "limitacoes": [
+              "Conteúdo depende de JavaScript; trecho da carta indexado não foi tratado como leitura direta."
+            ]
+          }
+        },
+        {
+          "nome": "PCIES",
+          "orgao": "Polícia Científica do Espírito Santo",
+          "tipo": "portal_orgao",
+          "url": "https://pci.es.gov.br/",
+          "descricao": "Órgão responsável pela CIN.",
+          "utilidade": "Alta para orientações e postos.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página oficial aberta e conteúdo público lido.",
+            "limitacoes": [
+              "Não comprova funcionamento do fluxo autenticado."
+            ]
+          }
+        },
+        {
+          "nome": "Detran-ES",
+          "orgao": "Detran-ES",
+          "tipo": "portal_orgao",
+          "url": "https://detran.es.gov.br/",
+          "descricao": "Órgão de habilitação e trânsito.",
+          "utilidade": "Alta para regras CNH.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página oficial aberta e conteúdo público lido.",
+            "limitacoes": [
+              "Não comprova funcionamento do fluxo autenticado."
+            ]
+          }
+        },
+        {
+          "nome": "Dados Abertos ES",
+          "orgao": "SECONT / PRODEST",
+          "tipo": "catalogo_dados_abertos",
+          "url": "https://dados.es.gov.br/dataset",
+          "descricao": "Metadados e recursos de dados estaduais.",
+          "utilidade": "Complementar; não substitui cartas de serviço.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página oficial aberta e conteúdo público lido.",
+            "limitacoes": [
+              "Não comprova funcionamento do fluxo autenticado."
+            ]
+          }
+        },
+        {
+          "nome": "Faça Fácil — CIN",
+          "orgao": "Faça Fácil / PCIES",
+          "tipo": "pagina_servico",
+          "url": "https://facafacil.es.gov.br/servicos/cin-carteira-de-identidade-nacional-primeira-e-segunda-via",
+          "descricao": "Fonte da ficha es-cin.",
+          "utilidade": "Alta para consulta manual.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página lida.",
+            "limitacoes": [
+              "Regras desta unidade; não generalizar a todos os postos."
+            ]
+          }
+        },
+        {
+          "nome": "PCIES — Perguntas frequentes",
+          "orgao": "PCIES",
+          "tipo": "pagina_servico",
+          "url": "https://pci.es.gov.br/perguntas-frequentes?contato=3-carteira-de-identidade-nacional",
+          "descricao": "Fonte da ficha es-cin.",
+          "utilidade": "Alta para consulta manual.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página lida.",
+            "limitacoes": [
+              "Não comprova funcionamento do fluxo autenticado."
+            ]
+          }
+        },
+        {
+          "nome": "PCIES — CIN",
+          "orgao": "PCIES",
+          "tipo": "pagina_servico",
+          "url": "https://pci.es.gov.br/cin",
+          "descricao": "Fonte da ficha es-cin.",
+          "utilidade": "Alta para consulta manual.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página lida.",
+            "limitacoes": [
+              "Documentação incorporada por Infogram não teve texto extraído."
+            ]
+          }
+        },
+        {
+          "nome": "Detran-ES — Perda ou dano",
+          "orgao": "Detran-ES",
+          "tipo": "pagina_servico",
+          "url": "https://detran.es.gov.br/perda-ou-dano-2",
+          "descricao": "Fonte da ficha es-cnh.",
+          "utilidade": "Alta para consulta manual.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página lida.",
+            "limitacoes": [
+              "Página menciona documentos abaixo, mas não apresenta a lista."
+            ]
+          }
+        },
+        {
+          "nome": "Detran-ES — Renovação",
+          "orgao": "Detran-ES",
+          "tipo": "pagina_servico",
+          "url": "https://detran.es.gov.br/renovacao-de-cnh",
+          "descricao": "Fonte da ficha es-cnh-renovacao.",
+          "utilidade": "Alta para consulta manual.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página lida.",
+            "limitacoes": [
+              "Não comprova funcionamento do fluxo autenticado."
+            ]
+          }
+        }
+      ],
+      "apis": [
+        {
+          "id": "es-ckan",
+          "nome": "API CKAN de dados abertos ES",
+          "orgao": "SECONT / PRODEST",
+          "abrangencia": "estadual",
+          "tipo": "api_dados_abertos",
+          "url_oficial": "https://dados.es.gov.br/about",
+          "url_documentacao": "https://docs.ckan.org/en/2.9/api/",
+          "url_base": "https://dados.es.gov.br/api/3/action/",
+          "informacoes": [
+            "Pesquisa de metadados, títulos e recursos de dados abertos."
+          ],
+          "autenticacao": {
+            "necessaria": false,
+            "escopo": "GET package_search de metadados públicos testado.",
+            "evidencia": "Resposta JSON válida, success=true, sem cabeçalho de autorização.",
+            "fonte": "https://dados.es.gov.br/api/3/action/package_search?q=servicos&rows=3"
+          },
+          "verificacao": {
+            "data": "2026-11-18",
+            "metodo": "GET público direto nas ações CKAN documentadas.",
+            "resultado": "GET 200 JSON; busca q=servicos retornou 67 conjuntos na rodada atual.",
+            "testes": [
+              {
+                "url": "https://dados.es.gov.br/api/3/action/package_search?q=servicos&rows=3",
+                "metodo": "GET",
+                "status_http": 200,
+                "formato": "application/json;charset=utf-8",
+                "evidencia": "success=true; resultados incluem IJSN Serviços, prestadores terceirizados e turismo.",
+                "limites": "Sem credenciais nem dados pessoais; amostra limitada."
+              }
+            ]
+          },
+          "utilidade": "Baixa para fichas CIN/CNH; útil para descobrir conjuntos.",
+          "limitacoes": [
+            "Não localizada nesta pesquisa API pública útil do catálogo cidadão CIN/CNH.",
+            "Resultado de busca não significa inventário completo.",
+            "Não testadas outras ações nem recursos individuais."
+          ]
+        }
+      ],
+      "busca_apis": {
+        "resultado": "API de dados abertos verificada; API pública útil de cartas CIN/CNH não localizada nesta pesquisa.",
+        "consultas": [
+          "site.es.gov.br API catálogo serviços dados abertos",
+          "Dados Abertos ES /about e /dataset",
+          "CKAN package_search q=servicos"
+        ],
+        "alternativa_oficial": "Manter fichas editoriais com links PCIES, Faça Fácil e Detran-ES."
+      }
+    },
+    {
+      "uf": "MG",
+      "nome": "Minas Gerais",
+      "portais": [
+        {
+          "nome": "Portal MG — Serviços",
+          "orgao": "Governo de Minas Gerais",
+          "tipo": "portal_servicos",
+          "url": "https://www.mg.gov.br/servicos",
+          "descricao": "Busca e cartas estaduais.",
+          "utilidade": "Alta; páginas CIN e CNH legíveis.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página oficial aberta e conteúdo público lido.",
+            "limitacoes": [
+              "Não comprova funcionamento do fluxo autenticado."
+            ]
+          }
+        },
+        {
+          "nome": "Polícia Civil MG",
+          "orgao": "Polícia Civil de Minas Gerais",
+          "tipo": "portal_orgao",
+          "url": "https://www.policiacivil.mg.gov.br/",
+          "descricao": "Órgão indicado para CIN pelo Portal MG.",
+          "utilidade": "Referência institucional.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Abertura expirou; competência confirmada na carta do Portal MG.",
+            "limitacoes": [
+              "Página inicial não lida."
+            ]
+          }
+        },
+        {
+          "nome": "Detran-MG",
+          "orgao": "Detran-MG",
+          "tipo": "portal_orgao",
+          "url": "https://detran.mg.gov.br/",
+          "descricao": "Órgão de habilitação.",
+          "utilidade": "Referência institucional.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página retornou Request Rejected.",
+            "limitacoes": [
+              "Usadas cartas legíveis do Portal MG."
+            ]
+          }
+        },
+        {
+          "nome": "Dados Abertos MG",
+          "orgao": "Controladoria-Geral do Estado de Minas Gerais",
+          "tipo": "catalogo_dados_abertos",
+          "url": "https://dados.mg.gov.br/",
+          "descricao": "Catálogo de dados abertos com link para documentação CKAN.",
+          "utilidade": "Complementar.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página oficial aberta e conteúdo público lido.",
+            "limitacoes": [
+              "Não comprova funcionamento do fluxo autenticado."
+            ]
+          }
+        },
+        {
+          "nome": "Portal MG — Obter CIN",
+          "orgao": "Polícia Civil de Minas Gerais",
+          "tipo": "pagina_servico",
+          "url": "https://www.mg.gov.br/servico/obter-carteira-de-identidade-nacional",
+          "descricao": "Fonte da ficha mg-cin.",
+          "utilidade": "Alta para consulta manual.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página lida.",
+            "limitacoes": [
+              "Não comprova funcionamento do fluxo autenticado."
+            ]
+          }
+        },
+        {
+          "nome": "Portal MG — Segunda via sem alterar dados",
+          "orgao": "Detran-MG",
+          "tipo": "pagina_servico",
+          "url": "https://www.mg.gov.br/servico/solicitar-2a-da-cnh-ppd-ou-acc-sem-alterar-dados",
+          "descricao": "Fonte da ficha mg-cnh.",
+          "utilidade": "Alta para consulta manual.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página lida.",
+            "limitacoes": [
+              "Não comprova funcionamento do fluxo autenticado."
+            ]
+          }
+        },
+        {
+          "nome": "Portal MG — Renovar CNH A, AB, B ou ACC",
+          "orgao": "Detran-MG",
+          "tipo": "pagina_servico",
+          "url": "https://www.mg.gov.br/servico/renovar-cnh-categorias-ab-ou-b-ou-acc",
+          "descricao": "Fonte da ficha mg-cnh-renovacao.",
+          "utilidade": "Alta para consulta manual.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página lida.",
+            "limitacoes": [
+              "Não comprova funcionamento do fluxo autenticado."
+            ]
+          }
+        }
+      ],
+      "apis": [
+        {
+          "id": "mg-ckan",
+          "nome": "API CKAN indicada pelo catálogo MG",
+          "orgao": "Controladoria-Geral do Estado de Minas Gerais",
+          "abrangencia": "estadual",
+          "tipo": "documentacao_api",
+          "url_oficial": "https://dados.mg.gov.br/",
+          "url_documentacao": "https://docs.ckan.org/en/2.9/api/",
+          "url_base": "https://dados.mg.gov.br/api/3/action/",
+          "informacoes": [
+            "Catálogo remete à documentação CKAN; consulta de metadados não funcionou no teste."
+          ],
+          "autenticacao": {
+            "necessaria": null,
+            "escopo": "Autorização da API de metadados não determinada.",
+            "evidencia": "GET retornou 403 HTML; bloqueio não prova necessidade de chave.",
+            "fonte": "https://dados.mg.gov.br/api/3/action/package_search?q=servicos&rows=3"
+          },
+          "verificacao": {
+            "data": "2026-11-18",
+            "metodo": "GET público direto na rota CKAN indicada pelo catálogo.",
+            "resultado": "GET 403 text/html; sem JSON de metadados.",
+            "testes": [
+              {
+                "url": "https://dados.mg.gov.br/api/3/action/package_search?q=servicos&rows=1",
+                "metodo": "GET",
+                "status_http": 403,
+                "formato": "text/html",
+                "evidencia": "Request forbidden by administrative rules.",
+                "limites": "O bloqueio pode ser de rede/política, não prova ausência de acesso público nem exigência de credencial."
+              }
+            ]
+          },
+          "utilidade": "Potencial para descoberta; não utilizável como integração confirmada.",
+          "limitacoes": [
+            "Não localizada nesta pesquisa API pública útil de cartas de serviços MG.",
+            "Não inferir autenticação obrigatória a partir do bloqueio."
+          ]
+        }
+      ],
+      "busca_apis": {
+        "resultado": "Documentação genérica CKAN localizada; endpoint testado bloqueado. API pública útil de cartas não localizada nesta pesquisa.",
+        "consultas": [
+          "site.mg.gov.br API serviços cidadão dados abertos",
+          "Portal de Dados Abertos MG e link API CKAN",
+          "CKAN package_search q=servicos"
+        ],
+        "alternativa_oficial": "Portal MG e Cidadão MG para orientação e encaminhamento."
+      }
+    },
+    {
+      "uf": "RJ",
+      "nome": "Rio de Janeiro",
+      "portais": [
+        {
+          "nome": "Portal RJ Digital",
+          "orgao": "Governo do Rio de Janeiro",
+          "tipo": "portal_servicos",
+          "url": "https://www.rj.gov.br/",
+          "descricao": "Portal estadual.",
+          "utilidade": "Alta para descoberta.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Abertura expirou; catálogo acessível via dados abertos.",
+            "limitacoes": [
+              "Página inicial não lida."
+            ]
+          }
+        },
+        {
+          "nome": "Detran-RJ",
+          "orgao": "Detran-RJ",
+          "tipo": "portal_orgao",
+          "url": "https://www.detran.rj.gov.br/",
+          "descricao": "Órgão de CIN e CNH.",
+          "utilidade": "Alta para cartas e orientações.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página oficial aberta e conteúdo público lido.",
+            "limitacoes": [
+              "Não comprova funcionamento do fluxo autenticado."
+            ]
+          }
+        },
+        {
+          "nome": "Dados Abertos RJ",
+          "orgao": "SETD / Governo do Rio de Janeiro",
+          "tipo": "catalogo_dados_abertos",
+          "url": "https://dadosabertos.rj.gov.br/dataset/",
+          "descricao": "Catálogo estadual com API CKAN.",
+          "utilidade": "Alta: contém snapshot de serviços.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página oficial aberta e conteúdo público lido.",
+            "limitacoes": [
+              "Não comprova funcionamento do fluxo autenticado."
+            ]
+          }
+        },
+        {
+          "nome": "Serviços no Portal RJ Digital",
+          "orgao": "SETD",
+          "tipo": "catalogo_dados_abertos",
+          "url": "https://dadosabertos.rj.gov.br/dataset/testedeintegracao1",
+          "descricao": "Conjunto de serviços estaduais publicado como arquivos.",
+          "utilidade": "Alta para carga inicial; revisar atualidade.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Metadados lidos por GET package_show; abertura web da página deu cache miss.",
+            "limitacoes": [
+              "Slug antigo rj-gov-br retornou 404; usar slug descoberto na API."
+            ]
+          }
+        },
+        {
+          "nome": "Detran-RJ — Primeira CIN",
+          "orgao": "Detran-RJ",
+          "tipo": "pagina_servico",
+          "url": "https://www.detran.rj.gov.br/todos-os-servicos/servicos-dic/1-via-de-identidade.html",
+          "descricao": "Fonte da ficha rj-cin.",
+          "utilidade": "Alta para consulta manual.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página lida.",
+            "limitacoes": [
+              "Não esclarece agendamento de pessoa sem CPF."
+            ]
+          }
+        },
+        {
+          "nome": "Detran-RJ — Agendamento digital desde 11/11/2026",
+          "orgao": "Detran-RJ",
+          "tipo": "pagina_servico",
+          "url": "https://www.detran.rj.gov.br/noticias/agendamentos-de-identificacao-civil-no-detran-rj-passam-a-ser-exclusivamente-digitais-a-partir-desta-quarta-feira-11-11.html",
+          "descricao": "Fonte da ficha rj-cin.",
+          "utilidade": "Alta para consulta manual.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página lida.",
+            "limitacoes": [
+              "Não comprova funcionamento do fluxo autenticado."
+            ]
+          }
+        },
+        {
+          "nome": "Detran-RJ — Segunda via da habilitação",
+          "orgao": "Detran-RJ",
+          "tipo": "pagina_servico",
+          "url": "https://detran.rj.gov.br/todos-os-servicos/servicos-hab/2-via-de-habilitacao.html",
+          "descricao": "Fonte da ficha rj-cnh.",
+          "utilidade": "Alta para consulta manual.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página lida.",
+            "limitacoes": [
+              "Telefone de agendamento na carta foi superado por notícia de 10/11."
+            ]
+          }
+        },
+        {
+          "nome": "Detran-RJ — Renovação da habilitação",
+          "orgao": "Detran-RJ",
+          "tipo": "pagina_servico",
+          "url": "https://www.detran.rj.gov.br/todos-os-servicos/servicos-hab/renovacao-da-habilitacao.html",
+          "descricao": "Fonte da ficha rj-cnh-renovacao.",
+          "utilidade": "Alta para consulta manual.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página lida.",
+            "limitacoes": [
+              "Página mistura atualização recente e referências antigas."
+            ]
+          }
+        }
+      ],
+      "apis": [
+        {
+          "id": "rj-ckan-servicos",
+          "nome": "API CKAN e snapshot de serviços RJ Digital",
+          "orgao": "Secretaria de Estado de Transformação Digital — SETD",
+          "abrangencia": "estadual",
+          "tipo": "api_dados_abertos",
+          "url_oficial": "https://dadosabertos.rj.gov.br/dataset/",
+          "url_documentacao": "https://docs.ckan.org/en/2.9/api/",
+          "url_base": "https://dadosabertos.rj.gov.br/api/3/action/",
+          "informacoes": [
+            "package_search e package_show localizam recursos.",
+            "Snapshot JSON: 1.347 registros; campos id, url, titulo, descricao, requisitos, publico, informacoes_extra, custo, media_avaliacao, orgao_sigla, orgao_nome.",
+            "Cobertura declarada: 16/09/2026; recurso criado/modificado em 06/10/2026.",
+            "Arquivo JSON de download não é endpoint transacional."
+          ],
+          "autenticacao": {
+            "necessaria": false,
+            "escopo": "GET públicos package_search, package_show e arquivo JSON testados.",
+            "evidencia": "Todos retornaram 200 JSON, sem autenticação.",
+            "fonte": "https://dadosabertos.rj.gov.br/api/3/action/package_show?id=testedeintegracao1"
+          },
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Leitura de fonte oficial e somente GET público nas rotas documentadas.",
+            "resultado": "API de catálogo e leitura do arquivo confirmadas.",
+            "testes": [
+              {
+                "url": "https://dadosabertos.rj.gov.br/api/3/action/package_search?q=rj.gov.br&rows=5",
+                "metodo": "GET",
+                "status_http": 200,
+                "formato": "application/json;charset=utf-8",
+                "evidencia": "success=true; identificou testedeintegracao1.",
+                "limites": "Sem credenciais nem dados pessoais; amostra limitada."
+              },
+              {
+                "url": "https://dadosabertos.rj.gov.br/api/3/action/package_show?id=testedeintegracao1",
+                "metodo": "GET",
+                "status_http": 200,
+                "formato": "application/json;charset=utf-8",
+                "evidencia": "success=true; metadados do conjunto e URLs de recursos.",
+                "limites": "Sem credenciais nem dados pessoais; amostra limitada."
+              },
+              {
+                "url": "https://dadosabertos.rj.gov.br/dataset/3ece64a3-bfdb-4d2e-b0fa-ace0fb0d0a03/resource/46df039f-235c-41a7-83e7-4d0c07d03892/download/servicos_2026_09_16.json",
+                "metodo": "GET",
+                "status_http": 200,
+                "formato": "application/json",
+                "evidencia": "JSON válido, lista com 1.347 objetos e campos de serviços.",
+                "limites": "Sem credenciais nem dados pessoais; amostra limitada."
+              }
+            ]
+          },
+          "utilidade": "Alta para carga inicial e descoberta de serviços.",
+          "limitacoes": [
+            "Snapshot não confirma situação vigente de cada serviço nem atualização automática.",
+            "Revalidar informações nas cartas atuais antes de publicar.",
+            "Não emite documentos, não agenda e não permite inferir API transacional pública."
+          ]
+        }
+      ],
+      "busca_apis": {
+        "resultado": "API de dados abertos verificada e snapshot de catálogo útil encontrado. API pública transacional CIN/CNH não localizada nesta pesquisa.",
+        "consultas": [
+          "site.rj.gov.br API catálogo serviços dados abertos",
+          "Catálogo CKAN e referência API",
+          "package_search q=servicos; q=rj.gov.br; package_show id=testedeintegracao1"
+        ],
+        "alternativa_oficial": "Usar snapshot como inventário inicial e conferir cada carta atual do Detran-RJ."
+      }
+    },
+    {
+      "uf": "SP",
+      "nome": "São Paulo",
+      "portais": [
+        {
+          "nome": "Serviços SP",
+          "orgao": "Governo de São Paulo",
+          "tipo": "portal_servicos",
+          "url": "https://servicos.sp.gov.br/",
+          "descricao": "Catálogo de cartas de serviço.",
+          "utilidade": "Alta para regras e links.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página oficial aberta e conteúdo público lido.",
+            "limitacoes": [
+              "Não comprova funcionamento do fluxo autenticado."
+            ]
+          }
+        },
+        {
+          "nome": "Poupatempo — Carta CIN / IIRGD",
+          "orgao": "IIRGD / Poupatempo",
+          "tipo": "pagina_servico",
+          "url": "https://www.poupatempo.sp.gov.br/carta/D97C3844-A2D9-4C9E-B364-CB4FEB26A1FB",
+          "descricao": "Carta legível identifica o IIRGD e os postos.",
+          "utilidade": "Alta para CIN.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página oficial aberta e conteúdo público lido.",
+            "limitacoes": [
+              "Não comprova funcionamento do fluxo autenticado."
+            ]
+          }
+        },
+        {
+          "nome": "SSP-SP — Emissão CIN",
+          "orgao": "Secretaria da Segurança Pública de São Paulo",
+          "tipo": "pagina_servico",
+          "url": "https://www.portal.ssp.sp.gov.br/servicos/emissao-cin",
+          "descricao": "Página institucional sobre emissão.",
+          "utilidade": "Alternativa institucional.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Abertura retornou HTML sem texto legível.",
+            "limitacoes": [
+              "Usada carta do Poupatempo para fatos."
+            ]
+          }
+        },
+        {
+          "nome": "Detran-SP",
+          "orgao": "Detran-SP",
+          "tipo": "portal_orgao",
+          "url": "https://www.detran.sp.gov.br/detransp",
+          "descricao": "Portal de habilitação.",
+          "utilidade": "Referência oficial.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página abriu apenas Carregando.",
+            "limitacoes": [
+              "Usar cartas legíveis em Serviços SP/Poupatempo."
+            ]
+          }
+        },
+        {
+          "nome": "Catálogo Prodesp",
+          "orgao": "Prodesp",
+          "tipo": "documentacao_api",
+          "url": "https://api.prodesp.sp.gov.br/",
+          "descricao": "Catálogo comercial/institucional de APIs.",
+          "utilidade": "Descoberta de ofertas.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "GET 200 text/html; ferramenta web não extraiu texto.",
+            "limitacoes": [
+              "Não é retorno JSON de uma API de serviços."
+            ]
+          }
+        },
+        {
+          "nome": "Integrador SP — Catálogo",
+          "orgao": "Prodesp",
+          "tipo": "documentacao_api",
+          "url": "https://rota.sp.gov.br/wps/portal/integrador/catalogoApis",
+          "descricao": "Catálogo indexado inclui ofertas CNH e serviços proativos.",
+          "utilidade": "Candidato para investigação futura.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Abertura expirou; domínio integrador retornou 404.",
+            "limitacoes": [
+              "Somente trecho oficial indexado; não confirma acesso público."
+            ]
+          }
+        },
+        {
+          "nome": "Poupatempo — Emitir segunda via da CNH",
+          "orgao": "Detran-SP",
+          "tipo": "pagina_servico",
+          "url": "https://www.poupatempo.sp.gov.br/carta/D6BB72BC-80D9-4AC4-924C-7C8503F37367",
+          "descricao": "Fonte da ficha sp-cnh.",
+          "utilidade": "Alta para consulta manual.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Trecho oficial indexado; página indisponível.",
+            "limitacoes": [
+              "Conteúdo indexado; abertura direta retornou 500/indisponibilidade."
+            ]
+          }
+        },
+        {
+          "nome": "Serviços SP — Indisponibilidade",
+          "orgao": "Detran-SP",
+          "tipo": "pagina_servico",
+          "url": "https://servicos.sp.gov.br/fcarta/D6BB72BC-80D9-4AC4-924C-7C8503F37367",
+          "descricao": "Fonte da ficha sp-cnh.",
+          "utilidade": "Alta para consulta manual.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página lida.",
+            "limitacoes": [
+              "Não apresentou a carta."
+            ]
+          }
+        },
+        {
+          "nome": "Serviços SP — Renovar CNH",
+          "orgao": "Detran-SP",
+          "tipo": "pagina_servico",
+          "url": "https://servicos.sp.gov.br/fcarta/F8D2DBE7-66BE-4AEC-9B0F-25912922D566",
+          "descricao": "Fonte da ficha sp-cnh-renovacao.",
+          "utilidade": "Alta para consulta manual.",
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Abertura de URL oficial por ferramenta web; consulta pública sem login.",
+            "resultado": "Página lida.",
+            "limitacoes": [
+              "Não comprova funcionamento do fluxo autenticado."
+            ]
+          }
+        }
+      ],
+      "apis": [
+        {
+          "id": "sp-catalogo-prodesp",
+          "nome": "Catálogo de APIs Prodesp / Integrador",
+          "orgao": "Prodesp",
+          "abrangencia": "estadual",
+          "tipo": "documentacao_api",
+          "url_oficial": "https://api.prodesp.sp.gov.br/",
+          "url_documentacao": "https://rota.sp.gov.br/wps/portal/integrador/catalogoApis",
+          "url_base": null,
+          "informacoes": [
+            "Há ofertas indexadas de APIs de CNH e serviços proativos; rotas e contratos não foram obtidos."
+          ],
+          "autenticacao": {
+            "necessaria": null,
+            "escopo": "Autenticação de APIs individuais desconhecida.",
+            "evidencia": "GET da página é HTML; nenhuma operação de API foi executada.",
+            "fonte": "https://api.prodesp.sp.gov.br/"
+          },
+          "verificacao": {
+            "data": "2026-11-15",
+            "metodo": "Leitura de fonte oficial e somente GET público nas rotas documentadas.",
+            "resultado": "Catálogo encontrado; API funcional não comprovada.",
+            "testes": [
+              {
+                "url": "https://api.prodesp.sp.gov.br/",
+                "metodo": "GET",
+                "status_http": 200,
+                "formato": "text/html; charset=utf-8",
+                "evidencia": "Página de catálogo, sem JSON de serviços.",
+                "limites": "Teste da página, não de endpoint de API."
+              }
+            ]
+          },
+          "utilidade": "Potencial; exige investigação da oferta e condições de adesão.",
+          "limitacoes": [
+            "API pública útil para catálogo CIN/CNH não localizada nesta pesquisa.",
+            "Não inferir acesso gratuito, ausência de chave ou uso permitido a terceiros."
+          ]
+        }
+      ],
+      "busca_apis": {
+        "resultado": "Catálogos/documentação candidatos encontrados; API pública utilizável não localizada nesta pesquisa.",
+        "consultas": [
+          "site.sp.gov.br API catálogo serviços Poupatempo documentação",
+          "Catálogo Integrador SP",
+          "Catálogo api.prodesp.sp.gov.br"
+        ],
+        "alternativa_oficial": "Manter conteúdo curado com cartas Serviços SP/Poupatempo e encaminhar ao órgão."
+      }
+    }
+  ],
+  "fontes_comuns": {
+    "arquivo": "servico-facil-base-servicos.json",
+    "campo": "fontes_integracao_comuns",
+    "ids": [
+      "br-api-servico-individual",
+      "br-api-lista-servicos",
+      "br-api-manutencao-estaduais",
+      "br-ibge-localidades"
+    ]
+  }
+}

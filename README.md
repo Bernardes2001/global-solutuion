@@ -2,7 +2,7 @@
 
 > Global Solution 2026/2 · **CitizenTech** · FIAP — Engenharia de Software (1ESOR)
 
-O Serviço Fácil reúne, em linguagem simples, **o que levar, o passo a passo, o custo, o prazo e o canal oficial** de 26 serviços públicos: CPF, título de eleitor, Cadastro Único, Enem, CNH e outros. São 23 serviços nacionais e 3 com regras próprias em 8 estados (CIN e CNH), somando 47 fichas.
+O Serviço Fácil reúne, em linguagem simples, **o que levar, o passo a passo, o custo, o prazo e o canal oficial** de 26 serviços públicos: CPF, título de eleitor, Cadastro Único, Enem, CNH e outros. São 23 serviços nacionais e 3 com regras próprias em estados das regiões Norte, Nordeste, Sudeste, Centro-Oeste e Sul, somando 47 fichas.
 
 **Para quem:** pessoas com pouca familiaridade com a internet. Segundo o IBGE (PNAD Contínua TIC 2023), "não saber usar" é o motivo mais citado por quem não usa a internet (46,3%), e mais da metade dessas pessoas (51,6%) são idosas.
 
@@ -16,7 +16,7 @@ O Serviço Fácil reúne, em linguagem simples, **o que levar, o passo a passo, 
 
 ## Como abrir
 
-Dê dois cliques no **`index.html`**. O site abre direto no navegador, sem instalar nada: o CSS já vem compilado em `css/style.css`.
+Dê dois cliques no **`dist/index.html`**. O site abre direto no navegador, sem instalar nada: o CSS já vem compilado em `dist/css/styles.css`. Para publicar o site, use o conteúdo de `dist/` como raiz.
 
 ### Só para quem for editar o visual
 
@@ -24,7 +24,8 @@ O CSS é escrito com Tailwind CSS, usado com autorização do professor. Depois 
 
 ```bash
 npm install
-npm run css        # gera css/style.css
+npm run build      # gera os dados e compila o CSS para dist/
+npm run css        # gera dist/css/styles.css
 npm run css:watch  # recompila automaticamente enquanto você edita
 ```
 
@@ -32,15 +33,15 @@ npm run css:watch  # recompila automaticamente enquanto você edita
 
 | Página | Arquivo | O que tem |
 |---|---|---|
-| Início | `index.html` | O cidadão, o problema com dado real e fonte, a proposta e os ODS |
-| Serviços (solução) | `servicos.html` | Busca, filtros por categoria e estado, detalhes e checklist de documentos |
-| Impacto | `impacto.html` | Números do catálogo, quem ganha, indicadores, ODS e ecossistema de fontes |
-| Sobre nós | `sobre-nos.html` | Missão, como a pesquisa foi feita e a equipe |
-| Fale conosco | `contato.html` | Formulário com validação em JavaScript |
+| Início | `dist/index.html` | O cidadão, o problema com dado real e fonte, a proposta e os ODS |
+| Serviços (solução) | `dist/pages/servicos.html` | Busca, filtros por categoria e estado, detalhes e checklist de documentos |
+| Impacto | `dist/pages/impacto.html` | Números do catálogo, quem ganha, indicadores, ODS e ecossistema de fontes |
+| Sobre nós | `dist/pages/sobre-nos.html` | Missão, como a pesquisa foi feita e a equipe |
+| Fale conosco | `dist/pages/contato.html` | Formulário com validação em JavaScript |
 
 ## Funcionalidades
 
-- **Simulação interativa:** os dados vêm de um array de objetos com 47 fichas (`js/dados.js`, gerado de `data/`); CIN e CNH aparecem em um card só, com a escolha do estado, e são exibidos pelo DOM. A busca ignora acentos e entende nomes populares ("tirar CPF").
+- **Simulação interativa:** os dados vêm de um array de objetos com 47 fichas (`dist/js/dados.js`, gerado de `data/`); CIN e CNH aparecem em um card só, com a escolha do estado, e são exibidos pelo DOM. Ao selecionar uma UF sem ficha estadual, a lista inclui o link ao portal oficial de serviços disponível. A busca ignora acentos e entende nomes populares ("tirar CPF").
 - **Checklist de documentos:** o usuário marca o que já tem e vê quantos documentos ainda faltam.
 - **Formulário validado:** os erros aparecem abaixo de cada campo, com um resumo no topo, e a mensagem de sucesso aparece na própria página.
 - **Acessibilidade:**
@@ -54,32 +55,42 @@ npm run css:watch  # recompila automaticamente enquanto você edita
 ## Estrutura
 
 ```text
-├── index.html  servicos.html  impacto.html  sobre-nos.html  contato.html
-├── css/
-│   ├── input.css      # fonte do Tailwind (tokens de cor, componentes, alto contraste)
-│   └── style.css      # CSS compilado usado pelas páginas
-├── js/
-│   ├── main.js        # menu, fonte e contraste (todas as páginas)
-│   ├── utils.js       # funções compartilhadas
-│   ├── dados.js       # array de serviços (base do catálogo)
-│   ├── servicos.js    # busca, filtros, detalhes e checklist
-│   ├── impacto.js     # números do catálogo e fontes
-│   └── contato.js     # validação do formulário
-├── img/               # logotipo e ilustração
-├── data/              # pesquisa original em JSON (única fonte dos dados)
-└── scripts/           # gera o js/dados.js e valida os dados
+├── dist/                  # site pronto para abrir ou publicar
+│   ├── css/
+│   │   └── styles.css     # CSS compilado usado pelas páginas
+│   ├── img/               # logotipo e ilustração
+│   ├── js/
+│   │   ├── main.js        # menu, fonte e contraste (todas as páginas)
+│   │   ├── utils.js       # funções compartilhadas
+│   │   ├── dados.js       # array gerado de serviços (base do catálogo)
+│   │   ├── servicos.js    # busca, filtros, detalhes e checklist
+│   │   ├── impacto.js     # números do catálogo e fontes
+│   │   └── contato.js     # validação do formulário
+│   ├── pages/
+│   │   ├── servicos.html
+│   │   ├── impacto.html
+│   │   ├── sobre-nos.html
+│   │   └── contato.html
+│   └── index.html
+├── src/
+│   └── input.css          # fonte do Tailwind (tokens, componentes e alto contraste)
+├── data/                  # pesquisa original em JSON (única fonte dos dados)
+├── scripts/               # gera dist/js/dados.js e valida os dados
+├── node_modules/          # dependências locais (npm install; fora do Git)
+├── package.json
+└── package-lock.json
 ```
 
 ## Dados
 
-Os dados ficam só em `data/servicos.json` e `data/nordeste.json`. O `js/dados.js` é **gerado** a partir deles — não edite à mão.
+Os dados ficam em `data/servicos.json`, `data/nordeste.json`, `data/norte.json`, `data/sudeste.json`, `data/centro-oeste.json` e `data/sul.json`. O `dist/js/dados.js` é **gerado** a partir deles — não edite à mão.
 
 ```bash
-npm run dados     # gera o js/dados.js e confere se há erros
+npm run dados     # gera dist/js/dados.js e confere se há erros
 npm run validar   # relatório completo: erros + o que ainda falta pesquisar
 ```
 
-O validador acusa como **erro** (e encerra com código 1): ID ou nome repetido, valor fora do padrão, fonte citada que não existe, ficha "confirmado" com custo ou documentos pendentes e `js/dados.js` desatualizado. Como **aviso**, lista o que ainda está incompleto: valor da taxa, prazo, lista de documentos etc.
+O validador acusa como **erro** (e encerra com código 1): ID ou nome repetido, valor fora do padrão, fonte citada que não existe, ficha "confirmado" com custo ou documentos pendentes e `dist/js/dados.js` desatualizado. Como **aviso**, lista o que ainda está incompleto: valor da taxa, prazo, lista de documentos etc.
 
 Padrões usados nas fichas:
 
@@ -94,11 +105,11 @@ Padrões usados nas fichas:
 
 | Nome | RM |
 |---|---|
-| Luis Felipe Schimith da Silva | _PREENCHER RM_ |
-| Felipe Tadeu Rodrigues da Silva | _PREENCHER RM_ |
-| Lucas Cauã Silva Brasil | _PREENCHER RM_ |
-| Gabriel Bernardes dos Santos | _PREENCHER RM_ |
-| Matheus _PREENCHER SOBRENOME_ | _PREENCHER RM_ |
+| Luis Felipe Schimith da Silva | RM575273 |
+| Felipe Tadeu Rodrigues da Silva | RM575989 |
+| Lucas Cauã Silva Brasil | RM575138 |
+| Gabriel Bernardes dos Santos | RM575795 |
+| Matheus Antonio Pereira Girelli | RM576211 |
 
 ## Fontes
 

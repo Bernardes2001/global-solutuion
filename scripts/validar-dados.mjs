@@ -1,4 +1,4 @@
-/* Confere data/servicos.json, data/nordeste.json e js/dados.js.
+/* Confere data/servicos.json, data/nordeste.json e dist/js/dados.js.
  * Erros (dado duplicado, valor fora do padrão, dados.js desatualizado) encerram com código 1.
  * Avisos apontam informação incompleta que a pesquisa ainda precisa completar.
  * Uso: npm run validar   (ou: npm run validar -- --sem-avisos) */
@@ -47,7 +47,8 @@ function fontesCitadas(valor, acc = new Set()) {
   return acc;
 }
 
-const { pesquisa, nordeste } = lerDados();
+const dados = lerDados();
+const { pesquisa, nordeste, norte, sudeste, centroOeste, sul } = dados;
 const bases = pesquisa.servicos_base || [];
 const fichas = [...pesquisa.servicos_nacionais, ...pesquisa.variacoes_estaduais];
 
@@ -197,17 +198,103 @@ for (const e of nordeste.estados) {
 }
 for (const url of repetidos(urlsNordeste)) erro('nordeste', `URL repetida: ${url}`);
 
-/* ---------- js/dados.js em dia com o JSON ---------- */
+/* ---------- Norte ---------- */
+const siglasNorte = norte.estados.map((e) => e.sigla);
+for (const sigla of repetidos(siglasNorte)) erro(`norte ${sigla}`, 'estado repetido');
+const urlsNorte = [];
+for (const e of norte.estados) {
+  const onde = `norte ${e.sigla}`;
+  if (!(e.portais_servicos || []).length) erro(onde, 'sem portal de serviços');
+  if (!(e.apis || []).length) aviso(onde, 'nenhuma API ou base de dados abertos listada');
+  for (const p of e.portais_servicos || []) {
+    if (!VALORES.utilidade.includes(p.utilidade)) erro(onde, `utilidade "${p.utilidade}" fora do padrão`);
+    urlsNorte.push(p.url.replace(/\/$/, ''));
+  }
+  for (const api of e.apis || []) {
+    if ('requer_token' in api) erro(onde, `${api.nome}: use "autenticacao" no lugar de "requer_token"`);
+    if (!VALORES.autenticacao.includes(api.autenticacao)) erro(onde, `${api.nome}: autenticacao deve ser true, false ou null`);
+    if (api.autenticacao === null) aviso(onde, `${api.nome}: não confirmado se exige login/token`);
+    if (!VALORES.utilidade.includes(api.utilidade)) erro(onde, `${api.nome}: utilidade "${api.utilidade}" fora do padrão`);
+    urlsNorte.push(api.url.replace(/\/$/, ''));
+  }
+}
+for (const url of repetidos(urlsNorte)) erro('norte', `URL repetida: ${url}`);
+
+/* ---------- Sudeste ---------- */
+const siglasSudeste = sudeste.estados.map((e) => e.sigla);
+for (const sigla of repetidos(siglasSudeste)) erro(`sudeste ${sigla}`, 'estado repetido');
+const urlsSudeste = [];
+for (const e of sudeste.estados) {
+  const onde = `sudeste ${e.sigla}`;
+  if (!(e.portais_servicos || []).length) erro(onde, 'sem portal de serviços');
+  if (!(e.apis || []).length) aviso(onde, 'nenhuma API ou base de dados abertos listada');
+  for (const p of e.portais_servicos || []) {
+    if (!VALORES.utilidade.includes(p.utilidade)) erro(onde, `utilidade "${p.utilidade}" fora do padrão`);
+    urlsSudeste.push(p.url.replace(/\/$/, ''));
+  }
+  for (const api of e.apis || []) {
+    if (!VALORES.autenticacao.includes(api.autenticacao)) erro(onde, `${api.nome}: autenticacao deve ser true, false ou null`);
+    if (api.autenticacao === null) aviso(onde, `${api.nome}: não confirmado se exige login/token`);
+    if (!VALORES.utilidade.includes(api.utilidade)) erro(onde, `${api.nome}: utilidade "${api.utilidade}" fora do padrão`);
+    urlsSudeste.push(api.url.replace(/\/$/, ''));
+  }
+}
+for (const url of repetidos(urlsSudeste)) erro('sudeste', `URL repetida: ${url}`);
+
+/* ---------- Centro-Oeste ---------- */
+const siglasCentroOeste = centroOeste.estados.map((e) => e.sigla);
+for (const sigla of repetidos(siglasCentroOeste)) erro(`centro-oeste ${sigla}`, 'estado repetido');
+const urlsCentroOeste = [];
+for (const e of centroOeste.estados) {
+  const onde = `centro-oeste ${e.sigla}`;
+  if (!(e.portais_servicos || []).length) erro(onde, 'sem portal de serviços');
+  if (!(e.apis || []).length) aviso(onde, 'nenhuma API ou base de dados abertos listada');
+  for (const p of e.portais_servicos || []) {
+    if (!VALORES.utilidade.includes(p.utilidade)) erro(onde, `utilidade "${p.utilidade}" fora do padrão`);
+    urlsCentroOeste.push(p.url.replace(/\/$/, ''));
+  }
+  for (const api of e.apis || []) {
+    if (!VALORES.autenticacao.includes(api.autenticacao)) erro(onde, `${api.nome}: autenticacao deve ser true, false ou null`);
+    if (api.autenticacao === null) aviso(onde, `${api.nome}: não confirmado se exige login/token`);
+    if (!VALORES.utilidade.includes(api.utilidade)) erro(onde, `${api.nome}: utilidade "${api.utilidade}" fora do padrão`);
+    urlsCentroOeste.push(api.url.replace(/\/$/, ''));
+  }
+}
+for (const url of repetidos(urlsCentroOeste)) erro('centro-oeste', `URL repetida: ${url}`);
+
+/* ---------- Sul ---------- */
+const siglasSul = sul.estados.map((e) => e.sigla);
+for (const sigla of repetidos(siglasSul)) erro(`sul ${sigla}`, 'estado repetido');
+const urlsSul = [];
+for (const e of sul.estados) {
+  const onde = `sul ${e.sigla}`;
+  if (!(e.portais_servicos || []).length) erro(onde, 'sem portal de serviços');
+  if (!(e.apis || []).length) aviso(onde, 'nenhuma API ou base de dados abertos listada');
+  for (const p of e.portais_servicos || []) {
+    if (!VALORES.utilidade.includes(p.utilidade)) erro(onde, `utilidade "${p.utilidade}" fora do padrão`);
+    urlsSul.push(p.url.replace(/\/$/, ''));
+  }
+  for (const api of e.apis || []) {
+    if (!VALORES.autenticacao.includes(api.autenticacao)) erro(onde, `${api.nome}: autenticacao deve ser true, false ou null`);
+    if (api.autenticacao === null) aviso(onde, `${api.nome}: não confirmado se exige login/token`);
+    if (!VALORES.utilidade.includes(api.utilidade)) erro(onde, `${api.nome}: utilidade "${api.utilidade}" fora do padrão`);
+    urlsSul.push(api.url.replace(/\/$/, ''));
+  }
+}
+for (const url of repetidos(urlsSul)) erro('sul', `URL repetida: ${url}`);
+
+/* ---------- dist/js/dados.js em dia com o JSON ---------- */
 const dadosJsAtual = readFileSync(caminhos.dadosJs, 'utf8');
-if (dadosJsAtual !== gerarDadosJs({ pesquisa, nordeste })) {
-  erro('js/dados.js', 'desatualizado em relação a data/*.json — rode `npm run dados`');
+if (dadosJsAtual !== gerarDadosJs({ pesquisa, nordeste, norte, sudeste, centroOeste, sul })) {
+  erro('dist/js/dados.js', 'desatualizado em relação a data/*.json — rode `npm run dados`');
 }
 
 /* ---------- Relatório ---------- */
 const semAvisos = process.argv.includes('--sem-avisos');
 const total = montarServicos(pesquisa).length;
 const contar = (filtro) => fichas.filter(filtro).length;
-console.log(`Serviço Fácil — validação dos dados (${total} fichas, ${bases.length} serviços base, ${siglas.length} estados do Nordeste)\n`);
+const totalEstados = siglas.length + siglasNorte.length + siglasSudeste.length + siglasCentroOeste.length + siglasSul.length;
+console.log(`Serviço Fácil — validação dos dados (${total} fichas, ${bases.length} serviços base, ${totalEstados} estados das cinco regiões)\n`);
 console.log(`  Fichas confirmadas:            ${contar((s) => s.status_conteudo === 'confirmado')} de ${total}`);
 console.log(`  Documentos não confirmados:    ${contar((s) => s.documentos_status === 'pendente')}`);
 console.log(`  Pago sem valor confirmado:     ${contar((s) => s.custo?.status === 'pago' && s.custo.valor_brl === null)}`);

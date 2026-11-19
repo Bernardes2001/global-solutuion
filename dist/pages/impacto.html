@@ -6,20 +6,20 @@
   <meta name="description" content="Quem ganha com o Serviço Fácil, como medimos o impacto e quem participa do ecossistema.">
   <meta name="theme-color" content="#0E2F5A">
   <title>Serviço Fácil | Impacto</title>
-  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="../img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/main.js"></script>
 </head>
 <body class="flex min-h-screen flex-col">
   <a href="#conteudo" class="pular-conteudo">Pular para o conteúdo</a>
 
   <header class="border-b border-linha bg-superficie">
     <div class="container-site flex flex-wrap items-center justify-between gap-3 py-3">
-      <a href="index.html" class="flex items-center gap-3 rounded-lg text-tinta no-underline">
-        <img src="img/logo.svg" alt="Logotipo do Serviço Fácil" width="44" height="44">
+      <a href="../index.html" class="flex items-center gap-3 rounded-lg text-tinta no-underline">
+        <img src="../img/logo.svg" alt="Logotipo do Serviço Fácil" width="44" height="44">
         <span class="flex flex-col leading-tight">
           <span class="font-display text-xl font-extrabold tracking-tight">Serviço Fácil</span>
           <span class="text-xs text-suave">Serviços públicos sem complicação</span>
@@ -31,11 +31,11 @@
       </button>
       <nav id="menuPrincipal" class="menu-principal w-full md:flex md:w-auto" aria-label="Menu principal">
         <ul class="flex w-full flex-col gap-1 md:flex-row md:flex-wrap">
-          <li><a href="index.html" class="nav-link">Início</a></li>
-          <li><a href="servicos.html" class="nav-link">Serviços</a></li>
-          <li><a href="impacto.html" class="nav-link" aria-current="page">Impacto</a></li>
-          <li><a href="sobre-nos.html" class="nav-link">Sobre nós</a></li>
-          <li><a href="contato.html" class="nav-link">Fale conosco</a></li>
+          <li><a href="../index.html" class="nav-link">Início</a></li>
+          <li><a href="./servicos.html" class="nav-link">Serviços</a></li>
+          <li><a href="./impacto.html" class="nav-link" aria-current="page">Impacto</a></li>
+          <li><a href="./sobre-nos.html" class="nav-link">Sobre nós</a></li>
+          <li><a href="./contato.html" class="nav-link">Fale conosco</a></li>
         </ul>
       </nav>
       <div class="flex gap-2" role="group" aria-label="Opções de acessibilidade">
@@ -112,31 +112,27 @@
       <p class="eyebrow">Como ampliar</p>
       <h2 id="tituloAmpliar" class="titulo-secao">Próximos passos</h2>
       <ol class="mt-6 grid gap-4 md:grid-cols-3">
-        <li class="card p-6"><p class="font-display text-3xl font-extrabold text-azul">1</p><p class="mt-2 leading-relaxed">Completar as variações estaduais das regiões Norte, Nordeste e Sul.</p></li>
+        <li class="card p-6"><p class="font-display text-3xl font-extrabold text-azul">1</p><p class="mt-2 leading-relaxed">Completar as variações estaduais da região Sul e expandir a validação presencial em todas as regiões.</p></li>
         <li class="card p-6"><p class="font-display text-3xl font-extrabold text-azul">2</p><p class="mt-2 leading-relaxed">Ligar o catálogo às APIs públicas listadas abaixo, para manter os dados atualizados.</p></li>
         <li class="card p-6"><p class="font-display text-3xl font-extrabold text-azul">3</p><p class="mt-2 leading-relaxed">Parcerias com CRAS e escolas para levar o checklist impresso a quem não usa internet.</p></li>
       </ol>
-      <!-- TODO (grupo): adicionar aqui a seção "Validado com gente real": com quem conversaram e o que mudou no protótipo por causa disso. -->
     </section>
 
     <section class="container-site py-10" aria-labelledby="tituloOdsImpacto">
       <p class="eyebrow">Agenda 2030 da ONU</p>
       <h2 id="tituloOdsImpacto" class="titulo-secao">Como contribuímos com os ODS</h2>
-      <ul class="mt-8 grid gap-5 md:grid-cols-3">
-        <li class="card p-6">
-          <span class="ods inline-grid h-14 w-14 place-items-center rounded-xl bg-[#C5192D] font-display text-2xl font-extrabold text-white" aria-hidden="true">4</span>
-          <h3 class="mt-4 text-lg font-bold">Educação de qualidade</h3>
-          <p class="mt-1.5 leading-relaxed text-suave">Reúne o que é preciso para Enem, Sisu, ProUni e Fies, ajudando o acesso igualitário ao ensino superior (meta 4.3).</p>
+      <ul class="mt-8 grid gap-5 md:grid-cols-2">
+        <li class="card p-7">
+          <p class="eyebrow">ODS 10</p>
+          <h3 class="mt-2 text-2xl font-bold">Redução das desigualdades</h3>
+          <p class="mt-2 text-lg leading-relaxed text-suave">Ao organizar orientações em um só lugar e usar linguagem
+            direta, a plataforma ajuda a reduzir barreiras de informação no acesso aos serviços.</p>
         </li>
-        <li class="card p-6">
-          <span class="ods inline-grid h-14 w-14 place-items-center rounded-xl bg-[#C31A6B] font-display text-2xl font-extrabold text-white" aria-hidden="true">10</span>
-          <h3 class="mt-4 text-lg font-bold">Redução das desigualdades</h3>
-          <p class="mt-1.5 leading-relaxed text-suave">Linguagem simples, alto contraste e ajuste de fonte para incluir quem tem menos familiaridade digital (meta 10.2).</p>
-        </li>
-        <li class="card p-6">
-          <span class="ods inline-grid h-14 w-14 place-items-center rounded-xl bg-[#B8620A] font-display text-2xl font-extrabold text-white" aria-hidden="true">11</span>
-          <h3 class="mt-4 text-lg font-bold">Cidades e comunidades sustentáveis</h3>
-          <p class="mt-1.5 leading-relaxed text-suave">Menos deslocamentos desnecessários até postos de atendimento, nas cidades e no interior.</p>
+        <li class="card p-7">
+          <p class="eyebrow">ODS 11</p>
+          <h3 class="mt-2 text-2xl font-bold">Cidades e comunidades sustentáveis</h3>
+          <p class="mt-2 text-lg leading-relaxed text-suave">Informações claras sobre serviços e canais oficiais
+            contribuem para comunidades mais inclusivas e para uma relação mais simples com os serviços da cidade.</p>
         </li>
       </ul>
     </section>
@@ -147,8 +143,8 @@
       <p class="mt-3 max-w-3xl leading-relaxed text-suave">Portais estaduais e integrações levantados na pesquisa. A disponibilidade e a abrangência variam conforme o órgão.</p>
       <div id="listaFontes" class="mt-8 grid gap-4 md:grid-cols-2"></div>
       <div class="mt-10 flex flex-wrap gap-3">
-        <a href="servicos.html" class="btn-primario">Ver os serviços</a>
-        <a href="contato.html" class="btn-acess min-h-13 px-6">Sugerir uma fonte</a>
+        <a href="./servicos.html" class="btn-primario">Ver os serviços</a>
+        <a href="./contato.html" class="btn-acess min-h-13 px-6">Sugerir uma fonte</a>
       </div>
     </section>
   </main>
@@ -160,8 +156,8 @@
     </div>
   </footer>
 
-  <script src="js/dados.js"></script>
-  <script src="js/utils.js"></script>
-  <script src="js/impacto.js"></script>
+  <script src="../js/dados.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/impacto.js"></script>
 </body>
 </html>

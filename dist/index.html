@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Serviço Fácil: o que levar, o passo a passo, o custo e o canal oficial de serviços públicos, em linguagem simples.">
+  <meta name="theme-color" content="#0E2F5A">
+  <title>Serviço Fácil | Início</title>
+  <link rel="icon" href="./img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/main.js"></script>
+</head>
+
+<body class="flex min-h-screen flex-col">
+  <a href="#conteudo" class="pular-conteudo">Pular para o conteúdo</a>
+
+  <header class="border-b border-linha bg-superficie">
+    <div class="container-site flex flex-wrap items-center justify-between gap-3 py-3">
+      <a href="./index.html" class="flex items-center gap-3 rounded-lg text-tinta no-underline">
+        <img src="./img/logo.svg" alt="Logotipo do Serviço Fácil" width="44" height="44">
+        <span class="flex flex-col leading-tight">
+          <span class="font-display text-xl font-extrabold tracking-tight">Serviço Fácil</span>
+          <span class="text-xs text-suave">Serviços públicos sem complicação</span>
+        </span>
+      </a>
+      <button type="button" id="botaoMenu" class="botao-menu btn-acess" aria-expanded="false"
+        aria-controls="menuPrincipal">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.5" stroke-linecap="round">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+        Menu
+      </button>
+      <nav id="menuPrincipal" class="menu-principal w-full md:flex md:w-auto" aria-label="Menu principal">
+        <ul class="flex w-full flex-col gap-1 md:flex-row md:flex-wrap">
+          <li><a href="./index.html" class="nav-link" aria-current="page">Início</a></li>
+          <li><a href="./pages/servicos.html" class="nav-link">Serviços</a></li>
+          <li><a href="./pages/impacto.html" class="nav-link">Impacto</a></li>
+          <li><a href="./pages/sobre-nos.html" class="nav-link">Sobre nós</a></li>
+          <li><a href="./pages/contato.html" class="nav-link">Fale conosco</a></li>
+        </ul>
+      </nav>
+      <div class="flex gap-2" role="group" aria-label="Opções de acessibilidade">
+        <button type="button" id="btnFonteMenos" class="btn-acess" aria-label="Diminuir tamanho da fonte">A−</button>
+        <button type="button" id="btnFonteMais" class="btn-acess" aria-label="Aumentar tamanho da fonte">A+</button>
+        <button type="button" id="btnContraste" class="btn-acess" aria-pressed="false">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" />
+          </svg>
+          <span>Alto contraste</span>
+        </button>
+      </div>
+    </div>
+    <p id="avisoAcessibilidade" class="container-site pb-2 text-sm font-semibold text-azul" role="status" hidden></p>
+  </header>
+
+  <main id="conteudo" class="flex-1">
+
+    <section class="faixa-escura bg-navy text-claro" aria-labelledby="tituloHero">
+      <div class="container-site flex flex-wrap items-center gap-12 pb-20 pt-16">
+        <div class="min-w-0 flex-[999_1_520px]">
+          <p
+            class="mb-5 inline-block rounded-full bg-sol px-3 py-1.5 text-[13px] font-extrabold tracking-[0.06em] text-navy">
+            GUIA DE DOCUMENTOS PARA SERVIÇOS PÚBLICOS</p>
+          <h1 id="tituloHero" class="hero-titulo text-5xl font-extrabold leading-[1.05] tracking-tight lg:text-6xl">
+            Informação pública clara é o primeiro passo para a cidadania.</h1>
+          <p class="mt-6 max-w-xl text-lg leading-relaxed text-claro-suave">O Serviço Fácil reúne em um só lugar as
+            orientações essenciais sobre <strong class="text-claro">documentos, etapas e canais oficiais</strong> de
+            atendimento em todo o Brasil, mostrando quais documentos você precisa levar para cada serviço.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="./pages/servicos.html" class="btn-sol">
+              Explorar serviços agora
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.5">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a href="#como-funciona" class="btn-contorno">Entenda o projeto</a>
+          </div>
+        </div>
+
+        <figure class="m-0 flex-[1_1_320px] rounded-[20px] bg-superficie p-8 text-tinta shadow-2xl">
+          <p class="eyebrow">O problema em números</p>
+          <p class="mt-3 font-display text-7xl font-extrabold leading-none tracking-tighter text-azul">25,3%</p>
+          <p class="mt-3 text-[17px] leading-relaxed">dos usuários de serviços públicos <strong>tentaram usar um serviço
+              no último ano e não conseguiram concluir</strong> por nenhum canal.</p>
+          <figcaption class="mt-5 border-t border-linha pt-4 text-sm text-suave">
+            Fonte: BID/MGI, Uso de serviços digitais (2025).
+            <a class="font-semibold text-azul underline"
+              href="https://publications.iadb.org/pt/uso-de-servicos-digitais-um-retrato-do-brasil" target="_blank"
+              rel="noopener noreferrer">Ver a pesquisa<span class="sr-only"> (abre em nova aba)</span></a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="cidadao" class="container-site pb-6 pt-20" aria-labelledby="tituloCidadao">
+      <p class="eyebrow">Quem a gente ajuda</p>
+      <h2 id="tituloCidadao" class="titulo-secao">Pensado para cada cidadão brasileiro</h2>
+
+      <div class="mt-8 flex flex-wrap items-start gap-10">
+        <div class="min-w-0 flex-[1_1_420px]">
+          <ul class="grid gap-5">
+            <li class="card p-6">
+              <h3 class="text-lg font-bold">Trabalhadores e famílias</h3>
+              <p class="mt-1.5 leading-relaxed text-suave">Pessoas que precisam consultar requisitos de benefícios,
+                emitir documentos ou agendar atendimentos sem perder tempo.</p>
+            </li>
+            <li class="card p-6">
+              <h3 class="text-lg font-bold">Estudantes e jovens</h3>
+              <p class="mt-1.5 leading-relaxed text-suave">Cidadãos que iniciam a vida civil e profissional e buscam
+                orientação sobre os primeiros documentos, programas estudantis e cadastros oficiais.</p>
+            </li>
+            <li class="card p-6">
+              <h3 class="text-lg font-bold">Idosos e pessoas com deficiência</h3>
+              <p class="mt-1.5 leading-relaxed text-suave">Pessoas que encontram barreiras nos portais do governo e
+                precisam de instruções organizadas, com letras legíveis e passo a passo objetivo.</p>
+            </li>
+          </ul>
+          <p class="mt-5 text-suave">Entre outros cidadãos que precisam saber quais documentos levar a um atendimento.
+          </p>
+        </div>
+
+        <figure class="card m-0 flex-[1_1_360px] p-7">
+          <svg viewBox="0 0 230 230" role="img"
+            aria-label="Ilustração: um senhor idoso de cabelo branco, apoiado em uma bengala, diante de um balcão de atendimento, segurando seus documentos."
+            class="mx-auto mb-5 w-full max-w-[260px]">
+            <rect width="230" height="230" rx="12" fill="#e6f0fa" />
+            <rect y="212" width="230" height="18" fill="#c9dcef" />
+            <rect x="128" y="64" width="80" height="44" rx="6" fill="#fff" stroke="#174f91" stroke-width="2" />
+            <rect x="138" y="76" width="44" height="5" rx="2" fill="#174f91" />
+            <rect x="138" y="88" width="58" height="5" rx="2" fill="#9ab8d5" />
+            <rect x="122" y="140" width="96" height="10" fill="#174f91" />
+            <rect x="128" y="150" width="84" height="62" fill="#123b72" />
+            <rect x="56" y="150" width="11" height="64" fill="#3b4a5a" />
+            <rect x="75" y="150" width="11" height="64" fill="#3b4a5a" />
+            <path d="M52 100 L90 100 L90 154 L52 154 Z" fill="#174f91" />
+            <circle cx="71" cy="76" r="20" fill="#e0b48e" />
+            <path d="M51 72 A20 20 0 0 1 91 72 L88 70 Q71 56 54 70 Z" fill="#e8edf1" />
+            <path d="M88 108 L112 134" stroke="#e0b48e" stroke-width="8" stroke-linecap="round" />
+            <rect x="106" y="116" width="22" height="28" rx="2" fill="#fff" stroke="#123b72" stroke-width="2" />
+            <rect x="110" y="122" width="14" height="3" fill="#123b72" />
+            <rect x="110" y="129" width="14" height="3" fill="#9ab8d5" />
+            <path d="M44 112 L38 212" stroke="#7a5230" stroke-width="5" stroke-linecap="round" />
+            <path d="M52 114 L44 112" stroke="#e0b48e" stroke-width="7" stroke-linecap="round" />
+          </svg>
+          <p class="eyebrow">Uma história comum</p>
+          <p class="mt-3 leading-relaxed">Seu Raimundo, 71 anos, mora num povoado a 40 km da cidade. Duas vezes pagou a
+            passagem até o posto para pedir um benefício que é direito dele, e duas vezes voltou para casa por causa de
+            um documento que ninguém avisou. Dois dias de trabalho perdidos. Na terceira, a neta abriu o Serviço Fácil e
+            anotou a lista completa. Ele foi uma única vez. A diferença entre perder o dia e garantir o direito era uma
+            lista.</p>
+          <figcaption class="mt-4 text-sm text-suave">Situação fictícia, criada para ilustrar o uso.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="problema" class="bg-navy text-claro" aria-labelledby="tituloProblema">
+      <div class="container-site py-16">
+        <p
+          class="inline-block rounded-full bg-sol px-3 py-1.5 text-[13px] font-extrabold uppercase tracking-[0.06em] text-navy">
+          O problema</p>
+
+        <div class="mt-5 grid gap-6 lg:grid-cols-2 lg:items-start lg:gap-12">
+          <h2 id="tituloProblema" class="text-3xl font-extrabold leading-tight tracking-tight text-claro sm:text-4xl">
+            Por que ainda é tão difícil saber quais documentos levar?</h2>
+          <div class="text-lg leading-relaxed text-claro-suave">
+            <p><strong class="text-claro">Cada órgão tem um portal e cada estado tem uma regra.</strong> Antes de pedir
+              um serviço público, o cidadão precisa descobrir quais documentos levar, e a resposta está espalhada em
+              sites diferentes, escrita em linguagem técnica.</p>
+            <p class="mt-3">Quando falta um papel, a pessoa perde a viagem, perde o dia e adia um direito.</p>
+          </div>
+        </div>
+
+        <ul class="mt-10 grid gap-5 md:grid-cols-3">
+          <li class="card flex flex-col p-7">
+            <p class="font-display text-5xl font-extrabold leading-none tracking-tighter text-azul">72%</p>
+            <p class="mt-3 font-bold text-azul">dos serviços federais do Gov.br</p>
+            <p class="mt-1.5 leading-relaxed text-suave">Não têm atendimento presencial em nenhuma etapa (4.056 de 5.616
+              serviços analisados).</p>
+            <p class="mt-auto pt-4 text-sm"><a class="font-semibold text-azul underline"
+                href="https://portal.tcu.gov.br/imprensa/noticias/populacao-enfrenta-barreiras-para-acessar-servicos-publicos-digitais"
+                target="_blank" rel="noopener noreferrer">Fonte: TCU, auditoria Cidadania Digital (2026)<span
+                  class="sr-only"> (abre em nova aba)</span></a></p>
+          </li>
+          <li class="card flex flex-col p-7">
+            <p class="font-display text-5xl font-extrabold leading-none tracking-tighter text-azul">21,5%</p>
+            <p class="mt-3 font-bold text-azul">dos entrevistados</p>
+            <p class="mt-1.5 leading-relaxed text-suave">Precisaram recorrer a conhecidos que trabalham no governo para
+              usar um serviço público.</p>
+            <p class="mt-auto pt-4 text-sm"><a class="font-semibold text-azul underline"
+                href="https://publications.iadb.org/pt/uso-de-servicos-digitais-um-retrato-do-brasil" target="_blank"
+                rel="noopener noreferrer">Fonte: BID/MGI, Uso de serviços digitais (2025)<span class="sr-only"> (abre em
+                  nova aba)</span></a></p>
+          </li>
+          <li class="card flex flex-col p-7">
+            <p class="font-display text-5xl font-extrabold leading-none tracking-tighter text-azul">84 milhões</p>
+            <p class="mt-3 font-bold text-azul">de brasileiros</p>
+            <p class="mt-1.5 leading-relaxed text-suave">Não usam o Gov.br: cerca de 39,6 milhões não têm conta e outros
+              45 milhões, mesmo cadastrados, não acessaram a plataforma em 2025.</p>
+            <p class="mt-auto pt-4 text-sm"><a class="font-semibold text-azul underline"
+                href="https://capitaldigital.com.br/tcu-aponta-396-milhoes-de-brasileiros-sem-conta-gov-br-e-cobra-inclusao-no-acesso-aos-servicos-digitais/"
+                target="_blank" rel="noopener noreferrer">Fonte: TCU, via Capital Digital (2026)<span class="sr-only">
+                  (abre em nova aba)</span></a></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="como-funciona" class="container-site scroll-mt-6 py-10" aria-labelledby="tituloComo">
+      <div class="rounded-3xl bg-[#EAF1FB] p-8 sm:p-10">
+        <p class="eyebrow">Como funciona</p>
+        <h2 id="tituloComo" class="titulo-secao">Em poucos passos, você encontra o que precisa</h2>
+
+        <ol class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <li
+            class="card p-7 transition duration-300 hover:-translate-y-1 hover:border-azul hover:shadow-[0_12px_32px_-6px_rgba(23,79,145,0.4)]">
+            <span class="icone-box"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="7" />
+                <path d="m20 20-4-4" />
+              </svg></span>
+            <h3 class="mt-5 text-xl font-bold">1. Pesquise o serviço</h3>
+            <p class="mt-2 leading-relaxed text-suave">Digite o que você procura ou navegue pelas categorias:
+              Documentos, Trabalho, Saúde e Benefícios Sociais.</p>
+          </li>
+          <li
+            class="card p-7 transition duration-300 hover:-translate-y-1 hover:border-azul hover:shadow-[0_12px_32px_-6px_rgba(23,79,145,0.4)]">
+            <span class="icone-box"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg></span>
+            <h3 class="mt-5 text-xl font-bold">2. Selecione seu estado</h3>
+            <p class="mt-2 leading-relaxed text-suave">Veja as orientações gerais do país e os detalhes aplicáveis à sua
+              unidade federativa.</p>
+          </li>
+          <li
+            class="card p-7 transition duration-300 hover:-translate-y-1 hover:border-azul hover:shadow-[0_12px_32px_-6px_rgba(23,79,145,0.4)]">
+            <span class="icone-box"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M9 11l3 3 8-8" />
+                <path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9" />
+              </svg></span>
+            <h3 class="mt-5 text-xl font-bold">3. Confira os requisitos</h3>
+            <p class="mt-2 leading-relaxed text-suave">Leia o resumo em linguagem simples, veja a lista de documentos
+              necessários e acesse o canal oficial para fazer o pedido.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="ods" class="container-site py-16" aria-labelledby="tituloOds">
+      <p class="eyebrow">Agenda 2030 da ONU</p>
+      <h2 id="tituloOds" class="titulo-secao">Compromisso com os Objetivos de Desenvolvimento Sustentável</h2>
+      <p class="mt-4 max-w-3xl text-lg leading-relaxed text-suave">O projeto usa a tecnologia cívica para promover
+        inclusão social e fortalecer o acesso à cidadania no Brasil.</p>
+      <ul class="mt-8 grid gap-5 md:grid-cols-2">
+        <li class="card p-7">
+          <p class="eyebrow">ODS 10</p>
+          <h3 class="mt-2 text-2xl font-bold">Redução das desigualdades</h3>
+          <p class="mt-2 text-lg leading-relaxed text-suave">Ao organizar orientações em um só lugar e usar linguagem
+            direta, a plataforma ajuda a reduzir barreiras de informação no acesso aos serviços.</p>
+        </li>
+        <li class="card p-7">
+          <p class="eyebrow">ODS 11</p>
+          <h3 class="mt-2 text-2xl font-bold">Cidades e comunidades sustentáveis</h3>
+          <p class="mt-2 text-lg leading-relaxed text-suave">Informações claras sobre serviços e canais oficiais
+            contribuem para comunidades mais inclusivas e para uma relação mais simples com os serviços da cidade.</p>
+        </li>
+      </ul>
+      <p class="mt-6"><a href="./pages/impacto.html" class="font-bold text-azul underline">Veja como medimos o impacto da
+          solução</a></p>
+    </section>
+
+    <section class="container-site pb-20" aria-labelledby="tituloBuscaRapida">
+      <div class="flex flex-wrap items-center justify-between gap-6 rounded-3xl bg-sol p-8 sm:p-12">
+        <div class="flex-[1_1_380px]">
+          <h2 id="tituloBuscaRapida" class="text-3xl font-extrabold tracking-tight text-navy">O guia digital para
+            entender e acessar serviços públicos.</h2>
+          <p class="mt-2 text-[17px] text-navy">Qual documento você precisa hoje?</p>
+        </div>
+        <form action="./pages/servicos.html" method="get" class="flex flex-[1_1_380px] flex-col gap-3 sm:flex-row"
+          role="search">
+          <label for="buscaRapida" class="sr-only">Nome do serviço</label>
+          <input id="buscaRapida" name="busca" type="search" class="campo border-navy"
+            placeholder="Ex.: CPF, título, CNH">
+          <button type="submit" class="btn-primario">Buscar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-rodape text-rodape-texto">
+    <div class="container-site flex flex-wrap justify-between gap-6 py-10 text-sm">
+      <p>Serviço Fácil · Global Solution 2026/2 · FIAP — Engenharia de Software</p>
+      <p class="max-w-md">Projeto informativo: não faz solicitações nem emite documentos. Confirme as regras no canal
+        oficial antes do atendimento.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -90,7 +90,14 @@ function preencherFiltros() {
     .sort((a, b) => nomeCategoria(a).localeCompare(nomeCategoria(b), 'pt-BR'));
   categorias.forEach((chave) => filtroCategoria.add(new Option(nomeCategoria(chave), chave)));
 
-  const ufs = [...new Set(servicos.map((s) => s.localidade && s.localidade.uf).filter(Boolean))].sort();
+  const ufsComFichas = servicos
+    .map((s) => s.localidade && s.localidade.uf)
+    .filter(Boolean);
+  const ufsComPortais = comoLista(portaisEstaduais)
+    .map((estado) => estado.sigla)
+    .filter(Boolean);
+  const ufs = [...new Set([...ufsComFichas, ...ufsComPortais])]
+    .sort((a, b) => (nomesUf[a] || a).localeCompare(nomesUf[b] || b, 'pt-BR'));
   ufs.forEach((uf) => filtroEstado.add(new Option(`${nomesUf[uf] || uf} (${uf})`, uf)));
 }
 
@@ -98,7 +105,20 @@ function preencherFiltros() {
  * Com estado escolhido: nacionais + as fichas daquele estado. */
 function itensDoCatalogo(estado) {
   const nacionais = servicos.filter((ficha) => !ufDe(ficha));
-  if (estado) return [...nacionais, ...servicos.filter((ficha) => ufDe(ficha) === estado)];
+  if (estado) {
+    const fichasEstaduais = servicos.filter((ficha) => ufDe(ficha) === estado);
+    if (fichasEstaduais.length) return [...nacionais, ...fichasEstaduais];
+    const portais = comoLista(portaisEstaduais)
+      .filter((item) => item.sigla === estado)
+      .flatMap((item) => comoLista(item.portais_servicos).map((portal, indice) => ({
+        ...portal,
+        id: `portal-${estado}-${indice}`,
+        estado: item.estado,
+        sigla: estado,
+        ehPortalEstado: true
+      })));
+    return [...nacionais, ...portais];
+  }
   const bases = comoLista(servicosBase).map((base) => ({ ...base, ehServicoBase: true }));
   return [...nacionais, ...bases];
 }
@@ -141,7 +161,25 @@ function criarCardServicoBase(base) {
     </li>`;
 }
 
+function criarCardPortalEstado(portal) {
+  return `
+    <li class="card flex h-full flex-col gap-2.5 p-5">
+      <div class="flex flex-wrap gap-2">
+        <span class="chip bg-ceu text-azul">Portal estadual</span>
+        <span class="chip bg-sucesso-fundo text-sucesso">${escaparHtml(portal.estado)} (${escaparHtml(portal.sigla)})</span>
+      </div>
+      <h3 class="text-lg font-bold leading-snug">${escaparHtml(portal.nome)}</h3>
+      <p class="flex-1 leading-relaxed text-suave">Acesse o portal oficial do estado para localizar serviços. Requisitos, custos e prazos dependem de cada serviço.</p>
+      ${portal.observacao ? `<p class="text-sm text-aviso">${escaparHtml(portal.observacao)}</p>` : ''}
+      <a class="btn-primario mt-2 w-full" href="${escaparHtml(portal.url)}" target="_blank" rel="noopener noreferrer">
+        Consultar serviços<span class="sr-only"> de ${escaparHtml(portal.estado)} (abre em nova aba)</span>
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 3h7v7M10 14 21 3M19 13v7H4V5h7"/></svg>
+      </a>
+    </li>`;
+}
+
 function criarCard(servico) {
+  if (servico.ehPortalEstado) return criarCardPortalEstado(servico);
   if (servico.ehServicoBase) return criarCardServicoBase(servico);
   const { total, feitos } = progressoDocumentos(servico);
   const seloProgresso = feitos
@@ -166,7 +204,7 @@ function criarCard(servico) {
 
 function mostrarServicos() {
   const resultado = filtrar();
-  const plural = resultado.length === 1 ? 'serviço encontrado' : 'serviços encontrados';
+  const plural = resultado.length === 1 ? 'resultado encontrado' : 'resultados encontrados';
   const total = itensDoCatalogo(filtroEstado.value).length;
   contagem.textContent = `${resultado.length} ${plural} de ${total}`;
   grade.innerHTML = resultado.map(criarCard).join('');
@@ -187,17 +225,17 @@ function htmlChecklist(servico) {
   const documentos = comoLista(servico.documentos_obrigatorios);
   if (!documentos.length) {
     const mensagem = servico.documentos_status === 'nao_se_aplica'
-      ? '<p class="mt-2 text-suave">Não há documento obrigatório para apresentar: o pedido é feito com seus dados ou com a conta gov.br. Veja abaixo os documentos pedidos só em situações específicas.</p>'
+      ? '<p class="mt-2 text-suave">Não há documento obrigatório para apresentar: o pedido é feito com seus dados ou com a conta gov.br.</p>'
       : '<p class="mt-2 rounded-xl bg-aviso-fundo p-3.5 text-aviso">A lista de documentos ainda não foi confirmada pela pesquisa. Confira no canal oficial antes de ir.</p>';
-    return `<section class="mt-6"><h3 class="text-lg font-extrabold">Checklist de documentos</h3>${mensagem}</section>`;
+    return `<section class="servico-checklist"><h3 class="text-lg font-extrabold">O que levar</h3>${mensagem}</section>`;
   }
   const marcados = documentosMarcados[servico.id] || new Set();
   const itens = documentos.map((item, indice) => {
     const nome = item.documento || item;
     return `
       <li>
-        <label class="flex cursor-pointer items-start gap-3 rounded-xl border border-linha p-3.5 hover:bg-ceu">
-          <input type="checkbox" class="mt-0.5 h-5.5 w-5.5 shrink-0 accent-sucesso-barra" data-documento="${indice}" ${marcados.has(indice) ? 'checked' : ''}>
+        <label class="servico-documento">
+          <input type="checkbox" data-documento="${indice}" ${marcados.has(indice) ? 'checked' : ''}>
           <span class="flex flex-col gap-0.5">
             <span class="font-semibold">${escaparHtml(nome)}</span>
             ${item.observacao ? `<span class="text-sm text-suave">${escaparHtml(item.observacao)}</span>` : ''}
@@ -207,14 +245,14 @@ function htmlChecklist(servico) {
   }).join('');
 
   return `
-    <section class="mt-6" aria-labelledby="tituloChecklist">
+    <section class="servico-checklist" aria-labelledby="tituloChecklist">
       <div class="flex flex-wrap items-baseline justify-between gap-2">
-        <h3 id="tituloChecklist" class="text-lg font-extrabold">Checklist: o que você já tem?</h3>
+        <h3 id="tituloChecklist" class="text-lg font-extrabold">O que levar</h3>
         <p id="statusChecklist" class="text-sm font-bold" role="status" tabindex="-1"></p>
       </div>
       ${marcados.size ? '<button type="button" class="no-print mt-2 text-sm font-semibold text-azul underline" data-acao="limpar-checklist">Limpar marcações</button>' : ''}
-      <progress id="barraChecklist" class="barra-checklist mt-3 h-2 w-full" max="${documentos.length}" value="0"></progress>
-      <ul class="mt-4 flex flex-col gap-2.5">${itens}</ul>
+      <ul class="servico-documentos">${itens}</ul>
+      <progress id="barraChecklist" class="barra-checklist servico-progresso" aria-labelledby="tituloChecklist statusChecklist" max="${documentos.length}" value="0"></progress>
     </section>`;
 }
 
@@ -251,7 +289,7 @@ function alertaPrazo(prazo) {
 
 function caixaInfo(titulo, texto, alerta) {
   return `
-    <div class="rounded-xl bg-fundo p-4">
+    <div>
       <p class="text-xs font-bold uppercase text-suave">${titulo}</p>
       <p class="mt-1 font-semibold">${escaparHtml(texto || 'Não informado na pesquisa.')}</p>
       ${alerta ? `<p class="mt-1 text-sm font-semibold text-aviso">${escaparHtml(alerta)}</p>` : ''}
@@ -272,7 +310,7 @@ function cabecalhoDialogo(eyebrow, titulo, subtitulo) {
     <div class="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-linha bg-superficie px-5 py-5 sm:px-8">
       <div>
         <p class="eyebrow">${escaparHtml(eyebrow)}</p>
-        <h2 id="tituloDialogo" class="mt-1 text-2xl font-extrabold leading-tight">${escaparHtml(titulo)}</h2>
+        <h2 id="tituloDialogo" class="mt-1 text-2xl font-extrabold leading-tight text-navy">${escaparHtml(titulo)}</h2>
         <p class="mt-1.5 text-sm text-suave">${escaparHtml(subtitulo)}</p>
       </div>
       <button type="button" id="fecharDialogo" class="btn-acess text-xl" aria-label="Fechar detalhes">×</button>
@@ -315,10 +353,35 @@ function htmlTrocarEstado(servico) {
     .map((ficha) => `<option value="${escaparHtml(ficha.id)}" ${ficha.id === servico.id ? 'selected' : ''}>${escaparHtml(nomeLocal(ficha))}</option>`)
     .join('');
   return `
-    <div class="mb-6 flex flex-col gap-1.5">
-      <label for="trocarEstado" class="rotulo">Ver as regras de outro estado</label>
+    <div class="servico-estado no-print">
+      <label for="trocarEstado" class="rotulo">Estado</label>
       <select id="trocarEstado" class="campo">${opcoes}</select>
     </div>`;
+}
+
+/* Seleciona uma aba sem recriar o conteúdo ou perder as marcações do checklist. */
+function selecionarAbaServico(aba) {
+  conteudoDialogo.querySelectorAll('[role="tab"]').forEach((botao) => {
+    const selecionada = botao === aba;
+    botao.setAttribute('aria-selected', String(selecionada));
+    botao.setAttribute('tabindex', selecionada ? '0' : '-1');
+    conteudoDialogo.querySelector(`#${botao.getAttribute('aria-controls')}`).hidden = !selecionada;
+  });
+}
+
+function navegarAbasServico(evento) {
+  if (!evento.target.matches('[role="tab"]')) return;
+  const abas = [...conteudoDialogo.querySelectorAll('[role="tab"]')];
+  const indice = abas.indexOf(evento.target);
+  let proxima;
+  if (evento.key === 'ArrowRight') proxima = (indice + 1) % abas.length;
+  else if (evento.key === 'ArrowLeft') proxima = (indice - 1 + abas.length) % abas.length;
+  else if (evento.key === 'Home') proxima = 0;
+  else if (evento.key === 'End') proxima = abas.length - 1;
+  else return;
+  evento.preventDefault();
+  selecionarAbaServico(abas[proxima]);
+  abas[proxima].focus();
 }
 
 function abrirServico(id, botao) {
@@ -328,60 +391,79 @@ function abrirServico(id, botao) {
 
   const canais = comoLista(servico.canais);
   const canalPrincipal = canais.find((canal) => canal.url);
+  const documentosCondicionais = comoLista(servico.documentos_condicionais);
 
   const html = `
     ${cabecalhoDialogo(nomeCategoria(servico.categoria), servico.nome, `${nomeLocal(servico)} · ${servico.orgao_responsavel || 'Órgão não informado'}`)}
 
     <div class="px-5 py-6 sm:px-8">
       ${htmlTrocarEstado(servico)}
-      <div class="rounded-xl p-4 ${classeStatus(servico)}">
+      ${servico.status_conteudo !== 'confirmado' ? `<div class="mb-5 rounded-xl p-4 ${classeStatus(servico)}">
         <p class="font-extrabold">${escaparHtml(rotuloStatus(servico))}</p>
         <p class="mt-1 text-sm">${escaparHtml(legendaStatus[servico.status_conteudo] || 'Consulte as observações e pendências antes de seguir.')}</p>
+      </div>` : ''}
+
+      <div class="servico-abas no-print" role="tablist" aria-label="Detalhes do serviço">
+        <button type="button" id="abaDocumentos" class="servico-aba" role="tab" aria-controls="painelDocumentos" aria-selected="true" tabindex="0">O que levar</button>
+        <button type="button" id="abaEtapas" class="servico-aba" role="tab" aria-controls="painelEtapas" aria-selected="false" tabindex="-1">Como solicitar</button>
+        <button type="button" id="abaInformacoes" class="servico-aba" role="tab" aria-controls="painelInformacoes" aria-selected="false" tabindex="-1">Informações</button>
       </div>
 
-      <section class="mt-5 grid gap-3 sm:grid-cols-2" aria-label="Custo e prazo">
-        ${caixaInfo('Custo', servico.custo && servico.custo.descricao, alertaCusto(servico.custo))}
-        ${caixaInfo('Prazo', servico.prazo && servico.prazo.descricao, alertaPrazo(servico.prazo))}
+      <section id="painelDocumentos" class="servico-painel" role="tabpanel" aria-labelledby="abaDocumentos" tabindex="0">
+        ${htmlChecklist(servico)}
+        ${documentosCondicionais.length ? `
+          <details class="servico-condicionais">
+            <summary>Documentos para situações específicas</summary>
+            <ul class="servico-lista">
+              ${documentosCondicionais.map((item) => `
+                <li>
+                  <p class="font-semibold">${escaparHtml(item.documento || item)}</p>
+                  ${item.quando ? `<p class="mt-1 text-sm text-suave"><strong class="text-tinta">Quando:</strong> ${escaparHtml(item.quando)}</p>` : ''}
+                  ${item.observacao ? `<p class="mt-1 text-sm text-suave">${escaparHtml(item.observacao)}</p>` : ''}
+                </li>`).join('')}
+            </ul>
+          </details>` : ''}
       </section>
 
-      ${htmlAcoes()}
-
-      <section class="mt-6">
-        <h3 class="text-lg font-extrabold">Sobre o serviço</h3>
-        <p class="mt-2 leading-relaxed">${escaparHtml(servico.descricao || 'Não informado na pesquisa.')}</p>
-        <p class="mt-3 text-sm text-suave"><strong class="text-tinta">Para quem:</strong> ${escaparHtml(servico.publico || 'Não informado na pesquisa.')}</p>
-        ${comoLista(servico.condicoes_acesso).length ? `<p class="mt-2 text-sm text-suave"><strong class="text-tinta">Condições:</strong> ${escaparHtml(servico.condicoes_acesso.join(' · '))}</p>` : ''}
+      <section id="painelEtapas" class="servico-painel" role="tabpanel" aria-labelledby="abaEtapas" tabindex="0" hidden>
+        ${secao('Passo a passo', servico.passo_a_passo, (item) => `
+          <li class="servico-etapa">
+            <span class="font-extrabold text-azul">${escaparHtml(item.ordem || '•')}.</span>
+            <div>
+              <p>${escaparHtml(item.acao || item)}</p>
+              ${item.canal_url ? `<a class="mt-1 inline-block text-sm font-semibold text-azul underline" href="${escaparHtml(item.canal_url)}" target="_blank" rel="noopener noreferrer">Abrir a página desta etapa<span class="sr-only"> (abre em nova aba)</span></a>` : ''}
+            </div>
+          </li>`)}
       </section>
 
-      ${htmlChecklist(servico)}
+      <section id="painelInformacoes" class="servico-painel" role="tabpanel" aria-labelledby="abaInformacoes" tabindex="0" hidden>
+        <section>
+          <h3 class="text-lg font-extrabold">Sobre o serviço</h3>
+          <p class="mt-2 leading-relaxed">${escaparHtml(servico.descricao || 'Não informado na pesquisa.')}</p>
+          <p class="mt-3 text-sm text-suave"><strong class="text-tinta">Para quem:</strong> ${escaparHtml(servico.publico || 'Não informado na pesquisa.')}</p>
+          ${comoLista(servico.condicoes_acesso).length ? `<p class="mt-2 text-sm text-suave"><strong class="text-tinta">Condições:</strong> ${escaparHtml(servico.condicoes_acesso.join(' · '))}</p>` : ''}
+        </section>
+        <section class="servico-custo-prazo" aria-label="Custo e prazo">
+          ${caixaInfo('Custo', servico.custo && servico.custo.descricao, alertaCusto(servico.custo))}
+          ${caixaInfo('Prazo', servico.prazo && servico.prazo.descricao, alertaPrazo(servico.prazo))}
+        </section>
+        <p class="mt-6 text-sm text-suave">${escaparHtml(rotuloStatus(servico))}. ${escaparHtml(legendaStatus[servico.status_conteudo] || 'Consulte as observações e pendências antes de seguir.')}</p>
+        ${comoLista(servico.pendencias).length ? secao('Pontos que ainda precisam de confirmação', servico.pendencias, (item) => `<li class="rounded-xl bg-aviso-fundo p-3.5 text-aviso">${escaparHtml(item)}</li>`) : ''}
+        ${secao('Fontes consultadas', servico.fontes, (fonte) => `
+          <li>
+            <a class="font-bold text-azul underline" href="${escaparHtml(fonte.url || '#')}" target="_blank" rel="noopener noreferrer">${escaparHtml(fonte.titulo || 'Consultar fonte')}</a>
+            <p class="mt-1 text-sm text-suave">${escaparHtml(fonte.orgao || '')} · Consulta: ${escaparHtml(fonte.data_consulta || 'data não informada')}</p>
+          </li>`)}
+      </section>
 
-      ${secao('Documentos que podem ser pedidos', servico.documentos_condicionais, (item) => `
-        <li class="rounded-xl border border-linha p-3.5">
-          <p class="font-semibold">${escaparHtml(item.documento || item)}</p>
-          ${item.quando ? `<p class="mt-1 text-sm text-suave"><strong class="text-tinta">Quando:</strong> ${escaparHtml(item.quando)}</p>` : ''}
-          ${item.observacao ? `<p class="mt-1 text-sm text-suave">${escaparHtml(item.observacao)}</p>` : ''}
-        </li>`)}
-
-      ${secao('Passo a passo', servico.passo_a_passo, (item) => `
-        <li class="flex gap-3 rounded-xl border border-linha p-3.5">
-          <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-ceu font-extrabold text-azul">${escaparHtml(item.ordem || '•')}</span>
-          <div>
-            <p>${escaparHtml(item.acao || item)}</p>
-            ${item.canal_url ? `<a class="mt-1 inline-block text-sm font-semibold text-azul underline" href="${escaparHtml(item.canal_url)}" target="_blank" rel="noopener noreferrer">Abrir a página desta etapa<span class="sr-only"> (abre em nova aba)</span></a>` : ''}
-          </div>
-        </li>`)}
-
-      ${canalPrincipal ? `<a class="btn-sol mt-6 w-full" href="${escaparHtml(canalPrincipal.url)}" target="_blank" rel="noopener noreferrer">Ir ao canal oficial: ${escaparHtml(canalPrincipal.nome || 'portal do órgão')}<span class="sr-only"> (abre em nova aba)</span></a>` : ''}
-
-      ${secao('Pontos que ainda precisam de confirmação', servico.pendencias, (item) => `<li class="rounded-xl bg-aviso-fundo p-3.5 text-aviso">${escaparHtml(item)}</li>`)}
-
-      ${secao('Fontes consultadas', servico.fontes, (fonte) => `
-        <li class="rounded-xl bg-fundo p-3.5">
-          <a class="font-bold text-azul underline" href="${escaparHtml(fonte.url || '#')}" target="_blank" rel="noopener noreferrer">${escaparHtml(fonte.titulo || 'Consultar fonte')}</a>
-          <p class="mt-1 text-sm text-suave">${escaparHtml(fonte.orgao || '')} · Consulta: ${escaparHtml(fonte.data_consulta || 'data não informada')}</p>
-        </li>`)}
-
-      <p class="mt-6 text-xs text-suave">Conteúdo conferido em ${escaparHtml(servico.data_consulta || 'data não informada')}. Encontrou algo diferente? <a class="font-semibold text-azul underline" href="contato.html">Avise a equipe</a>.</p>
+      <footer class="servico-rodape">
+        ${canalPrincipal ? `<a class="btn-sol w-full" href="${escaparHtml(canalPrincipal.url)}" target="_blank" rel="noopener noreferrer">Ir ao canal oficial<span class="sr-only">: ${escaparHtml(canalPrincipal.nome || 'portal do órgão')} (abre em nova aba)</span><span aria-hidden="true">↗</span></a>` : ''}
+        <details class="servico-ferramentas no-print">
+          <summary>Ferramentas do serviço</summary>
+          ${htmlAcoes()}
+        </details>
+        <p class="mt-4 text-xs text-suave">Conteúdo conferido em ${escaparHtml(servico.data_consulta || 'data não informada')}. Encontrou algo diferente? <a class="font-semibold text-azul underline" href="contato.html">Avise a equipe</a>.</p>
+      </footer>
     </div>`;
 
   pararLeitura();
@@ -526,8 +608,23 @@ grade.addEventListener('click', (evento) => {
 
 /* Escolha do estado dentro do diálogo de um serviço com regras por estado. */
 conteudoDialogo.addEventListener('click', (evento) => {
+  const aba = evento.target.closest('[role="tab"]');
+  if (aba) selecionarAbaServico(aba);
   const botaoFicha = evento.target.closest('[data-ficha]');
   if (botaoFicha) abrirServico(botaoFicha.dataset.ficha);
+});
+
+conteudoDialogo.addEventListener('keydown', navegarAbasServico);
+
+/* A impressão inclui os documentos condicionais sem mudar o que estava aberto na tela. */
+let detalhesParaRestaurar = [];
+window.addEventListener('beforeprint', () => {
+  detalhesParaRestaurar = [...conteudoDialogo.querySelectorAll('details:not(.no-print):not([open])')];
+  detalhesParaRestaurar.forEach((detalhes) => { detalhes.open = true; });
+});
+window.addEventListener('afterprint', () => {
+  detalhesParaRestaurar.forEach((detalhes) => { detalhes.open = false; });
+  detalhesParaRestaurar = [];
 });
 
 /* Marcar/desmarcar um documento do checklist atualiza o contador e a barra. */
