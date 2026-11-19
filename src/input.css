@@ -1,5 +1,5 @@
 /* Serviço Fácil — fonte do Tailwind CSS.
- * Compile com `npm run css` → gera css/style.css (o arquivo que as páginas usam). */
+ * Compile com `npm run css` → gera dist/css/styles.css (o arquivo que as páginas usam). */
 @import "tailwindcss";
 
 @source not "../data";

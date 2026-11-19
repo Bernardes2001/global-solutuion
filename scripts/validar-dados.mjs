@@ -1,4 +1,4 @@
-/* Confere data/servicos.json, data/nordeste.json e js/dados.js.
+/* Confere data/servicos.json, data/nordeste.json e dist/js/dados.js.
  * Erros (dado duplicado, valor fora do padrão, dados.js desatualizado) encerram com código 1.
  * Avisos apontam informação incompleta que a pesquisa ainda precisa completar.
  * Uso: npm run validar   (ou: npm run validar -- --sem-avisos) */
@@ -283,10 +283,10 @@ for (const e of sul.estados) {
 }
 for (const url of repetidos(urlsSul)) erro('sul', `URL repetida: ${url}`);
 
-/* ---------- js/dados.js em dia com o JSON ---------- */
+/* ---------- dist/js/dados.js em dia com o JSON ---------- */
 const dadosJsAtual = readFileSync(caminhos.dadosJs, 'utf8');
 if (dadosJsAtual !== gerarDadosJs({ pesquisa, nordeste, norte, sudeste, centroOeste, sul })) {
-  erro('js/dados.js', 'desatualizado em relação a data/*.json — rode `npm run dados`');
+  erro('dist/js/dados.js', 'desatualizado em relação a data/*.json — rode `npm run dados`');
 }
 
 /* ---------- Relatório ---------- */

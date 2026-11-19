@@ -1,4 +1,4 @@
-/* Serviço Fácil — leitura dos dados da pesquisa e montagem do js/dados.js.
+/* Serviço Fácil — leitura dos dados da pesquisa e montagem do dist/js/dados.js.
  * Usado por scripts/gerar-dados.mjs e scripts/validar-dados.mjs. */
 
 import { readFileSync } from 'node:fs';
@@ -13,7 +13,7 @@ export const caminhos = {
   sudeste: path.join(raiz, 'data/sudeste.json'),
   centroOeste: path.join(raiz, 'data/centro-oeste.json'),
   sul: path.join(raiz, 'data/sul.json'),
-  dadosJs: path.join(raiz, 'js/dados.js')
+  dadosJs: path.join(raiz, 'dist/js/dados.js')
 };
 
 function normalizarUtilidade(valor) {
