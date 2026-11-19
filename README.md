@@ -58,7 +58,7 @@ npm run css:watch  # recompila automaticamente enquanto você edita
 ├── dist/                  # site pronto para abrir ou publicar
 │   ├── css/
 │   │   └── styles.css     # CSS compilado usado pelas páginas
-│   ├── images/            # logotipo e ilustração
+│   ├── img/               # logotipo e ilustração
 │   ├── js/
 │   │   ├── main.js        # menu, fonte e contraste (todas as páginas)
 │   │   ├── utils.js       # funções compartilhadas
